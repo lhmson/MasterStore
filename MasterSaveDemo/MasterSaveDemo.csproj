@@ -1,0 +1,494 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="..\packages\NUnit3TestAdapter.3.17.0-beta.2\build\net35\NUnit3TestAdapter.props" Condition="Exists('..\packages\NUnit3TestAdapter.3.17.0-beta.2\build\net35\NUnit3TestAdapter.props')" />
+  <Import Project="..\packages\NUnit.3.12.0\build\NUnit.props" Condition="Exists('..\packages\NUnit.3.12.0\build\NUnit.props')" />
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{50BC470A-755D-4C8F-9678-975F68AE0697}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <RootNamespace>MasterSaveDemo</RootNamespace>
+    <AssemblyName>MasterSaveDemo</AssemblyName>
+    <TargetFrameworkVersion>v4.6.1</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <ProjectTypeGuids>{60dc8134-eba5-43b8-bcc9-bb4bc16c2548};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
+    <WarningLevel>4</WarningLevel>
+    <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
+    <Deterministic>true</Deterministic>
+    <NuGetPackageImportStamp>
+    </NuGetPackageImportStamp>
+    <IsWebBootstrapper>false</IsWebBootstrapper>
+    <PublishUrl>C:\Users\lehoa\Dropbox\My Code\schoolcode\Nam2\HK2\NMCNPM\MasterSaveDemo\</PublishUrl>
+    <Install>true</Install>
+    <InstallFrom>Disk</InstallFrom>
+    <UpdateEnabled>false</UpdateEnabled>
+    <UpdateMode>Foreground</UpdateMode>
+    <UpdateInterval>7</UpdateInterval>
+    <UpdateIntervalUnits>Days</UpdateIntervalUnits>
+    <UpdatePeriodically>false</UpdatePeriodically>
+    <UpdateRequired>false</UpdateRequired>
+    <MapFileExtensions>true</MapFileExtensions>
+    <ProductName>Master Save Banking System</ProductName>
+    <PublisherName>Team 8 - QLSTK StarthenD</PublisherName>
+    <AutorunEnabled>true</AutorunEnabled>
+    <ApplicationRevision>4</ApplicationRevision>
+    <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
+    <UseApplicationTrust>true</UseApplicationTrust>
+    <CreateDesktopShortcut>true</CreateDesktopShortcut>
+    <PublishWizardCompleted>true</PublishWizardCompleted>
+    <BootstrapperEnabled>true</BootstrapperEnabled>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup>
+    <ManifestCertificateThumbprint>9B0519042EA7000F526ABF6D665A95FA75C1D5E8</ManifestCertificateThumbprint>
+  </PropertyGroup>
+  <PropertyGroup>
+    <ManifestKeyFile>MasterSaveDemo_TemporaryKey.pfx</ManifestKeyFile>
+  </PropertyGroup>
+  <PropertyGroup>
+    <GenerateManifests>true</GenerateManifests>
+  </PropertyGroup>
+  <PropertyGroup>
+    <SignManifests>true</SignManifests>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="DevExpress.Data.v19.1, Version=19.1.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.Images.v19.1, Version=19.1.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.Mvvm.v19.1, Version=19.1.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL">
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="DevExpress.Pdf.v19.1.Core, Version=19.1.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.Printing.v19.1.Core, Version=19.1.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.Xpf.Core.v19.1, Version=19.1.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.Xpo.v19.1, Version=19.1.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.2.0\lib\net45\EntityFramework.dll</HintPath>
+    </Reference>
+    <Reference Include="EntityFramework.SqlServer, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.2.0\lib\net45\EntityFramework.SqlServer.dll</HintPath>
+    </Reference>
+    <Reference Include="HamburgerMenu, Version=0.1.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\HamburgerMenu.0.1.0\lib\net40\HamburgerMenu.dll</HintPath>
+    </Reference>
+    <Reference Include="MaterialDesignColors, Version=1.2.5.1465, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\MaterialDesignColors.1.2.5\lib\net45\MaterialDesignColors.dll</HintPath>
+    </Reference>
+    <Reference Include="MaterialDesignThemes.Wpf, Version=3.1.2.1465, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\MaterialDesignThemes.3.1.2\lib\net45\MaterialDesignThemes.Wpf.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Data.Entity.Design.Extensibility, Version=15.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL" />
+    <Reference Include="Microsoft.Expression.Interactions, Version=4.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Windows.Interactivity.WPF.2.0.20525\lib\net40\Microsoft.Expression.Interactions.dll</HintPath>
+    </Reference>
+    <Reference Include="nunit.framework, Version=3.12.0.0, Culture=neutral, PublicKeyToken=2638cd05610744eb, processorArchitecture=MSIL">
+      <HintPath>..\packages\NUnit.3.12.0\lib\net45\nunit.framework.dll</HintPath>
+    </Reference>
+    <Reference Include="ReachFramework" />
+    <Reference Include="System" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Data.Entity" />
+    <Reference Include="System.Data.Entity.Design" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Printing" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.Security" />
+    <Reference Include="System.ServiceModel" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Windows.Interactivity, Version=4.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Windows.Interactivity.WPF.2.0.20525\lib\net40\System.Windows.Interactivity.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Xml" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Xaml">
+      <RequiredTargetFramework>4.0</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="UIAutomationProvider" />
+    <Reference Include="UIAutomationTypes" />
+    <Reference Include="WindowsBase" />
+    <Reference Include="PresentationCore" />
+    <Reference Include="PresentationFramework" />
+  </ItemGroup>
+  <ItemGroup>
+    <ApplicationDefinition Include="App.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </ApplicationDefinition>
+    <Compile Include="Helper\DatabaseCheck.cs" />
+    <Compile Include="MoSo_PrintPreview.xaml.cs">
+      <DependentUpon>MoSo_PrintPreview.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="PhieuRut_PrintPreview.xaml.cs">
+      <DependentUpon>PhieuRut_PrintPreview.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="PhieuGui_PrintPreview.xaml.cs">
+      <DependentUpon>PhieuGui_PrintPreview.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="BaoCaoDoanhSo_PrintPreview.xaml.cs">
+      <DependentUpon>BaoCaoDoanhSo_PrintPreview.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="BaoCaoMoDong_PrintPreview.xaml.cs">
+      <DependentUpon>BaoCaoMoDong_PrintPreview.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Helper\NhapLaiVaoVon.cs" />
+    <Compile Include="LoginWindow.xaml.cs">
+      <DependentUpon>LoginWindow.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Model\BangPhanQuyen.cs" />
+    <Compile Include="Model\BAOCAODOANHSO.cs">
+      <DependentUpon>QLSTKModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Model\BaoCaoDS.cs" />
+    <Compile Include="Model\BAOCAOMODONG.cs">
+      <DependentUpon>QLSTKModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Model\CHUCNANG.cs">
+      <DependentUpon>QLSTKModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Model\CTBCMODONG.cs">
+      <DependentUpon>QLSTKModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Model\DataProvider.cs" />
+    <Compile Include="Model\ListBaoCaoDongMo.cs" />
+    <Compile Include="Model\ListBaoCaoDongMo_DaBaoCao.cs" />
+    <Compile Include="Model\ListLichSuPhieuRut.cs" />
+    <Compile Include="Model\ListLichSuPhieuGui.cs" />
+    <Compile Include="Model\NhanVien.cs" />
+    <Compile Include="Model\sp_helpdiagramdefinition_Result.cs">
+      <DependentUpon>QLSTKModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Model\sp_helpdiagrams_Result.cs">
+      <DependentUpon>QLSTKModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Model\STKDuocTraCuu.cs" />
+    <Compile Include="Model\LOAITIETKIEM.cs">
+      <DependentUpon>QLSTKModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Model\NGUOIDUNG.cs">
+      <DependentUpon>QLSTKModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Model\NHOMNGUOIDUNG.cs">
+      <DependentUpon>QLSTKModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Model\PHANQUYEN.cs">
+      <DependentUpon>QLSTKModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Model\PHIEUGUI.cs">
+      <DependentUpon>QLSTKModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Model\PHIEURUT.cs">
+      <DependentUpon>QLSTKModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Model\QLSTKModel.Context.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>QLSTKModel.Context.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Model\QLSTKModel.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>QLSTKModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Model\QLSTKModel.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>QLSTKModel.edmx</DependentUpon>
+    </Compile>
+    <Compile Include="Model\QLSTKModel1.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>QLSTKModel.edmx</DependentUpon>
+    </Compile>
+    <Compile Include="Model\SOTIETKIEM.cs">
+      <DependentUpon>QLSTKModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Model\THAMSO.cs">
+      <DependentUpon>QLSTKModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="ResourceXAML\ThayDoiQuyDinh_Resource.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>ThayDoiQuyDinh_Resource.resx</DependentUpon>
+    </Compile>
+    <Compile Include="UnitTest\TestBaoCaoDoanhSo.cs" />
+    <Compile Include="UnitTest\TestHome.cs" />
+    <Compile Include="UnitTest\TestMoSo.cs" />
+    <Compile Include="UnitTest\TestQuanLyNhanVien.cs" />
+    <Compile Include="UnitTest\TestThayDoiQuyDinh.cs" />
+    <Compile Include="UnitTest\TestTraCuu.cs" />
+    <Compile Include="ViewModel\BaoCaoDoanhSo_PrintPreview_ViewModel.cs" />
+    <Compile Include="ViewModel\BaoCaoDoanhSo_ViewModel.cs" />
+    <Compile Include="ViewModel\BaoCaoMoDong_PrintPreview_ViewModel.cs" />
+    <Compile Include="ViewModel\BaoCaoMoDong_ViewModel.cs" />
+    <Compile Include="ViewModel\GuiTien_ViewModel.cs" />
+    <Compile Include="ViewModel\Home_PageViewModel.cs" />
+    <Compile Include="ViewModel\MoSo_PrintPreview_ViewModel.cs" />
+    <Compile Include="ViewModel\PhieuRut_PrintPreview_ViewModel.cs" />
+    <Compile Include="ViewModel\PhieuGui_PrintPreview_ViewModel.cs" />
+    <Compile Include="ViewModel\CaiDatKhac_ViewModel.cs" />
+    <Compile Include="ViewModel\QuanLyNhanSu_ViewModel.cs" />
+    <Compile Include="ViewModel\RutTien_ViewModel.cs" />
+    <Compile Include="ViewModel\ThayDoiQuyDinh_ViewModel.cs" />
+    <Compile Include="ViewModel\TraCuu_ViewModel.cs" />
+    <Compile Include="View\BaoCaoDoanhSo_Page.xaml.cs">
+      <DependentUpon>BaoCaoDoanhSo_Page.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\BaoCaoMoDong_Page.xaml.cs">
+      <DependentUpon>BaoCaoMoDong_Page.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\CaiDatKhac_Page.xaml.cs">
+      <DependentUpon>CaiDatKhac_Page.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\GuiTien_Page.xaml.cs">
+      <DependentUpon>GuiTien_Page.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\Home_Page.xaml.cs">
+      <DependentUpon>Home_Page.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\MoSo_Page.xaml.cs">
+      <DependentUpon>MoSo_Page.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="SelfUserControl\ControlBarUC.xaml.cs">
+      <DependentUpon>ControlBarUC.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="ViewModel\BaseViewModel.cs" />
+    <Compile Include="ViewModel\ControlBarViewModel.cs" />
+    <Compile Include="ViewModel\LoginViewModel.cs" />
+    <Compile Include="ViewModel\MainViewModel.cs" />
+    <Compile Include="ViewModel\MoSo_ViewModel.cs" />
+    <Compile Include="View\QuanLyNhanSu_Page.xaml.cs">
+      <DependentUpon>QuanLyNhanSu_Page.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\RutTien_Page.xaml.cs">
+      <DependentUpon>RutTien_Page.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\ThayDoiQuyDinh_Page.xaml.cs">
+      <DependentUpon>ThayDoiQuyDinh_Page.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\TraCuu_Page.xaml.cs">
+      <DependentUpon>TraCuu_Page.xaml</DependentUpon>
+    </Compile>
+    <Page Include="MoSo_PrintPreview.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="PhieuRut_PrintPreview.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="PhieuGui_PrintPreview.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="BaoCaoDoanhSo_PrintPreview.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="BaoCaoMoDong_PrintPreview.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="LoginWindow.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="MainWindow.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Compile Include="App.xaml.cs">
+      <DependentUpon>App.xaml</DependentUpon>
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="MainWindow.xaml.cs">
+      <DependentUpon>MainWindow.xaml</DependentUpon>
+      <SubType>Code</SubType>
+    </Compile>
+    <Page Include="View\BaoCaoDoanhSo_Page.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="View\BaoCaoMoDong_Page.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="View\CaiDatKhac_Page.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="View\GuiTien_Page.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="View\Home_Page.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="View\MoSo_Page.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="ResourceXAML\MainResource.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="SelfUserControl\ControlBarUC.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="View\QuanLyNhanSu_Page.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="View\RutTien_Page.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="View\ThayDoiQuyDinh_Page.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="View\TraCuu_Page.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Properties\AssemblyInfo.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ResourceXAML\ThayDoiQuyDinh_Resource.resx">
+      <Generator>PublicResXFileCodeGenerator</Generator>
+      <LastGenOutput>ThayDoiQuyDinh_Resource.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EntityDeploy Include="Model\QLSTKModel.edmx">
+      <Generator>EntityModelCodeGenerator</Generator>
+      <LastGenOutput>QLSTKModel1.Designer.cs</LastGenOutput>
+    </EntityDeploy>
+    <None Include="MasterSaveDemo_TemporaryKey.pfx" />
+    <None Include="Model\QLSTKModel.edmx.diagram">
+      <DependentUpon>QLSTKModel.edmx</DependentUpon>
+    </None>
+    <None Include="packages.config" />
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config">
+      <SubType>Designer</SubType>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <BootstrapperPackage Include=".NETFramework,Version=v4.6.1">
+      <Visible>False</Visible>
+      <ProductName>Microsoft .NET Framework 4.6.1 %28x86 and x64%29</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Framework.3.5.SP1">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.SqlServer.Express.11.0">
+      <Visible>False</Visible>
+      <ProductName>SQL Server 2012 Express</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\logoms.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\tinylogo.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\favorite.png" />
+    <Resource Include="Images\home.png" />
+    <Resource Include="Images\list.png" />
+    <Resource Include="Images\person.png" />
+    <Resource Include="Images\search.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\setting.png" />
+    <Resource Include="Images\spam.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\new.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\logout.png" />
+    <Resource Include="Images\1-MoSo.png" />
+    <Resource Include="Images\10-info.png" />
+    <Resource Include="Images\11-logout.png" />
+    <Resource Include="Images\2-GuiTien.png" />
+    <Resource Include="Images\3-RutTien.png" />
+    <Resource Include="Images\5-BaoCaoDoanhThu.png" />
+    <Resource Include="Images\6-BaoCaoMoDong.png" />
+    <Resource Include="Images\7-ThayDoiQuyDinh.png" />
+    <Resource Include="Images\8-QuanLyNhanSu.png" />
+    <Content Include="Model\QLSTKModel.Context.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <LastGenOutput>QLSTKModel.Context.cs</LastGenOutput>
+      <DependentUpon>QLSTKModel.edmx</DependentUpon>
+    </Content>
+    <Content Include="Model\QLSTKModel.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>QLSTKModel.edmx</DependentUpon>
+      <LastGenOutput>QLSTKModel.cs</LastGenOutput>
+    </Content>
+    <Content Include="QLSTK.sql" />
+  </ItemGroup>
+  <ItemGroup>
+    <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <Import Project="..\packages\MaterialDesignThemes.3.1.2\build\MaterialDesignThemes.targets" Condition="Exists('..\packages\MaterialDesignThemes.3.1.2\build\MaterialDesignThemes.targets')" />
+  <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
+    <PropertyGroup>
+      <ErrorText>This project references NuGet package(s) that are missing on this computer. Use NuGet Package Restore to download them.  For more information, see http://go.microsoft.com/fwlink/?LinkID=322105. The missing file is {0}.</ErrorText>
+    </PropertyGroup>
+    <Error Condition="!Exists('..\packages\MaterialDesignThemes.3.1.2\build\MaterialDesignThemes.targets')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\MaterialDesignThemes.3.1.2\build\MaterialDesignThemes.targets'))" />
+    <Error Condition="!Exists('..\packages\NUnit.3.12.0\build\NUnit.props')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\NUnit.3.12.0\build\NUnit.props'))" />
+    <Error Condition="!Exists('..\packages\NUnit3TestAdapter.3.17.0-beta.2\build\net35\NUnit3TestAdapter.props')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\NUnit3TestAdapter.3.17.0-beta.2\build\net35\NUnit3TestAdapter.props'))" />
+  </Target>
+</Project>
