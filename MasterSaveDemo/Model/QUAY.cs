@@ -12,21 +12,22 @@ namespace MasterSaveDemo.Model
     using System;
     using System.Collections.Generic;
     
-    public partial class NHANVIEN
+    public partial class QUAY
     {
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
-        public NHANVIEN()
+        public QUAY()
         {
             this.HOADONs = new HashSet<HOADON>();
+            this.PHIEUDNXUATKHOes = new HashSet<PHIEUDNXUATKHO>();
         }
     
-        public string MaNguoiDung { get; set; }
-        public string HoTen { get; set; }
-        public string DiaChi { get; set; }
-        public string SDT { get; set; }
-        public string GioiTinh { get; set; }
+        public string MaQuay { get; set; }
+        public string TenQuay { get; set; }
+        public int DangSuDung { get; set; }
     
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<HOADON> HOADONs { get; set; }
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public virtual ICollection<PHIEUDNXUATKHO> PHIEUDNXUATKHOes { get; set; }
     }
 }

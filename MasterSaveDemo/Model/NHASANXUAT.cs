@@ -12,21 +12,20 @@ namespace MasterSaveDemo.Model
     using System;
     using System.Collections.Generic;
     
-    public partial class NHANVIEN
+    public partial class NHASANXUAT
     {
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
-        public NHANVIEN()
+        public NHASANXUAT()
         {
-            this.HOADONs = new HashSet<HOADON>();
+            this.MATHANGs = new HashSet<MATHANG>();
         }
     
-        public string MaNguoiDung { get; set; }
-        public string HoTen { get; set; }
+        public string MaNSX { get; set; }
+        public string TenNSX { get; set; }
         public string DiaChi { get; set; }
         public string SDT { get; set; }
-        public string GioiTinh { get; set; }
     
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<HOADON> HOADONs { get; set; }
+        public virtual ICollection<MATHANG> MATHANGs { get; set; }
     }
 }

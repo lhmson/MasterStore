@@ -12,13 +12,14 @@ namespace MasterSaveDemo.Model
     using System;
     using System.Collections.Generic;
     
-    public partial class PHANQUYEN
+    public partial class CT_THEKHO
     {
-        public int MaNhom { get; set; }
-        public int MaChucNang { get; set; }
-        public string GhiChu { get; set; }
+        public string MaCTTheKho { get; set; }
+        public System.DateTime NgayNhapXuat { get; set; }
+        public string MaPhieuNhapXuat { get; set; }
+        public string DienGiai { get; set; }
+        public string MaTheKho { get; set; }
     
-        public virtual CHUCNANG CHUCNANG { get; set; }
-        public virtual NHOMNGUOIDUNG NHOMNGUOIDUNG { get; set; }
+        public virtual THEKHO THEKHO { get; set; }
     }
 }
