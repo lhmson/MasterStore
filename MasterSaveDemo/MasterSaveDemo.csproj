@@ -139,6 +139,78 @@
       <SubType>Designer</SubType>
     </ApplicationDefinition>
     <Compile Include="Helper\DatabaseCheck.cs" />
+    <Compile Include="Model\CT_HOADON.cs">
+      <DependentUpon>QLSieuThiModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Model\CT_PHIEUDNXUATKHO.cs">
+      <DependentUpon>QLSieuThiModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Model\CT_PHIEUNHAPKHO.cs">
+      <DependentUpon>QLSieuThiModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Model\CT_PHIEUXUATKHO.cs">
+      <DependentUpon>QLSieuThiModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Model\CT_THEKHO.cs">
+      <DependentUpon>QLSieuThiModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Model\CT_THONGKENGAY.cs">
+      <DependentUpon>QLSieuThiModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Model\HOADON.cs">
+      <DependentUpon>QLSieuThiModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Model\MATHANG.cs">
+      <DependentUpon>QLSieuThiModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Model\NHACUNGCAP.cs">
+      <DependentUpon>QLSieuThiModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Model\NHANVIEN.cs">
+      <DependentUpon>QLSieuThiModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Model\NHASANXUAT.cs">
+      <DependentUpon>QLSieuThiModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Model\PHIEUDNXUATKHO.cs">
+      <DependentUpon>QLSieuThiModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Model\PHIEUNHAPKHO.cs">
+      <DependentUpon>QLSieuThiModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Model\PHIEUXUATKHO.cs">
+      <DependentUpon>QLSieuThiModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Model\QLSieuThiModel.Context.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>QLSieuThiModel.Context.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Model\QLSieuThiModel.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>QLSieuThiModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Model\QLSieuThiModel.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>QLSieuThiModel.edmx</DependentUpon>
+    </Compile>
+    <Compile Include="Model\QUAY.cs">
+      <DependentUpon>QLSieuThiModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Model\sysdiagram.cs">
+      <DependentUpon>QLSieuThiModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Model\THEKHO.cs">
+      <DependentUpon>QLSieuThiModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Model\THONGBAO.cs">
+      <DependentUpon>QLSieuThiModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Model\THONGKENGAY.cs">
+      <DependentUpon>QLSieuThiModel.tt</DependentUpon>
+    </Compile>
     <Compile Include="NhapHang_PrintPreview.xaml.cs">
       <DependentUpon>NhapHang_PrintPreview.xaml</DependentUpon>
     </Compile>
@@ -154,80 +226,31 @@
     <Compile Include="BaoCaoTonKho_PrintPreview.xaml.cs">
       <DependentUpon>BaoCaoTonKho_PrintPreview.xaml</DependentUpon>
     </Compile>
-    <Compile Include="Helper\NhapLaiVaoVon.cs" />
     <Compile Include="LoginWindow.xaml.cs">
       <DependentUpon>LoginWindow.xaml</DependentUpon>
     </Compile>
     <Compile Include="Model\BangPhanQuyen.cs" />
-    <Compile Include="Model\BAOCAODOANHSO.cs">
-      <DependentUpon>QLSTKModel.tt</DependentUpon>
-    </Compile>
     <Compile Include="Model\BaoCaoDS.cs" />
-    <Compile Include="Model\BAOCAOMODONG.cs">
-      <DependentUpon>QLSTKModel.tt</DependentUpon>
-    </Compile>
     <Compile Include="Model\CHUCNANG.cs">
-      <DependentUpon>QLSTKModel.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Model\CTBCMODONG.cs">
-      <DependentUpon>QLSTKModel.tt</DependentUpon>
+      <DependentUpon>QLSieuThiModel.tt</DependentUpon>
     </Compile>
     <Compile Include="Model\DataProvider.cs" />
     <Compile Include="Model\ListBaoCaoDongMo.cs" />
     <Compile Include="Model\ListBaoCaoDongMo_DaBaoCao.cs" />
     <Compile Include="Model\ListLichSuPhieuRut.cs" />
     <Compile Include="Model\ListLichSuPhieuGui.cs" />
-    <Compile Include="Model\NhanVien.cs" />
-    <Compile Include="Model\sp_helpdiagramdefinition_Result.cs">
-      <DependentUpon>QLSTKModel.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Model\sp_helpdiagrams_Result.cs">
-      <DependentUpon>QLSTKModel.tt</DependentUpon>
-    </Compile>
     <Compile Include="Model\STKDuocTraCuu.cs" />
-    <Compile Include="Model\LOAITIETKIEM.cs">
-      <DependentUpon>QLSTKModel.tt</DependentUpon>
-    </Compile>
     <Compile Include="Model\NGUOIDUNG.cs">
-      <DependentUpon>QLSTKModel.tt</DependentUpon>
+      <DependentUpon>QLSieuThiModel.tt</DependentUpon>
     </Compile>
     <Compile Include="Model\NHOMNGUOIDUNG.cs">
-      <DependentUpon>QLSTKModel.tt</DependentUpon>
+      <DependentUpon>QLSieuThiModel.tt</DependentUpon>
     </Compile>
     <Compile Include="Model\PHANQUYEN.cs">
-      <DependentUpon>QLSTKModel.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Model\PHIEUGUI.cs">
-      <DependentUpon>QLSTKModel.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Model\PHIEURUT.cs">
-      <DependentUpon>QLSTKModel.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Model\QLSTKModel.Context.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>QLSTKModel.Context.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Model\QLSTKModel.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>QLSTKModel.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Model\QLSTKModel.Designer.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>QLSTKModel.edmx</DependentUpon>
-    </Compile>
-    <Compile Include="Model\QLSTKModel1.Designer.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>QLSTKModel.edmx</DependentUpon>
-    </Compile>
-    <Compile Include="Model\SOTIETKIEM.cs">
-      <DependentUpon>QLSTKModel.tt</DependentUpon>
+      <DependentUpon>QLSieuThiModel.tt</DependentUpon>
     </Compile>
     <Compile Include="Model\THAMSO.cs">
-      <DependentUpon>QLSTKModel.tt</DependentUpon>
+      <DependentUpon>QLSieuThiModel.tt</DependentUpon>
     </Compile>
     <Compile Include="ResourceXAML\ThayDoiQuyDinh_Resource.Designer.cs">
       <AutoGen>True</AutoGen>
@@ -399,13 +422,13 @@
       <Generator>PublicResXFileCodeGenerator</Generator>
       <LastGenOutput>ThayDoiQuyDinh_Resource.Designer.cs</LastGenOutput>
     </EmbeddedResource>
-    <EntityDeploy Include="Model\QLSTKModel.edmx">
-      <Generator>EntityModelCodeGenerator</Generator>
-      <LastGenOutput>QLSTKModel1.Designer.cs</LastGenOutput>
-    </EntityDeploy>
     <None Include="MasterSaveDemo_TemporaryKey.pfx" />
-    <None Include="Model\QLSTKModel.edmx.diagram">
-      <DependentUpon>QLSTKModel.edmx</DependentUpon>
+    <EntityDeploy Include="Model\QLSieuThiModel.edmx">
+      <Generator>EntityModelCodeGenerator</Generator>
+      <LastGenOutput>QLSieuThiModel.Designer.cs</LastGenOutput>
+    </EntityDeploy>
+    <None Include="Model\QLSieuThiModel.edmx.diagram">
+      <DependentUpon>QLSieuThiModel.edmx</DependentUpon>
     </None>
     <None Include="packages.config" />
     <None Include="Properties\Settings.settings">
@@ -466,15 +489,15 @@
     <Resource Include="Images\6-BaoCaoMoDong.png" />
     <Resource Include="Images\7-ThayDoiQuyDinh.png" />
     <Resource Include="Images\8-QuanLyNhanSu.png" />
-    <Content Include="Model\QLSTKModel.Context.tt">
+    <Content Include="Model\QLSieuThiModel.Context.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
-      <LastGenOutput>QLSTKModel.Context.cs</LastGenOutput>
-      <DependentUpon>QLSTKModel.edmx</DependentUpon>
+      <DependentUpon>QLSieuThiModel.edmx</DependentUpon>
+      <LastGenOutput>QLSieuThiModel.Context.cs</LastGenOutput>
     </Content>
-    <Content Include="Model\QLSTKModel.tt">
+    <Content Include="Model\QLSieuThiModel.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
-      <DependentUpon>QLSTKModel.edmx</DependentUpon>
-      <LastGenOutput>QLSTKModel.cs</LastGenOutput>
+      <DependentUpon>QLSieuThiModel.edmx</DependentUpon>
+      <LastGenOutput>QLSieuThiModel.cs</LastGenOutput>
     </Content>
     <Content Include="QLSTK.sql" />
   </ItemGroup>

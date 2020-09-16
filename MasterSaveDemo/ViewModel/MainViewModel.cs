@@ -292,15 +292,19 @@ namespace MasterSaveDemo.ViewModel
         #endregion
         public MainViewModel() // all main page handling goes there
         {
+            // set bang true sau nay phai sua hihi
+            Enable_BCDS = Enable_BCMD = Enable_GuiTien = Enable_Home = Enable_MoSo = Enable_QLNS = Enable_RutTien = Enable_TDQD = Enable_TraCuu = true;
             //Selected_HOME = true;
             //Selected_DangXuat = false;
             LoadedWindowCommand = new RelayCommand<Window>((p) => { return true; }, (p) => {
 
                 //if (p == null) return;
                 p.Hide(); // main view hide in login window
-                LoginWindow loginWindow = new LoginWindow();
-                loginWindow.ShowDialog();
-                isLoaded = true;
+
+                // cmt de chay main, sau nay code cho login sau hihi
+                //LoginWindow loginWindow = new LoginWindow();
+                //loginWindow.ShowDialog();
+                //isLoaded = true;
 
                 //if (loginWindow.DataContext == null) return;
                 //var loginVM = loginWindow.DataContext as LoginViewModel;
