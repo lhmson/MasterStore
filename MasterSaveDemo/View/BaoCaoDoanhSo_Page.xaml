@@ -45,7 +45,7 @@
                   Background="{DynamicResource PrimaryHueDarkBrush}"
                   Foreground="{DynamicResource PrimaryHueMidForegroundBrush}"
                   Padding="8">
-                        <TextBlock FontWeight="SemiBold" TextAlignment="Center" FontSize="20">BÁO CÁO DOANH SỐ HOẠT ĐỘNG THEO NGÀY</TextBlock>
+                        <TextBlock FontWeight="SemiBold" TextAlignment="Center" FontSize="20">BÁO CÁO DOANH SỐ HOẠT ĐỘNG</TextBlock>
                     </materialDesign:Card>
                 </Grid>
                 <Grid Grid.Row="1" Margin="6">

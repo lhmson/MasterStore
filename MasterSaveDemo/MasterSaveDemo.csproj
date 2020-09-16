@@ -127,95 +127,118 @@
       <SubType>Designer</SubType>
     </ApplicationDefinition>
     <Compile Include="Helper\DatabaseCheck.cs" />
-    <Compile Include="MoSo_PrintPreview.xaml.cs">
-      <DependentUpon>MoSo_PrintPreview.xaml</DependentUpon>
+    <Compile Include="Model\CT_HOADON.cs">
+      <DependentUpon>QLSieuThiModel.tt</DependentUpon>
     </Compile>
-    <Compile Include="PhieuRut_PrintPreview.xaml.cs">
-      <DependentUpon>PhieuRut_PrintPreview.xaml</DependentUpon>
+    <Compile Include="Model\CT_PHIEUDNXUATKHO.cs">
+      <DependentUpon>QLSieuThiModel.tt</DependentUpon>
     </Compile>
-    <Compile Include="PhieuGui_PrintPreview.xaml.cs">
-      <DependentUpon>PhieuGui_PrintPreview.xaml</DependentUpon>
+    <Compile Include="Model\CT_PHIEUNHAPKHO.cs">
+      <DependentUpon>QLSieuThiModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Model\CT_PHIEUXUATKHO.cs">
+      <DependentUpon>QLSieuThiModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Model\CT_THEKHO.cs">
+      <DependentUpon>QLSieuThiModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Model\CT_THONGKENGAY.cs">
+      <DependentUpon>QLSieuThiModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Model\HOADON.cs">
+      <DependentUpon>QLSieuThiModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Model\MATHANG.cs">
+      <DependentUpon>QLSieuThiModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Model\NHACUNGCAP.cs">
+      <DependentUpon>QLSieuThiModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Model\NHANVIEN.cs">
+      <DependentUpon>QLSieuThiModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Model\NHASANXUAT.cs">
+      <DependentUpon>QLSieuThiModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Model\PHIEUDNXUATKHO.cs">
+      <DependentUpon>QLSieuThiModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Model\PHIEUNHAPKHO.cs">
+      <DependentUpon>QLSieuThiModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Model\PHIEUXUATKHO.cs">
+      <DependentUpon>QLSieuThiModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Model\QLSieuThiModel.Context.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>QLSieuThiModel.Context.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Model\QLSieuThiModel.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>QLSieuThiModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Model\QLSieuThiModel.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>QLSieuThiModel.edmx</DependentUpon>
+    </Compile>
+    <Compile Include="Model\QUAY.cs">
+      <DependentUpon>QLSieuThiModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Model\sysdiagram.cs">
+      <DependentUpon>QLSieuThiModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Model\THEKHO.cs">
+      <DependentUpon>QLSieuThiModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Model\THONGBAO.cs">
+      <DependentUpon>QLSieuThiModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Model\THONGKENGAY.cs">
+      <DependentUpon>QLSieuThiModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="NhapHang_PrintPreview.xaml.cs">
+      <DependentUpon>NhapHang_PrintPreview.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="BanHang_PrintPreview.xaml.cs">
+      <DependentUpon>BanHang_PrintPreview.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="XuatHang_PrintPreview.xaml.cs">
+      <DependentUpon>XuatHang_PrintPreview.xaml</DependentUpon>
     </Compile>
     <Compile Include="BaoCaoDoanhSo_PrintPreview.xaml.cs">
       <DependentUpon>BaoCaoDoanhSo_PrintPreview.xaml</DependentUpon>
     </Compile>
-    <Compile Include="BaoCaoMoDong_PrintPreview.xaml.cs">
-      <DependentUpon>BaoCaoMoDong_PrintPreview.xaml</DependentUpon>
+    <Compile Include="BaoCaoTonKho_PrintPreview.xaml.cs">
+      <DependentUpon>BaoCaoTonKho_PrintPreview.xaml</DependentUpon>
     </Compile>
-    <Compile Include="Helper\NhapLaiVaoVon.cs" />
     <Compile Include="LoginWindow.xaml.cs">
       <DependentUpon>LoginWindow.xaml</DependentUpon>
     </Compile>
     <Compile Include="Model\BangPhanQuyen.cs" />
-    <Compile Include="Model\BAOCAODOANHSO.cs">
-      <DependentUpon>QLSTKModel.tt</DependentUpon>
-    </Compile>
     <Compile Include="Model\BaoCaoDS.cs" />
-    <Compile Include="Model\BAOCAOMODONG.cs">
-      <DependentUpon>QLSTKModel.tt</DependentUpon>
-    </Compile>
     <Compile Include="Model\CHUCNANG.cs">
-      <DependentUpon>QLSTKModel.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Model\CTBCMODONG.cs">
-      <DependentUpon>QLSTKModel.tt</DependentUpon>
+      <DependentUpon>QLSieuThiModel.tt</DependentUpon>
     </Compile>
     <Compile Include="Model\DataProvider.cs" />
     <Compile Include="Model\ListBaoCaoDongMo.cs" />
     <Compile Include="Model\ListBaoCaoDongMo_DaBaoCao.cs" />
     <Compile Include="Model\ListLichSuPhieuRut.cs" />
     <Compile Include="Model\ListLichSuPhieuGui.cs" />
-    <Compile Include="Model\NhanVien.cs" />
-    <Compile Include="Model\sp_helpdiagramdefinition_Result.cs">
-      <DependentUpon>QLSTKModel.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Model\sp_helpdiagrams_Result.cs">
-      <DependentUpon>QLSTKModel.tt</DependentUpon>
-    </Compile>
     <Compile Include="Model\STKDuocTraCuu.cs" />
-    <Compile Include="Model\LOAITIETKIEM.cs">
-      <DependentUpon>QLSTKModel.tt</DependentUpon>
-    </Compile>
     <Compile Include="Model\NGUOIDUNG.cs">
-      <DependentUpon>QLSTKModel.tt</DependentUpon>
+      <DependentUpon>QLSieuThiModel.tt</DependentUpon>
     </Compile>
     <Compile Include="Model\NHOMNGUOIDUNG.cs">
-      <DependentUpon>QLSTKModel.tt</DependentUpon>
+      <DependentUpon>QLSieuThiModel.tt</DependentUpon>
     </Compile>
     <Compile Include="Model\PHANQUYEN.cs">
-      <DependentUpon>QLSTKModel.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Model\PHIEUGUI.cs">
-      <DependentUpon>QLSTKModel.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Model\PHIEURUT.cs">
-      <DependentUpon>QLSTKModel.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Model\QLSTKModel.Context.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>QLSTKModel.Context.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Model\QLSTKModel.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>QLSTKModel.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Model\QLSTKModel.Designer.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>QLSTKModel.edmx</DependentUpon>
-    </Compile>
-    <Compile Include="Model\QLSTKModel1.Designer.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>QLSTKModel.edmx</DependentUpon>
-    </Compile>
-    <Compile Include="Model\SOTIETKIEM.cs">
-      <DependentUpon>QLSTKModel.tt</DependentUpon>
+      <DependentUpon>QLSieuThiModel.tt</DependentUpon>
     </Compile>
     <Compile Include="Model\THAMSO.cs">
-      <DependentUpon>QLSTKModel.tt</DependentUpon>
+      <DependentUpon>QLSieuThiModel.tt</DependentUpon>
     </Compile>
     <Compile Include="ResourceXAML\ThayDoiQuyDinh_Resource.Designer.cs">
       <AutoGen>True</AutoGen>
@@ -230,35 +253,35 @@
     <Compile Include="UnitTest\TestTraCuu.cs" />
     <Compile Include="ViewModel\BaoCaoDoanhSo_PrintPreview_ViewModel.cs" />
     <Compile Include="ViewModel\BaoCaoDoanhSo_ViewModel.cs" />
-    <Compile Include="ViewModel\BaoCaoMoDong_PrintPreview_ViewModel.cs" />
-    <Compile Include="ViewModel\BaoCaoMoDong_ViewModel.cs" />
-    <Compile Include="ViewModel\GuiTien_ViewModel.cs" />
+    <Compile Include="ViewModel\BaoCaoTonKho_PrintPreview_ViewModel.cs" />
+    <Compile Include="ViewModel\BaoCaoTonKho_ViewModel.cs" />
+    <Compile Include="ViewModel\XuatHang_ViewModel.cs" />
     <Compile Include="ViewModel\Home_PageViewModel.cs" />
-    <Compile Include="ViewModel\MoSo_PrintPreview_ViewModel.cs" />
-    <Compile Include="ViewModel\PhieuRut_PrintPreview_ViewModel.cs" />
-    <Compile Include="ViewModel\PhieuGui_PrintPreview_ViewModel.cs" />
+    <Compile Include="ViewModel\NhapHang_PrintPreview_ViewModel.cs" />
+    <Compile Include="ViewModel\BanHang_PrintPreview_ViewModel.cs" />
+    <Compile Include="ViewModel\XuatHang_PrintPreview_ViewModel.cs" />
     <Compile Include="ViewModel\CaiDatKhac_ViewModel.cs" />
     <Compile Include="ViewModel\QuanLyNhanSu_ViewModel.cs" />
-    <Compile Include="ViewModel\RutTien_ViewModel.cs" />
+    <Compile Include="ViewModel\BanHang_ViewModel.cs" />
     <Compile Include="ViewModel\ThayDoiQuyDinh_ViewModel.cs" />
     <Compile Include="ViewModel\TraCuu_ViewModel.cs" />
     <Compile Include="View\BaoCaoDoanhSo_Page.xaml.cs">
       <DependentUpon>BaoCaoDoanhSo_Page.xaml</DependentUpon>
     </Compile>
-    <Compile Include="View\BaoCaoMoDong_Page.xaml.cs">
-      <DependentUpon>BaoCaoMoDong_Page.xaml</DependentUpon>
+    <Compile Include="View\BaoCaoTonKho_Page.xaml.cs">
+      <DependentUpon>BaoCaoTonKho_Page.xaml</DependentUpon>
     </Compile>
     <Compile Include="View\CaiDatKhac_Page.xaml.cs">
       <DependentUpon>CaiDatKhac_Page.xaml</DependentUpon>
     </Compile>
-    <Compile Include="View\GuiTien_Page.xaml.cs">
-      <DependentUpon>GuiTien_Page.xaml</DependentUpon>
+    <Compile Include="View\XuatHang_Page.xaml.cs">
+      <DependentUpon>XuatHang_Page.xaml</DependentUpon>
     </Compile>
     <Compile Include="View\Home_Page.xaml.cs">
       <DependentUpon>Home_Page.xaml</DependentUpon>
     </Compile>
-    <Compile Include="View\MoSo_Page.xaml.cs">
-      <DependentUpon>MoSo_Page.xaml</DependentUpon>
+    <Compile Include="View\NhapHang_Page.xaml.cs">
+      <DependentUpon>NhapHang_Page.xaml</DependentUpon>
     </Compile>
     <Compile Include="SelfUserControl\ControlBarUC.xaml.cs">
       <DependentUpon>ControlBarUC.xaml</DependentUpon>
@@ -267,12 +290,12 @@
     <Compile Include="ViewModel\ControlBarViewModel.cs" />
     <Compile Include="ViewModel\LoginViewModel.cs" />
     <Compile Include="ViewModel\MainViewModel.cs" />
-    <Compile Include="ViewModel\MoSo_ViewModel.cs" />
+    <Compile Include="ViewModel\NhapHang_ViewModel.cs" />
     <Compile Include="View\QuanLyNhanSu_Page.xaml.cs">
       <DependentUpon>QuanLyNhanSu_Page.xaml</DependentUpon>
     </Compile>
-    <Compile Include="View\RutTien_Page.xaml.cs">
-      <DependentUpon>RutTien_Page.xaml</DependentUpon>
+    <Compile Include="View\BanHang_Page.xaml.cs">
+      <DependentUpon>BanHang_Page.xaml</DependentUpon>
     </Compile>
     <Compile Include="View\ThayDoiQuyDinh_Page.xaml.cs">
       <DependentUpon>ThayDoiQuyDinh_Page.xaml</DependentUpon>
@@ -280,15 +303,15 @@
     <Compile Include="View\TraCuu_Page.xaml.cs">
       <DependentUpon>TraCuu_Page.xaml</DependentUpon>
     </Compile>
-    <Page Include="MoSo_PrintPreview.xaml">
+    <Page Include="NhapHang_PrintPreview.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </Page>
-    <Page Include="PhieuRut_PrintPreview.xaml">
+    <Page Include="BanHang_PrintPreview.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </Page>
-    <Page Include="PhieuGui_PrintPreview.xaml">
+    <Page Include="XuatHang_PrintPreview.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </Page>
@@ -296,7 +319,7 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="BaoCaoMoDong_PrintPreview.xaml">
+    <Page Include="BaoCaoTonKho_PrintPreview.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -320,7 +343,7 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="View\BaoCaoMoDong_Page.xaml">
+    <Page Include="View\BaoCaoTonKho_Page.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -328,7 +351,7 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="View\GuiTien_Page.xaml">
+    <Page Include="View\XuatHang_Page.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -336,7 +359,7 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="View\MoSo_Page.xaml">
+    <Page Include="View\NhapHang_Page.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -352,7 +375,7 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="View\RutTien_Page.xaml">
+    <Page Include="View\BanHang_Page.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -387,13 +410,13 @@
       <Generator>PublicResXFileCodeGenerator</Generator>
       <LastGenOutput>ThayDoiQuyDinh_Resource.Designer.cs</LastGenOutput>
     </EmbeddedResource>
-    <EntityDeploy Include="Model\QLSTKModel.edmx">
-      <Generator>EntityModelCodeGenerator</Generator>
-      <LastGenOutput>QLSTKModel1.Designer.cs</LastGenOutput>
-    </EntityDeploy>
     <None Include="MasterSaveDemo_TemporaryKey.pfx" />
-    <None Include="Model\QLSTKModel.edmx.diagram">
-      <DependentUpon>QLSTKModel.edmx</DependentUpon>
+    <EntityDeploy Include="Model\QLSieuThiModel.edmx">
+      <Generator>EntityModelCodeGenerator</Generator>
+      <LastGenOutput>QLSieuThiModel.Designer.cs</LastGenOutput>
+    </EntityDeploy>
+    <None Include="Model\QLSieuThiModel.edmx.diagram">
+      <DependentUpon>QLSieuThiModel.edmx</DependentUpon>
     </None>
     <None Include="packages.config" />
     <None Include="Properties\Settings.settings">
@@ -454,15 +477,15 @@
     <Resource Include="Images\6-BaoCaoMoDong.png" />
     <Resource Include="Images\7-ThayDoiQuyDinh.png" />
     <Resource Include="Images\8-QuanLyNhanSu.png" />
-    <Content Include="Model\QLSTKModel.Context.tt">
+    <Content Include="Model\QLSieuThiModel.Context.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
-      <LastGenOutput>QLSTKModel.Context.cs</LastGenOutput>
-      <DependentUpon>QLSTKModel.edmx</DependentUpon>
+      <DependentUpon>QLSieuThiModel.edmx</DependentUpon>
+      <LastGenOutput>QLSieuThiModel.Context.cs</LastGenOutput>
     </Content>
-    <Content Include="Model\QLSTKModel.tt">
+    <Content Include="Model\QLSieuThiModel.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
-      <DependentUpon>QLSTKModel.edmx</DependentUpon>
-      <LastGenOutput>QLSTKModel.cs</LastGenOutput>
+      <DependentUpon>QLSieuThiModel.edmx</DependentUpon>
+      <LastGenOutput>QLSieuThiModel.cs</LastGenOutput>
     </Content>
     <Content Include="QLSTK.sql" />
   </ItemGroup>

@@ -16,7 +16,7 @@ namespace MasterSaveDemo.Model
     {
         public int MaNhom { get; set; }
         public int MaChucNang { get; set; }
-        public string LiDo { get; set; }
+        public string GhiChu { get; set; }
     
         public virtual CHUCNANG CHUCNANG { get; set; }
         public virtual NHOMNGUOIDUNG NHOMNGUOIDUNG { get; set; }

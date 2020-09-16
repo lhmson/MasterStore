@@ -22,11 +22,11 @@ namespace MasterSaveDemo.Model
             }
         }
 
-        public QLSTKEntities DB { get; set; }
+        public QLSieuThiEntities DB { get; set; }
 
         private DataProvider()
         {
-            DB = new QLSTKEntities();
+            DB = new QLSieuThiEntities();
         }
     }
 }

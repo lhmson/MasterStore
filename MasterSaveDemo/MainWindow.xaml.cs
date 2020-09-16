@@ -26,11 +26,11 @@ namespace MasterSaveDemo
         #region Management Page Selections
 
         private Home_Page HomePage = new Home_Page();
-        private MoSo_Page MoSoPage = new MoSo_Page();
-        private GuiTien_Page GuiTienPage = new GuiTien_Page();
-        private RutTien_Page RutTienPage = new RutTien_Page();
+        private NhapHang_Page MoSoPage = new NhapHang_Page();
+        private XuatHang_Page GuiTienPage = new XuatHang_Page();
+        private BanHang_Page RutTienPage = new BanHang_Page();
         private BaoCaoDoanhSo_Page BaoCaoDoanhSoPage = new BaoCaoDoanhSo_Page();
-        private BaoCaoMoDong_Page BaoCaoMoDongPage = new BaoCaoMoDong_Page();
+        private BaoCaoTonKho_Page BaoCaoMoDongPage = new BaoCaoTonKho_Page();
         private ThayDoiQuyDinh_Page ThayDoiQuyDinhPage = new ThayDoiQuyDinh_Page();
         private QuanLyNhanSu_Page QuanLyNhanSuPage = new QuanLyNhanSu_Page();
         private CaiDatKhac_Page CaiDatKhacPage = new CaiDatKhac_Page();

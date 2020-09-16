@@ -69,7 +69,7 @@ namespace MasterSaveDemo.ViewModel
             user = LoginViewModel.TaiKhoanSuDung;
             if (user == null) return; 
 
-            TenTaiKhoan = user.HoTen;
+            //TenTaiKhoan = user.HoTen; cmt tam thoi hihi
             ObservableCollection<NHOMNGUOIDUNG> listNhom = new ObservableCollection<NHOMNGUOIDUNG>(DataProvider.Ins.DB.NHOMNGUOIDUNGs);
             foreach (var item in listNhom)
                 if (user.MaNhom == item.MaNhom)
