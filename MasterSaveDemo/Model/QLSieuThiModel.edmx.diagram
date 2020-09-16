@@ -4,7 +4,7 @@
   <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
     <!-- Diagram content (shape and connector positions) -->
     <edmx:Diagrams>
-      <Diagram DiagramId="dd7b267123fc4685b8d5ffee1828b917" Name="Diagram1">
+      <Diagram DiagramId="dd7b267123fc4685b8d5ffee1828b917" Name="Diagram1" ZoomLevel="55">
         <EntityTypeShape EntityType="QLSieuThiModel.CHUCNANG" Width="1.5" PointX="1.5" PointY="1.25" IsExpanded="true" />
         <EntityTypeShape EntityType="QLSieuThiModel.CT_HOADON" Width="1.5" PointX="8.25" PointY="13.5" IsExpanded="true" />
         <EntityTypeShape EntityType="QLSieuThiModel.CT_PHIEUDNXUATKHO" Width="1.5" PointX="5.25" PointY="9.5" IsExpanded="true" />
@@ -52,6 +52,7 @@
         <AssociationConnector Association="QLSieuThiModel.FK__PHIEUNHAP__MaNCC__6754599E" ManuallyRouted="false" />
         <AssociationConnector Association="QLSieuThiModel.FK__PHANQUYEN__MaNho__4222D4EF" ManuallyRouted="false" />
         <AssociationConnector Association="QLSieuThiModel.FK__PHIEUDNXU__MaQua__60A75C0F" ManuallyRouted="false" />
+        <EntityTypeShape EntityType="QLSieuThiModel.sysdiagram" Width="1.5" PointX="8.375" PointY="5.75" />
       </Diagram>
     </edmx:Diagrams>
   </edmx:Designer>
