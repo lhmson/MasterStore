@@ -17,11 +17,11 @@ using System.Windows.Shapes;
 namespace MasterSaveDemo.View
 {
     /// <summary>
-    /// Interaction logic for RutTien_Page.xaml
+    /// Interaction logic for BanHang_Page.xaml
     /// </summary>
-    public partial class RutTien_Page : Page
+    public partial class BanHang_Page : Page
     {
-        public RutTien_Page()
+        public BanHang_Page()
         {
             InitializeComponent();
         }

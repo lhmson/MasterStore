@@ -12,30 +12,14 @@ using System.Windows.Controls;
 
 namespace MasterSaveDemo.ViewModel
 {
-    public class BaoCaoDoanhSo_PrintPreview_ViewModel : BaseViewModel
+    public class XuatHang_PrintPreview_ViewModel : BaseViewModel
     {
         #region Old code
-
-
+        ////---------------
 
 
 
         ////---------------
-        //private DateTime _NgayBaoCao;
-        //public DateTime NgayBaoCao
-        //{
-        //    get { return _NgayBaoCao; }
-        //    set { _NgayBaoCao = value; OnPropertyChanged(); }
-        //}
-        ////---------------
-        //private string _MaBaoCao;
-
-        //public string MaBaoCao
-        //{
-        //    get { return _MaBaoCao; }
-        //    set { _MaBaoCao = value; OnPropertyChanged(); }
-        //}
-
         //private string _NguoiTaoPhieu;
 
         //public string NguoiTaoPhieu
@@ -43,29 +27,62 @@ namespace MasterSaveDemo.ViewModel
         //    get { return _NguoiTaoPhieu; }
         //    set { _NguoiTaoPhieu = value; OnPropertyChanged(); }
         //}
+        ////---------------
+        //private string _MaPhieuGui;
+
+        //public string MaPhieuGui
+        //{
+        //    get { return _MaPhieuGui; }
+        //    set { _MaPhieuGui = value; OnPropertyChanged(); }
+        //}
+        ////---------------
+        //private string _NgayTaoPhieu;
+
+        //public string NgayTaoPhieu
+        //{
+        //    get { return _NgayTaoPhieu; }
+        //    set { _NgayTaoPhieu = value; OnPropertyChanged(); }
+        //}
+        ////---------------
+        //private string _TenKhachhang;
+
+        //public string TenKhachhang
+        //{
+        //    get { return _TenKhachhang; }
+        //    set { _TenKhachhang = value; OnPropertyChanged(); }
+        //}
+        ////---------------
+        //private string _NgayGui;
+
+        //public string NgayGui
+        //{
+        //    get { return _NgayGui; }
+        //    set { _NgayGui = value; OnPropertyChanged(); }
+        //}
+        //private string _SoTienGui;
+
+        //public string SoTienGui
+        //{
+        //    get { return _SoTienGui; }
+        //    set { _SoTienGui = value; OnPropertyChanged(); }
+        //}
 
         ////---------------
-        //private ObservableCollection<BaoCaoDS> _ListBaoCaoDoanhSo;
 
-        //public ObservableCollection<BaoCaoDS> ListBaoCaoDoanhSo
-        //{
-        //    get { return _ListBaoCaoDoanhSo; }
-        //    set { _ListBaoCaoDoanhSo = value; OnPropertyChanged(); }
-        //}
+
         ////--------------
 
         //public ICommand CloseWindowCommand { get; set; }
         //public ICommand Print_Command { get; set; }
 
-        //public BaoCaoDoanhSo_PrintPreview_ViewModel(ObservableCollection<BaoCaoDS> listBaoCao, DateTime ngayBaoCao)
+        //public XuatHang_PrintPreview_ViewModel(string MaPG, string TenKH, string Ngay, string Tien)
         //{
-        //    ListBaoCaoDoanhSo = listBaoCao;
-        //    //for (int i = 0; i < listBaoCao.Count(); i++)
-        //    //    ListBaoCaoDoanhSo[i].SoThuTu = i + 1;
-                
-        //    NgayBaoCao = ngayBaoCao;
         //    NguoiTaoPhieu = LoginViewModel.TaiKhoanSuDung.HoTen;
-
+        //    MaPhieuGui = MaPG;
+        //    TenKhachhang = TenKH;
+        //    NgayGui = Ngay;
+        //    SoTienGui = Tien;
+        //    NgayTaoPhieu = DateTime.Now.ToString("dd/MM/yyyy");
         //    CloseWindowCommand = new RelayCommand<object>((p) => { return p == null ? false : true; }, (p) => {
         //        var ex = p as Window;
         //        ex.Close();
@@ -91,12 +108,11 @@ namespace MasterSaveDemo.ViewModel
 
         //    });
 
-
         //}
-
         #endregion
 
         // new code from this hihi
+
     }
 
 }

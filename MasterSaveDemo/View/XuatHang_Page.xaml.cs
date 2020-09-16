@@ -14,14 +14,14 @@ using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
 
-namespace MasterSaveDemo
+namespace MasterSaveDemo.View
 {
     /// <summary>
-    /// Interaction logic for MoSo_Page.xaml
+    /// Interaction logic for XuatHang_Page.xaml
     /// </summary>
-    public partial class MoSo_Page : Page
+    public partial class XuatHang_Page : Page
     {
-        public MoSo_Page()
+        public XuatHang_Page()
         {
             InitializeComponent();
         }

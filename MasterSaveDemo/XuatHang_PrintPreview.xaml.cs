@@ -16,11 +16,11 @@ using System.Windows.Shapes;
 namespace MasterSaveDemo
 {
     /// <summary>
-    /// Interaction logic for BaoCaoMoDong_PrintPreview.xaml
+    /// Interaction logic for XuatHang_PrintPreview
     /// </summary>
-    public partial class BaoCaoMoDong_PrintPreview : Window
+    public partial class XuatHang_PrintPreview : Window
     {
-        public BaoCaoMoDong_PrintPreview(BaseViewModel x)
+        public XuatHang_PrintPreview(BaseViewModel x)
         {
             InitializeComponent();
             this.DataContext = x;

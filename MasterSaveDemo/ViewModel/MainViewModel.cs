@@ -95,12 +95,12 @@ namespace MasterSaveDemo.ViewModel
         #region ICommand
         public ICommand LoadedWindowCommand { get; set; }
         public ICommand Home_Page_SelectedCommand { get; set; }
-        public ICommand MoSo_Page_SelectedCommand { get; set; }
-        public ICommand GuiTien_Page_SelectedCommand { get; set; }
-        public ICommand RutTien_Page_SelectedCommand { get; set; }
+        public ICommand NhapHang_Page_SelectedCommand { get; set; }
+        public ICommand XuatHang_Page_SelectedCommand { get; set; }
+        public ICommand BanHang_Page_SelectedCommand { get; set; }
         public ICommand TraCuu_Page_SelectedCommand { get; set; }
         public ICommand BaoCaoDoanhSo_Page_SelectedCommand { get; set; }
-        public ICommand BaoCaoMoDong_Page_SelectedCommand { get; set; }
+        public ICommand BaoCaoTonKho_Page_SelectedCommand { get; set; }
         public ICommand ThayDoiQuyDinh_Page_SelectedCommand { get; set; }
         public ICommand QuanLyNhanSu_Page_SelectedCommand { get; set; }
         public ICommand CaiDatKhac_Page_SelectedCommand { get; set; }
@@ -338,25 +338,25 @@ namespace MasterSaveDemo.ViewModel
                 FrameContent.DataContext = new Home_PageViewModel();
             });
 
-            MoSo_Page_SelectedCommand = new RelayCommand<HamburgerMenu.HamburgerMenu>((p) => { return true; }, (p) => {
+            NhapHang_Page_SelectedCommand = new RelayCommand<HamburgerMenu.HamburgerMenu>((p) => { return true; }, (p) => {
                 //Selected_HOME = false;
                 //Selected_DangXuat = false;
-                FrameContent = new MoSo_Page();
-                FrameContent.DataContext = new MoSo_ViewModel();
+                FrameContent = new NhapHang_Page();
+                FrameContent.DataContext = new NhapHang_ViewModel();
             });
 
-            GuiTien_Page_SelectedCommand = new RelayCommand<HamburgerMenu.HamburgerMenu>((p) => { return true; }, (p) => {
+            XuatHang_Page_SelectedCommand = new RelayCommand<HamburgerMenu.HamburgerMenu>((p) => { return true; }, (p) => {
                 //Selected_HOME = false;
                 //Selected_DangXuat = false;
-                FrameContent = new GuiTien_Page();
-                FrameContent.DataContext = new GuiTien_ViewModel();
+                FrameContent = new XuatHang_Page();
+                FrameContent.DataContext = new XuatHang_ViewModel();
             });
 
-            RutTien_Page_SelectedCommand = new RelayCommand<HamburgerMenu.HamburgerMenu>((p) => { return true; }, (p) => {
+            BanHang_Page_SelectedCommand = new RelayCommand<HamburgerMenu.HamburgerMenu>((p) => { return true; }, (p) => {
                 //Selected_HOME = false;
                 //Selected_DangXuat = false;
-                FrameContent = new RutTien_Page();
-                FrameContent.DataContext = new RutTien_ViewModel();
+                FrameContent = new BanHang_Page();
+                FrameContent.DataContext = new BanHang_ViewModel();
             });
             TraCuu_Page_SelectedCommand = new RelayCommand<HamburgerMenu.HamburgerMenu>((p) => { return true; }, (p) => {
                 //Selected_HOME = false;
@@ -370,11 +370,11 @@ namespace MasterSaveDemo.ViewModel
                 FrameContent = new BaoCaoDoanhSo_Page();
                 FrameContent.DataContext = new BaoCaoDoanhSo_ViewModel();
             });
-            BaoCaoMoDong_Page_SelectedCommand = new RelayCommand<HamburgerMenu.HamburgerMenu>((p) => { return true; }, (p) => {
+            BaoCaoTonKho_Page_SelectedCommand = new RelayCommand<HamburgerMenu.HamburgerMenu>((p) => { return true; }, (p) => {
                 //Selected_HOME = false;
                 //Selected_DangXuat = false;
-                FrameContent = new BaoCaoMoDong_Page();
-                FrameContent.DataContext = new BaoCaoMoDong_ViewModel();
+                FrameContent = new BaoCaoTonKho_Page();
+                FrameContent.DataContext = new BaoCaoTonKho_ViewModel();
             });
             ThayDoiQuyDinh_Page_SelectedCommand = new RelayCommand<HamburgerMenu.HamburgerMenu>((p) => { return true; }, (p) => {
                 //Selected_HOME = false;

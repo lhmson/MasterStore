@@ -12,7 +12,7 @@ using System.Windows.Controls;
 
 namespace MasterSaveDemo.ViewModel
 {
-    public class BaoCaoDoanhSo_PrintPreview_ViewModel : BaseViewModel
+    public class BaoCaoTonKho_PrintPreview_ViewModel : BaseViewModel
     {
         #region Old code
 
@@ -21,11 +21,32 @@ namespace MasterSaveDemo.ViewModel
 
 
         ////---------------
-        //private DateTime _NgayBaoCao;
-        //public DateTime NgayBaoCao
+
+
+
+        ////---------------
+        //private string _ThangBaoCao;
+
+        //public string ThangBaoCao
         //{
-        //    get { return _NgayBaoCao; }
-        //    set { _NgayBaoCao = value; OnPropertyChanged(); }
+        //    get { return _ThangBaoCao; }
+        //    set { _ThangBaoCao = value; OnPropertyChanged(); }
+        //}
+        ////---------------
+        //private string _NamBaoCao;
+
+        //public string NamBaoCao
+        //{
+        //    get { return _NamBaoCao; }
+        //    set { _NamBaoCao = value; OnPropertyChanged(); }
+        //}
+        ////---------------
+        //private string _NgayLapBaoCao;
+
+        //public string NgayLapBaoCao
+        //{
+        //    get { return _NgayLapBaoCao; }
+        //    set { _NgayLapBaoCao = value; OnPropertyChanged(); }
         //}
         ////---------------
         //private string _MaBaoCao;
@@ -34,6 +55,14 @@ namespace MasterSaveDemo.ViewModel
         //{
         //    get { return _MaBaoCao; }
         //    set { _MaBaoCao = value; OnPropertyChanged(); }
+        //}
+        ////---------------
+        //private string _LoaiTietKiem;
+
+        //public string LoaiTietKiem
+        //{
+        //    get { return _LoaiTietKiem; }
+        //    set { _LoaiTietKiem = value; OnPropertyChanged(); }
         //}
 
         //private string _NguoiTaoPhieu;
@@ -45,27 +74,27 @@ namespace MasterSaveDemo.ViewModel
         //}
 
         ////---------------
-        //private ObservableCollection<BaoCaoDS> _ListBaoCaoDoanhSo;
+        //private ObservableCollection<ListBaoCaoDongMo> _ListBaoCaoDMPP;
 
-        //public ObservableCollection<BaoCaoDS> ListBaoCaoDoanhSo
+        //public ObservableCollection<ListBaoCaoDongMo> ListBaoCaoDMPP
         //{
-        //    get { return _ListBaoCaoDoanhSo; }
-        //    set { _ListBaoCaoDoanhSo = value; OnPropertyChanged(); }
+        //    get { return _ListBaoCaoDMPP; }
+        //    set { _ListBaoCaoDMPP = value; OnPropertyChanged(); }
         //}
         ////--------------
 
         //public ICommand CloseWindowCommand { get; set; }
         //public ICommand Print_Command { get; set; }
 
-        //public BaoCaoDoanhSo_PrintPreview_ViewModel(ObservableCollection<BaoCaoDS> listBaoCao, DateTime ngayBaoCao)
+        //public BaoCaoTonKho_PrintPreview_ViewModel(string MaBC, string Thang, string Nam, string LTK, ObservableCollection<ListBaoCaoDongMo> list)
         //{
-        //    ListBaoCaoDoanhSo = listBaoCao;
-        //    //for (int i = 0; i < listBaoCao.Count(); i++)
-        //    //    ListBaoCaoDoanhSo[i].SoThuTu = i + 1;
-                
-        //    NgayBaoCao = ngayBaoCao;
+        //    ListBaoCaoDMPP = list;
+        //    NamBaoCao = Nam;
+        //    MaBaoCao = MaBC;
+        //    ThangBaoCao = Thang;
+        //    LoaiTietKiem = LTK;
+        //    NgayLapBaoCao = DateTime.Now.ToString("dd/MM/yyyy");
         //    NguoiTaoPhieu = LoginViewModel.TaiKhoanSuDung.HoTen;
-
         //    CloseWindowCommand = new RelayCommand<object>((p) => { return p == null ? false : true; }, (p) => {
         //        var ex = p as Window;
         //        ex.Close();
@@ -96,7 +125,8 @@ namespace MasterSaveDemo.ViewModel
 
         #endregion
 
-        // new code from this hihi
+        // new code from this
+
     }
 
 }

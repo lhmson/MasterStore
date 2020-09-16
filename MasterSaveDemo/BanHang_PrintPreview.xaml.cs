@@ -1,4 +1,5 @@
-﻿using System;
+﻿using MasterSaveDemo.ViewModel;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -10,21 +11,19 @@ using System.Windows.Documents;
 using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
-using System.Windows.Navigation;
 using System.Windows.Shapes;
 
-namespace MasterSaveDemo.View
+namespace MasterSaveDemo
 {
     /// <summary>
-    /// Interaction logic for BaoCaoMoDong_Page.xaml
+    /// Interaction logic for 
     /// </summary>
-    public partial class BaoCaoMoDong_Page : Page
+    public partial class BanHang_PrintPreview : Window
     {
-        public BaoCaoMoDong_Page()
+        public BanHang_PrintPreview(BaseViewModel x)
         {
             InitializeComponent();
+            this.DataContext = x;
         }
-
-       
     }
 }

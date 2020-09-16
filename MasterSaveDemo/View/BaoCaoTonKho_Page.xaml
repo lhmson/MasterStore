@@ -1,4 +1,4 @@
-﻿<Page x:Class="MasterSaveDemo.View.BaoCaoMoDong_Page"
+﻿<Page x:Class="MasterSaveDemo.View.BaoCaoTonKho_Page"
       xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
       xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
       xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
@@ -17,10 +17,10 @@
         Background="{DynamicResource MaterialDesignPaper}"
         FontFamily="{DynamicResource MaterialDesignFont}"
         
-        DataContext="{StaticResource BaoCaoMoDongVM}"
+        DataContext="{StaticResource BaoCaoTonKhoVM}"
       
-      Name="BaoCaoMoDong"
-      Title="BaoCaoMoDong_Page">
+      Name="BaoCaoTonKho"
+      Title="BaoCaoTonKho_Page">
 
     <Grid>
         <materialDesign:DialogHost IsOpen="{Binding DialogOpen}" BorderBrush="{DynamicResource MaterialDesignDivider}">
@@ -44,7 +44,7 @@
                   Background="{DynamicResource PrimaryHueDarkBrush}"
                   Foreground="{DynamicResource PrimaryHueMidForegroundBrush}"
                   Padding="8">
-                        <TextBlock FontWeight="SemiBold" TextAlignment="Center" FontSize="20">BÁO CÁO MỞ/ĐÓNG SỔ THEO THÁNG</TextBlock>
+                        <TextBlock FontWeight="SemiBold" TextAlignment="Center" FontSize="20">BÁO CÁO SỐ LƯỢNG TỒN KHO</TextBlock>
                     </materialDesign:Card>
                 </Grid>
                 <Grid Grid.Row="1" Margin="5">

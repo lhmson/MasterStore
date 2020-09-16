@@ -2,7 +2,6 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
-using System.Text.RegularExpressions;
 using System.Threading.Tasks;
 using System.Windows;
 using System.Windows.Controls;
@@ -17,19 +16,15 @@ using System.Windows.Shapes;
 namespace MasterSaveDemo.View
 {
     /// <summary>
-    /// Interaction logic for GuiTien_Page.xaml
+    /// Interaction logic for BaoCaoTonKho_Page.xaml
     /// </summary>
-    public partial class GuiTien_Page : Page
+    public partial class BaoCaoTonKho_Page : Page
     {
-        public GuiTien_Page()
+        public BaoCaoTonKho_Page()
         {
             InitializeComponent();
         }
 
-        private void TextBox_PreviewTextInput(object sender, TextCompositionEventArgs e)
-        {
-            var textBox = sender as TextBox;
-            e.Handled = Regex.IsMatch(e.Text, "[^0-9,]+");
-        }
+       
     }
 }

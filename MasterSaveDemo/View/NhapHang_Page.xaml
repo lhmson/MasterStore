@@ -1,4 +1,4 @@
-﻿<Page x:Class="MasterSaveDemo.MoSo_Page"
+﻿<Page x:Class="MasterSaveDemo.NhapHang_Page"
       xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
       xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
       xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
@@ -18,14 +18,14 @@
         FontFamily="{DynamicResource MaterialDesignFont}"
       
       
-      DataContext="{StaticResource MoSoVM}"
+      DataContext="{StaticResource NhapHangVM}"
       
-      Name="MoSo"
+      Name="NhapHang"
       Title="Open Passbook">
 
     <i:Interaction.Triggers>
         <i:EventTrigger EventName="Unloaded">
-            <i:InvokeCommandAction Command="{Binding LostFocusPageCommand}" CommandParameter="{Binding ElementName=MoSo}"/>
+            <i:InvokeCommandAction Command="{Binding LostFocusPageCommand}" CommandParameter="{Binding ElementName=NhapHang}"/>
         </i:EventTrigger>
     </i:Interaction.Triggers>
 

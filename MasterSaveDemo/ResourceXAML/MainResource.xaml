@@ -4,12 +4,12 @@
                     xmlns:local="clr-namespace:MasterSaveDemo.ResourceXAML;assembly=">
     <viewmodel:MainViewModel x:Key="MainVM"></viewmodel:MainViewModel>
     <viewmodel:LoginViewModel x:Key="LoginVM"></viewmodel:LoginViewModel>
-    <viewmodel:MoSo_ViewModel x:Key="MoSoVM"></viewmodel:MoSo_ViewModel>
-    <viewmodel:GuiTien_ViewModel x:Key="GuiTienVM"></viewmodel:GuiTien_ViewModel>
-    <viewmodel:RutTien_ViewModel x:Key="RutTienVM"></viewmodel:RutTien_ViewModel>
+    <viewmodel:NhapHang_ViewModel x:Key="NhapHangVM"></viewmodel:NhapHang_ViewModel>
+    <viewmodel:XuatHang_ViewModel x:Key="XuatHangVM"></viewmodel:XuatHang_ViewModel>
+    <viewmodel:BanHang_ViewModel x:Key="BanHangVM"></viewmodel:BanHang_ViewModel>
     <viewmodel:TraCuu_ViewModel x:Key="TraCuuVM"></viewmodel:TraCuu_ViewModel>
     <viewmodel:BaoCaoDoanhSo_ViewModel x:Key="BaoCaoDoanhSoVM"></viewmodel:BaoCaoDoanhSo_ViewModel>
-    <viewmodel:BaoCaoMoDong_ViewModel x:Key="BaoCaoMoDongVM"></viewmodel:BaoCaoMoDong_ViewModel>
+    <viewmodel:BaoCaoTonKho_ViewModel x:Key="BaoCaoTonKhoVM"></viewmodel:BaoCaoTonKho_ViewModel>
     <viewmodel:ThayDoiQuyDinh_ViewModel x:Key="ThayDoiQuyDinhVM"></viewmodel:ThayDoiQuyDinh_ViewModel>
     <viewmodel:QuanLyNhanSu_ViewModel x:Key="QuanLyNhanSuVM"></viewmodel:QuanLyNhanSu_ViewModel>
     <viewmodel:Home_PageViewModel x:Key="HomeVM"></viewmodel:Home_PageViewModel>
