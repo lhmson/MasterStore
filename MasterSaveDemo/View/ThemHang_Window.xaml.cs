@@ -2,7 +2,6 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
-using System.Text.RegularExpressions;
 using System.Threading.Tasks;
 using System.Windows;
 using System.Windows.Controls;
@@ -11,25 +10,23 @@ using System.Windows.Documents;
 using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
-using System.Windows.Navigation;
 using System.Windows.Shapes;
 
 namespace MasterSaveDemo.View
 {
     /// <summary>
-    /// Interaction logic for XuatHang_Page.xaml
+    /// Interaction logic for ThemHang_Window.xaml
     /// </summary>
-    public partial class XuatHang_Page : Page
+    public partial class ThemHang_Window : Window
     {
-        public XuatHang_Page()
+        public ThemHang_Window()
         {
             InitializeComponent();
         }
 
-        private void TextBox_PreviewTextInput(object sender, TextCompositionEventArgs e)
+        private void listViewReport_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
-            var textBox = sender as TextBox;
-            e.Handled = Regex.IsMatch(e.Text, "[^0-9,]+");
+
         }
     }
 }

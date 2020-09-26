@@ -352,7 +352,7 @@ namespace MasterSaveDemo.ViewModel
             XuatHang_Page_SelectedCommand = new RelayCommand<HamburgerMenu.HamburgerMenu>((p) => { return true; }, (p) => {
                 //Selected_HOME = false;
                 //Selected_DangXuat = false;
-                FrameContent = new XuatHang_Page();
+                //FrameContent = new XuatHang_Page();
                 FrameContent.DataContext = new XuatHang_ViewModel();
             });
 

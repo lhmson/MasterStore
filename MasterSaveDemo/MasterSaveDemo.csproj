@@ -58,18 +58,6 @@
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
-  <PropertyGroup>
-    <ManifestCertificateThumbprint>9B0519042EA7000F526ABF6D665A95FA75C1D5E8</ManifestCertificateThumbprint>
-  </PropertyGroup>
-  <PropertyGroup>
-    <ManifestKeyFile>MasterSaveDemo_TemporaryKey.pfx</ManifestKeyFile>
-  </PropertyGroup>
-  <PropertyGroup>
-    <GenerateManifests>true</GenerateManifests>
-  </PropertyGroup>
-  <PropertyGroup>
-    <SignManifests>true</SignManifests>
-  </PropertyGroup>
   <ItemGroup>
     <Reference Include="DevExpress.Data.v19.1, Version=19.1.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
     <Reference Include="DevExpress.Images.v19.1, Version=19.1.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
@@ -139,6 +127,8 @@
       <SubType>Designer</SubType>
     </ApplicationDefinition>
     <Compile Include="Helper\DatabaseCheck.cs" />
+    <Compile Include="Helper\ListMatHangMua.cs" />
+    <Compile Include="Helper\ListMatHangThem.cs" />
     <Compile Include="Model\CT_HOADON.cs">
       <DependentUpon>QLSieuThiModel.tt</DependentUpon>
     </Compile>
@@ -217,6 +207,14 @@
     <Compile Include="BanHang_PrintPreview.xaml.cs">
       <DependentUpon>BanHang_PrintPreview.xaml</DependentUpon>
     </Compile>
+    <Compile Include="ViewModel\BanHang_PrintPreview_ViewModel.cs" />
+    <Compile Include="ViewModel\ThemHang_ViewModel.cs" />
+    <Compile Include="View\PhieuDNXH_Window.xaml.cs">
+      <DependentUpon>PhieuDNXH_Window.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\ThemHang_Window.xaml.cs">
+      <DependentUpon>ThemHang_Window.xaml</DependentUpon>
+    </Compile>
     <Compile Include="XuatHang_PrintPreview.xaml.cs">
       <DependentUpon>XuatHang_PrintPreview.xaml</DependentUpon>
     </Compile>
@@ -270,7 +268,6 @@
     <Compile Include="ViewModel\XuatHang_ViewModel.cs" />
     <Compile Include="ViewModel\Home_PageViewModel.cs" />
     <Compile Include="ViewModel\NhapHang_PrintPreview_ViewModel.cs" />
-    <Compile Include="ViewModel\BanHang_PrintPreview_ViewModel.cs" />
     <Compile Include="ViewModel\XuatHang_PrintPreview_ViewModel.cs" />
     <Compile Include="ViewModel\CaiDatKhac_ViewModel.cs" />
     <Compile Include="ViewModel\QuanLyNhanSu_ViewModel.cs" />
@@ -285,9 +282,6 @@
     </Compile>
     <Compile Include="View\CaiDatKhac_Page.xaml.cs">
       <DependentUpon>CaiDatKhac_Page.xaml</DependentUpon>
-    </Compile>
-    <Compile Include="View\XuatHang_Page.xaml.cs">
-      <DependentUpon>XuatHang_Page.xaml</DependentUpon>
     </Compile>
     <Compile Include="View\Home_Page.xaml.cs">
       <DependentUpon>Home_Page.xaml</DependentUpon>
@@ -322,6 +316,14 @@
     <Page Include="BanHang_PrintPreview.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
+    </Page>
+    <Page Include="View\PhieuDNXH_Window.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="View\ThemHang_Window.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="XuatHang_PrintPreview.xaml">
       <Generator>MSBuild:Compile</Generator>
@@ -360,10 +362,6 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="View\CaiDatKhac_Page.xaml">
-      <SubType>Designer</SubType>
-      <Generator>MSBuild:Compile</Generator>
-    </Page>
-    <Page Include="View\XuatHang_Page.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

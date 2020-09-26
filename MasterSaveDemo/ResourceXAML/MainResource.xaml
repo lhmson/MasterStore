@@ -15,5 +15,5 @@
     <viewmodel:Home_PageViewModel x:Key="HomeVM"></viewmodel:Home_PageViewModel>
     <viewmodel:ControlBarViewModel x:Key="SelfControlVM"></viewmodel:ControlBarViewModel>
     <viewmodel:CaiDatKhac_ViewModel x:Key="CaiDatKhacVM"></viewmodel:CaiDatKhac_ViewModel>
-
+    <viewmodel:ThemHang_ViewModel x:Key="ThemHangVM"></viewmodel:ThemHang_ViewModel>
 </ResourceDictionary>

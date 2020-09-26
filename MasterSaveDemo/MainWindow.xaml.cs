@@ -27,7 +27,7 @@ namespace MasterSaveDemo
 
         private Home_Page HomePage = new Home_Page();
         private NhapHang_Page MoSoPage = new NhapHang_Page();
-        private XuatHang_Page GuiTienPage = new XuatHang_Page();
+       // private XuatHang_Page GuiTienPage = new XuatHang_Page();
         private BanHang_Page RutTienPage = new BanHang_Page();
         private BaoCaoDoanhSo_Page BaoCaoDoanhSoPage = new BaoCaoDoanhSo_Page();
         private BaoCaoTonKho_Page BaoCaoMoDongPage = new BaoCaoTonKho_Page();
