@@ -36,7 +36,6 @@ namespace MasterSaveDemo.Model
         public virtual DbSet<MATHANG> MATHANGs { get; set; }
         public virtual DbSet<NGUOIDUNG> NGUOIDUNGs { get; set; }
         public virtual DbSet<NHACUNGCAP> NHACUNGCAPs { get; set; }
-        public virtual DbSet<NHANVIEN> NHANVIENs { get; set; }
         public virtual DbSet<NHASANXUAT> NHASANXUATs { get; set; }
         public virtual DbSet<NHOMNGUOIDUNG> NHOMNGUOIDUNGs { get; set; }
         public virtual DbSet<PHANQUYEN> PHANQUYENs { get; set; }
@@ -48,6 +47,5 @@ namespace MasterSaveDemo.Model
         public virtual DbSet<THEKHO> THEKHOes { get; set; }
         public virtual DbSet<THONGBAO> THONGBAOs { get; set; }
         public virtual DbSet<THONGKENGAY> THONGKENGAYs { get; set; }
-        public virtual DbSet<sysdiagram> sysdiagrams { get; set; }
     }
 }

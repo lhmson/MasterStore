@@ -166,9 +166,7 @@
     <Compile Include="Model\NHACUNGCAP.cs">
       <DependentUpon>QLSieuThiModel.tt</DependentUpon>
     </Compile>
-    <Compile Include="Model\NHANVIEN.cs">
-      <DependentUpon>QLSieuThiModel.tt</DependentUpon>
-    </Compile>
+    <Compile Include="Model\NhanVien.cs" />
     <Compile Include="Model\NHASANXUAT.cs">
       <DependentUpon>QLSieuThiModel.tt</DependentUpon>
     </Compile>
@@ -197,9 +195,6 @@
       <DependentUpon>QLSieuThiModel.edmx</DependentUpon>
     </Compile>
     <Compile Include="Model\QUAY.cs">
-      <DependentUpon>QLSieuThiModel.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Model\sysdiagram.cs">
       <DependentUpon>QLSieuThiModel.tt</DependentUpon>
     </Compile>
     <Compile Include="Model\THEKHO.cs">
