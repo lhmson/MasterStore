@@ -4,6 +4,7 @@ using MasterSaveDemo.View;
 using MaterialDesignThemes.Wpf;
 using System;
 using System.Collections.ObjectModel;
+using System.Data.Entity.ModelConfiguration.Configuration;
 using System.Windows;
 using System.Windows.Controls;
 using System.Windows.Forms;
@@ -854,6 +855,23 @@ namespace MasterSaveDemo.ViewModel
 
             DataProvider.Ins.DB.HOADONs.Add(hd);
             DataProvider.Ins.DB.SaveChanges();
+
+            #region
+            foreach (var mh in ListMatHang)
+            {
+                CT_HOADON ct = new CT_HOADON()
+                {
+                    MaChiTietHoaDon = create_MaCTHD(),
+                    MaMH = mh.MaMH,
+                    MaHoaDon = MaHD,
+                    SoLuong = int.Parse(mh.SoLuong),
+                    DonGiaBan = decimal.Parse(mh.DonGia),
+                    GhiChu = "",
+                };
+                DataProvider.Ins.DB.CT_HOADON.Add(ct);
+                DataProvider.Ins.DB.SaveChanges();
+            }
+            #endregion
         }
 
         public bool check_CreateBill()
@@ -928,6 +946,25 @@ namespace MasterSaveDemo.ViewModel
             max++;
             ma += trans_string_HD(max);
             return ma;
+
+        }
+
+        public string create_MaCTHD()
+        {
+            string ma = "CTHD";
+
+            ObservableCollection<CT_HOADON> listCTHD = new ObservableCollection<CT_HOADON>(DataProvider.Ins.DB.CT_HOADON);
+
+            int max = 0;
+            foreach (var hd in listCTHD)
+            {
+                int value = int.Parse(hd.MaChiTietHoaDon.Substring(4));
+                if (max < value) max = value;
+            }
+
+            max++;
+            for (int i = 0; i < 6 - max.ToString().Length; i++) ma += "0";
+            return ma += max.ToString();
 
         }
 
@@ -1163,7 +1200,7 @@ namespace MasterSaveDemo.ViewModel
             DialogOK = new RelayCommand<Object>((p) => { return true; }, (p) =>
             {
                 DialogOpen = false;
-                if (check_CreateBill())
+                if (ThongBao == "Lập hóa đơn thành công!")
                 {
                     if (CreateReport)
                     {
@@ -1185,6 +1222,11 @@ namespace MasterSaveDemo.ViewModel
 
             CloseWindowCommand = new RelayCommand<Window>((p) => { return p == null ? false : true; }, (p) => {
                 p.Close();
+            });
+
+            LapPhieuDNXHCommand = new RelayCommand<Window>((p) => { return true; }, (p) => {
+                PhieuDNXH_Window win = new PhieuDNXH_Window();
+                win.ShowDialog();
             });
         }
     }

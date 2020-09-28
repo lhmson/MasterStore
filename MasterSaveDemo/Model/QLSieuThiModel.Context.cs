@@ -48,6 +48,5 @@ namespace MasterSaveDemo.Model
         public virtual DbSet<THEKHO> THEKHOes { get; set; }
         public virtual DbSet<THONGBAO> THONGBAOs { get; set; }
         public virtual DbSet<THONGKENGAY> THONGKENGAYs { get; set; }
-        public virtual DbSet<sysdiagram> sysdiagrams { get; set; }
     }
 }
