@@ -23,9 +23,12 @@ namespace MasterSaveDemo.Model
         public string MaPhieuXK { get; set; }
         public System.DateTime NgayLap { get; set; }
         public string MaNguoiLap { get; set; }
+        public string MaQuay { get; set; }
+        public int TrangThai { get; set; }
     
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<CT_PHIEUXUATKHO> CT_PHIEUXUATKHO { get; set; }
         public virtual NGUOIDUNG NGUOIDUNG { get; set; }
+        public virtual QUAY QUAY { get; set; }
     }
 }

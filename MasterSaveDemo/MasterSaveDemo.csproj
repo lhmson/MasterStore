@@ -68,7 +68,7 @@
     <GenerateManifests>true</GenerateManifests>
   </PropertyGroup>
   <PropertyGroup>
-    <SignManifests>true</SignManifests>
+    <SignManifests>false</SignManifests>
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="DevExpress.Data.v19.1, Version=19.1.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
@@ -98,6 +98,9 @@
     <Reference Include="Microsoft.Data.Entity.Design.Extensibility, Version=15.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL" />
     <Reference Include="Microsoft.Expression.Interactions, Version=4.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
       <HintPath>..\packages\System.Windows.Interactivity.WPF.2.0.20525\lib\net40\Microsoft.Expression.Interactions.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Office.Interop.Excel, Version=15.0.0.0, Culture=neutral, PublicKeyToken=71e9bce111e9429c, processorArchitecture=MSIL">
+      <EmbedInteropTypes>True</EmbedInteropTypes>
     </Reference>
     <Reference Include="nunit.framework, Version=3.12.0.0, Culture=neutral, PublicKeyToken=2638cd05610744eb, processorArchitecture=MSIL">
       <HintPath>..\packages\NUnit.3.12.0\lib\net45\nunit.framework.dll</HintPath>
@@ -139,10 +142,9 @@
       <SubType>Designer</SubType>
     </ApplicationDefinition>
     <Compile Include="Helper\DatabaseCheck.cs" />
+    <Compile Include="Helper\ListMatHangMua.cs" />
+    <Compile Include="Helper\ListMatHangThem.cs" />
     <Compile Include="Model\CT_HOADON.cs">
-      <DependentUpon>QLSieuThiModel.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Model\CT_PHIEUDNXUATKHO.cs">
       <DependentUpon>QLSieuThiModel.tt</DependentUpon>
     </Compile>
     <Compile Include="Model\CT_PHIEUNHAPKHO.cs">
@@ -166,13 +168,7 @@
     <Compile Include="Model\NHACUNGCAP.cs">
       <DependentUpon>QLSieuThiModel.tt</DependentUpon>
     </Compile>
-    <Compile Include="Model\NHANVIEN.cs">
-      <DependentUpon>QLSieuThiModel.tt</DependentUpon>
-    </Compile>
     <Compile Include="Model\NHASANXUAT.cs">
-      <DependentUpon>QLSieuThiModel.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Model\PHIEUDNXUATKHO.cs">
       <DependentUpon>QLSieuThiModel.tt</DependentUpon>
     </Compile>
     <Compile Include="Model\PHIEUNHAPKHO.cs">
@@ -199,9 +195,6 @@
     <Compile Include="Model\QUAY.cs">
       <DependentUpon>QLSieuThiModel.tt</DependentUpon>
     </Compile>
-    <Compile Include="Model\sysdiagram.cs">
-      <DependentUpon>QLSieuThiModel.tt</DependentUpon>
-    </Compile>
     <Compile Include="Model\THEKHO.cs">
       <DependentUpon>QLSieuThiModel.tt</DependentUpon>
     </Compile>
@@ -216,6 +209,26 @@
     </Compile>
     <Compile Include="BanHang_PrintPreview.xaml.cs">
       <DependentUpon>BanHang_PrintPreview.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="PhieuNhapHang_PrintPreview.xaml.cs">
+      <DependentUpon>PhieuNhapHang_PrintPreview.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="ViewModel\PhieuNhapHang_PrintPreview_ViewModel.cs" />
+    <Compile Include="ViewModel\ThemHang_ViewModel.cs" />
+    <Compile Include="View\PhieuDNNH_Window.xaml.cs">
+      <DependentUpon>PhieuDNNH_Window.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\ThemHang_Window.xaml.cs">
+      <DependentUpon>ThemHang_Window.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\ThemMatHang.xaml.cs">
+      <DependentUpon>ThemMatHang.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\ThemNhaCungCap.xaml.cs">
+      <DependentUpon>ThemNhaCungCap.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\ThemNhaSanXuat.xaml.cs">
+      <DependentUpon>ThemNhaSanXuat.xaml</DependentUpon>
     </Compile>
     <Compile Include="XuatHang_PrintPreview.xaml.cs">
       <DependentUpon>XuatHang_PrintPreview.xaml</DependentUpon>
@@ -322,6 +335,30 @@
     <Page Include="BanHang_PrintPreview.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
+    </Page>
+    <Page Include="PhieuNhapHang_PrintPreview.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="View\PhieuDNNH_Window.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="View\ThemHang_Window.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="View\ThemMatHang.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="View\ThemNhaCungCap.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="View\ThemNhaSanXuat.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="XuatHang_PrintPreview.xaml">
       <Generator>MSBuild:Compile</Generator>

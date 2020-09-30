@@ -54,4 +54,39 @@ namespace MasterSaveDemo.ViewModel
             remove { CommandManager.RequerySuggested -= value; }
         }
     }
+    class AppCommand<T> : ICommand
+    {
+        private readonly Predicate<T> _CanExecute;
+        private readonly Action<T> _Execute;
+
+        public event EventHandler CanExecuteChanged
+        {
+            add { CommandManager.RequerySuggested += value; }
+            remove { CommandManager.RequerySuggested -= value; }
+        }
+
+        public bool CanExecute(object parameter)
+        {
+            try
+            {
+                return _CanExecute == null ? true : _CanExecute((T)parameter);
+            }
+            catch
+            {
+                return true;
+            }
+        }
+
+        public void Execute(object parameter)
+        {
+            _Execute((T)parameter);
+        }
+        public AppCommand(Predicate<T> canExecute, Action<T> execute)
+        {
+            if (execute == null)
+                throw new ArgumentNullException("execute");
+            _CanExecute = canExecute;
+            _Execute = execute;
+        }
+    }
 }
