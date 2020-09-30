@@ -27,7 +27,6 @@ namespace MasterSaveDemo.Model
     
         public virtual DbSet<CHUCNANG> CHUCNANGs { get; set; }
         public virtual DbSet<CT_HOADON> CT_HOADON { get; set; }
-        public virtual DbSet<CT_PHIEUDNXUATKHO> CT_PHIEUDNXUATKHO { get; set; }
         public virtual DbSet<CT_PHIEUNHAPKHO> CT_PHIEUNHAPKHO { get; set; }
         public virtual DbSet<CT_PHIEUXUATKHO> CT_PHIEUXUATKHO { get; set; }
         public virtual DbSet<CT_THEKHO> CT_THEKHO { get; set; }
@@ -36,11 +35,9 @@ namespace MasterSaveDemo.Model
         public virtual DbSet<MATHANG> MATHANGs { get; set; }
         public virtual DbSet<NGUOIDUNG> NGUOIDUNGs { get; set; }
         public virtual DbSet<NHACUNGCAP> NHACUNGCAPs { get; set; }
-        public virtual DbSet<NHANVIEN> NHANVIENs { get; set; }
         public virtual DbSet<NHASANXUAT> NHASANXUATs { get; set; }
         public virtual DbSet<NHOMNGUOIDUNG> NHOMNGUOIDUNGs { get; set; }
         public virtual DbSet<PHANQUYEN> PHANQUYENs { get; set; }
-        public virtual DbSet<PHIEUDNXUATKHO> PHIEUDNXUATKHOes { get; set; }
         public virtual DbSet<PHIEUNHAPKHO> PHIEUNHAPKHOes { get; set; }
         public virtual DbSet<PHIEUXUATKHO> PHIEUXUATKHOes { get; set; }
         public virtual DbSet<QUAY> QUAYs { get; set; }

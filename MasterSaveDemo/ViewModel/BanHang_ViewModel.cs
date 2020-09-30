@@ -850,7 +850,7 @@ namespace MasterSaveDemo.ViewModel
                 ThoiGian = new TimeSpan(),
                 MaQuay = "Q001",
                 TongTien = decimal.Parse(TongTien),
-                MaNguoiLap = "NV001"
+                MaNguoiLap = "1"
             };
 
             DataProvider.Ins.DB.HOADONs.Add(hd);

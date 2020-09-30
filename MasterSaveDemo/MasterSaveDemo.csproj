@@ -127,13 +127,14 @@
       <SubType>Designer</SubType>
     </ApplicationDefinition>
     <Compile Include="Helper\DatabaseCheck.cs" />
+    <Compile Include="Helper\ListCTPhieu.cs" />
+    <Compile Include="Helper\ListCTTheKho.cs" />
     <Compile Include="Helper\ListMatHangKho.cs" />
     <Compile Include="Helper\ListMatHangMua.cs" />
     <Compile Include="Helper\ListMatHangThem.cs" />
+    <Compile Include="Helper\ListPhieu.cs" />
+    <Compile Include="Helper\ListTheKho.cs" />
     <Compile Include="Model\CT_HOADON.cs">
-      <DependentUpon>QLSieuThiModel.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Model\CT_PHIEUDNXUATKHO.cs">
       <DependentUpon>QLSieuThiModel.tt</DependentUpon>
     </Compile>
     <Compile Include="Model\CT_PHIEUNHAPKHO.cs">
@@ -157,13 +158,7 @@
     <Compile Include="Model\NHACUNGCAP.cs">
       <DependentUpon>QLSieuThiModel.tt</DependentUpon>
     </Compile>
-    <Compile Include="Model\NHANVIEN.cs">
-      <DependentUpon>QLSieuThiModel.tt</DependentUpon>
-    </Compile>
     <Compile Include="Model\NHASANXUAT.cs">
-      <DependentUpon>QLSieuThiModel.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Model\PHIEUDNXUATKHO.cs">
       <DependentUpon>QLSieuThiModel.tt</DependentUpon>
     </Compile>
     <Compile Include="Model\PHIEUNHAPKHO.cs">

@@ -227,12 +227,12 @@ namespace MasterSaveDemo.ViewModel
 
         public string create_MaPhieuDN(string dauchuoi)
         {
-            ObservableCollection<PHIEUDNXUATKHO> list_phieu = new ObservableCollection<PHIEUDNXUATKHO>(DataProvider.Ins.DB.PHIEUDNXUATKHOes);
+            ObservableCollection<PHIEUXUATKHO> list_phieu = new ObservableCollection<PHIEUXUATKHO>(DataProvider.Ins.DB.PHIEUXUATKHOes);
 
             int max = 0;
             foreach (var phieu in list_phieu)
             {
-                int value = int.Parse(phieu.MaPhieuDNXK.Substring(3));
+                int value = int.Parse(phieu.MaPhieuXK.Substring(3));
                 if (max < value) max = value;
             }
 
@@ -250,18 +250,18 @@ namespace MasterSaveDemo.ViewModel
 
         public string create_MaPhieuCTPDN()
         {
-            ObservableCollection<CT_PHIEUDNXUATKHO> list_phieu = new ObservableCollection<CT_PHIEUDNXUATKHO>(DataProvider.Ins.DB.CT_PHIEUDNXUATKHO);
+            ObservableCollection<CT_PHIEUXUATKHO> list_phieu = new ObservableCollection<CT_PHIEUXUATKHO>(DataProvider.Ins.DB.CT_PHIEUXUATKHO);
 
             int max = 0;
             foreach (var phieu in list_phieu)
             {
-                int value = int.Parse(phieu.MaCTPhieuDNXK.Substring(5));
+                int value = int.Parse(phieu.MaCTPhieuXK.Substring(4));
                 if (max < value) max = value;
             }
 
             max++;
 
-            string ma = "CTPDN";
+            string ma = "CTXK";
 
             for (int i = 0; i < 5 - max.ToString().Length; i++)
                 ma += "0";
@@ -285,30 +285,32 @@ namespace MasterSaveDemo.ViewModel
         {
             string maPhieu = create_MaPhieuDN("PDN");
 
-            PHIEUDNXUATKHO phieu = new PHIEUDNXUATKHO()
+            PHIEUXUATKHO phieu = new PHIEUXUATKHO()
             {
-                MaPhieuDNXK = maPhieu,
+                MaPhieuXK = maPhieu,
                 NgayLap = DateTime.Now,
-                MaQuay = "Q001"
+                MaQuay = "Q001",
+                MaNguoiLap = "1",
+                TrangThai = 0
             };
 
-            DataProvider.Ins.DB.PHIEUDNXUATKHOes.Add(phieu);
+            DataProvider.Ins.DB.PHIEUXUATKHOes.Add(phieu);
             DataProvider.Ins.DB.SaveChanges();
 
             #region Lưu chi tiết phiếu
             
             foreach (var mh_dn in ListMHDN)
             {
-                CT_PHIEUDNXUATKHO ct_phieu = new CT_PHIEUDNXUATKHO()
+                CT_PHIEUXUATKHO ct_phieu = new CT_PHIEUXUATKHO()
                 {
-                    MaCTPhieuDNXK = create_MaPhieuCTPDN(),
-                    MaPhieuDNXK = maPhieu,
+                    MaCTPhieuXK = create_MaPhieuCTPDN(),
+                    MaPhieuXK = maPhieu,
                     MaMH = mh_dn.Ma,
                     DonGia = decimal.Parse(get_DonGia(mh_dn.Ma)),
                     SoLuong = int.Parse(mh_dn.Ton),
                     GhiChu = ""
                 };
-                DataProvider.Ins.DB.CT_PHIEUDNXUATKHO.Add(ct_phieu);
+                DataProvider.Ins.DB.CT_PHIEUXUATKHO.Add(ct_phieu);
                 DataProvider.Ins.DB.SaveChanges();
             }
             #endregion

@@ -43,7 +43,8 @@
             <Grid Grid.Column="0">
                 <Grid.RowDefinitions>
                     <RowDefinition Height="50"></RowDefinition>
-                    <RowDefinition Height="auto"></RowDefinition>
+                    <RowDefinition Height="400"></RowDefinition>
+                    <RowDefinition Height="50"></RowDefinition>
                 </Grid.RowDefinitions>
                 <Grid Grid.Row="0">
                     <materialDesign:Card Height="35" Margin="10,10,10,10"
@@ -56,15 +57,15 @@
                 
                 <Grid Grid.Row="1">
                     <materialDesign:Card Margin="5,5,5,0" VerticalAlignment="Top" HorizontalAlignment="Stretch" Grid.ColumnSpan="2">
-                        <ListView x:Name="listViewReport" ItemsSource="{Binding ListMatHang, Mode=TwoWay}" SelectionMode="Single"
-                              HorizontalAlignment="Center" FontSize="14" VerticalAlignment="Top" ScrollViewer.VerticalScrollBarVisibility="Auto"
-                              HorizontalContentAlignment="Stretch" SelectedItem="{Binding SelectedMatHang, Mode=TwoWay}">
+                        <ListView x:Name="listViewReport" ItemsSource="{Binding ListPhieu, Mode=TwoWay}" SelectionMode="Single"
+                              HorizontalAlignment="Center" FontSize="18" VerticalAlignment="Top" ScrollViewer.VerticalScrollBarVisibility="Auto"
+                              HorizontalContentAlignment="Stretch" SelectedItem="{Binding SelectedPhieu, Mode=TwoWay}">
                             <ListView.View>
                                 <GridView>
                                     <GridViewColumn Width="70" Header="STT" DisplayMemberBinding="{Binding STT}"/>
-                                    <GridViewColumn Width="100" Header="Mã Phiếu" DisplayMemberBinding="{Binding MatHang}"/>
-                                    <GridViewColumn Width="100" Header="Ngày Lập" DisplayMemberBinding="{Binding DonVi}"/>
-                                    <GridViewColumn Width="100" Header="Quầy" DisplayMemberBinding="{Binding DonVi}"/>
+                                    <GridViewColumn Width="150" Header="Mã Phiếu" DisplayMemberBinding="{Binding Ma}"/>
+                                    <GridViewColumn Width="150" Header="Ngày Lập" DisplayMemberBinding="{Binding NgayLap}"/>
+                                    <GridViewColumn Width="150" Header="Quầy" DisplayMemberBinding="{Binding Quay}"/>
                                 </GridView>
                             </ListView.View>
                             <i:Interaction.Triggers>
@@ -75,6 +76,24 @@
                             </i:Interaction.Triggers>
                         </ListView>
                     </materialDesign:Card>
+                </Grid>
+                <Grid Grid.Row="2">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition></ColumnDefinition>
+                        <ColumnDefinition></ColumnDefinition>
+                    </Grid.ColumnDefinitions>
+                    <Grid Grid.Column="0">
+                        <Button Grid.Column="0" Command="{Binding DuyetCommand}" CommandParameter="{Binding ElementName=ThemHangWindow}"
+                        Style="{StaticResource MaterialDesignRaisedButton}" IsDefault="True"
+                        Width="150" Content="DUYỆT">
+                        </Button>
+                    </Grid>
+                    <Grid Grid.Column="1">
+                        <Button Grid.Column="1" Command="{Binding KhongDuyetCommand}" CommandParameter="{Binding ElementName=ThemHangWindow}"
+                        Style="{StaticResource MaterialDesignRaisedAccentButton}"
+                        Width="150" Content="KHÔNG DUYỆT">
+                        </Button>
+                    </Grid>
                 </Grid>
             </Grid>
             <Grid Grid.Column="1">
@@ -93,23 +112,18 @@
 
                 <Grid Grid.Row="1">
                     <materialDesign:Card Margin="5,5,5,0" VerticalAlignment="Top" HorizontalAlignment="Stretch" Grid.ColumnSpan="2">
-                        <ListView x:Name="list" ItemsSource="{Binding ListMatHang, Mode=TwoWay}" SelectionMode="Single"
-                              HorizontalAlignment="Center" FontSize="14" VerticalAlignment="Top" ScrollViewer.VerticalScrollBarVisibility="Auto"
+                        <ListView x:Name="list" ItemsSource="{Binding ListCTPhieu, Mode=TwoWay}" SelectionMode="Single"
+                              HorizontalAlignment="Center" FontSize="18" VerticalAlignment="Top" ScrollViewer.VerticalScrollBarVisibility="Auto"
                               HorizontalContentAlignment="Stretch" SelectedItem="{Binding SelectedMatHang, Mode=TwoWay}">
                             <ListView.View>
                                 <GridView>
                                     <GridViewColumn Width="70" Header="STT" DisplayMemberBinding="{Binding STT}"/>
-                                    <GridViewColumn Width="70" Header="Mã" DisplayMemberBinding="{Binding MatHang}"/>
-                                    <GridViewColumn Width="80" Header="Tên" DisplayMemberBinding="{Binding DonVi}"/>
-                                    <GridViewColumn Width="140" Header="Số Lượng ĐN" DisplayMemberBinding="{Binding DonVi}"/>
+                                    <GridViewColumn Width="100" Header="Mã" DisplayMemberBinding="{Binding Ma}"/>
+                                    <GridViewColumn Width="150" Header="Tên" DisplayMemberBinding="{Binding Ten}"/>
+                                    <GridViewColumn Width="150" Header="Số Lượng ĐN" DisplayMemberBinding="{Binding SoLuong}"/>
                                 </GridView>
                             </ListView.View>
-                            <i:Interaction.Triggers>
-                                <i:EventTrigger EventName="SelectionChanged">
-                                    <i:InvokeCommandAction Command="{Binding SelectionChangedCommand}"
-                                                   CommandParameter="{Binding ElementName=listDateDisplayed}"/>
-                                </i:EventTrigger>
-                            </i:Interaction.Triggers>
+
                         </ListView>
                     </materialDesign:Card>
                 </Grid>
