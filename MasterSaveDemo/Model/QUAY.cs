@@ -18,7 +18,7 @@ namespace MasterSaveDemo.Model
         public QUAY()
         {
             this.HOADONs = new HashSet<HOADON>();
-            this.PHIEUDNXUATKHOes = new HashSet<PHIEUDNXUATKHO>();
+            this.PHIEUXUATKHOes = new HashSet<PHIEUXUATKHO>();
         }
     
         public string MaQuay { get; set; }
@@ -28,6 +28,6 @@ namespace MasterSaveDemo.Model
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<HOADON> HOADONs { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<PHIEUDNXUATKHO> PHIEUDNXUATKHOes { get; set; }
+        public virtual ICollection<PHIEUXUATKHO> PHIEUXUATKHOes { get; set; }
     }
 }

@@ -187,7 +187,10 @@ namespace MasterSaveDemo.ViewModel
 
         #endregion
 
+
         public bool isLoaded = false;
+
+   
 
         #region Function
         private void Init_Button_User(NGUOIDUNG user)
@@ -292,6 +295,7 @@ namespace MasterSaveDemo.ViewModel
         #endregion
         public MainViewModel() // all main page handling goes there
         {
+            updateThongKeNgay();
             // set bang true sau nay phai sua hihi
             Enable_BCDS = Enable_BCMD = Enable_GuiTien = Enable_Home = Enable_MoSo = Enable_QLNS = Enable_RutTien = Enable_TDQD = Enable_TraCuu = true;
             //Selected_HOME = true;
@@ -405,6 +409,92 @@ namespace MasterSaveDemo.ViewModel
                     Application.Current.Shutdown();
                 }
             });
+        }
+        public void updateThongKeNgay()
+        {
+            var ThongKeNgay = new ObservableCollection<THONGKENGAY>(DataProvider.Ins.DB.THONGKENGAYs);
+            DateTime NgayKhaiTruong = new DateTime(2020, 09, 21);
+            DateTime LastUpdatedDay = NgayKhaiTruong.AddDays(-1);
+            int CountThongKe = (from tk in ThongKeNgay
+                                select tk).Count();
+            if (CountThongKe > 0)
+                LastUpdatedDay = (from tk in ThongKeNgay
+                                  select tk).Last().Ngay;
+            for (DateTime i = LastUpdatedDay.AddDays(1); i < DateTime.Today; i = i.AddDays(1))
+            {
+                CountThongKe++;
+                THONGKENGAY thongkengay = new THONGKENGAY()
+                {
+                    MaThongKe = "TKN" + "000".Substring(0, 4 - CountThongKe.ToString().Length) + CountThongKe.ToString(),
+                    Ngay = i,
+                };
+                DataProvider.Ins.DB.THONGKENGAYs.Add(thongkengay);
+                DataProvider.Ins.DB.SaveChanges();
+                var MatHang = new ObservableCollection<MATHANG>(DataProvider.Ins.DB.MATHANGs);
+                var ChiTietThongKe = new ObservableCollection<CT_THONGKENGAY>(DataProvider.Ins.DB.CT_THONGKENGAY);
+                int CountChiTietThongKe = (from cttk in ChiTietThongKe
+                                           select cttk).Count();
+                var TheKho = new ObservableCollection<THEKHO>(DataProvider.Ins.DB.THEKHOes);
+                var ChiTietTheKho = new ObservableCollection<CT_THEKHO>(DataProvider.Ins.DB.CT_THEKHO);
+                var PhieuNhap = new ObservableCollection<PHIEUNHAPKHO>(DataProvider.Ins.DB.PHIEUNHAPKHOes);
+                var ChiTietPhieuNhap = new ObservableCollection<CT_PHIEUNHAPKHO>(DataProvider.Ins.DB.CT_PHIEUNHAPKHO);
+                var PhieuXuat = new ObservableCollection<PHIEUXUATKHO>(DataProvider.Ins.DB.PHIEUXUATKHOes);
+                var ChiTietPhieuXuat = new ObservableCollection<CT_PHIEUXUATKHO>(DataProvider.Ins.DB.CT_PHIEUXUATKHO);
+                var HoaDon = new ObservableCollection<HOADON>(DataProvider.Ins.DB.HOADONs);
+                var ChiTietHoaDon = new ObservableCollection<CT_HOADON>(DataProvider.Ins.DB.CT_HOADON);
+                foreach (var item in MatHang)
+                {
+                    CountChiTietThongKe++;
+                    var AllPhieuNhap = (from ctpn in ChiTietPhieuNhap
+                                        join pn in PhieuNhap on ctpn.MaPhieuNhapKho equals pn.MaPhieuNhapKho
+                                        where (ctpn.MaMH == item.MaMH && pn.NgayLap.Date == i.Date && pn.Duyet == 1)
+                                        select ctpn);
+                    int TongNhap = 0;
+                    if (AllPhieuNhap.Count() > 0)
+                        TongNhap += AllPhieuNhap.Select(a => a.SoLuong).Sum();
+                    var AllPhieuXuat = (from ctpx in ChiTietPhieuXuat
+                                        join px in PhieuXuat on ctpx.MaPhieuXK equals px.MaPhieuXK
+                                        where (ctpx.MaMH == item.MaMH && px.NgayLap.Date == i.Date && px.TrangThai == 1)
+                                        select ctpx);
+                    int TongXuat = 0;
+                    if (AllPhieuXuat.Count() > 0)
+                        TongXuat += AllPhieuXuat.Select(a => a.SoLuong).Sum();
+                    var LayTon = (from tk in TheKho
+                                  where (tk.MaMH == item.MaMH)
+                                  select tk);
+                    int SoLuongTon = 0;
+                    if (LayTon.Count() > 0)
+                        SoLuongTon += LayTon.First().SoLuongTonKho;
+                    var LayThu = (from cthd in ChiTietHoaDon
+                                  join hd in HoaDon on cthd.MaHoaDon equals hd.MaHoaDon
+                                  where (hd.NgayLap.Date == i.Date && cthd.MaMH == item.MaMH)
+                                  select cthd);
+                    decimal TongThu = 0;
+                    foreach (var moihoadon in LayThu)
+                    {
+                        TongThu += moihoadon.SoLuong * moihoadon.DonGiaBan;
+                    }
+                    decimal TongChi = 0;
+                    foreach (var moihoadon in AllPhieuNhap)
+                    {
+                        TongChi += moihoadon.DonGiaNhap * moihoadon.SoLuong;
+                    }
+                    CT_THONGKENGAY ctthongkengay = new CT_THONGKENGAY()
+                    {
+                        MaCTTK = "CTTKN" + "00000".Substring(0, 5 - CountChiTietThongKe.ToString().Length) + CountChiTietThongKe.ToString(),
+                        MaThongKe = thongkengay.MaThongKe,
+                        MaMH = item.MaMH,
+                        Nhap = TongNhap,
+                        Xuat = TongXuat,
+                        Ton = SoLuongTon,
+                        Thu = TongThu,
+                        Chi = TongChi,
+                    };
+                    DataProvider.Ins.DB.CT_THONGKENGAY.Add(ctthongkengay);
+                    DataProvider.Ins.DB.SaveChanges();
+                };
+            }
+
         }
 
     }

@@ -21,82 +21,91 @@ namespace MasterSaveDemo.ViewModel
 
 
         ////---------------
-        //private DateTime _NgayBaoCao;
-        //public DateTime NgayBaoCao
-        //{
-        //    get { return _NgayBaoCao; }
-        //    set { _NgayBaoCao = value; OnPropertyChanged(); }
-        //}
-        ////---------------
-        //private string _MaBaoCao;
 
-        //public string MaBaoCao
-        //{
-        //    get { return _MaBaoCao; }
-        //    set { _MaBaoCao = value; OnPropertyChanged(); }
-        //}
-
-        //private string _NguoiTaoPhieu;
-
-        //public string NguoiTaoPhieu
-        //{
-        //    get { return _NguoiTaoPhieu; }
-        //    set { _NguoiTaoPhieu = value; OnPropertyChanged(); }
-        //}
-
-        ////---------------
-        //private ObservableCollection<BaoCaoDS> _ListBaoCaoDoanhSo;
-
-        //public ObservableCollection<BaoCaoDS> ListBaoCaoDoanhSo
-        //{
-        //    get { return _ListBaoCaoDoanhSo; }
-        //    set { _ListBaoCaoDoanhSo = value; OnPropertyChanged(); }
-        //}
-        ////--------------
-
-        //public ICommand CloseWindowCommand { get; set; }
-        //public ICommand Print_Command { get; set; }
-
-        //public BaoCaoDoanhSo_PrintPreview_ViewModel(ObservableCollection<BaoCaoDS> listBaoCao, DateTime ngayBaoCao)
-        //{
-        //    ListBaoCaoDoanhSo = listBaoCao;
-        //    //for (int i = 0; i < listBaoCao.Count(); i++)
-        //    //    ListBaoCaoDoanhSo[i].SoThuTu = i + 1;
-                
-        //    NgayBaoCao = ngayBaoCao;
-        //    NguoiTaoPhieu = LoginViewModel.TaiKhoanSuDung.HoTen;
-
-        //    CloseWindowCommand = new RelayCommand<object>((p) => { return p == null ? false : true; }, (p) => {
-        //        var ex = p as Window;
-        //        ex.Close();
-
-        //    });
-
-        //    Print_Command = new RelayCommand<object>((p) => { return p == null ? false : true; }, (p) =>
-        //    {
-        //        var ex = p as Window;
-        //        try
-        //        {
-        //            System.Windows.Controls.PrintDialog printDialog = new System.Windows.Controls.PrintDialog();
-        //            if (printDialog.ShowDialog() == true)
-        //            {
-        //                printDialog.PrintVisual(ex, "Print report");
-
-        //            }
-        //        }
-        //        catch (Exception e)
-        //        {
-        //            System.Windows.MessageBox.Show("Cannot print");
-        //        }
-
-        //    });
-
-
-        //}
 
         #endregion
 
-        // new code from this hihi
+
+        private DateTime _StartDate;
+        public DateTime StartDate
+        {
+            get { return _StartDate; }
+            set { _StartDate = value; OnPropertyChanged(); }
+        }
+        private DateTime _EndDate;
+        public DateTime EndDate
+        {
+            get { return _EndDate; }
+            set { _EndDate = value; OnPropertyChanged(); }
+        }
+        //---------------
+        private string _MaBaoCao;
+
+        public string MaBaoCao
+        {
+            get { return _MaBaoCao; }
+            set { _MaBaoCao = value; OnPropertyChanged(); }
+        }
+
+        private string _NguoiTaoPhieu;
+
+        public string NguoiTaoPhieu
+        {
+            get { return _NguoiTaoPhieu; }
+            set { _NguoiTaoPhieu = value; OnPropertyChanged(); }
+        }
+
+        //---------------
+        private ObservableCollection<DongBaoCao> _ListBaoCaoDoanhSo;
+
+        public ObservableCollection<DongBaoCao> ListBaoCaoDoanhSo
+        {
+            get { return _ListBaoCaoDoanhSo; }
+            set { _ListBaoCaoDoanhSo = value; OnPropertyChanged(); }
+        }
+        //--------------
+
+        public ICommand CloseWindowCommand { get; set; }
+        public ICommand Print_Command { get; set; }
+
+        public BaoCaoDoanhSo_PrintPreview_ViewModel(ObservableCollection<DongBaoCao> BaoCao, DateTime inputStartDate, DateTime inputEndDate, String inputNguoiTao)
+        {
+            ListBaoCaoDoanhSo = BaoCao;
+            StartDate = inputStartDate;
+            EndDate = inputEndDate;
+            NguoiTaoPhieu = inputNguoiTao;
+            //for (int i = 0; i < listBaoCao.Count(); i++)
+            //    ListBaoCaoDoanhSo[i].SoThuTu = i + 1;
+
+            CloseWindowCommand = new RelayCommand<object>((p) => { return p == null ? false : true; }, (p) =>
+            {
+                var ex = p as Window;
+                ex.Close();
+
+            });
+
+            Print_Command = new RelayCommand<object>((p) => { return p == null ? false : true; }, (p) =>
+            {
+                var ex = p as Window;
+                try
+                {
+                    System.Windows.Controls.PrintDialog printDialog = new System.Windows.Controls.PrintDialog();
+                    if (printDialog.ShowDialog() == true)
+                    {
+                        printDialog.PrintVisual(ex, "Print report");
+
+                    }
+                }
+                catch (Exception e)
+                {
+                    System.Windows.MessageBox.Show("Cannot print");
+                }
+
+            });
+
+
+        }
     }
+
 
 }

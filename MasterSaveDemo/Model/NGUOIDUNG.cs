@@ -17,6 +17,7 @@ namespace MasterSaveDemo.Model
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
         public NGUOIDUNG()
         {
+            this.HOADONs = new HashSet<HOADON>();
             this.PHIEUNHAPKHOes = new HashSet<PHIEUNHAPKHO>();
             this.PHIEUXUATKHOes = new HashSet<PHIEUXUATKHO>();
             this.THEKHOes = new HashSet<THEKHO>();
@@ -26,7 +27,13 @@ namespace MasterSaveDemo.Model
         public string TenDangNhap { get; set; }
         public string MatKhau { get; set; }
         public int MaNhom { get; set; }
+        public string HoTen { get; set; }
+        public string DiaChi { get; set; }
+        public string SDT { get; set; }
+        public string GioiTinh { get; set; }
     
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public virtual ICollection<HOADON> HOADONs { get; set; }
         public virtual NHOMNGUOIDUNG NHOMNGUOIDUNG { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<PHIEUNHAPKHO> PHIEUNHAPKHOes { get; set; }

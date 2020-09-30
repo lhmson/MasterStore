@@ -29,7 +29,7 @@ namespace MasterSaveDemo.Model
     
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<CT_HOADON> CT_HOADON { get; set; }
-        public virtual NHANVIEN NHANVIEN { get; set; }
+        public virtual NGUOIDUNG NGUOIDUNG { get; set; }
         public virtual QUAY QUAY { get; set; }
     }
 }
