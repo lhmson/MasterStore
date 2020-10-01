@@ -24,6 +24,7 @@ namespace MasterSaveDemo.Model
         public System.DateTime NgayLap { get; set; }
         public string MaNguoiLap { get; set; }
         public string MaMH { get; set; }
+        public int SoLuongTonKho { get; set; }
     
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<CT_THEKHO> CT_THEKHO { get; set; }

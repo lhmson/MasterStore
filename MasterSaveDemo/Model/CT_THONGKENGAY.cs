@@ -20,6 +20,8 @@ namespace MasterSaveDemo.Model
         public int Nhap { get; set; }
         public int Xuat { get; set; }
         public int Ton { get; set; }
+        public decimal Thu { get; set; }
+        public decimal Chi { get; set; }
     
         public virtual THONGKENGAY THONGKENGAY { get; set; }
         public virtual MATHANG MATHANG { get; set; }

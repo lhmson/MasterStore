@@ -12,16 +12,12 @@ namespace MasterSaveDemo.Model
     using System;
     using System.Collections.Generic;
     
-    public partial class CT_PHIEUDNXUATKHO
+    public partial class sysdiagram
     {
-        public string MaCTPhieuDNXK { get; set; }
-        public string MaMH { get; set; }
-        public string MaPhieuDNXK { get; set; }
-        public decimal DonGia { get; set; }
-        public int SoLuong { get; set; }
-        public string GhiChu { get; set; }
-    
-        public virtual PHIEUDNXUATKHO PHIEUDNXUATKHO { get; set; }
-        public virtual MATHANG MATHANG { get; set; }
+        public string name { get; set; }
+        public int principal_id { get; set; }
+        public int diagram_id { get; set; }
+        public Nullable<int> version { get; set; }
+        public byte[] definition { get; set; }
     }
 }

@@ -5,52 +5,49 @@
     <!-- Diagram content (shape and connector positions) -->
     <edmx:Diagrams>
       <Diagram DiagramId="dd7b267123fc4685b8d5ffee1828b917" Name="Diagram1" ZoomLevel="55">
-        <EntityTypeShape EntityType="QLSieuThiModel.CHUCNANG" Width="1.5" PointX="7.5" PointY="24.75" />
-        <EntityTypeShape EntityType="QLSieuThiModel.CT_HOADON" Width="1.5" PointX="8.25" PointY="14.375" />
-        <EntityTypeShape EntityType="QLSieuThiModel.CT_PHIEUDNXUATKHO" Width="1.5" PointX="8.25" PointY="10.375" />
-        <EntityTypeShape EntityType="QLSieuThiModel.CT_PHIEUNHAPKHO" Width="1.5" PointX="8.25" PointY="18.5" />
-        <EntityTypeShape EntityType="QLSieuThiModel.CT_PHIEUXUATKHO" Width="1.5" PointX="11.25" PointY="10.375" />
-        <EntityTypeShape EntityType="QLSieuThiModel.CT_THEKHO" Width="1.5" PointX="13.5" PointY="14.625" />
-        <EntityTypeShape EntityType="QLSieuThiModel.CT_THONGKENGAY" Width="1.5" PointX="11.25" PointY="18.375" />
-        <EntityTypeShape EntityType="QLSieuThiModel.HOADON" Width="1.5" PointX="6" PointY="19.375" />
-        <EntityTypeShape EntityType="QLSieuThiModel.MATHANG" Width="1.5" PointX="6" PointY="13.625" />
-        <EntityTypeShape EntityType="QLSieuThiModel.NGUOIDUNG" Width="1.5" PointX="6.75" PointY="3" />
-        <EntityTypeShape EntityType="QLSieuThiModel.NHACUNGCAP" Width="1.5" PointX="0.75" PointY="14.5" />
-        <EntityTypeShape EntityType="QLSieuThiModel.NHASANXUAT" Width="1.5" PointX="3.75" PointY="10.75" />
-        <EntityTypeShape EntityType="QLSieuThiModel.NHOMNGUOIDUNG" Width="1.5" PointX="4.5" PointY="3.875" />
-        <EntityTypeShape EntityType="QLSieuThiModel.PHANQUYEN" Width="1.5" PointX="9.75" PointY="0.75" />
-        <EntityTypeShape EntityType="QLSieuThiModel.PHIEUDNXUATKHO" Width="1.5" PointX="6" PointY="7.75" />
-        <EntityTypeShape EntityType="QLSieuThiModel.PHIEUNHAPKHO" Width="1.5" PointX="3" PointY="14.375" />
-        <EntityTypeShape EntityType="QLSieuThiModel.PHIEUXUATKHO" Width="1.5" PointX="9" PointY="3.75" />
-        <EntityTypeShape EntityType="QLSieuThiModel.QUAY" Width="1.5" PointX="3.75" PointY="7.75" />
-        <EntityTypeShape EntityType="QLSieuThiModel.THAMSO" Width="1.5" PointX="0.75" PointY="3.375" />
-        <EntityTypeShape EntityType="QLSieuThiModel.THEKHO" Width="1.5" PointX="11.25" PointY="14.5" />
-        <EntityTypeShape EntityType="QLSieuThiModel.THONGBAO" Width="1.5" PointX="0.75" PointY="6.375" />
-        <EntityTypeShape EntityType="QLSieuThiModel.THONGKENGAY" Width="1.5" PointX="9" PointY="21.875" />
+        <EntityTypeShape EntityType="QLSieuThiModel.CHUCNANG" Width="1.5" PointX="1.5" PointY="1.75" />
+        <EntityTypeShape EntityType="QLSieuThiModel.CT_HOADON" Width="1.5" PointX="8.25" PointY="8.375" />
+        <EntityTypeShape EntityType="QLSieuThiModel.CT_PHIEUNHAPKHO" Width="1.5" PointX="11.25" PointY="8.5" />
+        <EntityTypeShape EntityType="QLSieuThiModel.CT_PHIEUXUATKHO" Width="1.5" PointX="8.25" PointY="12.375" />
+        <EntityTypeShape EntityType="QLSieuThiModel.CT_THEKHO" Width="1.5" PointX="10.5" PointY="16.625" />
+        <EntityTypeShape EntityType="QLSieuThiModel.CT_THONGKENGAY" Width="1.5" PointX="11.25" PointY="12.25" />
+        <EntityTypeShape EntityType="QLSieuThiModel.HOADON" Width="1.5" PointX="6" PointY="3.375" />
+        <EntityTypeShape EntityType="QLSieuThiModel.MATHANG" Width="1.5" PointX="6" PointY="11.625" />
+        <EntityTypeShape EntityType="QLSieuThiModel.NGUOIDUNG" Width="1.5" PointX="3.75" PointY="4" />
+        <EntityTypeShape EntityType="QLSieuThiModel.NHACUNGCAP" Width="1.5" PointX="0.75" PointY="12.5" />
+        <EntityTypeShape EntityType="QLSieuThiModel.NHASANXUAT" Width="1.5" PointX="3.75" PointY="8.75" />
+        <EntityTypeShape EntityType="QLSieuThiModel.NHOMNGUOIDUNG" Width="1.5" PointX="1.5" PointY="4.875" />
+        <EntityTypeShape EntityType="QLSieuThiModel.PHANQUYEN" Width="1.5" PointX="3.75" PointY="0.75" />
+        <EntityTypeShape EntityType="QLSieuThiModel.PHIEUNHAPKHO" Width="1.5" PointX="3" PointY="12.375" />
+        <EntityTypeShape EntityType="QLSieuThiModel.PHIEUXUATKHO" Width="1.5" PointX="6" PointY="7.375" />
+        <EntityTypeShape EntityType="QLSieuThiModel.QUAY" Width="1.5" PointX="3.75" PointY="16.25" />
+        <EntityTypeShape EntityType="QLSieuThiModel.sysdiagram" Width="1.5" PointX="0.75" PointY="7.875" />
+        <EntityTypeShape EntityType="QLSieuThiModel.THAMSO" Width="1.5" PointX="8.75" PointY="2.875" />
+        <EntityTypeShape EntityType="QLSieuThiModel.THEKHO" Width="1.5" PointX="8.25" PointY="16.375" />
+        <EntityTypeShape EntityType="QLSieuThiModel.THONGBAO" Width="1.5" PointX="10.75" PointY="2.875" />
+        <EntityTypeShape EntityType="QLSieuThiModel.THONGKENGAY" Width="1.5" PointX="9" PointY="5.875" />
         <AssociationConnector Association="QLSieuThiModel.FK__PHANQUYEN__MaChu__412EB0B6" />
-        <AssociationConnector Association="QLSieuThiModel.FK__CT_HOADON__MaHoa__5BE2A6F2" />
-        <AssociationConnector Association="QLSieuThiModel.FK__CT_HOADON__MaMH__5AEE82B9" />
-        <AssociationConnector Association="QLSieuThiModel.FK__CT_PHIEUD__MaPhi__628FA481" />
-        <AssociationConnector Association="QLSieuThiModel.FK__CT_PHIEUDN__MaMH__619B8048" />
-        <AssociationConnector Association="QLSieuThiModel.FK__CT_PHIEUN__MaPhi__6B24EA82" />
-        <AssociationConnector Association="QLSieuThiModel.FK__CT_PHIEUNH__MaMH__6A30C649" />
-        <AssociationConnector Association="QLSieuThiModel.FK__CT_PHIEUX__MaPhi__5165187F" />
-        <AssociationConnector Association="QLSieuThiModel.FK__CT_PHIEUXU__MaMH__5070F446" />
-        <AssociationConnector Association="QLSieuThiModel.FK__CT_THEKHO__MaThe__71D1E811" />
-        <AssociationConnector Association="QLSieuThiModel.FK__CT_THONGK__MaTho__76969D2E" />
-        <AssociationConnector Association="QLSieuThiModel.FK__CT_THONGKE__MaMH__778AC167" />
-        <AssociationConnector Association="QLSieuThiModel.FK__HOADON__MaNguoiL__5812160E" />
-        <AssociationConnector Association="QLSieuThiModel.FK__HOADON__MaQuay__571DF1D5" />
+        <AssociationConnector Association="QLSieuThiModel.FK__CT_HOADON__MaHoa__5CD6CB2B" />
+        <AssociationConnector Association="QLSieuThiModel.FK__CT_HOADON__MaMH__5BE2A6F2" />
+        <AssociationConnector Association="QLSieuThiModel.FK__CT_PHIEUN__MaPhi__656C112C" />
+        <AssociationConnector Association="QLSieuThiModel.FK__CT_PHIEUNH__MaMH__6477ECF3" />
+        <AssociationConnector Association="QLSieuThiModel.FK__CT_PHIEUX__MaPhi__5441852A" />
+        <AssociationConnector Association="QLSieuThiModel.FK__CT_PHIEUXU__MaMH__534D60F1" />
+        <AssociationConnector Association="QLSieuThiModel.FK__CT_THEKHO__MaThe__6D0D32F4" />
+        <AssociationConnector Association="QLSieuThiModel.FK__CT_THONGK__MaTho__71D1E811" />
+        <AssociationConnector Association="QLSieuThiModel.FK__CT_THONGKE__MaMH__72C60C4A" />
+        <AssociationConnector Association="QLSieuThiModel.FK__HOADON__MaNguoiL__59063A47" />
+        <AssociationConnector Association="QLSieuThiModel.FK__HOADON__MaQuay__5812160E" />
         <AssociationConnector Association="QLSieuThiModel.FK__MATHANG__MaNCC__47DBAE45" />
         <AssociationConnector Association="QLSieuThiModel.FK__MATHANG__MaNSX__48CFD27E" />
-        <AssociationConnector Association="QLSieuThiModel.FK__THEKHO__MaMH__6EF57B66" />
+        <AssociationConnector Association="QLSieuThiModel.FK__THEKHO__MaMH__693CA210" />
         <AssociationConnector Association="QLSieuThiModel.FK__NGUOIDUNG__MaNho__3B75D760" />
-        <AssociationConnector Association="QLSieuThiModel.FK__PHIEUNHAP__MaNgu__6754599E" />
-        <AssociationConnector Association="QLSieuThiModel.FK__PHIEUXUAT__MaNgu__4D94879B" />
-        <AssociationConnector Association="QLSieuThiModel.FK__THEKHO__MaNguoiL__6E01572D" />
-        <AssociationConnector Association="QLSieuThiModel.FK__PHIEUNHAP__MaNCC__656C112C" />
+        <AssociationConnector Association="QLSieuThiModel.FK__PHIEUNHAP__MaNgu__619B8048" />
+        <AssociationConnector Association="QLSieuThiModel.FK__PHIEUXUAT__MaNgu__4F7CD00D" />
+        <AssociationConnector Association="QLSieuThiModel.FK__THEKHO__MaNguoiL__68487DD7" />
+        <AssociationConnector Association="QLSieuThiModel.FK__PHIEUNHAP__MaNCC__5FB337D6" />
         <AssociationConnector Association="QLSieuThiModel.FK__PHANQUYEN__MaNho__403A8C7D" />
-        <AssociationConnector Association="QLSieuThiModel.FK__PHIEUDNXU__MaQua__5EBF139D" />
+        <AssociationConnector Association="QLSieuThiModel.FK__PHIEUXUAT__MaQua__5070F446" />
       </Diagram>
     </edmx:Diagrams>
   </edmx:Designer>

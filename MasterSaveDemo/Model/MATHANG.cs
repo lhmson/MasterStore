@@ -18,7 +18,6 @@ namespace MasterSaveDemo.Model
         public MATHANG()
         {
             this.CT_HOADON = new HashSet<CT_HOADON>();
-            this.CT_PHIEUDNXUATKHO = new HashSet<CT_PHIEUDNXUATKHO>();
             this.CT_PHIEUNHAPKHO = new HashSet<CT_PHIEUNHAPKHO>();
             this.CT_PHIEUXUATKHO = new HashSet<CT_PHIEUXUATKHO>();
             this.CT_THONGKENGAY = new HashSet<CT_THONGKENGAY>();
@@ -33,12 +32,10 @@ namespace MasterSaveDemo.Model
         public decimal GiaBan { get; set; }
         public int SoLuongTonGian { get; set; }
         public string DonViTinh { get; set; }
-        public string image { get; set; }
+        public string HinhAnh { get; set; }
     
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<CT_HOADON> CT_HOADON { get; set; }
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<CT_PHIEUDNXUATKHO> CT_PHIEUDNXUATKHO { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<CT_PHIEUNHAPKHO> CT_PHIEUNHAPKHO { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]

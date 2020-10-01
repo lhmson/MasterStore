@@ -142,9 +142,6 @@
     <Compile Include="Model\CT_HOADON.cs">
       <DependentUpon>QLSieuThiModel.tt</DependentUpon>
     </Compile>
-    <Compile Include="Model\CT_PHIEUDNXUATKHO.cs">
-      <DependentUpon>QLSieuThiModel.tt</DependentUpon>
-    </Compile>
     <Compile Include="Model\CT_PHIEUNHAPKHO.cs">
       <DependentUpon>QLSieuThiModel.tt</DependentUpon>
     </Compile>
@@ -170,9 +167,6 @@
     <Compile Include="Model\NHASANXUAT.cs">
       <DependentUpon>QLSieuThiModel.tt</DependentUpon>
     </Compile>
-    <Compile Include="Model\PHIEUDNXUATKHO.cs">
-      <DependentUpon>QLSieuThiModel.tt</DependentUpon>
-    </Compile>
     <Compile Include="Model\PHIEUNHAPKHO.cs">
       <DependentUpon>QLSieuThiModel.tt</DependentUpon>
     </Compile>
@@ -195,6 +189,9 @@
       <DependentUpon>QLSieuThiModel.edmx</DependentUpon>
     </Compile>
     <Compile Include="Model\QUAY.cs">
+      <DependentUpon>QLSieuThiModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Model\sysdiagram.cs">
       <DependentUpon>QLSieuThiModel.tt</DependentUpon>
     </Compile>
     <Compile Include="Model\THEKHO.cs">
