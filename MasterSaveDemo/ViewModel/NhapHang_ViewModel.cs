@@ -483,7 +483,7 @@ namespace MasterSaveDemo.ViewModel
                 MaPhieuNhapKho = MaPhieuNhapKho,
                 NgayLap = DateTime.Now,
                 TongTien = decimal.Parse(TongTien),
-                MaNguoiLap = "NV001",
+                MaNguoiLap = "1",
                 Duyet = 0
             };
 
@@ -1034,7 +1034,7 @@ namespace MasterSaveDemo.ViewModel
                     MaTheKho = GetCodeTK(),
                     MaMH = mamh,
                     NgayLap = DateTime.Now,
-                    MaNguoiLap = "NV001",
+                    MaNguoiLap = "1",
                     SoLuongTonKho = 0,
                 };
                 DataProvider.Ins.DB.THEKHOes.Add(thekho);
