@@ -67,9 +67,10 @@ namespace MasterSaveDemo.ViewModel
             if (user == LoginViewModel.TaiKhoanSuDung) return; // check to update Ten one time only for utilize
 
             user = LoginViewModel.TaiKhoanSuDung;
-            if (user == null) return; 
+            if (user == null) return;
 
-            //TenTaiKhoan = user.HoTen; cmt tam thoi hihi
+            TenTaiKhoan = user.HoTen;
+            //cmt tam thoi hihi
             ObservableCollection<NHOMNGUOIDUNG> listNhom = new ObservableCollection<NHOMNGUOIDUNG>(DataProvider.Ins.DB.NHOMNGUOIDUNGs);
             foreach (var item in listNhom)
                 if (user.MaNhom == item.MaNhom)

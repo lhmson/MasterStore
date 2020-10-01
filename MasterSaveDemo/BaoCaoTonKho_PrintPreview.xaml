@@ -44,7 +44,7 @@
                     <Grid Grid.Row="0" Margin="5">
                         <StackPanel Orientation="Horizontal">
                             <TextBlock Text="Tên Đơn vị: " FontSize="20" Margin="5"/>
-                            <TextBlock Text="Ngân hàng Thương mại cổ phần StarthenD" FontSize="20" Margin="5" FontStyle="Italic"/>
+                            <TextBlock Text="Siêu thị MasterStore" FontSize="20" Margin="5" FontStyle="Italic"/>
                         </StackPanel>
                     </Grid>
                     <!--<Grid Grid.Row="1" Margin="5">
@@ -84,21 +84,16 @@
                 </Grid.RowDefinitions>
                 <Grid Grid.Row="0">
                     <StackPanel Grid.Row="1" HorizontalAlignment="Stretch" Margin="5">
-                        <TextBlock Text="BÁO CÁO MỞ/ĐÓNG SỔ" VerticalAlignment="Center" FontSize="35" FontWeight="Bold" Foreground="Black" HorizontalAlignment="Center"/>
+                        <TextBlock Text="BÁO CÁO NHẬP XUẤT TỒN KHO" VerticalAlignment="Center" FontSize="35" FontWeight="Bold" Foreground="Black" HorizontalAlignment="Center"/>
                         <Grid>
                             <Grid.ColumnDefinitions>
                                 <ColumnDefinition></ColumnDefinition>
-                                <ColumnDefinition></ColumnDefinition>
                             </Grid.ColumnDefinitions>
                             <StackPanel Grid.Column="0" Orientation="Horizontal" HorizontalAlignment="Center">
-                                <TextBlock Text="Loại tiết kiệm: " FontSize="35" FontWeight="Bold"></TextBlock>
-                                <TextBlock Text="{Binding LoaiTietKiem}"  FontSize="35" FontWeight="Bold"/>
-                            </StackPanel>
-                            <StackPanel Grid.Column="1" Orientation="Horizontal" HorizontalAlignment="Center">
-                                <TextBlock Text="Tháng " FontSize="35" FontWeight="Bold"></TextBlock>
-                                <TextBlock Text="{Binding ThangBaoCao}"  FontSize="35" FontWeight="Bold"/>
-                                <TextBlock Text=" Năm " FontSize="35" FontWeight="Bold"></TextBlock>
-                                <TextBlock Text="{Binding NamBaoCao}"  FontSize="35" FontWeight="Bold"/>
+                                <TextBlock Text="Từ ngày: " FontSize="35" FontWeight="Bold"></TextBlock>
+                                <TextBlock Text="{Binding StartDate, StringFormat={}{0:dd/MM/yyyy}}"  FontSize="35" FontWeight="Bold"/>
+                                <TextBlock Text="Đến ngày: " FontSize="35" FontWeight="Bold"></TextBlock>
+                                <TextBlock Text="{Binding EndDate, StringFormat={}{0:dd/MM/yyyy}}"  FontSize="35" FontWeight="Bold"/>
                             </StackPanel>
                         </Grid>
                         
@@ -106,16 +101,18 @@
                     </StackPanel>
                 </Grid>
                 <Grid Grid.Row="1" Margin="5">
-                    <ListView x:Name="listViewReportPP" ItemsSource="{Binding ListBaoCaoDMPP}" FontSize="18"
+                    <ListView x:Name="listViewReportPP" ItemsSource="{Binding ListBaoCaoTonKho}" FontSize="18"
                           HorizontalContentAlignment="Stretch"
                           ScrollViewer.HorizontalScrollBarVisibility="Disabled"  ScrollViewer.VerticalScrollBarVisibility="Disabled">
                         <ListView.View>
                             <GridView>
-                                <GridViewColumn Width="100" Header="STT"  DisplayMemberBinding="{Binding STT}"/>
-                                <GridViewColumn Width="200" Header="Ngày" DisplayMemberBinding="{Binding Ngay}"/>
-                                <GridViewColumn Width="200" Header="Sổ mở" DisplayMemberBinding="{Binding SoMo}"/>
-                                <GridViewColumn Width="200" Header="Sổ đóng" DisplayMemberBinding="{Binding SoDong}"/>
-                                <GridViewColumn Width="200" Header="Chênh lệch" DisplayMemberBinding="{Binding ChenhLech}"/>
+                                <GridViewColumn Header="STT" DisplayMemberBinding="{Binding STT}"/>
+                                <GridViewColumn  Header="Mã hàng" DisplayMemberBinding="{Binding MaMH}"/>
+                                <GridViewColumn  Header="Tên hàng" DisplayMemberBinding="{Binding TenHang}"/>
+                                <GridViewColumn  Header="Tồn đầu kì" DisplayMemberBinding="{Binding TonDauKi, StringFormat='#,##0;(#,##0)'}"/>
+                                <GridViewColumn Header="Nhập" DisplayMemberBinding="{Binding Nhap, StringFormat='#,##0;(#,##0)'}"/>
+                                <GridViewColumn  Header="Xuất" DisplayMemberBinding="{Binding Xuat, StringFormat='#,##0;#,##0'}"/>
+                                <GridViewColumn  Header="Tồn cuối kì" DisplayMemberBinding="{Binding TonCuoiKi, StringFormat='#,##0;#,##0'}"/>
                             </GridView>
                         </ListView.View>
                     </ListView>

@@ -20,7 +20,7 @@ namespace MasterSaveDemo
     /// </summary>
     public partial class BanHang_PrintPreview : Window
     {
-        public BanHang_PrintPreview(BaseViewModel x)
+        public BanHang_PrintPreview(BanHang_PrintPreview_ViewModel x)
         {
             InitializeComponent();
             this.DataContext = x;

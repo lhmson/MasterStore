@@ -22,7 +22,6 @@ namespace MasterSaveDemo.Model
     
         public string MaThongKe { get; set; }
         public System.DateTime Ngay { get; set; }
-        public decimal TongDoanhThu { get; set; }
     
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<CT_THONGKENGAY> CT_THONGKENGAY { get; set; }

@@ -60,7 +60,7 @@
                             </i:EventTrigger>
                         </i:Interaction.Triggers>
                     </HamburgerMenu:HamburgerMenuItem>
-                    <HamburgerMenu:HamburgerMenuItem x:Name="NhapHang_Page_Button" Icon="/Images/1-MoSo.png" Text="Thực hiện Nhập hàng" IsEnabled="{Binding Enable_MoSo}" ToolTip="{Binding MoSo_Tooltip}" ToolTipService.Placement="Right" ToolTipService.HorizontalOffset="10">
+                    <HamburgerMenu:HamburgerMenuItem x:Name="NhapHang_Page_Button" Icon="/Images/1-MoSo.png" Text="Thực hiện Nhập hàng" IsEnabled="{Binding Enable_NhapHang}" ToolTip="{Binding NhapHang_Tooltip}" ToolTipService.Placement="Right" ToolTipService.HorizontalOffset="10">
                         <i:Interaction.Triggers>
                             <i:EventTrigger EventName="GotFocus">
                                 <i:InvokeCommandAction Command="{Binding NhapHang_Page_SelectedCommand}"
@@ -68,7 +68,7 @@
                             </i:EventTrigger>
                         </i:Interaction.Triggers>
                     </HamburgerMenu:HamburgerMenuItem>
-                    <HamburgerMenu:HamburgerMenuItem x:Name="XuatHang_Page_Button" Icon="/Images/2-GuiTien.png" Text="Thực hiện Xuất hàng" IsEnabled="{Binding Enable_GuiTien}" ToolTip="{Binding GuiTien_Tooltip}" ToolTipService.Placement="Right" ToolTipService.HorizontalOffset="10">
+                    <HamburgerMenu:HamburgerMenuItem x:Name="XuatHang_Page_Button" Icon="/Images/2-GuiTien.png" Text="Thực hiện Xuất hàng" IsEnabled="{Binding Enable_XuatHang}" ToolTip="{Binding XuatHang_Tooltip}" ToolTipService.Placement="Right" ToolTipService.HorizontalOffset="10">
                         <i:Interaction.Triggers>
                             <i:EventTrigger EventName="GotFocus">
                                 <i:InvokeCommandAction Command="{Binding XuatHang_Page_SelectedCommand}"
@@ -76,7 +76,7 @@
                             </i:EventTrigger>
                         </i:Interaction.Triggers>
                     </HamburgerMenu:HamburgerMenuItem>
-                    <HamburgerMenu:HamburgerMenuItem x:Name="BanHang_Page_Button" Icon="/Images/3-RutTien.png" Text="Thực hiện Bán hàng" IsEnabled="{Binding Enable_RutTien}" ToolTip="{Binding RutTien_Tooltip}" ToolTipService.Placement="Right" ToolTipService.HorizontalOffset="10" >
+                    <HamburgerMenu:HamburgerMenuItem x:Name="BanHang_Page_Button" Icon="/Images/3-RutTien.png" Text="Thực hiện Bán hàng" IsEnabled="{Binding Enable_BanHang}" ToolTip="{Binding BanHang_Tooltip}" ToolTipService.Placement="Right" ToolTipService.HorizontalOffset="10" >
                         <i:Interaction.Triggers>
                             <i:EventTrigger EventName="GotFocus">
                                 <i:InvokeCommandAction Command="{Binding BanHang_Page_SelectedCommand}"
@@ -100,7 +100,7 @@
                             </i:EventTrigger>
                         </i:Interaction.Triggers>
                     </HamburgerMenu:HamburgerMenuItem>
-                    <HamburgerMenu:HamburgerMenuItem x:Name="BaoCaoTonKho_Page_Button" Icon="/Images/6-BaoCaoMoDong.png" Text="Lập báo cáo tồn kho" IsEnabled="{Binding Enable_BCMD}" ToolTip="{Binding BaoCaoMD_Tooltip}" ToolTipService.Placement="Right" ToolTipService.HorizontalOffset="10">
+                    <HamburgerMenu:HamburgerMenuItem x:Name="BaoCaoTonKho_Page_Button" Icon="/Images/6-BaoCaoMoDong.png" Text="Lập báo cáo tồn kho" IsEnabled="{Binding Enable_BCTK}" ToolTip="{Binding BaoCaoTK_Tooltip}" ToolTipService.Placement="Right" ToolTipService.HorizontalOffset="10">
                         <i:Interaction.Triggers>
                             <i:EventTrigger EventName="GotFocus">
                                 <i:InvokeCommandAction Command="{Binding BaoCaoTonKho_Page_SelectedCommand}"

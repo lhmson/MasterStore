@@ -43,42 +43,42 @@ namespace MasterSaveDemo.ViewModel
         }
 
         private bool _Enable_MoSo;
-        public bool Enable_MoSo
+        public bool Enable_XuatHang
         {
             get => _Enable_MoSo;
             set { _Enable_MoSo = value; OnPropertyChanged(); }
         }
 
         private bool _Enable_GuiTien;
-        public bool Enable_GuiTien
+        public bool Enable_BanHang
         {
             get => _Enable_GuiTien;
             set { _Enable_GuiTien = value; OnPropertyChanged(); }
         }
 
         private bool _Enable_RutTien;
-        public bool Enable_RutTien
+        public bool Enable_TraCuu
         {
             get => _Enable_RutTien;
             set { _Enable_RutTien = value; OnPropertyChanged(); }
         }
 
         private bool _Enable_TraCuu;
-        public bool Enable_TraCuu
+        public bool Enable_BCDS
         {
             get => _Enable_TraCuu;
             set { _Enable_TraCuu = value; OnPropertyChanged(); }
         }
 
         private bool _Enable_BCDS;
-        public bool Enable_BCDS
+        public bool Enable_BCTK
         {
             get => _Enable_BCDS;
             set { _Enable_BCDS = value; OnPropertyChanged(); }
         }
 
         private bool _Enable_BCMD;
-        public bool Enable_BCMD
+        public bool Enable_TDQD
         {
             get => _Enable_BCMD;
             set { _Enable_BCMD = value; OnPropertyChanged(); }
@@ -108,14 +108,14 @@ namespace MasterSaveDemo.ViewModel
         #endregion
 
         private bool _Enable_TDQD;
-        public bool Enable_TDQD
+        public bool Enable_QLNS
         {
             get => _Enable_TDQD;
             set { _Enable_TDQD = value; OnPropertyChanged(); }
         }
 
         private bool _Enable_QLNS;
-        public bool Enable_QLNS
+        public bool Enable_NhapHang
         {
             get => _Enable_QLNS;
             set { _Enable_QLNS = value; OnPropertyChanged(); }
@@ -130,56 +130,56 @@ namespace MasterSaveDemo.ViewModel
         }
 
         private string _MoSo_Tooltip;
-        public string MoSo_Tooltip
+        public string XuatHang_Tooltip
         {
             get => _MoSo_Tooltip;
             set { _MoSo_Tooltip = value; OnPropertyChanged(); }
         }
 
         private string _GuiTien_Tooltip;
-        public string GuiTien_Tooltip
+        public string BanHang_Tooltip
         {
             get => _GuiTien_Tooltip;
             set { _GuiTien_Tooltip = value; OnPropertyChanged(); }
         }
 
         private string _RutTien_Tooltip;
-        public string RutTien_Tooltip
+        public string TraCuu_Tooltip
         {
             get => _RutTien_Tooltip;
             set { _RutTien_Tooltip = value; OnPropertyChanged(); }
         }
 
         private string _TraCuu_Tooltip;
-        public string TraCuu_Tooltip
+        public string BaoCaoDS_Tooltip
         {
             get => _TraCuu_Tooltip;
             set { _TraCuu_Tooltip = value; OnPropertyChanged(); }
         }
 
         private string _BaoCaoDS_Tooltip;
-        public string BaoCaoDS_Tooltip
+        public string BaoCaoTK_Tooltip
         {
             get => _BaoCaoDS_Tooltip;
             set { _BaoCaoDS_Tooltip = value; OnPropertyChanged(); }
         }
 
         private string _BaoCaoMD_Tooltip;
-        public string BaoCaoMD_Tooltip
+        public string TDQD_Tooltip
         {
             get => _BaoCaoMD_Tooltip;
             set { _BaoCaoMD_Tooltip = value; OnPropertyChanged(); }
         }
 
         private string _TDQD_Tooltip;
-        public string TDQD_Tooltip
+        public string QLNS_Tooltip
         {
             get => _TDQD_Tooltip;
             set { _TDQD_Tooltip = value; OnPropertyChanged(); }
         }
 
         private string _QLNS_Tooltip;
-        public string QLNS_Tooltip
+        public string NhapHang_Tooltip
         {
             get => _QLNS_Tooltip;
             set { _QLNS_Tooltip = value; OnPropertyChanged(); }
@@ -187,7 +187,10 @@ namespace MasterSaveDemo.ViewModel
 
         #endregion
 
+
         public bool isLoaded = false;
+
+   
 
         #region Function
         private void Init_Button_User(NGUOIDUNG user)
@@ -206,10 +209,10 @@ namespace MasterSaveDemo.ViewModel
 
         private void Init_Button()
         {
-            Enable_Home = Enable_GuiTien = Enable_RutTien = Enable_TraCuu = Enable_BCDS = Enable_BCMD = Enable_QLNS = Enable_TDQD = Enable_MoSo =  false;
+            Enable_Home = Enable_BanHang = Enable_TraCuu = Enable_BCDS = Enable_BCTK = Enable_TDQD = Enable_NhapHang = Enable_QLNS = Enable_XuatHang =  false;
             Enable_Home = true;
             // tooltip handle
-            MoSo_Tooltip = GuiTien_Tooltip = RutTien_Tooltip = TraCuu_Tooltip = BaoCaoDS_Tooltip = BaoCaoMD_Tooltip = QLNS_Tooltip = TDQD_Tooltip = "Không thể truy cập";
+            XuatHang_Tooltip = BanHang_Tooltip = TraCuu_Tooltip = BaoCaoDS_Tooltip = BaoCaoTK_Tooltip = TDQD_Tooltip = NhapHang_Tooltip = QLNS_Tooltip = "Không thể truy cập";
             Home_Tooltip = "Có thể truy cập";
         }
 
@@ -218,28 +221,28 @@ namespace MasterSaveDemo.ViewModel
             switch (maChucNang)
             {
                 case 1:
-                    Enable_QLNS = true;
+                    Enable_NhapHang = true;
                     break;
                 case 2:
-                    Enable_MoSo = true;
+                    Enable_XuatHang = true;
                     break;
                 case 3:
-                    Enable_GuiTien = true;
+                    Enable_BanHang = true;
                     break;
                 case 4:
-                    Enable_RutTien = true;
-                    break;
-                case 5:
                     Enable_TraCuu = true;
                     break;
-                case 6:
+                case 5:
                     Enable_BCDS = true;
                     break;
+                case 6:
+                    Enable_BCTK = true;
+                    break;
                 case 7:
-                    Enable_BCMD = true;
+                    Enable_TDQD = true;
                     break;
                 case 8:
-                    Enable_TDQD = true;
+                    Enable_QLNS = true;
                     break;
                 case 9:
                     break;
@@ -252,30 +255,28 @@ namespace MasterSaveDemo.ViewModel
             switch (maChucNang)
             {
                 case 1:
-                    QLNS_Tooltip = "Có thể truy cập";
+                    NhapHang_Tooltip = "Có thể truy cập";
                     break;
                 case 2:
-                    MoSo_Tooltip = "Có thể truy cập";
+                    XuatHang_Tooltip = "Có thể truy cập";
                     break;
                 case 3:
-                    GuiTien_Tooltip = "Có thể truy cập";
+                    BanHang_Tooltip = "Có thể truy cập";
                     break;
                 case 4:
-                    RutTien_Tooltip = "Có thể truy cập";
-                    break;
-                case 5:
                     TraCuu_Tooltip = "Có thể truy cập";
                     break;
-                case 6:
+                case 5:
                     BaoCaoDS_Tooltip = "Có thể truy cập";
                     break;
-                case 7:
-                    BaoCaoMD_Tooltip = "Có thể truy cập";
+                case 6:
+                    BaoCaoTK_Tooltip = "Có thể truy cập";
                     break;
-                case 8:
+                case 7:
                     TDQD_Tooltip = "Có thể truy cập";
                     break;
-                case 9:
+                case 8:
+                    QLNS_Tooltip = "Có thể truy cập";
                     break;
             }
         }
@@ -292,8 +293,9 @@ namespace MasterSaveDemo.ViewModel
         #endregion
         public MainViewModel() // all main page handling goes there
         {
+            updateThongKeNgay();
             // set bang true sau nay phai sua hihi
-            Enable_BCDS = Enable_BCMD = Enable_GuiTien = Enable_Home = Enable_MoSo = Enable_QLNS = Enable_RutTien = Enable_TDQD = Enable_TraCuu = true;
+            Enable_BCTK = Enable_TDQD = Enable_BanHang = Enable_Home = Enable_XuatHang = Enable_NhapHang = Enable_TraCuu = Enable_QLNS = Enable_BCDS = true;
             //Selected_HOME = true;
             //Selected_DangXuat = false;
             LoadedWindowCommand = new RelayCommand<Window>((p) => { return true; }, (p) => {
@@ -302,9 +304,9 @@ namespace MasterSaveDemo.ViewModel
                 p.Hide(); // main view hide in login window
 
                 // cmt de chay main, sau nay code cho login sau hihi
-                //LoginWindow loginWindow = new LoginWindow();
-                //loginWindow.ShowDialog();
-                //isLoaded = true;
+                LoginWindow loginWindow = new LoginWindow();
+                loginWindow.ShowDialog();
+                isLoaded = true;
 
                 //if (loginWindow.DataContext == null) return;
                 //var loginVM = loginWindow.DataContext as LoginViewModel;
@@ -405,6 +407,92 @@ namespace MasterSaveDemo.ViewModel
                     Application.Current.Shutdown();
                 }
             });
+        }
+        public void updateThongKeNgay()
+        {
+            var ThongKeNgay = new ObservableCollection<THONGKENGAY>(DataProvider.Ins.DB.THONGKENGAYs);
+            DateTime NgayKhaiTruong = new DateTime(2020, 09, 21);
+            DateTime LastUpdatedDay = NgayKhaiTruong.AddDays(-1);
+            int CountThongKe = (from tk in ThongKeNgay
+                                select tk).Count();
+            if (CountThongKe > 0)
+                LastUpdatedDay = (from tk in ThongKeNgay
+                                  select tk).Last().Ngay;
+            for (DateTime i = LastUpdatedDay.AddDays(1); i < DateTime.Today; i = i.AddDays(1))
+            {
+                CountThongKe++;
+                THONGKENGAY thongkengay = new THONGKENGAY()
+                {
+                    MaThongKe = "TKN" + "000".Substring(0, 4 - CountThongKe.ToString().Length) + CountThongKe.ToString(),
+                    Ngay = i,
+                };
+                DataProvider.Ins.DB.THONGKENGAYs.Add(thongkengay);
+                DataProvider.Ins.DB.SaveChanges();
+                var MatHang = new ObservableCollection<MATHANG>(DataProvider.Ins.DB.MATHANGs);
+                var ChiTietThongKe = new ObservableCollection<CT_THONGKENGAY>(DataProvider.Ins.DB.CT_THONGKENGAY);
+                int CountChiTietThongKe = (from cttk in ChiTietThongKe
+                                           select cttk).Count();
+                var TheKho = new ObservableCollection<THEKHO>(DataProvider.Ins.DB.THEKHOes);
+                var ChiTietTheKho = new ObservableCollection<CT_THEKHO>(DataProvider.Ins.DB.CT_THEKHO);
+                var PhieuNhap = new ObservableCollection<PHIEUNHAPKHO>(DataProvider.Ins.DB.PHIEUNHAPKHOes);
+                var ChiTietPhieuNhap = new ObservableCollection<CT_PHIEUNHAPKHO>(DataProvider.Ins.DB.CT_PHIEUNHAPKHO);
+                var PhieuXuat = new ObservableCollection<PHIEUXUATKHO>(DataProvider.Ins.DB.PHIEUXUATKHOes);
+                var ChiTietPhieuXuat = new ObservableCollection<CT_PHIEUXUATKHO>(DataProvider.Ins.DB.CT_PHIEUXUATKHO);
+                var HoaDon = new ObservableCollection<HOADON>(DataProvider.Ins.DB.HOADONs);
+                var ChiTietHoaDon = new ObservableCollection<CT_HOADON>(DataProvider.Ins.DB.CT_HOADON);
+                foreach (var item in MatHang)
+                {
+                    CountChiTietThongKe++;
+                    var AllPhieuNhap = (from ctpn in ChiTietPhieuNhap
+                                        join pn in PhieuNhap on ctpn.MaPhieuNhapKho equals pn.MaPhieuNhapKho
+                                        where (ctpn.MaMH == item.MaMH && pn.NgayLap.Date == i.Date && pn.Duyet == 1)
+                                        select ctpn);
+                    int TongNhap = 0;
+                    if (AllPhieuNhap.Count() > 0)
+                        TongNhap += AllPhieuNhap.Select(a => a.SoLuong).Sum();
+                    var AllPhieuXuat = (from ctpx in ChiTietPhieuXuat
+                                        join px in PhieuXuat on ctpx.MaPhieuXK equals px.MaPhieuXK
+                                        where (ctpx.MaMH == item.MaMH && px.NgayLap.Date == i.Date && px.TrangThai == 1)
+                                        select ctpx);
+                    int TongXuat = 0;
+                    if (AllPhieuXuat.Count() > 0)
+                        TongXuat += AllPhieuXuat.Select(a => a.SoLuong).Sum();
+                    var LayTon = (from tk in TheKho
+                                  where (tk.MaMH == item.MaMH)
+                                  select tk);
+                    int SoLuongTon = 0;
+                    if (LayTon.Count() > 0)
+                        SoLuongTon += LayTon.First().SoLuongTonKho;
+                    var LayThu = (from cthd in ChiTietHoaDon
+                                  join hd in HoaDon on cthd.MaHoaDon equals hd.MaHoaDon
+                                  where (hd.NgayLap.Date == i.Date && cthd.MaMH == item.MaMH)
+                                  select cthd);
+                    decimal TongThu = 0;
+                    foreach (var moihoadon in LayThu)
+                    {
+                        TongThu += moihoadon.SoLuong * moihoadon.DonGiaBan;
+                    }
+                    decimal TongChi = 0;
+                    foreach (var moihoadon in AllPhieuNhap)
+                    {
+                        TongChi += moihoadon.DonGiaNhap * moihoadon.SoLuong;
+                    }
+                    CT_THONGKENGAY ctthongkengay = new CT_THONGKENGAY()
+                    {
+                        MaCTTK = "CTTKN" + "00000".Substring(0, 5 - CountChiTietThongKe.ToString().Length) + CountChiTietThongKe.ToString(),
+                        MaThongKe = thongkengay.MaThongKe,
+                        MaMH = item.MaMH,
+                        Nhap = TongNhap,
+                        Xuat = TongXuat,
+                        Ton = SoLuongTon,
+                        Thu = TongThu,
+                        Chi = TongChi,
+                    };
+                    DataProvider.Ins.DB.CT_THONGKENGAY.Add(ctthongkengay);
+                    DataProvider.Ins.DB.SaveChanges();
+                };
+            }
+
         }
 
     }

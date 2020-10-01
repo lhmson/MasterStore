@@ -28,6 +28,7 @@ namespace MasterSaveDemo.ViewModel
         public LoginViewModel()
         {
             //DatabaseCheck.Ins.Check();
+
             UserName = "";
             Password = "";
 
@@ -65,5 +66,6 @@ namespace MasterSaveDemo.ViewModel
                 Password = p.Password;
             });
         }
+
     }
 }
