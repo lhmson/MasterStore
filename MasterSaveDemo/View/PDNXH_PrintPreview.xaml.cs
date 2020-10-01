@@ -1,5 +1,4 @@
-﻿using MasterSaveDemo.ViewModel;
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -13,17 +12,16 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
 
-namespace MasterSaveDemo
+namespace MasterSaveDemo.View
 {
     /// <summary>
-    /// Interaction logic for 
+    /// Interaction logic for PDNXH_PrintPreview.xaml
     /// </summary>
-    public partial class BanHang_PrintPreview : Window
+    public partial class PDNXH_PrintPreview : Window
     {
-        public BanHang_PrintPreview(BanHang_PrintPreview_ViewModel x)
+        public PDNXH_PrintPreview()
         {
             InitializeComponent();
-            this.DataContext = x;
         }
     }
 }

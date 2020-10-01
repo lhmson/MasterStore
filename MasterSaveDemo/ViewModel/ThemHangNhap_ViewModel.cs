@@ -11,7 +11,7 @@ using MasterSaveDemo.Helper;
 
 namespace MasterSaveDemo.ViewModel
 {
-    public class ThemHang_ViewModel : BaseViewModel
+    public class ThemHangNhap_ViewModel : BaseViewModel
     {
         #region Sub Functions
 
@@ -22,9 +22,12 @@ namespace MasterSaveDemo.ViewModel
             int stt = 1;
             foreach (var mh in listMatHang)
             {
-                ListMatHangThem mh_them = new ListMatHangThem(stt + "", mh.MaMH, mh.TenMH, mh.GiaBan + "", mh.SoLuongTonGian - get_SoLuongDaMua(mh.MaMH)+ "");
-                ListMatHang.Add(mh_them);
-                stt++;
+                if (mh.MaNCC == NhapHang_ViewModel.mancc_nhaphang)
+                {
+                    ListMatHangThem mh_them = new ListMatHangThem(stt + "", mh.MaMH, mh.TenMH, mh.GiaBan + "");
+                    ListMatHang.Add(mh_them);
+                    stt++;
+                }
             }
         }
 
@@ -49,9 +52,9 @@ namespace MasterSaveDemo.ViewModel
             ListMatHang = new ObservableCollection<ListMatHangThem>();
             int stt = 1;
             foreach (var mh in listMatHang)
-                if (duyet_MatHang(mh,ma,ten)) 
+                if (duyet_MatHang(mh, ma, ten))
                 {
-                    ListMatHangThem mh_them = new ListMatHangThem(stt + "", mh.MaMH, mh.TenMH, mh.GiaBan + "", mh.SoLuongTonGian - get_SoLuongDaMua(mh.MaMH) + "");
+                    ListMatHangThem mh_them = new ListMatHangThem(stt + "", mh.MaMH, mh.TenMH, mh.GiaBan + "");
                     ListMatHang.Add(mh_them);
                     stt++;
                 }
@@ -74,7 +77,7 @@ namespace MasterSaveDemo.ViewModel
             foreach (var mh in list)
                 if (mh.MaMH == maMH)
                 {
-                    return mh.SoLuongTonGian - get_SoLuongDaMua(maMH);
+                    return mh.SoLuongTonGian;
                 }
 
             return 0;
@@ -82,7 +85,7 @@ namespace MasterSaveDemo.ViewModel
 
         public void add_MatHang()
         {
-            if (check_AllNumber(SoLuong)==false)
+            if (check_AllNumber(SoLuong) == false)
             {
                 MessageBox.Show("Số lượng chỉ được chứa ký tự số! Mời bạn nhập lại");
                 SoLuong = "1";
@@ -95,29 +98,12 @@ namespace MasterSaveDemo.ViewModel
                 MessageBox.Show("Số lượng không thể bằng 0");
                 return;
             }
-
-            if (sl > get_SoLuongQuay(maMH))
-            {
-                MessageBox.Show("Mặt hàng này không đủ số lượng! Cần phải lập phiếu đề nghị xuất hàng");
-                return;
-            }
             MessageBox.Show("Bạn đã săn phẩm thành công");
             okAdd = true;
             soLuong = sl;
         }
 
 
-        public int get_SoLuongDaMua(string maMH)
-        {
-            ObservableCollection<ListMatHangMua> list = BanHang_ViewModel.temp_MH_Mua;
-
-            int sl = 0;
-            foreach (var mh in list)
-                if (mh.MaMH == maMH)
-                    sl += int.Parse(mh.SoLuong);
-
-            return sl;
-        }
         #endregion
 
         #region Declare Variable
@@ -177,7 +163,7 @@ namespace MasterSaveDemo.ViewModel
         public static bool okAdd { get; set; }
         #endregion
 
-        public ThemHang_ViewModel()
+        public ThemHangNhap_ViewModel()
         {
             okAdd = false;
             init_ListView();
@@ -186,7 +172,7 @@ namespace MasterSaveDemo.ViewModel
             });
 
             SearchCommand = new RelayCommand<Window>((p) => { return true; }, (p) => {
-                search_MatHang(txtMaMH,txtTenMH);
+                search_MatHang(txtMaMH, txtTenMH);
             });
 
             ThemHangCommand = new RelayCommand<Window>((p) => { return true; }, (p) => {
@@ -195,8 +181,7 @@ namespace MasterSaveDemo.ViewModel
                     ThoatCommand.Execute(p);
             });
 
-
-            SelectionChangedCommand = new RelayCommand<Window>((p) => { if (SelectedMatHang!=null) return true; return false; }, (p) => {
+            SelectionChangedCommand = new RelayCommand<Window>((p) => { if (SelectedMatHang != null) return true; return false; }, (p) => {
                 MaMH = SelectedMatHang.Ten;
                 maMH = SelectedMatHang.Ma;
                 SoLuong = "1";

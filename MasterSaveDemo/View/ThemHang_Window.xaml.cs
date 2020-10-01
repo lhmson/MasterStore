@@ -23,5 +23,10 @@ namespace MasterSaveDemo.View
         {
             InitializeComponent();
         }
+
+        private void listViewReport_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        {
+
+        }
     }
 }

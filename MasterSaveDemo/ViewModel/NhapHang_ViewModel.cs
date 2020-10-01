@@ -140,6 +140,8 @@ namespace MasterSaveDemo.ViewModel
             }
         }
 
+        
+
         private NHACUNGCAP _SelectedItemNCC;
         public NHACUNGCAP SelectedItemNCC
         {
@@ -519,6 +521,10 @@ namespace MasterSaveDemo.ViewModel
                         };
                         DataProvider.Ins.DB.CT_THEKHO.Add(cttk);
                         DataProvider.Ins.DB.SaveChanges();
+                        
+                        tk.SoLuongTonKho += ct.SoLuong;
+                        DataProvider.Ins.DB.SaveChanges();
+                        //MessageBox.Show(tk.SoLuongTonKho + "");
                     }
 
                 }
@@ -591,13 +597,13 @@ namespace MasterSaveDemo.ViewModel
 
             ThemHangCommand = new RelayCommand<Object>((p) => { return true; }, (p) =>
             {
-                ThemHang_ViewModel.okAdd = false;
-                Window themHANG = new ThemHang_Window();
-                themHANG.DataContext = new ThemHang_ViewModel();
+                ThemHangNhap_ViewModel.okAdd = false;
+                Window themHANG = new ThemHangNhap_Window();
+                themHANG.DataContext = new ThemHangNhap_ViewModel();
                 themHANG.ShowDialog();
-                if (ThemHang_ViewModel.okAdd)
+                if (ThemHangNhap_ViewModel.okAdd)
                 {
-                    add_MatHang(ThemHang_ViewModel.maMH, ThemHang_ViewModel.soLuong);
+                    add_MatHang(ThemHangNhap_ViewModel.maMH, ThemHangNhap_ViewModel.soLuong);
                 }
             });
 
@@ -971,8 +977,9 @@ namespace MasterSaveDemo.ViewModel
             XacNhanCommand = new RelayCommand<Object>((p) => { return true; }, (p) =>
             {
                 if (check_PN() == false) return;
-                ThongBao = "Lập hóa đơn thành công!";
+                ThongBao = "Lập phiếu nhập hàng thành công!";
                 save_PNK();
+                huy_PNK();
                 DialogOpen = true;
             });
             #endregion

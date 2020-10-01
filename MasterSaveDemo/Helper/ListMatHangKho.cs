@@ -6,31 +6,19 @@ using System.Threading.Tasks;
 
 namespace MasterSaveDemo.Helper
 {
-    public class ListMatHangThem
+    public class ListMatHangKho
     {
         public string STT { get; set; }
         public string Ma { get; set; }
         public string Ten { get; set; }
-        public string DonGia { get; set; }
         public string Ton { get; set; }
 
-        public ListMatHangThem(string stt, string ma, string ten, string dongia, string ton)
+        public ListMatHangKho(string stt, string ma, string ten, string ton)
         {
             STT = stt;
             Ma = ma;
             Ten = ten;
-            DonGia = dongia;
             Ton = ton;
         }
-
-        public ListMatHangThem (string stt, string ma, string ten, string dongia)
-        {
-            STT = stt;
-            Ma = ma;
-            Ten = ten;
-            DonGia = dongia;
-           
-        }
-
     }
 }

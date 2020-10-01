@@ -16,5 +16,6 @@
     <viewmodel:ControlBarViewModel x:Key="SelfControlVM"></viewmodel:ControlBarViewModel>
     <viewmodel:CaiDatKhac_ViewModel x:Key="CaiDatKhacVM"></viewmodel:CaiDatKhac_ViewModel>
     <viewmodel:ThemHang_ViewModel x:Key="ThemHangVM"></viewmodel:ThemHang_ViewModel>
-
+    <viewmodel:PhieuDNXH_ViewModel x:Key="PhieuDNXHVM"></viewmodel:PhieuDNXH_ViewModel>
+    <viewmodel:ThemHangNhap_ViewModel x:Key="ThemHangNhapVM"></viewmodel:ThemHangNhap_ViewModel>
 </ResourceDictionary>

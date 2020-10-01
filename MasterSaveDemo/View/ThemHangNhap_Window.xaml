@@ -1,4 +1,4 @@
-﻿<Window x:Class="MasterSaveDemo.View.ThemHang_Window"
+﻿<Window x:Class="MasterSaveDemo.View.ThemHangNhap_Window"
         xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
@@ -20,7 +20,7 @@
         WindowStyle="None"
         WindowStartupLocation="CenterScreen"
         
-        DataContext="{StaticResource ThemHangVM}"
+        DataContext="{StaticResource ThemHangNhapVM}"
         
         Name="ThemHangWindow"
         Title="Thêm Hàng" Height="500" Width="900">
@@ -55,7 +55,7 @@
                             <RowDefinition Height="auto"></RowDefinition>
                         </Grid.RowDefinitions>
                         <Grid Grid.Row="0">
-                            <TextBox materialDesign:HintAssist.Hint="Mã mặt hàng"
+                            <TextBox materialDesign:HintAssist.Hint="Tên mặt hàng"
                              Text="{Binding MaMH}"
                         Style="{StaticResource MaterialDesignFloatingHintTextBox}"
                         VerticalAlignment="Center" IsEnabled="False" />
@@ -102,7 +102,6 @@
                                     <GridViewColumn Width="80" Header="Mã" DisplayMemberBinding="{Binding Ma}"/>
                                     <GridViewColumn Width="150" Header="Tên Mặt Hàng" DisplayMemberBinding="{Binding Ten}"/>
                                     <GridViewColumn Width="100" Header="Đơn Giá" DisplayMemberBinding="{Binding DonGia}"/>
-                                    <GridViewColumn Width="120" Header="Tồn Quầy" DisplayMemberBinding="{Binding Ton}"/>
                                 </GridView>
                             </ListView.View>
                             <i:Interaction.Triggers>

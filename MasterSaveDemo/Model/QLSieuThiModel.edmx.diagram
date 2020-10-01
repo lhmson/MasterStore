@@ -70,7 +70,7 @@
         
         <AssociationConnector Association="QLSieuThiModel.FK__PHANQUYEN__MaChu__2E1BDC42" />
 =======
-      <Diagram DiagramId="dd7b267123fc4685b8d5ffee1828b917" Name="Diagram1" ZoomLevel="46">
+      <Diagram DiagramId="dd7b267123fc4685b8d5ffee1828b917" Name="Diagram1" ZoomLevel="64">
         <EntityTypeShape EntityType="QLSieuThiModel.CT_HOADON" Width="1.5" PointX="8.25" PointY="11.375" />
         <EntityTypeShape EntityType="QLSieuThiModel.CT_PHIEUNHAPKHO" Width="1.5" PointX="8.25" PointY="7.5" />
         <EntityTypeShape EntityType="QLSieuThiModel.CT_PHIEUXUATKHO" Width="1.5" PointX="11.25" PointY="11.375" />
@@ -101,10 +101,7 @@
         <AssociationConnector Association="QLSieuThiModel.FK__CT_THEKHO__MaThe__59FA5E80" />
         <AssociationConnector Association="QLSieuThiModel.FK__CT_THONGK__MaTho__5EBF139D" />
         <AssociationConnector Association="QLSieuThiModel.FK__CT_THONGKE__MaMH__5FB337D6" />
-<<<<<<< HEAD
-=======
         <AssociationConnector Association="QLSieuThiModel.FK__PHANQUYEN__MaChu__2E1BDC42" />
->>>>>>> 51a0fc5819a4ce0eae61b8490ed6c19116fa0575
         <AssociationConnector Association="QLSieuThiModel.FK__HOADON__MaNguoiL__45F365D3" />
         <AssociationConnector Association="QLSieuThiModel.FK__HOADON__MaQuay__44FF419A" />
         <AssociationConnector Association="QLSieuThiModel.FK__MATHANG__MaNCC__34C8D9D1" />
@@ -117,8 +114,6 @@
         <AssociationConnector Association="QLSieuThiModel.FK__PHIEUNHAP__MaNCC__4CA06362" />
         <AssociationConnector Association="QLSieuThiModel.FK__PHANQUYEN__MaNho__2D27B809" />
         <AssociationConnector Association="QLSieuThiModel.FK__PHIEUXUAT__MaQua__3D5E1FD2" />
-<<<<<<< HEAD
-        
         <EntityTypeShape EntityType="QLSieuThiModel.sysdiagram" Width="1.5" PointX="6.1523535205760744" PointY="22.10182828740302" />
         <AssociationConnector Association="QLSieuThiModel.FK__PHANQUYEN__MaChu__412EB0B6" />
         <AssociationConnector Association="QLSieuThiModel.FK__CT_HOADON__MaHoa__5CD6CB2B" />
@@ -142,10 +137,6 @@
         <AssociationConnector Association="QLSieuThiModel.FK__PHIEUNHAP__MaNCC__5FB337D6" />
         <AssociationConnector Association="QLSieuThiModel.FK__PHANQUYEN__MaNho__403A8C7D" />
         <AssociationConnector Association="QLSieuThiModel.FK__PHIEUXUAT__MaQua__5070F446" />
-        
-&gt;&gt;&gt;&gt;&gt;&gt;&gt; 55cb350d7debecd9c4481694702c0a0ea5d233a5
-=======
-&gt;&gt;&gt;&gt;&gt;&gt;&gt; 51a0fc5819a4ce0eae61b8490ed6c19116fa0575
       </Diagram>
     </edmx:Diagrams>
   </edmx:Designer>

@@ -148,8 +148,13 @@
       <SubType>Designer</SubType>
     </ApplicationDefinition>
     <Compile Include="Helper\DatabaseCheck.cs" />
+    <Compile Include="Helper\ListCTPhieu.cs" />
+    <Compile Include="Helper\ListCTTheKho.cs" />
+    <Compile Include="Helper\ListMatHangKho.cs" />
     <Compile Include="Helper\ListMatHangMua.cs" />
     <Compile Include="Helper\ListMatHangThem.cs" />
+    <Compile Include="Helper\ListPhieu.cs" />
+    <Compile Include="Helper\ListTheKho.cs" />
     <Compile Include="Model\CT_HOADON.cs">
       <DependentUpon>QLSieuThiModel.tt</DependentUpon>
     </Compile>
@@ -223,10 +228,21 @@
     <Compile Include="PhieuNhapHang_PrintPreview.xaml.cs">
       <DependentUpon>PhieuNhapHang_PrintPreview.xaml</DependentUpon>
     </Compile>
+    <Compile Include="ViewModel\PhieuDNXH_ViewModel.cs" />
     <Compile Include="ViewModel\PhieuNhapHang_PrintPreview_ViewModel.cs" />
+    <Compile Include="ViewModel\ThemHangNhap_ViewModel.cs" />
     <Compile Include="ViewModel\ThemHang_ViewModel.cs" />
+    <Compile Include="View\PDNXH_PrintPreview.xaml.cs">
+      <DependentUpon>PDNXH_PrintPreview.xaml</DependentUpon>
+    </Compile>
     <Compile Include="View\PhieuDNNH_Window.xaml.cs">
       <DependentUpon>PhieuDNNH_Window.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\PhieuDNXH_Window.xaml.cs">
+      <DependentUpon>PhieuDNXH_Window.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\ThemHangNhap_Window.xaml.cs">
+      <DependentUpon>ThemHangNhap_Window.xaml</DependentUpon>
     </Compile>
     <Compile Include="View\ThemHang_Window.xaml.cs">
       <DependentUpon>ThemHang_Window.xaml</DependentUpon>
@@ -350,7 +366,19 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
+    <Page Include="View\PDNXH_PrintPreview.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
     <Page Include="View\PhieuDNNH_Window.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="View\PhieuDNXH_Window.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="View\ThemHangNhap_Window.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

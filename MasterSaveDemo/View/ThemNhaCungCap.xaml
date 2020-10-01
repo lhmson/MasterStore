@@ -72,7 +72,7 @@
                     </Grid>
                 </Grid>
                 <Grid Grid.Row="0" Grid.Column="1">
-                    <TextBox Text="{Binding TenNCC, UpdateSourceTrigger=PropertyChanged, Mode=TwoWay}" Margin="5" materialDesign:HintAssist.Hint="nhập tên nhà cc" Style="{StaticResource MaterialDesignFloatingHintTextBox}"/>
+                    <TextBox Text="{Binding TenNCC, UpdateSourceTrigger=PropertyChanged, Mode=TwoWay}" Margin="5" materialDesign:HintAssist.Hint="Nhập tên nhà cung cấp" Style="{StaticResource MaterialDesignFloatingHintTextBox}"/>
                 </Grid>
                 <Grid Grid.Row="1" Grid.Column="0">
                     <Grid Grid.Column="0">
@@ -80,7 +80,7 @@
                     </Grid>
                 </Grid>
                 <Grid Grid.Row="1" Grid.Column="1">
-                    <TextBox Text="{Binding DiaChi, UpdateSourceTrigger=PropertyChanged, Mode=TwoWay}" Margin="5" materialDesign:HintAssist.Hint="nhập dia chi" Style="{StaticResource MaterialDesignFloatingHintTextBox}"/>
+                    <TextBox Text="{Binding DiaChi, UpdateSourceTrigger=PropertyChanged, Mode=TwoWay}" Margin="5" materialDesign:HintAssist.Hint="Nhập địa chỉ" Style="{StaticResource MaterialDesignFloatingHintTextBox}"/>
                 </Grid>
                 <!--nhà sản xuất-->
                 <Grid Grid.Row="2" Grid.Column="0">
@@ -89,7 +89,7 @@
                     </Grid>
                 </Grid>
                 <Grid Grid.Row="2" Grid.Column="1">
-                    <TextBox Text="{Binding SDT, UpdateSourceTrigger=PropertyChanged, Mode=TwoWay}" Margin="5" materialDesign:HintAssist.Hint="nhập số điện thoại" Style="{StaticResource MaterialDesignFloatingHintTextBox}"/>
+                    <TextBox Text="{Binding SDT, UpdateSourceTrigger=PropertyChanged, Mode=TwoWay}" Margin="5" materialDesign:HintAssist.Hint="Nhập số điện thoại" Style="{StaticResource MaterialDesignFloatingHintTextBox}"/>
 
                 </Grid>
                 <!--đơn vị tính-->
@@ -99,7 +99,7 @@
                     </Grid>
                 </Grid>
                 <Grid Grid.Row="3" Grid.Column="1">
-                    <TextBox Text="{Binding Fax, UpdateSourceTrigger=PropertyChanged, Mode=TwoWay}" Margin="5" materialDesign:HintAssist.Hint="nhập fax" Style="{StaticResource MaterialDesignFloatingHintTextBox}"/>
+                    <TextBox Text="{Binding Fax, UpdateSourceTrigger=PropertyChanged, Mode=TwoWay}" Margin="5" materialDesign:HintAssist.Hint="Nhập Fax" Style="{StaticResource MaterialDesignFloatingHintTextBox}"/>
 
                 </Grid>
             </Grid>
@@ -109,11 +109,11 @@
                         <ListView ItemsSource="{Binding ListNCC, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" SelectedItem="{Binding SelectedItemNCC, Mode=TwoWay}">
                             <ListView.View>
                                 <GridView>
-                                    <GridViewColumn Header="ma" DisplayMemberBinding="{Binding MaNCC}"></GridViewColumn>
-                                    <GridViewColumn Header="ten" DisplayMemberBinding="{Binding TenNCC }"></GridViewColumn>
-                                    <GridViewColumn Header="ma" DisplayMemberBinding="{Binding DiaChi}"></GridViewColumn>
-                                    <GridViewColumn Header="ten" DisplayMemberBinding="{Binding SDT }"></GridViewColumn>
-                                    <GridViewColumn Header="ten" DisplayMemberBinding="{Binding Fax }"></GridViewColumn>
+                                    <GridViewColumn Header="Mã nhà cung cấp" DisplayMemberBinding="{Binding MaNCC}"></GridViewColumn>
+                                    <GridViewColumn Header="Tên nhà cung cấp" DisplayMemberBinding="{Binding TenNCC }"></GridViewColumn>
+                                    <GridViewColumn Header="Địa chỉ" DisplayMemberBinding="{Binding DiaChi}"></GridViewColumn>
+                                    <GridViewColumn Header="SDT" DisplayMemberBinding="{Binding SDT }"></GridViewColumn>
+                                    <GridViewColumn Header="Fax" DisplayMemberBinding="{Binding Fax }"></GridViewColumn>
                                 </GridView>
                             </ListView.View>
                         </ListView>
