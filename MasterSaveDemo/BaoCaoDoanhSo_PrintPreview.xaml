@@ -44,7 +44,7 @@
                     <Grid Grid.Row="0" Margin="5">
                         <StackPanel Orientation="Horizontal">
                             <TextBlock Text="Tên Đơn vị: " FontSize="20" Margin="5"/>
-                            <TextBlock Text="Ngân hàng Thương mại cổ phần StarthenD" FontSize="20" Margin="5" FontStyle="Italic"/>
+                            <TextBlock Text="Siêu thị MasterStore" FontSize="20" Margin="5,5,5,4.6" FontStyle="Italic"/>
                         </StackPanel>
                     </Grid>
                     <Grid Grid.Row="1" Margin="5"/>
@@ -79,10 +79,12 @@
                 </Grid.RowDefinitions>
                 <Grid Grid.Row="0">
                     <StackPanel Grid.Row="1" HorizontalAlignment="Stretch" Margin="5">
-                        <TextBlock Text="BÁO CÁO DOANH SỐ HOẠT ĐỘNG" VerticalAlignment="Center" FontSize="35" FontWeight="Bold" Foreground="Black" HorizontalAlignment="Center"/>
+                        <TextBlock Text="BÁO CÁO THU CHI" VerticalAlignment="Center" FontSize="35" FontWeight="Bold" Foreground="Black" HorizontalAlignment="Center"/>
                         <StackPanel Orientation="Horizontal" HorizontalAlignment="Center">
-                            <TextBlock Text="Ngày: " FontSize="35" FontWeight="Bold"></TextBlock>
-                            <TextBlock Text="{Binding NgayBaoCao, StringFormat={}{0:dd/MM/yyyy}}"  FontSize="35" FontWeight="Bold"/>
+                            <TextBlock Text="Từ ngày: " FontSize="35" FontWeight="Bold"></TextBlock>
+                            <TextBlock Text="{Binding StartDate, StringFormat={}{0:dd/MM/yyyy}}"  FontSize="35" FontWeight="Bold"/>
+                            <TextBlock Text="Đến ngày: " FontSize="35" FontWeight="Bold"></TextBlock>
+                            <TextBlock Text="{Binding EndDate, StringFormat={}{0:dd/MM/yyyy}}"  FontSize="35" FontWeight="Bold"/>
                         </StackPanel>
                         <Rectangle Fill="Black" Height="1" Margin="10 5" Opacity="0.5"/>
                     </StackPanel>
@@ -93,11 +95,12 @@
                           ScrollViewer.VerticalScrollBarVisibility="Disabled"  ScrollViewer.HorizontalScrollBarVisibility="Disabled" FontSize="18">
                         <ListView.View>
                             <GridView>
-                                <GridViewColumn Width="100" Header="STT"  DisplayMemberBinding="{Binding SoThuTu}"/>
-                                <GridViewColumn Width="200" Header="Tên loại tiết kiệm" DisplayMemberBinding="{Binding TenLoaiTietKiem}"/>
-                                <GridViewColumn Width="200" Header="Tổng thu" DisplayMemberBinding="{Binding TongThu}"/>
-                                <GridViewColumn Width="200" Header="Tổng chi" DisplayMemberBinding="{Binding TongChi}"/>
-                                <GridViewColumn Width="200" Header="Chênh lệch (VND)" DisplayMemberBinding="{Binding ChenhLech}"/>
+                                <GridViewColumn Header="STT" DisplayMemberBinding="{Binding STT}"/>
+                                <GridViewColumn  Header="Mã hàng" DisplayMemberBinding="{Binding MaMH}"/>
+                                <GridViewColumn  Header="Tên hàng" DisplayMemberBinding="{Binding TenHang}"/>
+                                <GridViewColumn  Header="Tổng thu (VND)" DisplayMemberBinding="{Binding TongThu, StringFormat='#,##0;(#,##0)'}"/>
+                                <GridViewColumn Header="Tổng chi (VND)" DisplayMemberBinding="{Binding TongChi, StringFormat='#,##0;(#,##0)'}"/>
+                                <GridViewColumn  Header="Chênh lệch (VND)" DisplayMemberBinding="{Binding ChenhLech, StringFormat='#,##0;#,##0'}"/>
                             </GridView>
                         </ListView.View>
                     </ListView>
@@ -111,12 +114,12 @@
                 </Grid.ColumnDefinitions>
                 <StackPanel Orientation="Vertical" Grid.Column="0">
                     <TextBlock />
-                    <TextBlock Text="Người lập báo cáo" FontWeight="Bold" HorizontalAlignment="Center"/>
+                    <TextBlock Text="Kế toán trưởng" FontWeight="Bold" HorizontalAlignment="Center"/>
                     <TextBlock Text="(Ký, ghi rõ họ và tên)" FontWeight="Thin" FontStyle="Oblique" HorizontalAlignment="Center"/>
                 </StackPanel>
                 <StackPanel Orientation="Vertical" Grid.Column="1">
                     <TextBlock Text="........., ngày....tháng.....năm...." FontStyle="Italic" HorizontalAlignment="Center"/>
-                    <TextBlock Text="Người xác nhận" FontWeight="Bold" HorizontalAlignment="Center"/>
+                    <TextBlock Text="Cửa hàng trưởng" FontWeight="Bold" HorizontalAlignment="Center"/>
                     <TextBlock Text="(Ký, ghi rõ họ và tên)" FontWeight="Thin" FontStyle="Oblique" HorizontalAlignment="Center"/>
                 </StackPanel>
             </Grid>

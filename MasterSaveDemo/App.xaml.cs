@@ -13,5 +13,9 @@ namespace MasterSaveDemo
     /// </summary>
     public partial class App : Application
     {
+        public App()
+        {
+            Syncfusion.Licensing.SyncfusionLicenseProvider.RegisterLicense("MzIzNDQ0QDMxMzgyZTMyMmUzMEVWSGRsV2pLa0xQWTBVUlRqT3BpZHhTS3V1dkJVSkY0R0lRY3hKdzZMOW89");
+        }
     }
 }
