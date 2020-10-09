@@ -86,7 +86,7 @@
                         </Grid>
                     </Grid>
                     <Grid Grid.Row="0" Grid.Column="1">
-                        <TextBox Text="{Binding TenMH, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" Margin="5" materialDesign:HintAssist.Hint="nhập tên sản phẩm" Style="{StaticResource MaterialDesignFloatingHintTextBox}"/>
+                        <TextBox Text="{Binding TenMH, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" Margin="5" materialDesign:HintAssist.Hint="Nhập tên sản phẩm" Style="{StaticResource MaterialDesignFloatingHintTextBox}"/>
                     </Grid>
                     <Grid Grid.Row="1" Grid.Column="0">
                         <Grid Grid.Column="0">
@@ -167,7 +167,7 @@
                         </Grid>
                     </Grid>
                     <Grid Grid.Row="3" Grid.Column="1">
-                        <TextBox Text="{Binding DonViTinh, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" Margin="5" materialDesign:HintAssist.Hint="nhập tên đơn vị tính" Style="{StaticResource MaterialDesignFloatingHintTextBox}"/>
+                        <TextBox Text="{Binding DonViTinh, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" Margin="5" materialDesign:HintAssist.Hint="Nhập tên đơn vị tính" Style="{StaticResource MaterialDesignFloatingHintTextBox}"/>
                     </Grid>
                     <!--giá nhập-->
                     <Grid Grid.Row="4" Grid.Column="0">
@@ -176,7 +176,7 @@
                         </Grid>
                     </Grid>
                     <Grid Grid.Row="4" Grid.Column="1">
-                        <TextBox Text="{Binding GiaNhap, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" Margin="5" materialDesign:HintAssist.Hint="nhập giá mua" Style="{StaticResource MaterialDesignFloatingHintTextBox}"/>
+                        <TextBox Text="{Binding GiaNhap, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" Margin="5" materialDesign:HintAssist.Hint="Nhập giá mua" Style="{StaticResource MaterialDesignFloatingHintTextBox}"/>
                     </Grid>
                     <!--giá bán-->
                     <Grid Grid.Row="5" Grid.Column="0">
@@ -185,7 +185,7 @@
                         </Grid>
                     </Grid>
                     <Grid Grid.Row="5" Grid.Column="1">
-                        <TextBox Text="{Binding GiaBan, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" Margin="5,0,5,5" materialDesign:HintAssist.Hint="nhập giá bán" Style="{StaticResource MaterialDesignFloatingHintTextBox}" Height="49" VerticalAlignment="Bottom"/>
+                        <TextBox Text="{Binding GiaBan, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" Margin="5,0,5,5" materialDesign:HintAssist.Hint="Nhập giá bán" Style="{StaticResource MaterialDesignFloatingHintTextBox}" Height="49" VerticalAlignment="Bottom"/>
                     </Grid>
                 </Grid>
 

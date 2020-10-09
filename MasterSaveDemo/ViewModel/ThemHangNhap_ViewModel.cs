@@ -98,7 +98,7 @@ namespace MasterSaveDemo.ViewModel
                 MessageBox.Show("Số lượng không thể bằng 0");
                 return;
             }
-            MessageBox.Show("Bạn đã săn phẩm thành công");
+            MessageBox.Show("Bạn đã thêm săn phẩm thành công");
             okAdd = true;
             soLuong = sl;
         }

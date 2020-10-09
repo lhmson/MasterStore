@@ -109,12 +109,11 @@
                     <ColumnDefinition/>
                     <ColumnDefinition/>
                     <ColumnDefinition/>
-                    <ColumnDefinition/>
+
                 </Grid.ColumnDefinitions>
                 <Button Grid.Column="0" Command="{Binding AddNSXFromFileCommand}" Content="Thêm từ file" Margin="5" Width="100"></Button>
                 <Button  Grid.Column="1" Command="{Binding AddNSXCommand}" Content="Thêm" Margin="5" Width="100"></Button>
                 <Button Grid.Column="2" Command="{Binding EditNSXCommand}" Content="Sửa" Margin="5" Width="100"></Button>
-                <Button Grid.Column="3"  Command="{Binding DeleteNSXCommand}" Content="Xóa" Margin="5" Width="100"></Button>
             </Grid>
         </Grid>
     </ScrollViewer>

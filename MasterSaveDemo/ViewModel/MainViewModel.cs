@@ -1,6 +1,6 @@
 ﻿using MasterSaveDemo.Helper;
 using MasterSaveDemo.Model;
-﻿using MasterSaveDemo.View;
+using MasterSaveDemo.View;
 using System;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
@@ -87,7 +87,7 @@ namespace MasterSaveDemo.ViewModel
         private Page _FrameContent;
 
         public Page FrameContent
-        { 
+        {
             get { return _FrameContent; }
             set { _FrameContent = value; OnPropertyChanged(); }
         }
@@ -97,6 +97,7 @@ namespace MasterSaveDemo.ViewModel
         public ICommand Home_Page_SelectedCommand { get; set; }
         public ICommand NhapHang_Page_SelectedCommand { get; set; }
         public ICommand XuatHang_Page_SelectedCommand { get; set; }
+        public ICommand DuyetXuatHang_Page_SelectedCommand { get; set; }
         public ICommand BanHang_Page_SelectedCommand { get; set; }
         public ICommand TraCuu_Page_SelectedCommand { get; set; }
         public ICommand BaoCaoDoanhSo_Page_SelectedCommand { get; set; }
@@ -190,13 +191,13 @@ namespace MasterSaveDemo.ViewModel
 
         public bool isLoaded = false;
 
-   
+
 
         #region Function
         private void Init_Button_User(NGUOIDUNG user)
         {
             Init_Button();
-            ObservableCollection<PHANQUYEN> list_PhanQuyen= new ObservableCollection<PHANQUYEN>(DataProvider.Ins.DB.PHANQUYENs);
+            ObservableCollection<PHANQUYEN> list_PhanQuyen = new ObservableCollection<PHANQUYEN>(DataProvider.Ins.DB.PHANQUYENs);
             foreach (var item in list_PhanQuyen)
             {
                 if (item.MaNhom == user.MaNhom)
@@ -209,7 +210,7 @@ namespace MasterSaveDemo.ViewModel
 
         private void Init_Button()
         {
-            Enable_Home = Enable_BanHang = Enable_TraCuu = Enable_BCDS = Enable_BCTK = Enable_TDQD = Enable_NhapHang = Enable_QLNS = Enable_XuatHang =  false;
+            Enable_Home = Enable_BanHang = Enable_TraCuu = Enable_BCDS = Enable_BCTK = Enable_TDQD = Enable_NhapHang = Enable_QLNS = Enable_XuatHang = false;
             Enable_Home = true;
             // tooltip handle
             XuatHang_Tooltip = BanHang_Tooltip = TraCuu_Tooltip = BaoCaoDS_Tooltip = BaoCaoTK_Tooltip = TDQD_Tooltip = NhapHang_Tooltip = QLNS_Tooltip = "Không thể truy cập";
@@ -287,7 +288,7 @@ namespace MasterSaveDemo.ViewModel
         }
         static public void LogOut()
         {
-            
+
         }
         public ICommand Home_Select { get; set; }
         #endregion
@@ -327,7 +328,7 @@ namespace MasterSaveDemo.ViewModel
                     if (LoginViewModel.TaiKhoanSuDung != null)
                     {
                         Init_Button_User(LoginViewModel.TaiKhoanSuDung);
-                        
+
                         _timer.Stop();
                     }
                 };
@@ -356,6 +357,13 @@ namespace MasterSaveDemo.ViewModel
                 //Selected_DangXuat = false;
                 FrameContent = new XuatHang_Page();
                 FrameContent.DataContext = new XuatHang_ViewModel();
+            });
+
+            DuyetXuatHang_Page_SelectedCommand = new RelayCommand<HamburgerMenu.HamburgerMenu>((p) => { return true; }, (p) => {
+                //Selected_HOME = false;
+                //Selected_DangXuat = false;
+                FrameContent = new DuyetPhieuNhap_Page();
+                FrameContent.DataContext = new DuyetPhieuNhap_ViewModel();
             });
 
             BanHang_Page_SelectedCommand = new RelayCommand<HamburgerMenu.HamburgerMenu>((p) => { return true; }, (p) => {
