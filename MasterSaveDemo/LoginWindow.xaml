@@ -23,7 +23,7 @@
         DataContext="{StaticResource LoginVM}"
         
         Name="loginWindow"
-        Title="Đăng nhập Master Save System" Height="300" Width="600">
+        Title="Đăng nhập Master Store" Height="300" Width="600">
 
     <!--<i:Interaction.Triggers>
         <i:EventTrigger EventName="MouseLeftDown">
@@ -38,7 +38,7 @@
             <RowDefinition></RowDefinition>
         </Grid.RowDefinitions>
         <Grid Grid.Row="0">
-            <Button Background="{StaticResource PrimaryHueDarkBrush}" Name="titleBtn" Content="Đăng nhập hệ thống Master Save"></Button>
+            <Button Background="{StaticResource PrimaryHueDarkBrush}" Name="titleBtn" Content="Đăng nhập hệ thống Master Store"></Button>
             
             <!--<UC:ControlBarUC Tag="{Binding Title, ElementName=loginWindow}"></UC:ControlBarUC>-->
         </Grid>
@@ -95,7 +95,7 @@
                 </materialDesign:Card>
             </Grid>
             <Grid Grid.Column="1">
-                <Image Source="/Images/logoms.png" VerticalAlignment="Center" HorizontalAlignment="Center" Width="250"/>
+                <Image Source="/Images/logo_masterstore.png" VerticalAlignment="Center" HorizontalAlignment="Center" Width="250"/>
             </Grid>
         </Grid>
     </Grid>

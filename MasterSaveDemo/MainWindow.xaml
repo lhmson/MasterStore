@@ -28,7 +28,7 @@
         
         
         x:Name="this_"
-        Title="Master Save - Professional Banking System" Height="650" Width="800">
+        Title="Master Store - Professional Market System" Height="650" Width="800">
 
     <i:Interaction.Triggers>
         <i:EventTrigger EventName="Loaded">
