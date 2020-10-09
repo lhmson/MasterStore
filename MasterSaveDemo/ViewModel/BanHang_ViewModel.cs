@@ -848,7 +848,7 @@ namespace MasterSaveDemo.ViewModel
                 MaHoaDon = MaHD,
                 NgayLap = DateTime.Now,
                 ThoiGian = new TimeSpan(),
-                MaQuay = "Q001",
+                MaQuay = LoginViewModel.Quay.MaQuay,
                 TongTien = decimal.Parse(TongTien),
                 MaNguoiLap = "1"
             };
@@ -908,7 +908,9 @@ namespace MasterSaveDemo.ViewModel
 
         public string get_NameofStaff()
         {
-            string staff = "Sanh Like";
+            if (LoginViewModel.TaiKhoanSuDung == null)
+                return "";
+            string staff = LoginViewModel.TaiKhoanSuDung.HoTen;
             return staff;
         }
 
@@ -1204,6 +1206,7 @@ namespace MasterSaveDemo.ViewModel
                 {
                     if (CreateReport)
                     {
+                        TenNhanVien = LoginViewModel.TaiKhoanSuDung.HoTen;
                         ObservableCollection<ListMatHangMua> temp = new ObservableCollection<ListMatHangMua>();
                         foreach (var mh in ListMatHang)
                             temp.Add(mh);
