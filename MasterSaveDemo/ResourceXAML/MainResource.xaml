@@ -18,4 +18,5 @@
     <viewmodel:ThemHang_ViewModel x:Key="ThemHangVM"></viewmodel:ThemHang_ViewModel>
     <viewmodel:PhieuDNXH_ViewModel x:Key="PhieuDNXHVM"></viewmodel:PhieuDNXH_ViewModel>
     <viewmodel:ThemHangNhap_ViewModel x:Key="ThemHangNhapVM"></viewmodel:ThemHangNhap_ViewModel>
+    <viewmodel:DuyetPhieuNhap_ViewModel x:Key="DuyetPhieuNhapVM"></viewmodel:DuyetPhieuNhap_ViewModel>
 </ResourceDictionary>
