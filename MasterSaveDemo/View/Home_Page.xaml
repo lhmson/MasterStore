@@ -55,46 +55,20 @@
                 <ColumnDefinition></ColumnDefinition>
             </Grid.ColumnDefinitions>
             <Grid Grid.Column="0">
-                <GroupBox Header="Tổng số sổ mở trong ngày" FontSize="18" Width="Auto" HorizontalAlignment="Center" Margin="16" materialDesign:ShadowAssist.ShadowDepth="Depth4">
-                    <TextBlock Text="{Binding SL_SoMo}" FontSize="38" FontWeight="SemiBold" HorizontalAlignment="Center" VerticalAlignment="Center"></TextBlock>
+                <GroupBox Header="Số Phiếu Mua Hàng Chưa Duyệt" FontSize="18" Width="Auto" HorizontalAlignment="Center" Margin="16" materialDesign:ShadowAssist.ShadowDepth="Depth4">
+                    <TextBlock Text="{Binding SL_PhieuNhap}" FontSize="38" FontWeight="SemiBold" HorizontalAlignment="Center" VerticalAlignment="Center"></TextBlock>
                 </GroupBox>
             </Grid>
             <Grid Grid.Column="1">
-                <GroupBox Header="Tổng số phiếu gửi trong ngày" FontSize="18" Width="Auto" HorizontalAlignment="Center" Margin="16" materialDesign:ShadowAssist.ShadowDepth="Depth4">
-                    <TextBlock Text="{Binding SL_PhieuGui}" FontSize="38" FontWeight="SemiBold" HorizontalAlignment="Center" VerticalAlignment="Center"></TextBlock>
+                <GroupBox Header="Số Phiếu Đề Nghị Xuất Hàng Chưa Duyệt" FontSize="18" Width="Auto" HorizontalAlignment="Center" Margin="16" materialDesign:ShadowAssist.ShadowDepth="Depth4">
+                    <TextBlock Text="{Binding SL_PhieuDN}" FontSize="38" FontWeight="SemiBold" HorizontalAlignment="Center" VerticalAlignment="Center"></TextBlock>
                 </GroupBox>
             </Grid>
             <Grid Grid.Column="2">
-                <GroupBox Header="Tổng số phiếu rút trong ngày" FontSize="18" Width="Auto" HorizontalAlignment="Center" Margin="16" materialDesign:ShadowAssist.ShadowDepth="Depth4">
-                    <TextBlock Text="{Binding SL_PhieuRut}" FontSize="38" FontWeight="SemiBold" HorizontalAlignment="Center" VerticalAlignment="Center"></TextBlock>
+                <GroupBox Header="Số Hóa Đơn Trong Ngày" FontSize="18" Width="Auto" HorizontalAlignment="Center" Margin="28,16,24,16" materialDesign:ShadowAssist.ShadowDepth="Depth4">
+                    <TextBlock Text="{Binding SL_HD}" FontSize="38" FontWeight="SemiBold" HorizontalAlignment="Center" VerticalAlignment="Center"></TextBlock>
                 </GroupBox>
             </Grid>
-        </Grid>
-        <Grid Grid.Row="3">
-            <Grid.ColumnDefinitions>
-                <ColumnDefinition></ColumnDefinition>
-                <ColumnDefinition></ColumnDefinition>
-                <ColumnDefinition></ColumnDefinition>
-            </Grid.ColumnDefinitions>
-            <Grid Grid.Column="0" HorizontalAlignment="Center">
-                <GroupBox Header="Tổng thu trong ngày (VND)" FontSize="18" Width="Auto" HorizontalAlignment="Center" Margin="16" materialDesign:ShadowAssist.ShadowDepth="Depth4">
-                    <TextBlock Text="{Binding TongThu}" FontSize="38" FontWeight="SemiBold" HorizontalAlignment="Center" VerticalAlignment="Center"></TextBlock>
-                </GroupBox>
-            </Grid>
-            <Grid Grid.Column="1" HorizontalAlignment="Center">
-                <StackPanel HorizontalAlignment="Center" VerticalAlignment="Center">
-                    <TextBlock Text="Sự hài lòng của khách hàng" HorizontalAlignment="Center" LineHeight="26" FontSize="24" Foreground="{StaticResource PrimaryHueDarkBrush}" FontWeight="Bold"></TextBlock>
-                    <TextBlock Text="là niềm vui của chúng ta" HorizontalAlignment="Center" LineHeight="26" FontSize="24" Foreground="{StaticResource PrimaryHueDarkBrush}" FontWeight="Bold"/>
-                    <TextBlock Text="-------------------" HorizontalAlignment="Center" LineHeight="26" FontSize="24" Foreground="{StaticResource PrimaryHueDarkBrush}" FontWeight="Bold"/>
-                    <TextBlock Text="An toàn, chính trực, hiệu quả" HorizontalAlignment="Center" LineHeight="26" FontSize="24" Foreground="{StaticResource PrimaryHueDarkBrush}" FontWeight="Bold"/>
-                </StackPanel>
-            </Grid>
-            <Grid Grid.Column="2" HorizontalAlignment="Center">
-                <GroupBox Header="Tổng chi trong ngày (VND)" FontSize="18" Width="Auto" HorizontalAlignment="Center" Margin="16" materialDesign:ShadowAssist.ShadowDepth="Depth4">
-                    <TextBlock Text="{Binding TongChi}" FontSize="38" FontWeight="SemiBold" HorizontalAlignment="Center" VerticalAlignment="Center"></TextBlock>
-                </GroupBox>
-            </Grid>
-
         </Grid>
     </Grid>
 </Page>

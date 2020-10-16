@@ -26,6 +26,20 @@ namespace MasterSaveDemo.ViewModel
         private string _Password;
         public string Password { get => _Password; set { _Password = value; OnPropertyChanged(); } }
 
+        public QUAY init_Quay()
+        {
+            ObservableCollection<QUAY> list_quay = new ObservableCollection<QUAY>(DataProvider.Ins.DB.QUAYs);
+
+            foreach (var item in list_quay)
+                if (item.DangSuDung == 0)
+                {
+                    if (TaiKhoanSuDung.NHOMNGUOIDUNG.TenNhom == "Bộ phận Thu ngân")
+                        item.DangSuDung = 1;
+                    DataProvider.Ins.DB.SaveChanges();
+                    return item;
+                }
+            return list_quay[1];
+        }
         public LoginViewModel()
         {
             //DatabaseCheck.Ins.Check();
@@ -50,6 +64,7 @@ namespace MasterSaveDemo.ViewModel
                     {
                         //Gan static TaiKhoanSuDung
                         TaiKhoanSuDung = item;
+                        Quay = init_Quay();
                         //MessageBox.Show("Đăng nhập thành công");
                         p.Close();
                         return;

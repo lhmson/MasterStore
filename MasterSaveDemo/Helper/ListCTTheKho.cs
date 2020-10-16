@@ -28,7 +28,7 @@ namespace MasterSaveDemo.Helper
                     Ngay = phieu.PHIEUNHAPKHO.NgayLap.ToString("dd/mm/yyyy");
                     Nhap = phieu.SoLuong + "";
                     Xuat = "0";
-                    DienGiai = "//";
+                    DienGiai = "";
                 }
         }
 
@@ -39,11 +39,11 @@ namespace MasterSaveDemo.Helper
             foreach (var phieu in list_CTphieu)
                 if (phieu.MaPhieuXK == maPhieu && phieu.MaMH == maMH)
                 {
-                    Loai = "Nhập hàng";
+                    Loai = "Xuất hàng";
                     Ngay = phieu.PHIEUXUATKHO.NgayLap.ToString("dd/mm/yyyy");
                     Xuat = phieu.SoLuong + "";
                     Nhap = "0";
-                    DienGiai = "//";
+                    DienGiai = "";
                 }
         }
 

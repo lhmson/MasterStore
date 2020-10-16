@@ -1096,6 +1096,12 @@ namespace MasterSaveDemo.ViewModel
             set { _TenNhanVien = value; OnPropertyChanged(); }
         }
 
+        private string _TenQuay;
+        public string TenQuay
+        {
+            get { return _TenQuay; }
+            set { _TenQuay = value; OnPropertyChanged(); }
+        }
 
         private string _MaHD;
         public string MaHD
@@ -1160,6 +1166,7 @@ namespace MasterSaveDemo.ViewModel
             GetMaHDCommand = new RelayCommand<Object>((p) => { return true; }, (p) =>
             {
                 MaHD = create_MaHD();
+                TenQuay = LoginViewModel.Quay.TenQuay;
             });
 
             ThemHangCommand = new RelayCommand<Object>((p) => { return true; }, (p) =>

@@ -165,7 +165,10 @@
                                             <RowDefinition/>
                                         </Grid.RowDefinitions>
                                         <Grid Grid.Row="0">
-                                            <Button Command ="{Binding Refresh}" Margin="5" Width="50" Content="{materialDesign:PackIcon Refresh}" ToolTip="Làm mới" HorizontalAlignment="Right" Background="{StaticResource SecondaryAccentBrush}"/>
+                                            <TextBox Width="200" FontSize="18" materialDesign:HintAssist.Hint="Quầy"
+                                 Style="{StaticResource MaterialDesignFloatingHintTextBox}" Foreground="{StaticResource SecondaryAccentBrush}" VerticalAlignment="Center"
+                                 Text="{Binding TenQuay, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" IsEnabled="False"
+                                 IsReadOnly="True"/>
                                         </Grid>
                                         <Grid Grid.Row="1">
                                             <StackPanel Orientation="Horizontal" HorizontalAlignment="Center">
