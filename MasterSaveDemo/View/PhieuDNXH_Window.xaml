@@ -23,217 +23,172 @@
         DataContext="{StaticResource PhieuDNXHVM}"
         
         Name="ThemHangWindow"
-        Title="" Height="600" Width="1200">
+        Title="" Height="720" Width="1280">
 
     <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition/>
+            <ColumnDefinition/>
+            <ColumnDefinition/>
+            <ColumnDefinition/>
+            <ColumnDefinition/>
+            <ColumnDefinition/>
+            <ColumnDefinition/>
+            <ColumnDefinition/>
+            <ColumnDefinition/>
+            <ColumnDefinition/>
+            <ColumnDefinition/>
+            <ColumnDefinition/>
+            <ColumnDefinition/>
+            <ColumnDefinition/>
+        </Grid.ColumnDefinitions>
         <Grid.RowDefinitions>
-            <RowDefinition Height="auto"></RowDefinition>
-            <RowDefinition></RowDefinition>
+            <RowDefinition Height="0.4*"/>
+            <RowDefinition Height="0.4*"/>
+            <RowDefinition/>
+            <RowDefinition/>
+            <RowDefinition/>
+            <RowDefinition/>
+            <RowDefinition Height="0.7* "/>
+            <RowDefinition/>
         </Grid.RowDefinitions>
-        <Grid Grid.Row="0">
-            <Button Background="{StaticResource PrimaryHueDarkBrush}" Name="titleBtn" Content="PHIẾU ĐỀ NGHỊ XUẤT HÀNG" Height="70" FontSize="20"></Button>
-
-            <!--<UC:ControlBarUC Tag="{Binding Title, ElementName=loginWindow}"></UC:ControlBarUC>-->
+        <Grid Margin="8,8,8,0" Grid.Row="0" Grid.Column="0" Grid.ColumnSpan="14">
+            <materialDesign:Card
+                  Background="{DynamicResource PrimaryHueDarkBrush}"
+                  Foreground="{DynamicResource PrimaryHueMidForegroundBrush}"
+                  Padding="8">
+                <TextBlock FontWeight="SemiBold" TextAlignment="Center" FontSize="18">LẬP PHIẾU ĐỀ NGHỊ XUẤT HÀNG</TextBlock>
+            </materialDesign:Card>
         </Grid>
-        <Grid Grid.Row="1">
-            <Grid.ColumnDefinitions>
-                <ColumnDefinition Width="400"></ColumnDefinition>
-                <ColumnDefinition Width="Auto"></ColumnDefinition>
-                <ColumnDefinition></ColumnDefinition>
-            </Grid.ColumnDefinitions>
-            <Grid Grid.Column="0">
-                <Grid.RowDefinitions>
-                    <RowDefinition Height="350"></RowDefinition>
-                    <RowDefinition></RowDefinition>
-                </Grid.RowDefinitions>
-                <Grid Grid.Row="0">
-                    <materialDesign:Card Width="380" Height="300" HorizontalAlignment="Center" VerticalAlignment="Center" Margin="10,5,10,25">
-                        <Grid>
-                            <Grid.RowDefinitions>
-                                <RowDefinition Height="50"></RowDefinition>
-                                <RowDefinition Height="180"></RowDefinition>
-                                <RowDefinition></RowDefinition>
-                            </Grid.RowDefinitions>
-                            <Grid Grid.Row="0">
-                                <TextBlock Text="{Binding MaPhieu}" FontSize="18" Height="30" Width="auto" FontWeight="Bold" HorizontalAlignment="Center"/>
-                            </Grid>
+        <Grid Margin="8,8,8,0" Grid.Row="1" Grid.Column="0" Grid.ColumnSpan="4">
+            <materialDesign:Card
+                  Background="{DynamicResource PrimaryHueDarkBrush}"
+                  Foreground="{DynamicResource PrimaryHueMidForegroundBrush}"
+                  Padding="8">
+                <TextBlock FontWeight="SemiBold" TextAlignment="Center" FontSize="18" Text="Thông tin phiếu" HorizontalAlignment="Center" VerticalAlignment="Center"></TextBlock>
+            </materialDesign:Card>
+        </Grid>
+        <Grid Margin="8,8,8,0" Grid.Row="1" Grid.Column="4" Grid.ColumnSpan="10">
+            <materialDesign:Card
+                  Background="{DynamicResource PrimaryHueDarkBrush}"
+                  Foreground="{DynamicResource PrimaryHueMidForegroundBrush}"
+                  Padding="8">
+                <TextBlock FontWeight="SemiBold" TextAlignment="Center" FontSize="18" Text="Chọn mặt hàng" HorizontalAlignment="Center" VerticalAlignment="Center"></TextBlock>
+            </materialDesign:Card>
+        </Grid>
+        <Grid Margin="8" Grid.Row="2" Grid.Column="0" Grid.ColumnSpan="4" Grid.RowSpan="6">
+            <materialDesign:Card/>
+        </Grid>
+        <Grid Margin="8" Grid.Row="2" Grid.Column="4" Grid.ColumnSpan="10" Grid.RowSpan="6">
+            <materialDesign:Card/>
+        </Grid>
+        <Grid Margin="8" Grid.Row="2" Grid.Column="0" Grid.ColumnSpan="4" >
+            <TextBox  materialDesign:HintAssist.Hint="Ngày lập"
+                      Text="{Binding NgayLap}" Style="{StaticResource MaterialDesignFloatingHintTextBox}"
+                      VerticalAlignment="Center" IsReadOnly="True" Margin="24,0"/>
+        </Grid>
+        <Grid Margin="8" Grid.Row="3" Grid.Column="0" Grid.ColumnSpan="4" >
+            <TextBox materialDesign:HintAssist.Hint="Quầy"
+                     Text="{Binding Quay}" Style="{StaticResource MaterialDesignFloatingHintTextBox}"
+                     VerticalAlignment="Center" IsReadOnly="True" Margin="24,0"/>
 
-                            <Grid Grid.Row="1">
-                                <Grid.ColumnDefinitions>
-                                    <ColumnDefinition></ColumnDefinition>
-                                    <ColumnDefinition></ColumnDefinition>
-                                </Grid.ColumnDefinitions>
-                                <Grid Grid.Column="0">
-                                    <Grid.RowDefinitions>
-                                        <RowDefinition></RowDefinition>
-                                        <RowDefinition></RowDefinition>
-                                    </Grid.RowDefinitions>
-                                    <Grid Grid.Row="0">
-                                        <TextBox  Margin="10,10,10,10" materialDesign:HintAssist.Hint="Quầy" Text="{Binding Quay}" Style="{StaticResource MaterialDesignFloatingHintTextBox}" VerticalAlignment="Center" IsReadOnly="True"/>
-                                    </Grid>
-                                    <Grid Grid.Row="1">
-                                        <TextBox Margin="10,10,10,10" materialDesign:HintAssist.Hint="Nhân viên" Text="{Binding TenNhanVien}" Style="{StaticResource MaterialDesignFloatingHintTextBox}" VerticalAlignment="Center" IsReadOnly="True"/>
-                                    </Grid>
-                                </Grid>
+        </Grid>
+        <Grid Margin="8" Grid.Row="4" Grid.Column="0" Grid.ColumnSpan="4" >
+            <TextBox materialDesign:HintAssist.Hint="Nhân viên" Text="{Binding TenNhanVien}" Style="{StaticResource MaterialDesignFloatingHintTextBox}" VerticalAlignment="Center" IsReadOnly="True" Margin="16,0"/>
 
-                                <Grid Grid.Column="1">
-                                    <Grid.RowDefinitions>
-                                        <RowDefinition></RowDefinition>
-                                        <RowDefinition></RowDefinition>
-                                    </Grid.RowDefinitions>
-                                    <Grid Grid.Row="0">
-                                        <TextBox Margin="10,10,10,10" materialDesign:HintAssist.Hint="Ngày lập" Text="{Binding NgayLap}" Style="{StaticResource MaterialDesignFloatingHintTextBox}" VerticalAlignment="Center" IsReadOnly="True"/>
-                                    </Grid>
-                                    <Grid Grid.Row="1">
-                                        <TextBox Margin="10,10,10,10" materialDesign:HintAssist.Hint="Số lượng mặt hàng" Text="{Binding TongSoLuong}" Style="{StaticResource MaterialDesignFloatingHintTextBox}" VerticalAlignment="Center" IsReadOnly="True"/>
-                                    </Grid>
-                                </Grid>
-                            </Grid>
+        </Grid>
+        <Grid Margin="8" Grid.Row="5" Grid.Column="0" Grid.ColumnSpan="4" >
+            <TextBox materialDesign:HintAssist.Hint="Số lượng mặt hàng" Text="{Binding TongSoLuong}" Style="{StaticResource MaterialDesignFloatingHintTextBox}" VerticalAlignment="Center" IsReadOnly="True" Margin="16,0"/>
 
-                            <Grid Grid.Row="2">
-                                <Button Grid.Column="0" Command="{Binding XemDSCommand}" CommandParameter="{Binding ElementName=ThemHangWindow}"
+        </Grid>
+        <Grid Margin="8" Grid.Row="6" Grid.Column="1" Grid.ColumnSpan="3" >
+            <Button  Command="{Binding XemDSCommand}" CommandParameter="{Binding ElementName=ThemHangWindow}"
                         Style="{StaticResource MaterialDesignFlatMidBgButton}" IsDefault="True"
-                        Width="300" Content="XEM THÔNG TIN MẶT HÀNG YÊU CẦU">
-                                </Button>
-                            </Grid>
-                        </Grid>
-                    </materialDesign:Card>
-                </Grid>
-                <Grid Grid.Row="1">
-                    <materialDesign:Card Width="380" Height="120" HorizontalAlignment="Center" VerticalAlignment="Center" Margin="10,5,10,25">
-                        <Grid >
-                            <Grid.ColumnDefinitions>
-                                <ColumnDefinition></ColumnDefinition>
-                                <ColumnDefinition></ColumnDefinition>
-                            </Grid.ColumnDefinitions>
-                            <Grid Grid.Column="0">
-                                <Button Grid.Column="0" Command="{Binding TaoPhieuCommand}" CommandParameter="{Binding ElementName=ThemHangWindow}"
+                         Content="Danh sách mặt hàng" FontSize="18" Height="48" Margin="4,0,16,0">
+            </Button>
+        </Grid>
+        <Grid Margin="8" Grid.Row="7" Grid.Column="2" Grid.ColumnSpan="2" >
+            <Button Grid.Column="0" Command="{Binding TaoPhieuCommand}" CommandParameter="{Binding ElementName=ThemHangWindow}"
                         Style="{StaticResource MaterialDesignRaisedButton}" IsDefault="True"
-                        Width="120" Content="TẠO PHIẾU">
-                                </Button>
-                            </Grid>
-                            <Grid Grid.Column="1">
-                                <Button Grid.Column="1" Command="{Binding HuyPhieuCommand}" CommandParameter="{Binding ElementName=ThemHangWindow}"
+                        Content="Tạo phiếu"  FontSize="18" Height="48" Margin="4,0,16,16">
+            </Button>
+        </Grid>
+        <Grid Margin="8" Grid.Row="6" Grid.Column="0" >
+            <Button Grid.Column="1" Command="{Binding HuyPhieuCommand}" CommandParameter="{Binding ElementName=ThemHangWindow}"
+                        Style="{StaticResource MaterialDesignRaisedButton}" Padding="0"
+                         Content="{materialDesign:PackIcon Kind=RotateLeft, Size=32}"  Height="48" Margin="16,0,4,0" >
+            </Button>
+        </Grid>
+        <Grid Margin="8" Grid.Row="7" Grid.Column="0" Grid.ColumnSpan="2" >
+            <Button  Command="{Binding CloseWindowCommand}" CommandParameter="{Binding ElementName=ThemHangWindow}"
                         Style="{StaticResource MaterialDesignRaisedAccentButton}"
-                        Width="120" Content="HỦY PHIẾU">
-                                </Button>
-                            </Grid>
-                        </Grid>
-                    </materialDesign:Card>
-                </Grid>
-            </Grid>
-            <Grid Grid.Column="1">
-                <materialDesign:Card Width="300" Height="224" HorizontalAlignment="Center" VerticalAlignment="Center" Margin="10,34,10,10">
-                    <Grid >
-                        <Grid.Resources>
-                            <Style TargetType="Grid">
-                                <Setter Property="Margin" Value="15 5"></Setter>
-                            </Style>
-                        </Grid.Resources>
-                        <Grid.RowDefinitions>
-                            <RowDefinition Height="auto"></RowDefinition>
-                            <RowDefinition Height="auto"></RowDefinition>
-                            <RowDefinition Height="auto"></RowDefinition>
-                            <RowDefinition Height="auto"></RowDefinition>
-                        </Grid.RowDefinitions>
-                        <Grid Grid.Row="0">
-                            <TextBox materialDesign:HintAssist.Hint="Mã mặt hàng"
-                             Text="{Binding MaMH}"
-                        Style="{StaticResource MaterialDesignFloatingHintTextBox}"
-                        VerticalAlignment="Center" IsEnabled="False" />
-                        </Grid>
-                        <Grid Grid.Row="1">
-                            <TextBox materialDesign:HintAssist.Hint="Tên mặt hàng"
-                             Text="{Binding TenMH}"
-                        Style="{StaticResource MaterialDesignFloatingHintTextBox}"
-                        VerticalAlignment="Center" IsEnabled="False" />
-                        </Grid>
-                        <Grid Grid.Row="2">
-                            <TextBox materialDesign:HintAssist.Hint="Số lượng đề nghị"
-                             Text="{Binding SoLuong}"
-                        Style="{StaticResource MaterialDesignFloatingHintTextBox}"
-                        VerticalAlignment="Center" />
-                        </Grid>
-                        <Grid Grid.Row="3">
-                            <Grid.ColumnDefinitions>
-                                <ColumnDefinition></ColumnDefinition>
-                                <ColumnDefinition></ColumnDefinition>
-                            </Grid.ColumnDefinitions>
-                            <Button Grid.Column="0" Command="{Binding ThemCommand}" CommandParameter="{Binding ElementName=ThemHangWindow}"
-                        Style="{StaticResource MaterialDesignRaisedButton}" IsDefault="True"
-                        Width="120" Content="THÊM">
-                            </Button>
-                            <Button Grid.Column="1" Command="{Binding CloseWindowCommand}" CommandParameter="{Binding ElementName=ThemHangWindow}"
-                        Style="{StaticResource MaterialDesignRaisedAccentButton}"
-                        Width="120" Content="THOÁT">
-                            </Button>
-                        </Grid>
-                    </Grid>
-                </materialDesign:Card>
-            </Grid>
-            <Grid Grid.Column="2" Margin="0,0,0,10">
-                <Grid.RowDefinitions>
-                    <RowDefinition Height="320"></RowDefinition>
-                    <RowDefinition></RowDefinition>
-                </Grid.RowDefinitions>
-                <Grid Grid.Row="0">
-                    <materialDesign:Card Margin="5,5,5,0" VerticalAlignment="Top" HorizontalAlignment="Stretch" Grid.ColumnSpan="2">
-                        <ListView x:Name="listViewReport" ItemsSource="{Binding ListMatHang, Mode=TwoWay}" SelectionMode="Single"
-                              HorizontalAlignment="Center" FontSize="18" VerticalAlignment="Top" ScrollViewer.VerticalScrollBarVisibility="Auto"
-                              HorizontalContentAlignment="Stretch" Margin="0,0,0,0" Width="450" SelectedItem="{Binding SelectedMatHang, Mode=TwoWay}">
-                            <ListView.View>
-                                <GridView>
-                                    <GridViewColumn Width="70" Header="STT" DisplayMemberBinding="{Binding STT}"/>
-                                    <GridViewColumn Width="80" Header="Mã" DisplayMemberBinding="{Binding Ma}"/>
-                                    <GridViewColumn Width="190" Header="Tên Mặt Hàng" DisplayMemberBinding="{Binding Ten}"/>
-                                    <GridViewColumn Width="120" Header="Tồn Kho" DisplayMemberBinding="{Binding Ton}"/>
-                                </GridView>
-                            </ListView.View>
-                            <i:Interaction.Triggers>
-                                <i:EventTrigger EventName="SelectionChanged">
-                                    <i:InvokeCommandAction Command="{Binding SelectionChangedCommand}"
-                                                   CommandParameter="{Binding ElementName=listDateDisplayed}"/>
-                                </i:EventTrigger>
-                            </i:Interaction.Triggers>
-                        </ListView>
-                    </materialDesign:Card>
-                </Grid>
-                <Grid Grid.Row="1">
-                    <materialDesign:Card Width="450" Height="150" HorizontalAlignment="Center" VerticalAlignment="Center" Margin="0,0,0,0">
-                        <Grid>
-                            <Grid.ColumnDefinitions>
-                                <ColumnDefinition Width="300"></ColumnDefinition>
-                                <ColumnDefinition Width="auto"></ColumnDefinition>
-                            </Grid.ColumnDefinitions>
-                            <Grid Grid.Column="0">
-                                <Grid.RowDefinitions>
-                                    <RowDefinition></RowDefinition>
-                                    <RowDefinition></RowDefinition>
-                                </Grid.RowDefinitions>
-
-                                <Grid Grid.Row="0">
-                                    <TextBox materialDesign:HintAssist.Hint="Tìm kiếm theo Mã"
+                         Content="Thoát" Margin="16,0,4,16" FontSize="18" Height="48">
+            </Button>
+        </Grid>
+        <Grid Margin="8" Grid.Row="2" Grid.Column="4" Grid.ColumnSpan="4">
+            <TextBox materialDesign:HintAssist.Hint="Tìm kiếm theo mã mặt hàng"
                              Text="{Binding txtMaMH , Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"
                         Style="{StaticResource MaterialDesignFloatingHintTextBox}"
-                        VerticalAlignment="Center"   Margin="50,5,10,5"/>
-                                </Grid>
-                                <Grid Grid.Row="1">
-                                    <TextBox materialDesign:HintAssist.Hint="Tìm kiếm theo Tên"
+                        VerticalAlignment="Center" Margin="24,0,0,0"  />
+        </Grid>
+        <Grid Margin="8" Grid.Row="2" Grid.Column="8" Grid.ColumnSpan="4">
+            <TextBox materialDesign:HintAssist.Hint="Tìm kiếm theo tên mặt hàng"
                              Text="{Binding txtTenMH , Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"
                         Style="{StaticResource MaterialDesignFloatingHintTextBox}"
-                        VerticalAlignment="Center"   Margin="50,5,10,20"/>
-                                </Grid>
-                            </Grid>
-                            <Grid Grid.Column="1">
-                                <Button Grid.Column="0" Command="{Binding SearchCommand}"
+                        VerticalAlignment="Center" Margin="12,0"/>
+        </Grid>
+        <Grid Margin="8" Grid.Row="2" Grid.Column="12" Grid.ColumnSpan="2">
+            <Button  Command="{Binding SearchCommand}"
                         Style="{StaticResource MaterialDesignRaisedButton}" IsDefault="True"
-                        Width="120" Content="TRA CỨU" Margin="10,25,0,0">
-                                </Button>
-                            </Grid>
-                        </Grid>
-                    </materialDesign:Card>
-                </Grid>
-            </Grid>
+                        Content="Tra cứu" Height="48" FontSize="18" Margin="0,14,24,0">
+            </Button>
+        </Grid>
+        <Grid Margin="8" Grid.Row="3" Grid.Column="4" Grid.ColumnSpan="10" Grid.RowSpan="4">
+            <ListView x:Name="listViewReport" ItemsSource="{Binding ListMatHang, Mode=TwoWay}" SelectionMode="Single"
+                              HorizontalAlignment="Stretch" FontSize="16" VerticalAlignment="Stretch" ScrollViewer.VerticalScrollBarVisibility="Auto"
+                              HorizontalContentAlignment="Stretch" Margin="8,0" SelectedItem="{Binding SelectedMatHang, Mode=TwoWay}">
+                <ListView.View>
+                    <GridView>
+                        <GridViewColumn Width="100" Header="STT" DisplayMemberBinding="{Binding STT}"/>
+                        <GridViewColumn Width="200" Header="Mã" DisplayMemberBinding="{Binding Ma}"/>
+                        <GridViewColumn Width="300" Header="Tên Mặt Hàng" DisplayMemberBinding="{Binding Ten}"/>
+                        <GridViewColumn Width="200" Header="Tồn Kho" DisplayMemberBinding="{Binding Ton}"/>
+                    </GridView>
+                </ListView.View>
+                <i:Interaction.Triggers>
+                    <i:EventTrigger EventName="SelectionChanged">
+                        <i:InvokeCommandAction Command="{Binding SelectionChangedCommand}"
+                                                   CommandParameter="{Binding ElementName=listDateDisplayed}"/>
+                    </i:EventTrigger>
+                </i:Interaction.Triggers>
+            </ListView>
+        </Grid>
+        <Grid Margin="8" Grid.Row="7" Grid.Column="4" Grid.ColumnSpan="3">
+            <TextBox materialDesign:HintAssist.Hint="Mã mặt hàng được chọn"
+                             Text="{Binding MaMH}"
+                        Style="{StaticResource MaterialDesignFloatingHintTextBox}"
+                        VerticalAlignment="Center" IsEnabled="False" Margin="24,0,0,30" />
+        </Grid>
+        <Grid Margin="8" Grid.Row="7" Grid.Column="7" Grid.ColumnSpan="3">
+            <TextBox materialDesign:HintAssist.Hint="Tên mặt hàng được chọn"
+                             Text="{Binding TenMH}"
+                        Style="{StaticResource MaterialDesignFloatingHintTextBox}"
+                        VerticalAlignment="Center" IsEnabled="False" Margin="8,0,8,30" />
+        </Grid>
+        <Grid Margin="8" Grid.Row="7" Grid.Column="10" Grid.ColumnSpan="2">
+            <TextBox materialDesign:HintAssist.Hint="Số lượng"
+                             Text="{Binding SoLuong}"
+                        Style="{StaticResource MaterialDesignFloatingHintTextBox}"
+                        VerticalAlignment="Center" Margin="0,0,8,30" />
+        </Grid>
+        <Grid Margin="8" Grid.Row="7" Grid.Column="12" Grid.ColumnSpan="2">
+            <Button Command="{Binding ThemCommand}" CommandParameter="{Binding ElementName=ThemHangWindow}"
+                        Style="{StaticResource MaterialDesignRaisedButton}" IsDefault="True"
+                         Content="Thêm" Height="48" FontSize="18" Margin="0,0,24,16">
+            </Button>
+        </Grid>
+        <Grid Margin="8" Grid.Row="4" Grid.Column="3" Grid.ColumnSpan="2" HorizontalAlignment="Center" VerticalAlignment="Center">
+            <Label Content="{materialDesign:PackIcon ArrowLeftBold, Size=64}" Foreground="#FF00967C" />
         </Grid>
     </Grid>
 </Window>

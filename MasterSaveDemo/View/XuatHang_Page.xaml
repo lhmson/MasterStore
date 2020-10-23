@@ -6,12 +6,12 @@
       xmlns:i="http://schemas.microsoft.com/expression/2010/interactivity"
       xmlns:local="clr-namespace:MasterSaveDemo.View"
       mc:Ignorable="d" 
-      d:DesignHeight="450" d:DesignWidth="800"
+      d:DesignHeight="628" d:DesignWidth="1372"
       
       xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
         TextElement.Foreground="{DynamicResource MaterialDesignBody}"
         TextElement.FontWeight="Regular"
-        TextElement.FontSize="18"
+        TextElement.FontSize="20"
         TextOptions.TextFormattingMode="Ideal"
         TextOptions.TextRenderingMode="Auto"
         Background="{DynamicResource MaterialDesignPaper}"
@@ -23,111 +23,107 @@
       Title="Home Page">
 
     <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition/>
+            <ColumnDefinition/>
+            <ColumnDefinition/>
+            <ColumnDefinition/>
+            <ColumnDefinition/>
+            <ColumnDefinition/>
+            <ColumnDefinition/>
+            <ColumnDefinition/>
+            <ColumnDefinition/>
+            <ColumnDefinition/>
+            <ColumnDefinition/>
+            <ColumnDefinition/>
+            <ColumnDefinition/>
+        </Grid.ColumnDefinitions>
         <Grid.RowDefinitions>
-            <RowDefinition Height="Auto"></RowDefinition>
-            <RowDefinition Height="Auto"></RowDefinition>
+            <RowDefinition Height="0.5*"/>
+            <RowDefinition Height="0.5*"/>
+            <RowDefinition/>
+            <RowDefinition/>
+            <RowDefinition/>
+            <RowDefinition/>
+            <RowDefinition/>
+            <RowDefinition/>
         </Grid.RowDefinitions>
-        <Grid Grid.Row="0" >
-            <materialDesign:Card Margin="5"
+        <Grid Margin="8,8,8,0" Grid.Row="0" Grid.Column="0" Grid.ColumnSpan="13">
+            <materialDesign:Card
                   Background="{DynamicResource PrimaryHueDarkBrush}"
                   Foreground="{DynamicResource PrimaryHueMidForegroundBrush}"
                   Padding="8">
                 <TextBlock FontWeight="SemiBold" TextAlignment="Center" FontSize="20">XUẤT HÀNG KHO</TextBlock>
             </materialDesign:Card>
         </Grid>
-        <Grid Grid.Row="1">
-            <Grid.ColumnDefinitions>
-                <ColumnDefinition></ColumnDefinition>
-                <ColumnDefinition></ColumnDefinition>
-            </Grid.ColumnDefinitions>
-            <Grid Grid.Column="0">
-                <Grid.RowDefinitions>
-                    <RowDefinition Height="50"></RowDefinition>
-                    <RowDefinition Height="400"></RowDefinition>
-                    <RowDefinition Height="50"></RowDefinition>
-                </Grid.RowDefinitions>
-                <Grid Grid.Row="0">
-                    <materialDesign:Card Height="35" Margin="10,10,10,10"
+        <Grid Margin="8,8,8,0" Grid.Row="1" Grid.Column="0" Grid.ColumnSpan="6">
+            <materialDesign:Card
                   Background="{DynamicResource PrimaryHueDarkBrush}"
                   Foreground="{DynamicResource PrimaryHueMidForegroundBrush}"
-                  Padding="5">
-                        <TextBlock FontWeight="SemiBold" TextAlignment="Center" FontSize="20" Text="Danh Sách Phiếu Đề Nghị"></TextBlock>
-                    </materialDesign:Card>
-                </Grid>
-                
-                <Grid Grid.Row="1">
-                    <materialDesign:Card Margin="5,5,5,0" VerticalAlignment="Top" HorizontalAlignment="Stretch" Grid.ColumnSpan="2">
-                        <ListView x:Name="listViewReport" ItemsSource="{Binding ListPhieu, Mode=TwoWay}" SelectionMode="Single"
-                              HorizontalAlignment="Center" FontSize="18" VerticalAlignment="Top" ScrollViewer.VerticalScrollBarVisibility="Auto"
-                              HorizontalContentAlignment="Stretch" SelectedItem="{Binding SelectedPhieu, Mode=TwoWay}">
-                            <ListView.View>
-                                <GridView>
-                                    <GridViewColumn Width="70" Header="STT" DisplayMemberBinding="{Binding STT}"/>
-                                    <GridViewColumn Width="150" Header="Mã Phiếu" DisplayMemberBinding="{Binding Ma}"/>
-                                    <GridViewColumn Width="150" Header="Ngày Lập" DisplayMemberBinding="{Binding NgayLap}"/>
-                                    <GridViewColumn Width="150" Header="Quầy" DisplayMemberBinding="{Binding Quay}"/>
-                                </GridView>
-                            </ListView.View>
-                            <i:Interaction.Triggers>
-                                <i:EventTrigger EventName="SelectionChanged">
-                                    <i:InvokeCommandAction Command="{Binding SelectionChangedCommand}"
+                  Padding="8">
+                <TextBlock FontWeight="SemiBold" TextAlignment="Center" FontSize="20" Text="Danh sách phiếu đề nghị" HorizontalAlignment="Center" VerticalAlignment="Center"></TextBlock>
+            </materialDesign:Card>
+        </Grid>
+        <Grid Margin="8" Grid.Row="2" Grid.Column="0" Grid.ColumnSpan="6" Grid.RowSpan="6">
+            <materialDesign:Card Margin="0,0,0,8"/>
+        </Grid>
+        <Grid Margin="8" Grid.Row="2" Grid.Column="0" Grid.ColumnSpan="6" Grid.RowSpan="5">
+            <ListView x:Name="listViewReport" ItemsSource="{Binding ListPhieu, Mode=TwoWay}" SelectionMode="Single"
+                          HorizontalContentAlignment="Stretch"    HorizontalAlignment="Stretch" FontSize="16" VerticalAlignment="Stretch" ScrollViewer.VerticalScrollBarVisibility="Auto"
+                              SelectedItem="{Binding SelectedPhieu, Mode=TwoWay}" Margin="8,0" SelectionChanged="listViewReport_SelectionChanged">
+                <ListView.View>
+                    <GridView >
+                        <GridViewColumn Width="70" Header="STT" DisplayMemberBinding="{Binding STT}"/>
+                        <GridViewColumn Width="200" Header="Mã Phiếu" DisplayMemberBinding="{Binding Ma}"/>
+                        <GridViewColumn Width="220" Header="Ngày Lập" DisplayMemberBinding="{Binding NgayLap}"/>
+                        <GridViewColumn Width="100"  Header="Quầy" DisplayMemberBinding="{Binding Quay}"/>
+                    </GridView>
+                </ListView.View>
+                <i:Interaction.Triggers>
+                    <i:EventTrigger EventName="SelectionChanged">
+                        <i:InvokeCommandAction Command="{Binding SelectionChangedCommand}"
                                                    CommandParameter="{Binding ElementName=listDateDisplayed}"/>
-                                </i:EventTrigger>
-                            </i:Interaction.Triggers>
-                        </ListView>
-                    </materialDesign:Card>
-                </Grid>
-                <Grid Grid.Row="2">
-                    <Grid.ColumnDefinitions>
-                        <ColumnDefinition></ColumnDefinition>
-                        <ColumnDefinition></ColumnDefinition>
-                    </Grid.ColumnDefinitions>
-                    <Grid Grid.Column="0">
-                        <Button Grid.Column="0" Command="{Binding DuyetCommand}" CommandParameter="{Binding ElementName=ThemHangWindow}"
+                    </i:EventTrigger>
+                </i:Interaction.Triggers>
+            </ListView>
+        </Grid>
+        <Grid Margin="8" Grid.Row="7" Grid.Column="4" Grid.ColumnSpan="2">
+            <Button  Command="{Binding DuyetCommand}" CommandParameter="{Binding ElementName=ThemHangWindow}"
                         Style="{StaticResource MaterialDesignRaisedButton}" IsDefault="True"
-                        Width="150" Content="DUYỆT">
-                        </Button>
-                    </Grid>
-                    <Grid Grid.Column="1">
-                        <Button Grid.Column="1" Command="{Binding KhongDuyetCommand}" CommandParameter="{Binding ElementName=ThemHangWindow}"
-                        Style="{StaticResource MaterialDesignRaisedAccentButton}"
-                        Width="150" Content="KHÔNG DUYỆT">
-                        </Button>
-                    </Grid>
-                </Grid>
-            </Grid>
-            <Grid Grid.Column="1">
-                <Grid.RowDefinitions>
-                    <RowDefinition Height="50"></RowDefinition>
-                    <RowDefinition Height="auto"></RowDefinition>
-                </Grid.RowDefinitions>
-                <Grid Grid.Row="0">
-                    <materialDesign:Card Height="35" Margin="10,10,10,10"
+                         Content="Duyệt" Margin="8,0,8,16" FontSize="20" Height="48">
+            </Button>
+
+        </Grid>
+        <Grid Margin="8" Grid.Row="7" Grid.Column="2" Grid.ColumnSpan="2">
+            <Button Command="{Binding KhongDuyetCommand}" CommandParameter="{Binding ElementName=ThemHangWindow}"
+                        Style="{StaticResource MaterialDesignRaisedButton}"
+                       Content="Không duyệt" Margin="8,0,8,16" FontSize="20" Height="48" Background="#FFD32F2F" BorderBrush="#FFD32F2F" >
+            </Button>
+        </Grid>
+        <Grid Margin="8,8,8,0" Grid.Row="1" Grid.Column="6" Grid.ColumnSpan="7">
+            <materialDesign:Card 
                   Background="{DynamicResource PrimaryHueDarkBrush}"
                   Foreground="{DynamicResource PrimaryHueMidForegroundBrush}"
-                  Padding="5">
-                        <TextBlock FontWeight="SemiBold" TextAlignment="Center" FontSize="20" Text="Thông Tin Phiếu"></TextBlock>
-                    </materialDesign:Card>
-                </Grid>
+                  Padding="6">
+                <TextBlock FontWeight="SemiBold" TextAlignment="Center" FontSize="20" Text="Thông tin phiếu" HorizontalAlignment="Center" VerticalAlignment="Center"></TextBlock>
+            </materialDesign:Card>
+        </Grid>
+        <Grid Margin="8,8,8,16" Grid.Row="2" Grid.Column="6" Grid.RowSpan="6" Grid.ColumnSpan="7">
+            <materialDesign:Card>
+                <ListView x:Name="list" ItemsSource="{Binding ListCTPhieu, Mode=TwoWay}" SelectionMode="Single"
+                              HorizontalAlignment="Stretch" FontSize="16" VerticalAlignment="Stretch" ScrollViewer.VerticalScrollBarVisibility="Auto"
+                              HorizontalContentAlignment="Stretch" SelectedItem="{Binding SelectedMatHang, Mode=TwoWay}" Margin="8,0">
+                    <ListView.View>
+                        <GridView>
+                            <GridViewColumn Width="70" Header="STT" DisplayMemberBinding="{Binding STT}"/>
+                            <GridViewColumn Width="200" Header="Mã MH" DisplayMemberBinding="{Binding Ma}"/>
+                            <GridViewColumn Width="250" Header="Tên MH" DisplayMemberBinding="{Binding Ten}"/>
+                            <GridViewColumn Width="150" Header="Số Lượng ĐN" DisplayMemberBinding="{Binding SoLuong}"/>
+                        </GridView>
+                    </ListView.View>
 
-                <Grid Grid.Row="1">
-                    <materialDesign:Card Margin="5,5,5,0" VerticalAlignment="Top" HorizontalAlignment="Stretch" Grid.ColumnSpan="2">
-                        <ListView x:Name="list" ItemsSource="{Binding ListCTPhieu, Mode=TwoWay}" SelectionMode="Single"
-                              HorizontalAlignment="Center" FontSize="18" VerticalAlignment="Top" ScrollViewer.VerticalScrollBarVisibility="Auto"
-                              HorizontalContentAlignment="Stretch" SelectedItem="{Binding SelectedMatHang, Mode=TwoWay}">
-                            <ListView.View>
-                                <GridView>
-                                    <GridViewColumn Width="70" Header="STT" DisplayMemberBinding="{Binding STT}"/>
-                                    <GridViewColumn Width="100" Header="Mã" DisplayMemberBinding="{Binding Ma}"/>
-                                    <GridViewColumn Width="150" Header="Tên" DisplayMemberBinding="{Binding Ten}"/>
-                                    <GridViewColumn Width="150" Header="Số Lượng ĐN" DisplayMemberBinding="{Binding SoLuong}"/>
-                                </GridView>
-                            </ListView.View>
-
-                        </ListView>
-                    </materialDesign:Card>
-                </Grid>
-            </Grid>
+                </ListView>
+            </materialDesign:Card>
         </Grid>
     </Grid>
 </Page>

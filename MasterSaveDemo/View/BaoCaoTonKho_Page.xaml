@@ -173,7 +173,7 @@
                                     </Grid>
                                     <StackPanel Visibility="{Binding VisibilityChart}">
                                         <Grid>
-                                            <chart:SfChart Header="Biểu đồ thống kê nhập xuất tồn kho siêu thị MasterStore">
+                                            <chart:SfChart Header="Biểu đồ thống kê nhập xuất tồn kho siêu thị MasterStore" Height="470" Margin="0,16,16,0">
                                                 <chart:SfChart.PrimaryAxis>
                                                     <chart:CategoryAxis PlotOffset="90" Header="{Binding YearHeader}"/>
                                                 </chart:SfChart.PrimaryAxis>
