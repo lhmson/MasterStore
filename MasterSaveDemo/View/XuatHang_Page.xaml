@@ -70,7 +70,7 @@
         <Grid Margin="8" Grid.Row="2" Grid.Column="0" Grid.ColumnSpan="6" Grid.RowSpan="5">
             <ListView x:Name="listViewReport" ItemsSource="{Binding ListPhieu, Mode=TwoWay}" SelectionMode="Single"
                           HorizontalContentAlignment="Stretch"    HorizontalAlignment="Stretch" FontSize="16" VerticalAlignment="Stretch" ScrollViewer.VerticalScrollBarVisibility="Auto"
-                              SelectedItem="{Binding SelectedPhieu, Mode=TwoWay}" Margin="8,0" SelectionChanged="listViewReport_SelectionChanged">
+                              SelectedItem="{Binding SelectedPhieu, Mode=TwoWay}" Margin="8,0">
                 <ListView.View>
                     <GridView >
                         <GridViewColumn Width="70" Header="STT" DisplayMemberBinding="{Binding STT}"/>
