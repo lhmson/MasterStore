@@ -119,7 +119,7 @@
                             </i:EventTrigger>
                         </i:Interaction.Triggers>
                     </HamburgerMenu:HamburgerMenuItem>
-                    <HamburgerMenu:HamburgerMenuItem x:Name="ThayDoiQuyDinh_Page_Button" Icon="/Images/7-ThayDoiQuyDinh.png" Text="Thay đổi quy định" IsEnabled="{Binding Enable_TDQD}" ToolTip="{Binding TDQD_Tooltip}" ToolTipService.Placement="Right" ToolTipService.HorizontalOffset="10">
+                    <HamburgerMenu:HamburgerMenuItem x:Name="ThayDoiQuyDinh_Page_Button" Icon="/Images/7-ThayDoiQuyDinh.png" Text="Thay đổi quy định" IsEnabled="False"  ToolTip="{Binding TDQD_Tooltip}" ToolTipService.Placement="Right" ToolTipService.HorizontalOffset="10">
                         <i:Interaction.Triggers>
                             <i:EventTrigger EventName="GotFocus">
                                 <i:InvokeCommandAction Command="{Binding ThayDoiQuyDinh_Page_SelectedCommand}"
