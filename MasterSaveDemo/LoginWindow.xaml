@@ -95,7 +95,7 @@
                 </materialDesign:Card>
             </Grid>
             <Grid Grid.Column="1">
-                <Image Source="/Images/logoms.png" VerticalAlignment="Center" HorizontalAlignment="Center" Width="250"/>
+                <Image Source="/Images/logo_masterstore.png" VerticalAlignment="Center" HorizontalAlignment="Center" Width="250"/>
             </Grid>
         </Grid>
     </Grid>
