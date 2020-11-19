@@ -564,6 +564,12 @@
     <Resource Include="Images\6-BaoCaoMoDong.png" />
     <Resource Include="Images\7-ThayDoiQuyDinh.png" />
     <Resource Include="Images\8-QuanLyNhanSu.png" />
+    <Resource Include="Images\BanHang.png" />
+    <Resource Include="Images\DuyetNhap.png" />
+    <Resource Include="Images\DuyetXuat.png" />
+    <Resource Include="Images\logo_masterstore.png" />
+    <Resource Include="Images\NhapHang.png" />
+    <Resource Include="Images\tinylogo.ico" />
     <Content Include="Model\QLSieuThiModel.Context.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
       <DependentUpon>QLSieuThiModel.edmx</DependentUpon>

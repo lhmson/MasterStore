@@ -714,13 +714,12 @@ namespace MasterSaveDemo.ViewModel
             CT_THEKHO temp = new CT_THEKHO()
             {
                 MaTheKho = maTK,
-                MaCTTheKho =create_MaCTTK(),
+                MaCTTheKho = create_MaCTTK(),
                 NgayNhapXuat = DateTime.Now,
                 DienGiai = "",
                 MaPhieuNhapXuat = maPhieuDuyet,
             };
 
-            MessageBox.Show(temp.MaTheKho + " " + temp.MaCTTheKho + " " + temp.MaPhieuNhapXuat);
             DataProvider.Ins.DB.CT_THEKHO.Add(temp);
             DataProvider.Ins.DB.SaveChanges();
             #endregion
@@ -735,9 +734,9 @@ namespace MasterSaveDemo.ViewModel
                     mh.SoLuongTonGian += slthem;
                     DataProvider.Ins.DB.SaveChanges();
                     return;
-                }    
+                }
         }
-        
+
         public void duyet()
         {
             if (SelectedPhieu == null)
@@ -788,11 +787,11 @@ namespace MasterSaveDemo.ViewModel
 
             foreach (var phieu in list_PXK)
                 if (phieu.TrangThai == 0)
-            {
-                ListPhieu temp = new ListPhieu(stt.ToString(),phieu.MaPhieuXK,phieu.NgayLap.ToString("dd/mm/yyyy"),get_TenQuay(phieu.MaQuay));
-                stt++;
-                ListPhieu.Add(temp);
-            }
+                {
+                    ListPhieu temp = new ListPhieu(stt.ToString(), phieu.MaPhieuXK, phieu.NgayLap.ToString("dd/mm/yyyy"), get_TenQuay(phieu.MaQuay));
+                    stt++;
+                    ListPhieu.Add(temp);
+                }
         }
 
         public void init_ListCTPhieu(string maPhieu)

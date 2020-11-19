@@ -28,7 +28,7 @@
         
         
         x:Name="this_"
-        Title="Master Save - Professional Banking System" Height="650" Width="800">
+        Title="Master Store - Professional Market System" Height="650" Width="800">
 
     <i:Interaction.Triggers>
         <i:EventTrigger EventName="Loaded">
@@ -60,7 +60,9 @@
                             </i:EventTrigger>
                         </i:Interaction.Triggers>
                     </HamburgerMenu:HamburgerMenuItem>
-                    <HamburgerMenu:HamburgerMenuItem x:Name="NhapHang_Page_Button" Icon="/Images/1-MoSo.png" Text="Thực hiện Nhập hàng" IsEnabled="{Binding Enable_NhapHang}" ToolTip="{Binding NhapHang_Tooltip}" ToolTipService.Placement="Right" ToolTipService.HorizontalOffset="10">
+
+
+                    <HamburgerMenu:HamburgerMenuItem x:Name="NhapHang_Page_Button" Icon="/Images/NhapHang.png" Text="Thực hiện Nhập hàng" IsEnabled="{Binding Enable_NhapHang}" ToolTip="{Binding NhapHang_Tooltip}" ToolTipService.Placement="Right" ToolTipService.HorizontalOffset="10">
                         <i:Interaction.Triggers>
                             <i:EventTrigger EventName="GotFocus">
                                 <i:InvokeCommandAction Command="{Binding NhapHang_Page_SelectedCommand}"
@@ -68,7 +70,15 @@
                             </i:EventTrigger>
                         </i:Interaction.Triggers>
                     </HamburgerMenu:HamburgerMenuItem>
-                    <HamburgerMenu:HamburgerMenuItem x:Name="XuatHang_Page_Button" Icon="/Images/2-GuiTien.png" Text="Thực hiện Xuất hàng" IsEnabled="{Binding Enable_XuatHang}" ToolTip="{Binding XuatHang_Tooltip}" ToolTipService.Placement="Right" ToolTipService.HorizontalOffset="10">
+                    <HamburgerMenu:HamburgerMenuItem x:Name="XuatHang_Page_Button" Icon="/Images/DuyetNhap.png" Text="Thực hiện Xuất hàng" IsEnabled="{Binding Enable_XuatHang}" ToolTip="{Binding XuatHang_Tooltip}" ToolTipService.Placement="Right" ToolTipService.HorizontalOffset="10">
+                        <i:Interaction.Triggers>
+                            <i:EventTrigger EventName="GotFocus">
+                                <i:InvokeCommandAction Command="{Binding DuyetXuatHang_Page_SelectedCommand}"
+                                                    CommandParameter="{Binding ElementName=hamburger}"/>
+                            </i:EventTrigger>
+                        </i:Interaction.Triggers>
+                    </HamburgerMenu:HamburgerMenuItem>
+                    <HamburgerMenu:HamburgerMenuItem x:Name="DuyetXuatHang_Page_Button" Icon="/Images/DuyetXuat.png" Text="Thực hiện Xuất hàng" IsEnabled="{Binding Enable_XuatHang}" ToolTip="{Binding XuatHang_Tooltip}" ToolTipService.Placement="Right" ToolTipService.HorizontalOffset="10">
                         <i:Interaction.Triggers>
                             <i:EventTrigger EventName="GotFocus">
                                 <i:InvokeCommandAction Command="{Binding XuatHang_Page_SelectedCommand}"
@@ -76,7 +86,8 @@
                             </i:EventTrigger>
                         </i:Interaction.Triggers>
                     </HamburgerMenu:HamburgerMenuItem>
-                    <HamburgerMenu:HamburgerMenuItem x:Name="BanHang_Page_Button" Icon="/Images/3-RutTien.png" Text="Thực hiện Bán hàng" IsEnabled="{Binding Enable_BanHang}" ToolTip="{Binding BanHang_Tooltip}" ToolTipService.Placement="Right" ToolTipService.HorizontalOffset="10" >
+
+                    <HamburgerMenu:HamburgerMenuItem x:Name="BanHang_Page_Button" Icon="/Images/BanHang.png" Text="Thực hiện Bán hàng" IsEnabled="{Binding Enable_BanHang}" ToolTip="{Binding BanHang_Tooltip}" ToolTipService.Placement="Right" ToolTipService.HorizontalOffset="10" >
                         <i:Interaction.Triggers>
                             <i:EventTrigger EventName="GotFocus">
                                 <i:InvokeCommandAction Command="{Binding BanHang_Page_SelectedCommand}"
@@ -125,13 +136,13 @@
                         </i:Interaction.Triggers>
                     </HamburgerMenu:HamburgerMenuItem>
                     <HamburgerMenu:HamburgerMenuItem Icon="/Images/10-info.png" Text="Thông tin phần mềm">
-                            <i:Interaction.Triggers>
-                                <i:EventTrigger EventName="Selected">
-                                    <i:InvokeCommandAction Command="{Binding CaiDatKhac_Page_SelectedCommand}"
+                        <i:Interaction.Triggers>
+                            <i:EventTrigger EventName="Selected">
+                                <i:InvokeCommandAction Command="{Binding CaiDatKhac_Page_SelectedCommand}"
                                                    CommandParameter="{Binding ElementName=_this}" />
-                                </i:EventTrigger>
-                            </i:Interaction.Triggers>
-                        </HamburgerMenu:HamburgerMenuItem>
+                            </i:EventTrigger>
+                        </i:Interaction.Triggers>
+                    </HamburgerMenu:HamburgerMenuItem>
 
                     <HamburgerMenu:HamburgerMenuItem IsEnabled="False" Height="134">
                     </HamburgerMenu:HamburgerMenuItem>
@@ -153,14 +164,17 @@
                         <Image Source="/Images/logout.png" Width="10" Height="10" />
                     </Button>
                 </Grid>-->
-                
+
             </Grid>
             <Grid Grid.Column="1">
-                <Frame x:Name="main" Margin="10,10,10.4,10" NavigationUIVisibility="Hidden"
-                       Content="{Binding FrameContent, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="34*"/>
+                    <RowDefinition Height="75*"/>
+                </Grid.RowDefinitions>
+                <Frame x:Name="main" Margin="10" NavigationUIVisibility="Hidden"
+                       Content="{Binding FrameContent, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" Grid.RowSpan="2">
                 </Frame>
             </Grid>
         </Grid>
-
     </Grid>
 </Window>
