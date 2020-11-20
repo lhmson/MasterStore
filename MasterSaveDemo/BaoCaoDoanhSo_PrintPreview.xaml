@@ -81,9 +81,9 @@
                     <StackPanel Grid.Row="1" HorizontalAlignment="Stretch" Margin="5">
                         <TextBlock Text="BÁO CÁO THU CHI" VerticalAlignment="Center" FontSize="35" FontWeight="Bold" Foreground="Black" HorizontalAlignment="Center"/>
                         <StackPanel Orientation="Horizontal" HorizontalAlignment="Center">
-                            <TextBlock Text="Từ ngày: " FontSize="35" FontWeight="Bold"></TextBlock>
-                            <TextBlock Text="{Binding StartDate, StringFormat={}{0:dd/MM/yyyy}}"  FontSize="35" FontWeight="Bold"/>
-                            <TextBlock Text="Đến ngày: " FontSize="35" FontWeight="Bold"></TextBlock>
+                            <TextBlock Text="Từ ngày: " FontSize="35" FontWeight="Bold" Margin="0,0,10,0"></TextBlock>
+                            <TextBlock Text="{Binding StartDate, StringFormat={}{0:dd/MM/yyyy}}"  FontSize="35" FontWeight="Bold" Margin="0,0,20,0"/>
+                            <TextBlock Text="Đến ngày: " FontSize="35" FontWeight="Bold" Margin="0,0,10,0"></TextBlock>
                             <TextBlock Text="{Binding EndDate, StringFormat={}{0:dd/MM/yyyy}}"  FontSize="35" FontWeight="Bold"/>
                         </StackPanel>
                         <Rectangle Fill="Black" Height="1" Margin="10 5" Opacity="0.5"/>

@@ -6,12 +6,12 @@
       xmlns:i="http://schemas.microsoft.com/expression/2010/interactivity"
       xmlns:local="clr-namespace:MasterSaveDemo.View"
       mc:Ignorable="d" 
-      d:DesignHeight="450" d:DesignWidth="800"
+      d:DesignHeight="628" d:DesignWidth="1372"
       
       xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
         TextElement.Foreground="{DynamicResource MaterialDesignBody}"
         TextElement.FontWeight="Regular"
-        TextElement.FontSize="18"
+        TextElement.FontSize="20"
         TextOptions.TextFormattingMode="Ideal"
         TextOptions.TextRenderingMode="Auto"
         Background="{DynamicResource MaterialDesignPaper}"
@@ -23,78 +23,100 @@
       Title="Home Page">
 
     <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="0.2*"/>
+            <ColumnDefinition/>
+            <ColumnDefinition/>
+            <ColumnDefinition/>
+            <ColumnDefinition Width="0.2*"/>
+            <ColumnDefinition/>
+            <ColumnDefinition/>
+            <ColumnDefinition/>
+            <ColumnDefinition Width="0.2*"/>
+            <ColumnDefinition/>
+            <ColumnDefinition/>
+            <ColumnDefinition/>
+            <ColumnDefinition Width="0.2*"/>
+        </Grid.ColumnDefinitions>
         <Grid.RowDefinitions>
-            <RowDefinition Height="Auto"></RowDefinition>
-            <RowDefinition Height="Auto"></RowDefinition>
-            <RowDefinition></RowDefinition>
-            <RowDefinition></RowDefinition>
+            <RowDefinition Height="0.5*"/>
+            <RowDefinition Height="0.2*"/>
+            <RowDefinition/>
+            <RowDefinition/>
+            <RowDefinition/>
+            <RowDefinition/>
+            <RowDefinition/>
+            <RowDefinition Height="0.2*"/>
         </Grid.RowDefinitions>
-        <Grid Grid.Row="0" >
-            <materialDesign:Card Margin="5"
-                  Background="{DynamicResource PrimaryHueDarkBrush}"
+        <Grid Margin="8" Grid.Row="0" Grid.Column="0" Grid.ColumnSpan="13">
+            <materialDesign:Card
+                  Background="{DynamicResource SecondaryAccentBrush}"
                   Foreground="{DynamicResource PrimaryHueMidForegroundBrush}"
                   Padding="8">
-                <TextBlock FontWeight="SemiBold" TextAlignment="Center" FontSize="20">TRANG CHỦ</TextBlock>
+                <TextBlock FontWeight="SemiBold" TextAlignment="Center" FontSize="20" HorizontalAlignment="Center" VerticalAlignment="Center">TRANG CHỦ</TextBlock>
             </materialDesign:Card>
         </Grid>
-        <Grid Grid.Row="1" Margin="5">
-            <Grid.ColumnDefinitions>
-                <ColumnDefinition></ColumnDefinition>
-            </Grid.ColumnDefinitions>
-            <Grid Grid.Column="0" HorizontalAlignment="Center">
-                <StackPanel HorizontalAlignment="Center" VerticalAlignment="Center">
-                    <TextBlock Text="Chào bạn, chúc ngày mới tốt lành" HorizontalAlignment="Center" LineHeight="26" FontSize="36" Foreground="{StaticResource PrimaryHueDarkBrush}" FontWeight="Bold"></TextBlock>
-                </StackPanel>
-            </Grid>
+        <Grid Margin="12,0" Grid.Row="3" Grid.RowSpan="4" Grid.Column="1" Grid.ColumnSpan="3">
+            <materialDesign:Card>
+                <TextBlock Text="{Binding SL_PhieuNhap}" FontSize="128" FontWeight="ExtraBlack" HorizontalAlignment="Center" VerticalAlignment="Center" Foreground="#DD000000"></TextBlock>
+            </materialDesign:Card>
+        </Grid>
+        <Grid Margin="8,8,8,0" Grid.Row="2" Grid.RowSpan="1" Grid.Column="1" Grid.ColumnSpan="3" >
+            <materialDesign:Card materialDesign:ShadowAssist.ShadowDepth="Depth5">
+                <materialDesign:Card.Background>
+                    <LinearGradientBrush EndPoint="1,1" MappingMode="RelativeToBoundingBox" StartPoint="0,0">
+                        <GradientStop Color="#FF00DDB7" Offset="0"/>
+                        <GradientStop Color="#FF268FCD" Offset="1"/>
+                    </LinearGradientBrush>
+                </materialDesign:Card.Background>
 
-        </Grid>
-        <Grid Grid.Row="2" Margin="5">
-            <Grid.ColumnDefinitions>
-                <ColumnDefinition></ColumnDefinition>
-                <ColumnDefinition></ColumnDefinition>
-                <ColumnDefinition></ColumnDefinition>
-            </Grid.ColumnDefinitions>
-            <Grid Grid.Column="0">
-                <GroupBox Header="Tổng số sổ mở trong ngày" FontSize="18" Width="Auto" HorizontalAlignment="Center" Margin="16" materialDesign:ShadowAssist.ShadowDepth="Depth4">
-                    <TextBlock Text="{Binding SL_SoMo}" FontSize="38" FontWeight="SemiBold" HorizontalAlignment="Center" VerticalAlignment="Center"></TextBlock>
-                </GroupBox>
-            </Grid>
-            <Grid Grid.Column="1">
-                <GroupBox Header="Tổng số phiếu gửi trong ngày" FontSize="18" Width="Auto" HorizontalAlignment="Center" Margin="16" materialDesign:ShadowAssist.ShadowDepth="Depth4">
-                    <TextBlock Text="{Binding SL_PhieuGui}" FontSize="38" FontWeight="SemiBold" HorizontalAlignment="Center" VerticalAlignment="Center"></TextBlock>
-                </GroupBox>
-            </Grid>
-            <Grid Grid.Column="2">
-                <GroupBox Header="Tổng số phiếu rút trong ngày" FontSize="18" Width="Auto" HorizontalAlignment="Center" Margin="16" materialDesign:ShadowAssist.ShadowDepth="Depth4">
-                    <TextBlock Text="{Binding SL_PhieuRut}" FontSize="38" FontWeight="SemiBold" HorizontalAlignment="Center" VerticalAlignment="Center"></TextBlock>
-                </GroupBox>
-            </Grid>
-        </Grid>
-        <Grid Grid.Row="3">
-            <Grid.ColumnDefinitions>
-                <ColumnDefinition></ColumnDefinition>
-                <ColumnDefinition></ColumnDefinition>
-                <ColumnDefinition></ColumnDefinition>
-            </Grid.ColumnDefinitions>
-            <Grid Grid.Column="0" HorizontalAlignment="Center">
-                <GroupBox Header="Tổng thu trong ngày (VND)" FontSize="18" Width="Auto" HorizontalAlignment="Center" Margin="16" materialDesign:ShadowAssist.ShadowDepth="Depth4">
-                    <TextBlock Text="{Binding TongThu}" FontSize="38" FontWeight="SemiBold" HorizontalAlignment="Center" VerticalAlignment="Center"></TextBlock>
-                </GroupBox>
-            </Grid>
-            <Grid Grid.Column="1" HorizontalAlignment="Center">
-                <StackPanel HorizontalAlignment="Center" VerticalAlignment="Center">
-                    <TextBlock Text="Sự hài lòng của khách hàng" HorizontalAlignment="Center" LineHeight="26" FontSize="24" Foreground="{StaticResource PrimaryHueDarkBrush}" FontWeight="Bold"></TextBlock>
-                    <TextBlock Text="là niềm vui của chúng ta" HorizontalAlignment="Center" LineHeight="26" FontSize="24" Foreground="{StaticResource PrimaryHueDarkBrush}" FontWeight="Bold"/>
-                    <TextBlock Text="-------------------" HorizontalAlignment="Center" LineHeight="26" FontSize="24" Foreground="{StaticResource PrimaryHueDarkBrush}" FontWeight="Bold"/>
-                    <TextBlock Text="An toàn, chính trực, hiệu quả" HorizontalAlignment="Center" LineHeight="26" FontSize="24" Foreground="{StaticResource PrimaryHueDarkBrush}" FontWeight="Bold"/>
-                </StackPanel>
-            </Grid>
-            <Grid Grid.Column="2" HorizontalAlignment="Center">
-                <GroupBox Header="Tổng chi trong ngày (VND)" FontSize="18" Width="Auto" HorizontalAlignment="Center" Margin="16" materialDesign:ShadowAssist.ShadowDepth="Depth4">
-                    <TextBlock Text="{Binding TongChi}" FontSize="38" FontWeight="SemiBold" HorizontalAlignment="Center" VerticalAlignment="Center"></TextBlock>
-                </GroupBox>
-            </Grid>
+                <TextBlock TextAlignment="Center" TextWrapping="Wrap" FontWeight="Bold" HorizontalAlignment="Center" VerticalAlignment="Center" Foreground="#DDFFFFFF" FontSize="24" Margin="100,0">
+                            Số phiếu mua hàng chưa duyệt
+                </TextBlock>
 
+            </materialDesign:Card>
         </Grid>
+        <Grid Margin="12,0" Grid.Row="3" Grid.RowSpan="4" Grid.Column="5" Grid.ColumnSpan="3">
+            <materialDesign:Card>
+                <TextBlock Text="{Binding SL_PhieuDN}" FontSize="128" FontWeight="ExtraBlack" HorizontalAlignment="Center" VerticalAlignment="Center" Foreground="#DD000000"></TextBlock>
+            </materialDesign:Card>
+        </Grid>
+
+        <Grid Margin="8,8,8,0" Grid.Row="2" Grid.RowSpan="1" Grid.Column="5" Grid.ColumnSpan="3" >
+            <materialDesign:Card materialDesign:ShadowAssist.ShadowDepth="Depth5">
+                <materialDesign:Card.Background>
+                    <LinearGradientBrush EndPoint="1,1" MappingMode="RelativeToBoundingBox" StartPoint="0,0">
+                        <GradientStop Color="#FF00DDB7" Offset="0"/>
+                        <GradientStop Color="#FF268FCD" Offset="1"/>
+                    </LinearGradientBrush>
+                </materialDesign:Card.Background>
+
+                <TextBlock TextAlignment="Center" TextWrapping="Wrap" FontWeight="Bold" HorizontalAlignment="Center" VerticalAlignment="Center" Foreground="#DDFFFFFF" FontSize="24" Margin="64,0">
+                            Số phiếu đề nghị xuất hàng chưa duyệt
+                </TextBlock>
+
+            </materialDesign:Card>
+        </Grid>
+        <Grid Margin="12,0" Grid.Row="3" Grid.RowSpan="4" Grid.Column="9" Grid.ColumnSpan="3">
+            <materialDesign:Card>
+                <TextBlock Text="{Binding SL_HD}" FontSize="128" FontWeight="ExtraBlack" HorizontalAlignment="Center" VerticalAlignment="Center" Foreground="#DD000000"></TextBlock>
+            </materialDesign:Card>
+        </Grid>
+        <Grid Margin="8,8,8,0" Grid.Row="2" Grid.RowSpan="1" Grid.Column="9" Grid.ColumnSpan="3" >
+            <materialDesign:Card materialDesign:ShadowAssist.ShadowDepth="Depth5">
+                <materialDesign:Card.Background>
+                    <LinearGradientBrush EndPoint="1,1" MappingMode="RelativeToBoundingBox" StartPoint="0,0">
+                        <GradientStop Color="#FF00DDB7" Offset="0"/>
+                        <GradientStop Color="#FF268FCD" Offset="1"/>
+                    </LinearGradientBrush>
+                </materialDesign:Card.Background>
+
+                <TextBlock TextAlignment="Center" TextWrapping="Wrap" FontWeight="Bold" HorizontalAlignment="Center" VerticalAlignment="Center" Foreground="#DDFFFFFF" FontSize="24" Margin="150,0">
+                            Số hóa đơn trong ngày
+                </TextBlock>
+
+            </materialDesign:Card>
+        </Grid>
+
     </Grid>
 </Page>

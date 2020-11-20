@@ -741,7 +741,7 @@ namespace MasterSaveDemo.ViewModel
             },
     (q) =>
     {
-        BaoCaoTonKho_PrintPreview_ViewModel printPreviewBaoCaoTonKho = new BaoCaoTonKho_PrintPreview_ViewModel(BaoCaoTonKho, SelectedStartDate, SelectedEndDate, "*insert nguoi tao here");
+        BaoCaoTonKho_PrintPreview_ViewModel printPreviewBaoCaoTonKho = new BaoCaoTonKho_PrintPreview_ViewModel(BaoCaoTonKho, SelectedStartDate, SelectedEndDate, "Sơn");
         BaoCaoTonKho_PrintPreview PrintPreviewWindow = new BaoCaoTonKho_PrintPreview(printPreviewBaoCaoTonKho);
         PrintPreviewWindow.ShowDialog();
     }

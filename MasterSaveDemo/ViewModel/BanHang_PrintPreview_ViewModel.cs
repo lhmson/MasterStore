@@ -3,117 +3,74 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using System.Windows.Forms;
-using System.Collections.ObjectModel;
-using MasterSaveDemo.Model;
 using System.Windows.Input;
 using System.Windows;
-using System.Windows.Controls;
+using System.Drawing;
+using System.Collections.ObjectModel;
+using MasterSaveDemo.Helper;
 
 namespace MasterSaveDemo.ViewModel
 {
     public class BanHang_PrintPreview_ViewModel : BaseViewModel
     {
+        #region Variables
+        public ICommand CloseWindowCommand { get; set; }
 
-        //---------------
+        private string _NgayThangNam;
+        public string NgayThangNam
+        {
+            get { return _NgayThangNam; }
+            set { _NgayThangNam = value; OnPropertyChanged(); }
+        }
 
+        private string _TenNhanVien;
+        public string TenNhanVien
+        {
+            get { return _TenNhanVien; }
+            set { _TenNhanVien = value; OnPropertyChanged(); }
+        }
 
-        #region Old code
-        ////---------------
-        //private string _NguoiTaoPhieu;
+        private string _MaHD;
+        public string MaHD
+        {
+            get { return _MaHD; }
+            set { _MaHD = value; OnPropertyChanged(); }
+        }
 
-        //public string NguoiTaoPhieu
-        //{
-        //    get { return _NguoiTaoPhieu; }
-        //    set { _NguoiTaoPhieu = value; OnPropertyChanged(); }
-        //}
-        ////---------------
-        //private string _MaPhieuRut;
+        private string _TongTien;
+        public string TongTien
+        {
+            get { return _TongTien; }
+            set { _TongTien = value; OnPropertyChanged(); }
+        }
 
-        //public string MaPhieuRut
-        //{
-        //    get { return _MaPhieuRut; }
-        //    set { _MaPhieuRut = value; OnPropertyChanged(); }
-        //}
-        ////---------------
-        //private string _NgayTaoPhieu;
+        private ObservableCollection<ListMatHangMua> _ListMatHang;
+        public ObservableCollection<ListMatHangMua> ListMatHang
+        {
+            get { return _ListMatHang; }
+            set { _ListMatHang = value; OnPropertyChanged(); }
+        }
 
-        //public string NgayTaoPhieu
-        //{
-        //    get { return _NgayTaoPhieu; }
-        //    set { _NgayTaoPhieu = value; OnPropertyChanged(); }
-        //}
-        ////---------------
-        //private string _TenKhachhang;
-
-        //public string TenKhachhang
-        //{
-        //    get { return _TenKhachhang; }
-        //    set { _TenKhachhang = value; OnPropertyChanged(); }
-        //}
-        ////---------------
-        //private string _NgayRut;
-
-        //public string NgayRut
-        //{
-        //    get { return _NgayRut; }
-        //    set { _NgayRut = value; OnPropertyChanged(); }
-        //}
-        //private string _SoTienRut;
-
-        //public string SoTienRut
-        //{
-        //    get { return _SoTienRut; }
-        //    set { _SoTienRut = value; OnPropertyChanged(); }
-        //}
-
-        ////---------------
-        
-        
-        ////--------------
-
-        //public ICommand CloseWindowCommand { get; set; }
-        //public ICommand Print_Command { get; set; }
-
-        //public BanHang_PrintPreview_ViewModel(string MaPR, string TenKH, string Ngay, string Tien)
-        //{
-        //    MaPhieuRut = MaPR;
-        //    TenKhachhang = TenKH;
-        //    NgayRut = Ngay;
-        //    NguoiTaoPhieu = LoginViewModel.TaiKhoanSuDung.HoTen;
-        //    SoTienRut = Tien;
-        //    NgayTaoPhieu = DateTime.Now.ToString("dd/MM/yyyy");
-        //    CloseWindowCommand = new RelayCommand<object>((p) => { return p == null ? false : true; }, (p) => {
-        //        var ex = p as Window;
-        //        ex.Close();
-
-        //    });
-
-        //    Print_Command = new RelayCommand<object>((p) => { return p == null ? false : true; }, (p) =>
-        //    {
-        //        var ex = p as Window;
-        //        try
-        //        {
-        //            System.Windows.Controls.PrintDialog printDialog = new System.Windows.Controls.PrintDialog();
-        //            if (printDialog.ShowDialog() == true)
-        //            {
-        //                printDialog.PrintVisual(ex, "Print report");
-
-        //            }
-        //        }
-        //        catch (Exception e)
-        //        {
-        //            System.Windows.MessageBox.Show("Cannot print");
-        //        }
-
-        //    });
-
-
-        //}
         #endregion
+        public void Load()
+        {
+            string NgayLapHD = DateTime.Now.ToString("dd/MM/yyyy"); 
+            NgayThangNam = "Ngày " + NgayLapHD[0] + NgayLapHD[1] + ", Tháng " + NgayLapHD[3] + NgayLapHD[4] + ", Năm " + NgayLapHD.Substring(6);
+        }
+        #region 
+        #endregion
+        public BanHang_PrintPreview_ViewModel(string maHD, string TenNV, string tt, ObservableCollection<ListMatHangMua> list)
+        {
+            MaHD = maHD;
+            TenNhanVien = TenNV;
+            TongTien = tt;
+            ListMatHang = list;
+            Load();
+            CloseWindowCommand = new RelayCommand<Window>((p) => { return p == null ? false : true; }, (p) => {
+                p.Close();
+            });
 
-        // new code from this hihi
 
+        }
     }
-
 }

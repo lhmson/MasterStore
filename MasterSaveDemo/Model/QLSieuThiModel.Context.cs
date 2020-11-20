@@ -25,12 +25,12 @@ namespace MasterSaveDemo.Model
             throw new UnintentionalCodeFirstException();
         }
     
+        public virtual DbSet<CHUCNANG> CHUCNANGs { get; set; }
         public virtual DbSet<CT_HOADON> CT_HOADON { get; set; }
         public virtual DbSet<CT_PHIEUNHAPKHO> CT_PHIEUNHAPKHO { get; set; }
         public virtual DbSet<CT_PHIEUXUATKHO> CT_PHIEUXUATKHO { get; set; }
         public virtual DbSet<CT_THEKHO> CT_THEKHO { get; set; }
         public virtual DbSet<CT_THONGKENGAY> CT_THONGKENGAY { get; set; }
-        public virtual DbSet<CHUCNANG> CHUCNANGs { get; set; }
         public virtual DbSet<HOADON> HOADONs { get; set; }
         public virtual DbSet<MATHANG> MATHANGs { get; set; }
         public virtual DbSet<NGUOIDUNG> NGUOIDUNGs { get; set; }
@@ -41,6 +41,7 @@ namespace MasterSaveDemo.Model
         public virtual DbSet<PHIEUNHAPKHO> PHIEUNHAPKHOes { get; set; }
         public virtual DbSet<PHIEUXUATKHO> PHIEUXUATKHOes { get; set; }
         public virtual DbSet<QUAY> QUAYs { get; set; }
+        public virtual DbSet<sysdiagram> sysdiagrams { get; set; }
         public virtual DbSet<THAMSO> THAMSOes { get; set; }
         public virtual DbSet<THEKHO> THEKHOes { get; set; }
         public virtual DbSet<THONGBAO> THONGBAOs { get; set; }

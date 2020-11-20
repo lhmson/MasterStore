@@ -1,6 +1,6 @@
 ﻿using MasterSaveDemo.Helper;
 using MasterSaveDemo.Model;
-﻿using MasterSaveDemo.View;
+using MasterSaveDemo.View;
 using System;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
@@ -43,42 +43,42 @@ namespace MasterSaveDemo.ViewModel
         }
 
         private bool _Enable_MoSo;
-        public bool Enable_MoSo
+        public bool Enable_XuatHang
         {
             get => _Enable_MoSo;
             set { _Enable_MoSo = value; OnPropertyChanged(); }
         }
 
         private bool _Enable_GuiTien;
-        public bool Enable_GuiTien
+        public bool Enable_BanHang
         {
             get => _Enable_GuiTien;
             set { _Enable_GuiTien = value; OnPropertyChanged(); }
         }
 
         private bool _Enable_RutTien;
-        public bool Enable_RutTien
+        public bool Enable_TraCuu
         {
             get => _Enable_RutTien;
             set { _Enable_RutTien = value; OnPropertyChanged(); }
         }
 
         private bool _Enable_TraCuu;
-        public bool Enable_TraCuu
+        public bool Enable_BCDS
         {
             get => _Enable_TraCuu;
             set { _Enable_TraCuu = value; OnPropertyChanged(); }
         }
 
         private bool _Enable_BCDS;
-        public bool Enable_BCDS
+        public bool Enable_BCTK
         {
             get => _Enable_BCDS;
             set { _Enable_BCDS = value; OnPropertyChanged(); }
         }
 
         private bool _Enable_BCMD;
-        public bool Enable_BCMD
+        public bool Enable_TDQD
         {
             get => _Enable_BCMD;
             set { _Enable_BCMD = value; OnPropertyChanged(); }
@@ -87,7 +87,7 @@ namespace MasterSaveDemo.ViewModel
         private Page _FrameContent;
 
         public Page FrameContent
-        { 
+        {
             get { return _FrameContent; }
             set { _FrameContent = value; OnPropertyChanged(); }
         }
@@ -97,6 +97,7 @@ namespace MasterSaveDemo.ViewModel
         public ICommand Home_Page_SelectedCommand { get; set; }
         public ICommand NhapHang_Page_SelectedCommand { get; set; }
         public ICommand XuatHang_Page_SelectedCommand { get; set; }
+        public ICommand DuyetXuatHang_Page_SelectedCommand { get; set; }
         public ICommand BanHang_Page_SelectedCommand { get; set; }
         public ICommand TraCuu_Page_SelectedCommand { get; set; }
         public ICommand BaoCaoDoanhSo_Page_SelectedCommand { get; set; }
@@ -108,14 +109,14 @@ namespace MasterSaveDemo.ViewModel
         #endregion
 
         private bool _Enable_TDQD;
-        public bool Enable_TDQD
+        public bool Enable_QLNS
         {
             get => _Enable_TDQD;
             set { _Enable_TDQD = value; OnPropertyChanged(); }
         }
 
         private bool _Enable_QLNS;
-        public bool Enable_QLNS
+        public bool Enable_NhapHang
         {
             get => _Enable_QLNS;
             set { _Enable_QLNS = value; OnPropertyChanged(); }
@@ -130,56 +131,56 @@ namespace MasterSaveDemo.ViewModel
         }
 
         private string _MoSo_Tooltip;
-        public string MoSo_Tooltip
+        public string XuatHang_Tooltip
         {
             get => _MoSo_Tooltip;
             set { _MoSo_Tooltip = value; OnPropertyChanged(); }
         }
 
         private string _GuiTien_Tooltip;
-        public string GuiTien_Tooltip
+        public string BanHang_Tooltip
         {
             get => _GuiTien_Tooltip;
             set { _GuiTien_Tooltip = value; OnPropertyChanged(); }
         }
 
         private string _RutTien_Tooltip;
-        public string RutTien_Tooltip
+        public string TraCuu_Tooltip
         {
             get => _RutTien_Tooltip;
             set { _RutTien_Tooltip = value; OnPropertyChanged(); }
         }
 
         private string _TraCuu_Tooltip;
-        public string TraCuu_Tooltip
+        public string BaoCaoDS_Tooltip
         {
             get => _TraCuu_Tooltip;
             set { _TraCuu_Tooltip = value; OnPropertyChanged(); }
         }
 
         private string _BaoCaoDS_Tooltip;
-        public string BaoCaoDS_Tooltip
+        public string BaoCaoTK_Tooltip
         {
             get => _BaoCaoDS_Tooltip;
             set { _BaoCaoDS_Tooltip = value; OnPropertyChanged(); }
         }
 
         private string _BaoCaoMD_Tooltip;
-        public string BaoCaoMD_Tooltip
+        public string TDQD_Tooltip
         {
             get => _BaoCaoMD_Tooltip;
             set { _BaoCaoMD_Tooltip = value; OnPropertyChanged(); }
         }
 
         private string _TDQD_Tooltip;
-        public string TDQD_Tooltip
+        public string QLNS_Tooltip
         {
             get => _TDQD_Tooltip;
             set { _TDQD_Tooltip = value; OnPropertyChanged(); }
         }
 
         private string _QLNS_Tooltip;
-        public string QLNS_Tooltip
+        public string NhapHang_Tooltip
         {
             get => _QLNS_Tooltip;
             set { _QLNS_Tooltip = value; OnPropertyChanged(); }
@@ -190,13 +191,13 @@ namespace MasterSaveDemo.ViewModel
 
         public bool isLoaded = false;
 
-   
+
 
         #region Function
         private void Init_Button_User(NGUOIDUNG user)
         {
             Init_Button();
-            ObservableCollection<PHANQUYEN> list_PhanQuyen= new ObservableCollection<PHANQUYEN>(DataProvider.Ins.DB.PHANQUYENs);
+            ObservableCollection<PHANQUYEN> list_PhanQuyen = new ObservableCollection<PHANQUYEN>(DataProvider.Ins.DB.PHANQUYENs);
             foreach (var item in list_PhanQuyen)
             {
                 if (item.MaNhom == user.MaNhom)
@@ -209,10 +210,10 @@ namespace MasterSaveDemo.ViewModel
 
         private void Init_Button()
         {
-            Enable_Home = Enable_GuiTien = Enable_RutTien = Enable_TraCuu = Enable_BCDS = Enable_BCMD = Enable_QLNS = Enable_TDQD = Enable_MoSo =  false;
+            Enable_Home = Enable_BanHang = Enable_TraCuu = Enable_BCDS = Enable_BCTK = Enable_TDQD = Enable_NhapHang = Enable_QLNS = Enable_XuatHang = false;
             Enable_Home = true;
             // tooltip handle
-            MoSo_Tooltip = GuiTien_Tooltip = RutTien_Tooltip = TraCuu_Tooltip = BaoCaoDS_Tooltip = BaoCaoMD_Tooltip = QLNS_Tooltip = TDQD_Tooltip = "Không thể truy cập";
+            XuatHang_Tooltip = BanHang_Tooltip = TraCuu_Tooltip = BaoCaoDS_Tooltip = BaoCaoTK_Tooltip = TDQD_Tooltip = NhapHang_Tooltip = QLNS_Tooltip = "Không thể truy cập";
             Home_Tooltip = "Có thể truy cập";
         }
 
@@ -221,28 +222,28 @@ namespace MasterSaveDemo.ViewModel
             switch (maChucNang)
             {
                 case 1:
-                    Enable_QLNS = true;
+                    Enable_NhapHang = true;
                     break;
                 case 2:
-                    Enable_MoSo = true;
+                    Enable_XuatHang = true;
                     break;
                 case 3:
-                    Enable_GuiTien = true;
+                    Enable_BanHang = true;
                     break;
                 case 4:
-                    Enable_RutTien = true;
-                    break;
-                case 5:
                     Enable_TraCuu = true;
                     break;
-                case 6:
+                case 5:
                     Enable_BCDS = true;
                     break;
+                case 6:
+                    Enable_BCTK = true;
+                    break;
                 case 7:
-                    Enable_BCMD = true;
+                    Enable_TDQD = true;
                     break;
                 case 8:
-                    Enable_TDQD = true;
+                    Enable_QLNS = true;
                     break;
                 case 9:
                     break;
@@ -255,30 +256,28 @@ namespace MasterSaveDemo.ViewModel
             switch (maChucNang)
             {
                 case 1:
-                    QLNS_Tooltip = "Có thể truy cập";
+                    NhapHang_Tooltip = "Có thể truy cập";
                     break;
                 case 2:
-                    MoSo_Tooltip = "Có thể truy cập";
+                    XuatHang_Tooltip = "Có thể truy cập";
                     break;
                 case 3:
-                    GuiTien_Tooltip = "Có thể truy cập";
+                    BanHang_Tooltip = "Có thể truy cập";
                     break;
                 case 4:
-                    RutTien_Tooltip = "Có thể truy cập";
-                    break;
-                case 5:
                     TraCuu_Tooltip = "Có thể truy cập";
                     break;
-                case 6:
+                case 5:
                     BaoCaoDS_Tooltip = "Có thể truy cập";
                     break;
-                case 7:
-                    BaoCaoMD_Tooltip = "Có thể truy cập";
+                case 6:
+                    BaoCaoTK_Tooltip = "Có thể truy cập";
                     break;
-                case 8:
+                case 7:
                     TDQD_Tooltip = "Có thể truy cập";
                     break;
-                case 9:
+                case 8:
+                    QLNS_Tooltip = "Có thể truy cập";
                     break;
             }
         }
@@ -289,7 +288,7 @@ namespace MasterSaveDemo.ViewModel
         }
         static public void LogOut()
         {
-            
+
         }
         public ICommand Home_Select { get; set; }
         #endregion
@@ -297,7 +296,7 @@ namespace MasterSaveDemo.ViewModel
         {
             updateThongKeNgay();
             // set bang true sau nay phai sua hihi
-            Enable_BCDS = Enable_BCMD = Enable_GuiTien = Enable_Home = Enable_MoSo = Enable_QLNS = Enable_RutTien = Enable_TDQD = Enable_TraCuu = true;
+            Enable_BCTK = Enable_TDQD = Enable_BanHang = Enable_Home = Enable_XuatHang = Enable_NhapHang = Enable_TraCuu = Enable_QLNS = Enable_BCDS = true;
             //Selected_HOME = true;
             //Selected_DangXuat = false;
             LoadedWindowCommand = new RelayCommand<Window>((p) => { return true; }, (p) => {
@@ -306,9 +305,9 @@ namespace MasterSaveDemo.ViewModel
                 p.Hide(); // main view hide in login window
 
                 // cmt de chay main, sau nay code cho login sau hihi
-                //LoginWindow loginWindow = new LoginWindow();
-                //loginWindow.ShowDialog();
-                //isLoaded = true;
+                LoginWindow loginWindow = new LoginWindow();
+                loginWindow.ShowDialog();
+                isLoaded = true;
 
                 //if (loginWindow.DataContext == null) return;
                 //var loginVM = loginWindow.DataContext as LoginViewModel;
@@ -329,7 +328,7 @@ namespace MasterSaveDemo.ViewModel
                     if (LoginViewModel.TaiKhoanSuDung != null)
                     {
                         Init_Button_User(LoginViewModel.TaiKhoanSuDung);
-                        
+
                         _timer.Stop();
                     }
                 };
@@ -358,6 +357,13 @@ namespace MasterSaveDemo.ViewModel
                 //Selected_DangXuat = false;
                 FrameContent = new XuatHang_Page();
                 FrameContent.DataContext = new XuatHang_ViewModel();
+            });
+
+            DuyetXuatHang_Page_SelectedCommand = new RelayCommand<HamburgerMenu.HamburgerMenu>((p) => { return true; }, (p) => {
+                //Selected_HOME = false;
+                //Selected_DangXuat = false;
+                FrameContent = new DuyetPhieuNhap_Page();
+                FrameContent.DataContext = new DuyetPhieuNhap_ViewModel();
             });
 
             BanHang_Page_SelectedCommand = new RelayCommand<HamburgerMenu.HamburgerMenu>((p) => { return true; }, (p) => {

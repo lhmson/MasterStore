@@ -105,5 +105,59 @@ namespace MasterSaveDemo.ViewModel
         //    Tinh_SoPhieuGui_TongThu();
         //    Tinh_SoPhieuRut_TongChi();
         //}
+
+        #region
+        private string _SL_PhieuNhap;
+        public string SL_PhieuNhap { get => _SL_PhieuNhap; set { _SL_PhieuNhap = value; OnPropertyChanged(); } }
+
+        private string _SL_PhieuDN;
+        public string SL_PhieuDN { get => _SL_PhieuDN; set { _SL_PhieuDN = value; OnPropertyChanged(); } }
+
+        private string _SL_HD;
+        public string SL_HD { get => _SL_HD; set { _SL_HD = value; OnPropertyChanged(); } }
+        #endregion
+
+        public void init_PhieuNhap()
+        {
+            ObservableCollection<PHIEUNHAPKHO> list_phieu = new ObservableCollection<PHIEUNHAPKHO>(DataProvider.Ins.DB.PHIEUNHAPKHOes);
+
+            int count = 0;
+
+            foreach (var item in list_phieu)
+                if (item.Duyet == 0)
+                    count++;
+            SL_PhieuNhap = count + "";
+        }
+
+        public void init_PhieuXuat()
+        {
+            ObservableCollection<PHIEUXUATKHO> list_phieu = new ObservableCollection<PHIEUXUATKHO>(DataProvider.Ins.DB.PHIEUXUATKHOes);
+
+            int count = 0;
+
+            foreach (var item in list_phieu)
+                if (item.TrangThai == 0)
+                    count++;
+            SL_PhieuDN = count + "";
+        }
+
+        public void init_HoaDon()
+        {
+            ObservableCollection<HOADON> list_hd = new ObservableCollection<HOADON>(DataProvider.Ins.DB.HOADONs);
+
+            int count = 0;
+
+            foreach (var item in list_hd)
+                if (item.NgayLap.ToString("dd/mm/yyyy") == DateTime.Now.ToString("dd/mm/yyyy"))
+                    count++;
+
+            SL_HD = count + "";
+        }
+        public Home_PageViewModel()
+        {
+            init_HoaDon();
+            init_PhieuNhap();
+            init_PhieuXuat();
+        }
     }
 }

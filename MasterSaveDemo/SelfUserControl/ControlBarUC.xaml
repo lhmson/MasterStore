@@ -40,7 +40,7 @@
                   Background="{DynamicResource PrimaryHueDarkBrush}"
                   Foreground="{DynamicResource PrimaryHueMidForegroundBrush}"
                   Padding="8">
-                            <TextBlock FontWeight="SemiBold" TextAlignment="Center" FontSize="14" Text="Master Save Banking System - Phần mềm quản lý sổ tiết kiệm chuyên nghiệp"></TextBlock>
+                            <TextBlock FontWeight="SemiBold" TextAlignment="Center" FontSize="14" Text="Master Store Market System - Phần mềm quản lý siêu thị chuyên nghiệp"></TextBlock>
                         </materialDesign:Card>
                     </Grid>
                     <Grid Grid.Column="1">
@@ -109,7 +109,7 @@
         </Grid>
         <Grid Grid.Column="0" Background="Transparent">
             <materialDesign:Card Margin="5,5,5,5">
-                <Image Source="/Images/logoms.png" Width="210" Margin="10"/>
+                <Image Source="/Images/logo_masterstore.png" Width="210" Margin="10"/>
             </materialDesign:Card>
             
         </Grid>

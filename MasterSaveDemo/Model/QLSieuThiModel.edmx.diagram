@@ -4,7 +4,73 @@
   <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
     <!-- Diagram content (shape and connector positions) -->
     <edmx:Diagrams>
-      <Diagram DiagramId="dd7b267123fc4685b8d5ffee1828b917" Name="Diagram1" ZoomLevel="94">
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+=======
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        <AssociationConnector Association="QLSieuThiModel.FK__PHANQUYEN__MaChu__2E1BDC42" />
+=======
+      <Diagram DiagramId="dd7b267123fc4685b8d5ffee1828b917" Name="Diagram1" ZoomLevel="64">
         <EntityTypeShape EntityType="QLSieuThiModel.CT_HOADON" Width="1.5" PointX="8.25" PointY="11.375" />
         <EntityTypeShape EntityType="QLSieuThiModel.CT_PHIEUNHAPKHO" Width="1.5" PointX="8.25" PointY="7.5" />
         <EntityTypeShape EntityType="QLSieuThiModel.CT_PHIEUXUATKHO" Width="1.5" PointX="11.25" PointY="11.375" />
@@ -25,6 +91,7 @@
         <EntityTypeShape EntityType="QLSieuThiModel.THEKHO" Width="1.5" PointX="11.25" PointY="7.375" />
         <EntityTypeShape EntityType="QLSieuThiModel.THONGBAO" Width="1.5" PointX="5.75" PointY="4.875" />
         <EntityTypeShape EntityType="QLSieuThiModel.THONGKENGAY" Width="1.5" PointX="6" PointY="19.875" />
+>>>>>>> 51a0fc5819a4ce0eae61b8490ed6c19116fa0575
         <AssociationConnector Association="QLSieuThiModel.FK__CT_HOADON__MaHoa__49C3F6B7" />
         <AssociationConnector Association="QLSieuThiModel.FK__CT_HOADON__MaMH__48CFD27E" />
         <AssociationConnector Association="QLSieuThiModel.FK__CT_PHIEUN__MaPhi__52593CB8" />
@@ -47,6 +114,29 @@
         <AssociationConnector Association="QLSieuThiModel.FK__PHIEUNHAP__MaNCC__4CA06362" />
         <AssociationConnector Association="QLSieuThiModel.FK__PHANQUYEN__MaNho__2D27B809" />
         <AssociationConnector Association="QLSieuThiModel.FK__PHIEUXUAT__MaQua__3D5E1FD2" />
+        <EntityTypeShape EntityType="QLSieuThiModel.sysdiagram" Width="1.5" PointX="6.1523535205760744" PointY="22.10182828740302" />
+        <AssociationConnector Association="QLSieuThiModel.FK__PHANQUYEN__MaChu__412EB0B6" />
+        <AssociationConnector Association="QLSieuThiModel.FK__CT_HOADON__MaHoa__5CD6CB2B" />
+        <AssociationConnector Association="QLSieuThiModel.FK__CT_HOADON__MaMH__5BE2A6F2" />
+        <AssociationConnector Association="QLSieuThiModel.FK__CT_PHIEUN__MaPhi__656C112C" />
+        <AssociationConnector Association="QLSieuThiModel.FK__CT_PHIEUNH__MaMH__6477ECF3" />
+        <AssociationConnector Association="QLSieuThiModel.FK__CT_PHIEUX__MaPhi__5441852A" />
+        <AssociationConnector Association="QLSieuThiModel.FK__CT_PHIEUXU__MaMH__534D60F1" />
+        <AssociationConnector Association="QLSieuThiModel.FK__CT_THEKHO__MaThe__6D0D32F4" />
+        <AssociationConnector Association="QLSieuThiModel.FK__CT_THONGK__MaTho__71D1E811" />
+        <AssociationConnector Association="QLSieuThiModel.FK__CT_THONGKE__MaMH__72C60C4A" />
+        <AssociationConnector Association="QLSieuThiModel.FK__HOADON__MaNguoiL__59063A47" />
+        <AssociationConnector Association="QLSieuThiModel.FK__HOADON__MaQuay__5812160E" />
+        <AssociationConnector Association="QLSieuThiModel.FK__MATHANG__MaNCC__47DBAE45" />
+        <AssociationConnector Association="QLSieuThiModel.FK__MATHANG__MaNSX__48CFD27E" />
+        <AssociationConnector Association="QLSieuThiModel.FK__THEKHO__MaMH__693CA210" />
+        <AssociationConnector Association="QLSieuThiModel.FK__NGUOIDUNG__MaNho__3B75D760" />
+        <AssociationConnector Association="QLSieuThiModel.FK__PHIEUNHAP__MaNgu__619B8048" />
+        <AssociationConnector Association="QLSieuThiModel.FK__PHIEUXUAT__MaNgu__4F7CD00D" />
+        <AssociationConnector Association="QLSieuThiModel.FK__THEKHO__MaNguoiL__68487DD7" />
+        <AssociationConnector Association="QLSieuThiModel.FK__PHIEUNHAP__MaNCC__5FB337D6" />
+        <AssociationConnector Association="QLSieuThiModel.FK__PHANQUYEN__MaNho__403A8C7D" />
+        <AssociationConnector Association="QLSieuThiModel.FK__PHIEUXUAT__MaQua__5070F446" />
       </Diagram>
     </edmx:Diagrams>
   </edmx:Designer>

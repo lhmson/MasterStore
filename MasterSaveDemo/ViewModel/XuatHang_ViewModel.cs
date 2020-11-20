@@ -1,5 +1,6 @@
 ﻿using MasterSaveDemo.Helper;
 using MasterSaveDemo.Model;
+using MaterialDesignColors.Recommended;
 using System;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
@@ -9,6 +10,7 @@ using System.Threading.Tasks;
 using System.Windows;
 using System.Windows.Controls;
 using System.Windows.Input;
+using System.Xml.Linq;
 
 namespace MasterSaveDemo.ViewModel
 {
@@ -34,7 +36,7 @@ namespace MasterSaveDemo.ViewModel
         //    get { return _OpenDialog; }
         //    set { _OpenDialog = value; OnPropertyChanged();}
         //}
-       
+
         //private ObservableCollection<ListLichSuPhieuGui> _ListLichSuGD;
 
         //public ObservableCollection<ListLichSuPhieuGui> ListLichSuGD
@@ -97,7 +99,7 @@ namespace MasterSaveDemo.ViewModel
         //    set { _Notify_money = value; OnPropertyChanged(); }
         //}
 
-        
+
         //private string _MaSoTietKiem_check;
         //public string MaSoTietKiem_check
         //{
@@ -296,7 +298,7 @@ namespace MasterSaveDemo.ViewModel
         //}
         //private void Init()
         //{
-            
+
         //    SoTienGui_check = "None";
         //    NgayDaoHanKeTiep_check = "None";
         //    TenKhachHang = "";
@@ -311,7 +313,7 @@ namespace MasterSaveDemo.ViewModel
         //    CanCreate = false;
 
         //}
-        
+
         //private void CheckValid()
         //{
         //    try
@@ -331,7 +333,7 @@ namespace MasterSaveDemo.ViewModel
         //        {
 
         //        }
-                
+
         //        if ( String.IsNullOrWhiteSpace(MaSoTietKiem))
         //        {
         //            Notify_Ma= "Hãy nhập mã sổ tiết kiệm trước khi bấm kiểm tra!";
@@ -407,7 +409,7 @@ namespace MasterSaveDemo.ViewModel
         //        else
         //        {
         //            CanCreate = true;
-                    
+
         //            Notify = "Thông tin phiếu gửi hợp lệ";
         //            OpenDialog = true;
         //        }
@@ -448,7 +450,7 @@ namespace MasterSaveDemo.ViewModel
         //    else
 
         //    {
-                
+
         //        SoTienGui_check = "None";
         //        NgayDaoHanKeTiep_check = "None";
         //        MaSoTietKiem_check = "None";
@@ -517,7 +519,7 @@ namespace MasterSaveDemo.ViewModel
         //    {
         //        ExecuteSTK();
         //        KiemTraNhapLai();
-                
+
         //    });
         //    CheckCommand = new RelayCommand<object>((p) =>
         //    {
@@ -525,7 +527,7 @@ namespace MasterSaveDemo.ViewModel
         //    }, (p) =>
         //    {
         //        CheckValid();
-               
+
         //    });
         //    STG_TextChangedCommand = new RelayCommand<object>((p) =>
         //    {
@@ -565,7 +567,7 @@ namespace MasterSaveDemo.ViewModel
 
         //        if (CanCreate == true)
         //        {
-                    
+
         //            string mapg = GetCodeMPG();
         //            PHIEUGUI Phieugui = new PHIEUGUI()
         //            {
@@ -590,7 +592,7 @@ namespace MasterSaveDemo.ViewModel
         //                XuatHang_PrintPreview_ViewModel PhieuGuiVM = new XuatHang_PrintPreview_ViewModel(mapg,TenKhachHang,NgayGui,SoTienGui);
         //                XuatHang_PrintPreview PhieuGui = new XuatHang_PrintPreview(PhieuGuiVM);
         //                PhieuGui.ShowDialog();
-                        
+
         //            }
         //            Init();
         //            MaSoTietKiem_check = "None"; Notify_Ma = "";
@@ -608,5 +610,231 @@ namespace MasterSaveDemo.ViewModel
         #endregion
 
         // new code from this hihi
+
+        #region declare binding variables
+
+        public string maPhieuDuyet = "";
+
+        private ObservableCollection<ListPhieu> _ListPhieu;
+        public ObservableCollection<ListPhieu> ListPhieu
+        {
+            get { return _ListPhieu; }
+            set { _ListPhieu = value; OnPropertyChanged(); }
+        }
+
+        private ObservableCollection<ListCTPhieu> _ListCTPhieu;
+        public ObservableCollection<ListCTPhieu> ListCTPhieu
+        {
+            get { return _ListCTPhieu; }
+            set { _ListCTPhieu = value; OnPropertyChanged(); }
+        }
+
+        private ListPhieu _SelectedPhieu;
+        public ListPhieu SelectedPhieu
+        {
+            get { return _SelectedPhieu; }
+            set { _SelectedPhieu = value; OnPropertyChanged(); }
+        }
+        #endregion
+
+        public string get_TenQuay(string maQuay)
+        {
+            ObservableCollection<QUAY> list_Quay = new ObservableCollection<QUAY>(DataProvider.Ins.DB.QUAYs);
+
+            foreach (var quay in list_Quay)
+                if (quay.MaQuay == maQuay)
+                    return quay.TenQuay;
+
+            return "";
+        }
+
+        public void khongduyet()
+        {
+            if (SelectedPhieu == null)
+                return;
+            ObservableCollection<PHIEUXUATKHO> list_PXK = new ObservableCollection<PHIEUXUATKHO>(DataProvider.Ins.DB.PHIEUXUATKHOes);
+
+            foreach (var pxk in list_PXK)
+                if (pxk.MaPhieuXK == SelectedPhieu.Ma)
+                {
+                    pxk.TrangThai = 2;
+                    DataProvider.Ins.DB.SaveChanges();
+                    break;
+                }
+            ListCTPhieu = new ObservableCollection<ListCTPhieu>();
+            init_ListView();
+            MessageBox.Show("Phiếu đề nghị đã hủy thành công");
+        }
+
+        public int get_SoLuongTon(string maMH)
+        {
+            ObservableCollection<THEKHO> list_TK = new ObservableCollection<THEKHO>(DataProvider.Ins.DB.THEKHOes);
+
+            foreach (var tk in list_TK)
+                if (tk.MaMH == maMH)
+                {
+                    return tk.SoLuongTonKho;
+                }
+            return 0;
+        }
+
+        public string create_MaCTTK()
+        {
+            ObservableCollection<CT_THEKHO> list_PXK = new ObservableCollection<CT_THEKHO>(DataProvider.Ins.DB.CT_THEKHO);
+
+            int max = 0;
+            foreach (var phieu in list_PXK)
+            {
+                int value = int.Parse(phieu.MaCTTheKho.Substring(4));
+                if (max < value) max = value;
+            }
+
+            max++;
+            string code = "CTTK";
+            for (int i = 0; i < 6 - max.ToString().Length; i++)
+                code += "0";
+            code += max.ToString();
+            return code;
+        }
+
+        public void update_xuatkho(string maMH, int slxuat)
+        {
+            ObservableCollection<THEKHO> list_TK = new ObservableCollection<THEKHO>(DataProvider.Ins.DB.THEKHOes);
+
+            string maTK = "";
+            foreach (var tk in list_TK)
+                if (tk.MaMH == maMH)
+                {
+                    maTK = tk.MaTheKho;
+                    tk.SoLuongTonKho -= slxuat;
+                    break;
+                }
+
+            #region Update chi tiết xuất kho
+            CT_THEKHO temp = new CT_THEKHO()
+            {
+                MaTheKho = maTK,
+                MaCTTheKho =create_MaCTTK(),
+                NgayNhapXuat = DateTime.Now,
+                DienGiai = "",
+                MaPhieuNhapXuat = maPhieuDuyet,
+            };
+
+            DataProvider.Ins.DB.CT_THEKHO.Add(temp);
+            DataProvider.Ins.DB.SaveChanges();
+            #endregion
+        }
+        public void update_themgian(string maMH, int slthem)
+        {
+            ObservableCollection<MATHANG> list_MH = new ObservableCollection<MATHANG>(DataProvider.Ins.DB.MATHANGs);
+
+            foreach (var mh in list_MH)
+                if (mh.MaMH == maMH)
+                {
+                    mh.SoLuongTonGian += slthem;
+                    DataProvider.Ins.DB.SaveChanges();
+                    return;
+                }    
+        }
+        
+        public void duyet()
+        {
+            if (SelectedPhieu == null)
+                return;
+
+            ObservableCollection<CT_PHIEUXUATKHO> list_CTXK = new ObservableCollection<CT_PHIEUXUATKHO>(DataProvider.Ins.DB.CT_PHIEUXUATKHO);
+
+            foreach (var ct in list_CTXK)
+                if (ct.MaPhieuXK == SelectedPhieu.Ma)
+                {
+                    if (ct.SoLuong > get_SoLuongTon(ct.MaMH))
+                    {
+                        MessageBox.Show("Số lượng hàng kho không thể đáp ứng phiếu đề nghị này!");
+                        return;
+                    }
+                }
+
+            foreach (var ct in list_CTXK)
+                if (ct.MaPhieuXK == SelectedPhieu.Ma)
+                {
+                    maPhieuDuyet = ct.MaPhieuXK;
+                    update_xuatkho(ct.MaMH, ct.SoLuong);
+                    update_themgian(ct.MaMH, ct.SoLuong);
+                }
+
+            ObservableCollection<PHIEUXUATKHO> list_PXK = new ObservableCollection<PHIEUXUATKHO>(DataProvider.Ins.DB.PHIEUXUATKHOes);
+
+            foreach (var pxk in list_PXK)
+                if (pxk.MaPhieuXK == SelectedPhieu.Ma)
+                {
+                    pxk.TrangThai = 1;
+                    DataProvider.Ins.DB.SaveChanges();
+                    break;
+                }
+
+            MessageBox.Show("Xuất hàng thành công");
+            init_ListView();
+            init_ListCTPhieu("");
+        }
+
+        #region Sub Functions 
+        public void init_ListView()
+        {
+            ObservableCollection<PHIEUXUATKHO> list_PXK = new ObservableCollection<PHIEUXUATKHO>(DataProvider.Ins.DB.PHIEUXUATKHOes);
+            ListPhieu = new ObservableCollection<ListPhieu>();
+
+            int stt = 1;
+
+            foreach (var phieu in list_PXK)
+                if (phieu.TrangThai == 0)
+            {
+                ListPhieu temp = new ListPhieu(stt.ToString(),phieu.MaPhieuXK,phieu.NgayLap.ToString("dd/mm/yyyy"),get_TenQuay(phieu.MaQuay));
+                stt++;
+                ListPhieu.Add(temp);
+            }
+        }
+
+        public void init_ListCTPhieu(string maPhieu)
+        {
+            ObservableCollection<CT_PHIEUXUATKHO> list_CTXK = new ObservableCollection<CT_PHIEUXUATKHO>(DataProvider.Ins.DB.CT_PHIEUXUATKHO);
+            ListCTPhieu = new ObservableCollection<ListCTPhieu>();
+            int stt = 1;
+
+            foreach (var ct in list_CTXK)
+                if (ct.MaPhieuXK == maPhieu)
+                {
+                    ListCTPhieu temp = new ListCTPhieu(stt.ToString(), ct.MaMH, ct.MATHANG.TenMH, ct.SoLuong.ToString());
+                    stt++;
+                    ListCTPhieu.Add(temp);
+                }
+        }
+        #endregion
+
+        #region Icommand
+        public ICommand DuyetCommand { get; set; }
+        public ICommand KhongDuyetCommand { get; set; }
+        public ICommand SelectionChangedCommand { get; set; }
+        #endregion
+
+        public XuatHang_ViewModel()
+        {
+            init_ListView();
+            SelectionChangedCommand = new RelayCommand<Object>((p) => { return true; }, (p) =>
+            {
+                if (SelectedPhieu != null)
+                    init_ListCTPhieu(SelectedPhieu.Ma);
+            });
+
+            KhongDuyetCommand = new RelayCommand<Object>((p) => { if (SelectedPhieu != null) return true; return false; }, (p) =>
+            {
+                khongduyet();
+            });
+
+
+            DuyetCommand = new RelayCommand<Object>((p) => { if (SelectedPhieu != null) return true; return false; }, (p) =>
+            {
+                duyet();
+            });
+        }
     }
 }
