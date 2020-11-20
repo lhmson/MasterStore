@@ -29,7 +29,6 @@ namespace MasterSaveDemo.ViewModel
         public ICommand AddNSXFromFileCommand { get; set; }
         public ICommand AddNCCCommand { get; set; }
         public ICommand EditNCCCommand { get; set; }
-        public ICommand DeleteNCCCommand { get; set; }
         public ICommand ThemMatHangCommand { get; set; }
         public ICommand ThemNhaCungCapCommand { get; set; }
         public ICommand ThemNhaSanXuatCommand { get; set; }
@@ -43,7 +42,6 @@ namespace MasterSaveDemo.ViewModel
         public ICommand DialogOK { get; set; }
         public ICommand AddNSXCommand { get; set; }
         public ICommand EditNSXCommand { get; set; }
-        public ICommand DeleteNSXCommand { get; set; }
         public ICommand EditMHCommand { get; set; }
 
         #endregion
@@ -140,7 +138,7 @@ namespace MasterSaveDemo.ViewModel
             }
         }
 
-        
+
 
         private NHACUNGCAP _SelectedItemNCC;
         public NHACUNGCAP SelectedItemNCC
@@ -152,10 +150,9 @@ namespace MasterSaveDemo.ViewModel
                 OnPropertyChanged();
                 NCC_NotNull = _SelectedItemNCC != null;
 
-                if (_SelectedItemNCC != null)
+                if (SelectedItemNCC != null)
                 {
                     TenNCC = SelectedItemNCC.TenNCC;
-
                     DiaChi = SelectedItemNCC.DiaChi;
                     SDT = SelectedItemNCC.SDT;
                     Fax = SelectedItemNCC.Fax;
@@ -368,7 +365,6 @@ namespace MasterSaveDemo.ViewModel
 
         public void Init()
         {
-
             NgayLap = get_DateNow();
             TenNhanVien = get_NameofStaff();
             ListMatHang = new ObservableCollection<ListMatHangMua>();
@@ -506,28 +502,30 @@ namespace MasterSaveDemo.ViewModel
                 DataProvider.Ins.DB.CT_PHIEUNHAPKHO.Add(ct);
                 DataProvider.Ins.DB.SaveChanges();
 
-                ObservableCollection<THEKHO> ListTK = new ObservableCollection<THEKHO>(DataProvider.Ins.DB.THEKHOes);
-                foreach (var tk in ListTK)
-                {
-                    if (tk.MaMH == mh.MaMH)
-                    {
-                        CT_THEKHO cttk = new CT_THEKHO()
-                        {
-                            MaCTTheKho = create_MaCTTK(),
-                            NgayNhapXuat = DateTime.Now,
-                            MaPhieuNhapXuat = ct.MaCTPhieuNK,
-                            MaTheKho = tk.MaTheKho,
-                            DienGiai = "",
-                        };
-                        DataProvider.Ins.DB.CT_THEKHO.Add(cttk);
-                        DataProvider.Ins.DB.SaveChanges();
-                        
-                        tk.SoLuongTonKho += ct.SoLuong;
-                        DataProvider.Ins.DB.SaveChanges();
-                        //MessageBox.Show(tk.SoLuongTonKho + "");
-                    }
+                #region Command của thảo
+                //ObservableCollection<THEKHO> ListTK = new ObservableCollection<THEKHO>(DataProvider.Ins.DB.THEKHOes);
+                //foreach (var tk in ListTK)
+                //{
+                //    if (tk.MaMH == mh.MaMH)
+                //    {
+                //        CT_THEKHO cttk = new CT_THEKHO()
+                //        {
+                //            MaCTTheKho = create_MaCTTK(),
+                //            NgayNhapXuat = DateTime.Now,
+                //            MaPhieuNhapXuat = ct.MaCTPhieuNK,
+                //            MaTheKho = tk.MaTheKho,
+                //            DienGiai = "",
+                //        };
+                //        DataProvider.Ins.DB.CT_THEKHO.Add(cttk);
+                //        DataProvider.Ins.DB.SaveChanges();
 
-                }
+                //        tk.SoLuongTonKho += ct.SoLuong;
+                //        DataProvider.Ins.DB.SaveChanges();
+                //        //MessageBox.Show(tk.SoLuongTonKho + "");
+                //    }
+
+                //}
+                #endregion
             }
             #endregion 
         }
@@ -550,8 +548,6 @@ namespace MasterSaveDemo.ViewModel
 
         }
         #endregion
-
-
 
         public NhapHang_ViewModel()
         {
@@ -583,6 +579,7 @@ namespace MasterSaveDemo.ViewModel
                 ThemNhaCungCap wd = new ThemNhaCungCap();
                 InitNCC();
                 wd.ShowDialog();
+                NCC = (wd.DataContext as NhapHang_ViewModel).NCC;
             });
 
             ThemNhaSanXuatCommand = new AppCommand<object>((p) =>
@@ -640,8 +637,9 @@ namespace MasterSaveDemo.ViewModel
 
                 DataProvider.Ins.DB.NHACUNGCAPs.Add(ncc);
                 DataProvider.Ins.DB.SaveChanges();
-                ListNCC.Add(ncc);
                 NCC.Add(ncc);
+                NCC = new ObservableCollection<NHACUNGCAP>(DataProvider.Ins.DB.NHACUNGCAPs);
+                ListNCC.Add(ncc);
                 InitNCC();
                 MessageBox.Show("Thêm thành công");
             });
@@ -685,8 +683,9 @@ namespace MasterSaveDemo.ViewModel
 
                         DataProvider.Ins.DB.NHACUNGCAPs.Add(ncc);
                         DataProvider.Ins.DB.SaveChanges();
-                        NCC.Add(ncc);
+
                         ListNCC.Add(ncc);
+                        NCC = new ObservableCollection<NHACUNGCAP>(DataProvider.Ins.DB.NHACUNGCAPs);
                     }
 
                     // this.SetSelectedItemToFirstItemOfPage(false);
@@ -714,31 +713,6 @@ namespace MasterSaveDemo.ViewModel
                 InitNCC();
             });
 
-            DeleteNCCCommand = new AppCommand<object>((p) =>
-            {
-                if (SelectedItemNCC == null)
-                    return false;
-                return true;
-            }, (p) =>
-            {
-                var ncc = DataProvider.Ins.DB.NHACUNGCAPs.Where(x => x.MaNCC == SelectedItemNCC.MaNCC).SingleOrDefault();
-
-                if (DataProvider.Ins.DB.MATHANGs.Where(b => b.MaNCC == ncc.MaNCC).Count() > 0)
-                {
-                    MessageBox.Show("Không thể xóa");
-                }
-                else
-                {
-                    DataProvider.Ins.DB.NHACUNGCAPs.Remove(ncc);
-                    DataProvider.Ins.DB.SaveChanges();
-                    ListNCC.Remove(ncc);
-                    InitNCC();
-                    MessageBox.Show("Xóa thành công");
-                }
-            });
-            #endregion
-
-            #region thêm sửa xóa nhà sản xuất
             AddNSXCommand = new AppCommand<object>((p) =>
             {
                 if (string.IsNullOrEmpty(TenNSX) || string.IsNullOrEmpty(DiaChiNSX) || string.IsNullOrEmpty(SDTNSX))
@@ -836,97 +810,6 @@ namespace MasterSaveDemo.ViewModel
 
             });
 
-            DeleteNSXCommand = new AppCommand<object>((p) =>
-            {
-                if (SelectedItemNSX == null)
-                    return false;
-                return true;
-            }, (p) =>
-            {
-                var nsx = DataProvider.Ins.DB.NHASANXUATs.Where(x => x.MaNSX == SelectedItemNSX.MaNSX).SingleOrDefault();
-
-                if (DataProvider.Ins.DB.MATHANGs.Where(b => b.MaNSX == nsx.MaNSX).Count() > 0)
-                {
-                    MessageBox.Show("Không thể xóa "); // khóa ngoại còn dính mặt hàng
-                }
-                else
-                {
-                    DataProvider.Ins.DB.NHASANXUATs.Remove(nsx);
-                    DataProvider.Ins.DB.SaveChanges();
-                    ListNSX.Remove(nsx);
-                    InitNSX();
-                    MessageBox.Show("Xóa thành công");
-                }
-            });
-
-            #region nháp
-            //AddNCCFromFileCommand = new AppCommand<object>((p) =>
-            //{
-            //    return true;
-            //}, (p) =>
-            //{
-            //    string newFileName = GetImageName();
-            //    OpenFileDialog openFileDialog = new OpenFileDialog();
-            //    openFileDialog.Filter = "Excel files (*.xlsx)|*.xlsx";
-            //    openFileDialog.Multiselect = false;
-            //    openFileDialog.Title = "Open file excel to import books";
-            //    if (openFileDialog.ShowDialog() == true)
-            //    {
-            //        Excel.Application xlApp = new Excel.Application();
-            //        Excel.Workbook xlWorkBook = xlApp.Workbooks.Open(openFileDialog.FileName);
-            //        Excel._Worksheet xlWorkSheet = xlWorkBook.Sheets[1];
-            //        Excel.Range xlRange = xlWorkSheet.UsedRange;
-            //        int rowCount = xlRange.Rows.Count;
-            //        int colCount = xlRange.Columns.Count;
-            //        for (int i = 2; i <= rowCount; i++)
-            //        {
-
-            //            image = null;
-            //            TenNSX = xlRange.Cells[i, 1].Value.ToString();
-            //            DiaChi = xlRange.Cells[i, 2].Value.ToString();
-            //            SDT = xlRange.Cells[i, 3].Value.ToString();
-
-
-            //            string mansx = GetCodeNSX();
-            //            var nsx = new NHASANXUAT()
-            //            {
-            //                MaNSX = mansx,
-            //                TenNSX = TenNSX,
-            //                DiaChi = DiaChiNSX,
-            //                SDT= SDT,
-
-            //            };
-            //            DataProvider.Ins.DB.NHASANXUATs.Add(nsx);
-            //            DataProvider.Ins.DB.SaveChanges();
-
-            //        }
-
-            //        //cleanup
-            //        GC.Collect();
-            //        GC.WaitForPendingFinalizers();
-
-            //        //rule of thumb for releasing com objects:
-            //        //  never use two dots, all COM objects must be referenced and released individually
-            //        //  ex: [somthing].[something].[something] is bad
-
-            //        //release com objects to fully kill excel process from running in the background
-            //        Marshal.ReleaseComObject(xlRange);
-            //        Marshal.ReleaseComObject(xlWorkSheet);
-
-            //        //close and release
-            //        xlWorkBook.Close();
-            //        Marshal.ReleaseComObject(xlWorkBook);
-
-            //        //quit and release
-            //        xlApp.Quit();
-            //        Marshal.ReleaseComObject(xlApp);
-
-
-            //        MessageBox.Show("Thêm sách thành công!");
-            //    }
-            //});
-
-            #endregion
             #endregion
 
             #region phiếu nhập hàng
@@ -934,7 +817,7 @@ namespace MasterSaveDemo.ViewModel
             DialogOK = new RelayCommand<Object>((p) => { return true; }, (p) =>
             {
                 DialogOpen = false;
-                if (ThongBao == "Lập hóa đơn thành công!")
+                if (ThongBao == "Lập phiếu nhập hàng thành công!")
                 {
                     if (CreateReport)
                     {
@@ -946,9 +829,15 @@ namespace MasterSaveDemo.ViewModel
                         pnk.Show();
                     }
 
-                    MaPhieuNhapKho = "";
-                    TongTien = "";
                     ListMatHang.Clear();
+                    TongTien = "";
+                    MaPhieuNhapKho = "";
+                    DiaChi = "";
+                    SDT = "";
+                    Fax = "";
+                    SelectedItemNCC = null;
+                    ListNCC = new ObservableCollection<NHACUNGCAP>();
+                    temp_MH_Mua = ListMatHang;
                 }
 
             });
@@ -956,7 +845,6 @@ namespace MasterSaveDemo.ViewModel
             GetMaPhieNhapCommand = new RelayCommand<Object>((p) => { return true; }, (p) =>
             {
                 MaPhieuNhapKho = create_MaPNK();
-
             });
 
             XoaHangCommand = new RelayCommand<Object>((p) => { if (SelectedMatHang != null) return true; return false; }, (p) =>
@@ -979,7 +867,6 @@ namespace MasterSaveDemo.ViewModel
                 if (check_PN() == false) return;
                 ThongBao = "Lập phiếu nhập hàng thành công!";
                 save_PNK();
-                huy_PNK();
                 DialogOpen = true;
             });
             #endregion
@@ -1046,6 +933,8 @@ namespace MasterSaveDemo.ViewModel
                 };
                 DataProvider.Ins.DB.THEKHOes.Add(thekho);
                 DataProvider.Ins.DB.SaveChanges();
+                InitMH();
+
             });
 
             EditMHCommand = new RelayCommand<object>((p) =>
@@ -1121,9 +1010,9 @@ namespace MasterSaveDemo.ViewModel
             return destinationFile;
         }
 
-
         private string GetImageName()
         {
+            /*
             List<String> images = DataProvider.Ins.DB.MATHANGs.Select(b => b.HinhAnh).ToList();
             int max = 0;
             foreach (var el in images)
@@ -1136,7 +1025,8 @@ namespace MasterSaveDemo.ViewModel
                 }
             }
             max += 1;
-            return $"photo-{max}.png";
+            */
+            return $"favorite.png"; 
         }
 
         public void add_MatHang(string ma, int sl)

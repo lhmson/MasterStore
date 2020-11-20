@@ -43,7 +43,7 @@
                     <Grid Grid.Row="0" Margin="5">
                         <StackPanel Orientation="Horizontal">
                             <TextBlock Text="Tên Đơn vị: " FontSize="20" Margin="5"/>
-                            <TextBlock Text="TIẾN KHÙNG" FontSize="20" Margin="5" FontStyle="Italic"/>
+                            <TextBlock Text="MASTER STORE" FontSize="20" Margin="5,0,5,4.6" FontStyle="Italic" Height="24" VerticalAlignment="Bottom"/>
                         </StackPanel>
                     </Grid>
                     <Grid Grid.Row="1" Margin="5"/>

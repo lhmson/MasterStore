@@ -91,7 +91,7 @@
                             <Button Style="{StaticResource MaterialDesignRaisedButton}" 
                                 HorizontalAlignment="Center"
                                 Content="In báo cáo"
-                                Width="150" Height="35" Command="{Binding PrintTableCommand}"/>   
+                                Width="150" Height="35" Command="{Binding PrintTableCommand}"/>
                         </StackPanel>
                         <StackPanel Visibility="{Binding VisibilityChonNam}" Orientation="Horizontal" Margin="20,0,0,0">
                             <ComboBox Width="200" materialDesign:HintAssist.Hint="Chọn năm" VerticalAlignment="Center" Style="{StaticResource MaterialDesignFloatingHintComboBox}"
@@ -152,24 +152,24 @@
                             <materialDesign:Card  Margin="5,5,4.6,-0.2" Padding="10" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Grid.ColumnSpan="2">
                                 <Grid>
                                     <Grid  Visibility="{Binding VisibilityBang}"  Grid.Row="2">
-                                    <Grid.RowDefinitions>
-                                        <RowDefinition Height="10*"/>
-                                        <RowDefinition Height="*"/>
-                                    </Grid.RowDefinitions>
-                                    <ListView  Grid.Row="0" FontSize="18" ItemsSource="{Binding BaoCao}" ScrollViewer.VerticalScrollBarVisibility="Auto" SelectionMode="Single" VerticalAlignment="Top">
-                                        <ListView.View>
-                                            <GridView>
-                                                <GridViewColumn Header="STT" DisplayMemberBinding="{Binding STT}"/>
-                                                <GridViewColumn  Header="Mã hàng" DisplayMemberBinding="{Binding MaMH}"/>
-                                                <GridViewColumn  Header="Tên hàng" DisplayMemberBinding="{Binding TenHang}"/>
-                                                <GridViewColumn  Header="Tổng thu (VND)" DisplayMemberBinding="{Binding TongThu, StringFormat='#,##0;(#,##0)'}"/>
-                                                <GridViewColumn Header="Tổng chi (VND)" DisplayMemberBinding="{Binding TongChi, StringFormat='#,##0;(#,##0)'}"/>
-                                                <GridViewColumn  Header="Chênh lệch (VND)" DisplayMemberBinding="{Binding ChenhLech, StringFormat='#,##0;#,##0'}"/>
-                                            </GridView>
-                                        </ListView.View>
-                                    </ListView>
-                                    <TextBlock Grid.Row="1" FontStyle="Italic" Opacity="0.5" HorizontalAlignment="Right" Margin="0,0,15,0">* báo cáo không bao gồm ngày hôm nay</TextBlock>
-                                </Grid>
+                                        <Grid.RowDefinitions>
+                                            <RowDefinition Height="10*"/>
+                                            <RowDefinition Height="*"/>
+                                        </Grid.RowDefinitions>
+                                        <ListView  Grid.Row="0" FontSize="18" ItemsSource="{Binding BaoCao}" ScrollViewer.VerticalScrollBarVisibility="Auto" SelectionMode="Single" VerticalAlignment="Top">
+                                            <ListView.View>
+                                                <GridView>
+                                                    <GridViewColumn Header="STT" DisplayMemberBinding="{Binding STT}"/>
+                                                    <GridViewColumn  Header="Mã hàng" DisplayMemberBinding="{Binding MaMH}"/>
+                                                    <GridViewColumn  Header="Tên hàng" DisplayMemberBinding="{Binding TenHang}"/>
+                                                    <GridViewColumn  Header="Tổng thu (VND)" DisplayMemberBinding="{Binding TongThu, StringFormat='#,##0;(#,##0)'}"/>
+                                                    <GridViewColumn Header="Tổng chi (VND)" DisplayMemberBinding="{Binding TongChi, StringFormat='#,##0;(#,##0)'}"/>
+                                                    <GridViewColumn  Header="Chênh lệch (VND)" DisplayMemberBinding="{Binding ChenhLech, StringFormat='#,##0;#,##0'}"/>
+                                                </GridView>
+                                            </ListView.View>
+                                        </ListView>
+                                        <TextBlock Grid.Row="1" FontStyle="Italic" Opacity="0.5" HorizontalAlignment="Right" Margin="0,0,15,0">* báo cáo không bao gồm ngày hôm nay</TextBlock>
+                                    </Grid>
                                     <StackPanel Visibility="{Binding VisibilityChart}">
                                         <TextBlock Text="{Binding DoanhThuCaNam}"  Margin="16,26,0,26"/>
                                         <Grid>

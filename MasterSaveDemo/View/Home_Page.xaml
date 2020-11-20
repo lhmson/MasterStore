@@ -69,11 +69,10 @@
                         <GradientStop Color="#FF268FCD" Offset="1"/>
                     </LinearGradientBrush>
                 </materialDesign:Card.Background>
-               
-                        <TextBlock TextAlignment="Center" TextWrapping="Wrap" FontWeight="Bold" HorizontalAlignment="Center" VerticalAlignment="Center" Foreground="#DDFFFFFF" FontSize="24" Margin="100,0">
-                            Số phiếu mua hàng chưa duyệt
-                        </TextBlock>
 
+                <TextBlock TextAlignment="Center" TextWrapping="Wrap" FontWeight="Bold" HorizontalAlignment="Center" VerticalAlignment="Center" Foreground="#DDFFFFFF" FontSize="24" Margin="100,0">
+                            Số phiếu mua hàng chưa duyệt
+                </TextBlock>
             </materialDesign:Card>
         </Grid>
         <Grid Margin="12,0" Grid.Row="3" Grid.RowSpan="4" Grid.Column="5" Grid.ColumnSpan="3">
@@ -82,7 +81,7 @@
             </materialDesign:Card>
         </Grid>
 
-          <Grid Margin="8,8,8,0" Grid.Row="2" Grid.RowSpan="1" Grid.Column="5" Grid.ColumnSpan="3" >
+        <Grid Margin="8,8,8,0" Grid.Row="2" Grid.RowSpan="1" Grid.Column="5" Grid.ColumnSpan="3" >
             <materialDesign:Card materialDesign:ShadowAssist.ShadowDepth="Depth5">
                 <materialDesign:Card.Background>
                     <LinearGradientBrush EndPoint="1,1" MappingMode="RelativeToBoundingBox" StartPoint="0,0">
@@ -90,11 +89,10 @@
                         <GradientStop Color="#FF268FCD" Offset="1"/>
                     </LinearGradientBrush>
                 </materialDesign:Card.Background>
-              
-                        <TextBlock TextAlignment="Center" TextWrapping="Wrap" FontWeight="Bold" HorizontalAlignment="Center" VerticalAlignment="Center" Foreground="#DDFFFFFF" FontSize="24" Margin="64,0">
+                
+                <TextBlock TextAlignment="Center" TextWrapping="Wrap" FontWeight="Bold" HorizontalAlignment="Center" VerticalAlignment="Center" Foreground="#DDFFFFFF" FontSize="24" Margin="64,0">
                             Số phiếu đề nghị xuất hàng chưa duyệt
-                        </TextBlock>
-                 
+                </TextBlock>
             </materialDesign:Card>
         </Grid>
         <Grid Margin="12,0" Grid.Row="3" Grid.RowSpan="4" Grid.Column="9" Grid.ColumnSpan="3">
@@ -110,10 +108,10 @@
                         <GradientStop Color="#FF268FCD" Offset="1"/>
                     </LinearGradientBrush>
                 </materialDesign:Card.Background>
-             
-                        <TextBlock TextAlignment="Center" TextWrapping="Wrap" FontWeight="Bold" HorizontalAlignment="Center" VerticalAlignment="Center" Foreground="#DDFFFFFF" FontSize="24" Margin="150,0">
+
+                <TextBlock TextAlignment="Center" TextWrapping="Wrap" FontWeight="Bold" HorizontalAlignment="Center" VerticalAlignment="Center" Foreground="#DDFFFFFF" FontSize="24" Margin="150,0">
                             Số hóa đơn trong ngày
-                        </TextBlock>
+                </TextBlock>
 
             </materialDesign:Card>
         </Grid>

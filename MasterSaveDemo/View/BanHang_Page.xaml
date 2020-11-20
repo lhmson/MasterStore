@@ -90,12 +90,10 @@
                 </Grid>
                 <Grid Margin="8,8,8,16" Grid.Row="2" Grid.Column="0" Grid.ColumnSpan="4" Grid.RowSpan="6">
                     <materialDesign:Card>
-                        
                     </materialDesign:Card>
                 </Grid>
                 <Grid Margin="8,8,8,16" Grid.Row="2" Grid.Column="4" Grid.ColumnSpan="9" Grid.RowSpan="6">
                     <materialDesign:Card>
-                        
                     </materialDesign:Card>
                 </Grid>
                 <Grid Margin="32,8,8,8" Grid.Row="2" Grid.Column="0" Grid.ColumnSpan="3">

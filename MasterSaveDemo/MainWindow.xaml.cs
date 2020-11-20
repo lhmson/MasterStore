@@ -2,6 +2,7 @@
 using MasterSaveDemo.ViewModel;
 using System;
 using System.Collections.Generic;
+using System.Collections.ObjectModel;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -15,6 +16,8 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
+using MasterSaveDemo.Model;
+using MasterSaveDemo.Helper;
 
 namespace MasterSaveDemo
 {
@@ -48,6 +51,20 @@ namespace MasterSaveDemo
             DialogResult kq = System.Windows.Forms.MessageBox.Show("Bạn có chắc đăng xuất tài khoản này không?", "Đăng xuất", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
             if (kq == System.Windows.Forms.DialogResult.No)
                 return;
+
+            if (LoginViewModel.TaiKhoanSuDung.NHOMNGUOIDUNG.TenNhom == "Bộ phận Thu ngân")
+            {
+                ObservableCollection<QUAY> list_quay = new ObservableCollection<QUAY>(DataProvider.Ins.DB.QUAYs);
+
+                foreach (var item in list_quay)
+                    if (item.MaQuay == LoginViewModel.Quay.MaQuay)
+                    {
+                        item.DangSuDung = 0;
+                        DataProvider.Ins.DB.SaveChanges();
+                        break;
+                    }    
+                  
+            }
 
             this_.Hide();
             LoginWindow loginWindow = new LoginWindow();

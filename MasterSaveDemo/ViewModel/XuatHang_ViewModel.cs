@@ -714,7 +714,7 @@ namespace MasterSaveDemo.ViewModel
             CT_THEKHO temp = new CT_THEKHO()
             {
                 MaTheKho = maTK,
-                MaCTTheKho = create_MaCTTK(),
+                MaCTTheKho =create_MaCTTK(),
                 NgayNhapXuat = DateTime.Now,
                 DienGiai = "",
                 MaPhieuNhapXuat = maPhieuDuyet,

@@ -125,5 +125,5 @@
                         Content="Thoát" Margin="0,0,0,8">
             </Button>
         </Grid>
-        </Grid>
+    </Grid>
 </Window>

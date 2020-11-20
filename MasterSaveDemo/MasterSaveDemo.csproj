@@ -243,10 +243,14 @@
     <Compile Include="PhieuNhapHang_PrintPreview.xaml.cs">
       <DependentUpon>PhieuNhapHang_PrintPreview.xaml</DependentUpon>
     </Compile>
+    <Compile Include="ViewModel\DuyetPhieuNhap_ViewModel.cs" />
     <Compile Include="ViewModel\PhieuDNXH_ViewModel.cs" />
     <Compile Include="ViewModel\PhieuNhapHang_PrintPreview_ViewModel.cs" />
     <Compile Include="ViewModel\ThemHangNhap_ViewModel.cs" />
     <Compile Include="ViewModel\ThemHang_ViewModel.cs" />
+    <Compile Include="View\DuyetPhieuNhap_Page.xaml.cs">
+      <DependentUpon>DuyetPhieuNhap_Page.xaml</DependentUpon>
+    </Compile>
     <Compile Include="View\PDNXH_PrintPreview.xaml.cs">
       <DependentUpon>PDNXH_PrintPreview.xaml</DependentUpon>
     </Compile>
@@ -378,6 +382,10 @@
       <SubType>Designer</SubType>
     </Page>
     <Page Include="PhieuNhapHang_PrintPreview.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="View\DuyetPhieuNhap_Page.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

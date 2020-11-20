@@ -510,6 +510,7 @@ namespace MasterSaveDemo.ViewModel
         public ObservableCollection<int> ListYear { get => _ListYear; set { _ListYear = value; OnPropertyChanged(); } }
         private int _SelectedYear;
         public int SelectedYear { get => _SelectedYear; set { _SelectedYear = value; OnPropertyChanged(); } }
+        private string _TenNhanVien;
         public BaoCaoDoanhSo_ViewModel()
         {
             ListCheDoXem = new ObservableCollection<string>();

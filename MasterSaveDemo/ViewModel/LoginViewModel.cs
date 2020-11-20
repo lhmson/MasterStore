@@ -15,6 +15,7 @@ namespace MasterSaveDemo.ViewModel
     public class LoginViewModel : BaseViewModel
     {
         static public NGUOIDUNG TaiKhoanSuDung; // tao bien static nguoi dung
+        static public QUAY Quay;
 
         public ICommand CloseWindowCommand { get; set; }
         public ICommand LoginCommand { get; set; }
@@ -25,9 +26,28 @@ namespace MasterSaveDemo.ViewModel
         private string _Password;
         public string Password { get => _Password; set { _Password = value; OnPropertyChanged(); } }
 
+        public QUAY init_Quay()
+        {
+            ObservableCollection<QUAY> list_quay = new ObservableCollection<QUAY>(DataProvider.Ins.DB.QUAYs);
+
+            foreach (var item in list_quay)
+                if (item.DangSuDung == 0)
+                {
+                    if (TaiKhoanSuDung.NHOMNGUOIDUNG.TenNhom == "Bộ phận Thu ngân")
+                        item.DangSuDung = 1;
+                    DataProvider.Ins.DB.SaveChanges();
+                    return item;
+                }
+            return list_quay[1];
+        }
         public LoginViewModel()
         {
             //DatabaseCheck.Ins.Check();
+            ObservableCollection<QUAY> Quays = new ObservableCollection<QUAY>(DataProvider.Ins.DB.QUAYs);
+
+            foreach (var item in Quays)
+                if (item.MaQuay == "Q001")
+                    Quay = item;
 
             UserName = "";
             Password = "";
@@ -38,13 +58,13 @@ namespace MasterSaveDemo.ViewModel
                     MessageBox.Show("Mời nhập tài khoản!");
 
                 ObservableCollection<NGUOIDUNG> Account = new ObservableCollection<NGUOIDUNG>(DataProvider.Ins.DB.NGUOIDUNGs);
-
                 foreach (var item in Account)
                 {
                     if (item.TenDangNhap == UserName && item.MatKhau == Password)
                     {
                         //Gan static TaiKhoanSuDung
                         TaiKhoanSuDung = item;
+                        Quay = init_Quay();
                         //MessageBox.Show("Đăng nhập thành công");
                         p.Close();
                         return;
