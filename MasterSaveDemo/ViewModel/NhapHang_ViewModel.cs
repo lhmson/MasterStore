@@ -337,6 +337,13 @@ namespace MasterSaveDemo.ViewModel
             set { _ThongBao = value; OnPropertyChanged(); }
         }
 
+        private string _NgayLapPhieu;
+        public string NgayLapPhieu
+        {
+            get { return _NgayLapPhieu; }
+            set { _NgayLapPhieu = value; OnPropertyChanged(); }
+        }
+
         private string _NgayThangNam;
         public string NgayThangNam
         {
@@ -369,7 +376,6 @@ namespace MasterSaveDemo.ViewModel
             TenNhanVien = get_NameofStaff();
             ListMatHang = new ObservableCollection<ListMatHangMua>();
             NgayThangNam = "Ngày " + NgayLap[0] + NgayLap[1] + ", Tháng " + NgayLap[3] + NgayLap[4] + ", Năm " + NgayLap.Substring(6);
-
         }
 
         public bool check_PN()
