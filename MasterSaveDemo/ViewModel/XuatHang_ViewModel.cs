@@ -788,7 +788,7 @@ namespace MasterSaveDemo.ViewModel
             foreach (var phieu in list_PXK)
                 if (phieu.TrangThai == 0)
                 {
-                    ListPhieu temp = new ListPhieu(stt.ToString(), phieu.MaPhieuXK, phieu.NgayLap.ToString("dd/mm/yyyy"), get_TenQuay(phieu.MaQuay));
+                    ListPhieu temp = new ListPhieu(stt.ToString(), phieu.MaPhieuXK, phieu.NgayLap.ToString("dd/MM/yyyy"), phieu.QUAY.TenQuay,phieu.NGUOIDUNG.HoTen);
                     stt++;
                     ListPhieu.Add(temp);
                 }

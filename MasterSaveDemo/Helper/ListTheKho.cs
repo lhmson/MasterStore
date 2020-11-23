@@ -23,7 +23,7 @@ namespace MasterSaveDemo.Helper
             MaMH = TK.MaMH;
             TenMH = TK.MATHANG.TenMH;
             NguoiLap = TK.NGUOIDUNG.HoTen;
-            NgayLap = TK.NgayLap.ToString("dd/mm/yyyy");
+            NgayLap = TK.NgayLap.ToString("dd/MM/yyyy");
         }
     }
 }

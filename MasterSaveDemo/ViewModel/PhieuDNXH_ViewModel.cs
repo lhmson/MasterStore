@@ -172,9 +172,15 @@ namespace MasterSaveDemo.ViewModel
             ListMatHang = new ObservableCollection<ListMatHangKho>();
 
             Quay = "Quầy số 1";
+            TenNhanVien = "Sơn";
+
+            if (LoginViewModel.TaiKhoanSuDung != null)
             TenNhanVien = LoginViewModel.TaiKhoanSuDung.HoTen;
 
-            NgayLap = DateTime.Now.ToString("dd/mm/yyyy");
+            if (LoginViewModel.Quay != null)
+                Quay = LoginViewModel.Quay.TenQuay;
+
+            NgayLap = DateTime.Now.ToString("dd/MM/yyyy");
             TongSoLuong = "0";
 
             MaPhieu = "MÃ PHIẾU : " + create_MaPhieuDN("PDN");

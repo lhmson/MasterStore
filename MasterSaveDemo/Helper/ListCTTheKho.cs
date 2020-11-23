@@ -25,7 +25,7 @@ namespace MasterSaveDemo.Helper
                 if (phieu.MaPhieuNhapKho == maPhieu && phieu.MaMH == maMH)
                 {
                     Loai = "Nhập hàng";
-                    Ngay = phieu.PHIEUNHAPKHO.NgayLap.ToString("dd/mm/yyyy");
+                    Ngay = phieu.PHIEUNHAPKHO.NgayLap.ToString("dd/MM/yyyy");
                     Nhap = phieu.SoLuong + "";
                     Xuat = "0";
                     DienGiai = "";
@@ -40,7 +40,7 @@ namespace MasterSaveDemo.Helper
                 if (phieu.MaPhieuXK == maPhieu && phieu.MaMH == maMH)
                 {
                     Loai = "Xuất hàng";
-                    Ngay = phieu.PHIEUXUATKHO.NgayLap.ToString("dd/mm/yyyy");
+                    Ngay = phieu.PHIEUXUATKHO.NgayLap.ToString("dd/MM/yyyy");
                     Xuat = phieu.SoLuong + "";
                     Nhap = "0";
                     DienGiai = "";

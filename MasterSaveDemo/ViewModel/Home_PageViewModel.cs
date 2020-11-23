@@ -148,7 +148,7 @@ namespace MasterSaveDemo.ViewModel
             int count = 0;
 
             foreach (var item in list_hd)
-                if (item.NgayLap.ToString("dd/mm/yyyy") == DateTime.Now.ToString("dd/mm/yyyy"))
+                if (item.NgayLap.ToString("dd/MM/yyyy") == DateTime.Now.ToString("dd/MM/yyyy"))
                     count++;
 
             SL_HD = count + "";
