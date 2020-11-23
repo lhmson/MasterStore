@@ -90,11 +90,14 @@
             <materialDesign:Card/>
         </Grid>
         <Grid Margin="8,4,0,8" Grid.Row="2" Grid.Column="0" Grid.ColumnSpan="3" Grid.RowSpan="3">
-            <Label Margin="16,8,16,0" Content="Ảnh sản phẩm" FontSize="18" HorizontalAlignment="Stretch" VerticalContentAlignment="Center" HorizontalContentAlignment="Center" VerticalAlignment="Stretch" Background="WhiteSmoke"/>
+            <!--<Label Margin="16,8,16,0" Content="Ảnh sản phẩm" FontSize="18" HorizontalAlignment="Stretch" VerticalContentAlignment="Center" HorizontalContentAlignment="Center" VerticalAlignment="Stretch" Background="WhiteSmoke"/>-->
+            <materialDesign:Card Margin="5,5,5,5">
+                <Image Source="/Images/packageicon.png" Width="210" Margin="10"/>
+            </materialDesign:Card>
         </Grid>
-        <Grid Margin="8,4,0,8" Grid.Row="2" Grid.Column="2" >
+        <!--<Grid Margin="8,4,0,8" Grid.Row="2" Grid.Column="2" >
             <Button Padding="0" Content="{materialDesign:PackIcon Kind=Edit, Size=32}" Style="{StaticResource MaterialDesignFlatAccentButton}" BorderBrush="{x:Null}" HorizontalContentAlignment="Center" Margin="0,16,16,0" Command="{Binding AddImage}" Foreground="Black"></Button>
-        </Grid>
+        </Grid>-->
         <Grid Margin="8,4,0,8" Grid.Row="5" Grid.Column="0" Grid.ColumnSpan="3" >
             <TextBox Text="{Binding TenMH, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" materialDesign:HintAssist.Hint="Tên sản phẩm" Style="{StaticResource MaterialDesignFloatingHintTextBox}" Margin="16,0"/>
         </Grid>

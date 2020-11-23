@@ -600,6 +600,7 @@
     <Resource Include="Images\logo_masterstore.png" />
     <Resource Include="Images\NhapHang.png" />
     <Resource Include="Images\tinylogo.ico" />
+    <Resource Include="Images\packageicon.png" />
     <Content Include="Model\QLSieuThiModel.Context.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
       <DependentUpon>QLSieuThiModel.edmx</DependentUpon>
