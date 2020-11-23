@@ -401,6 +401,8 @@ namespace MasterSaveDemo.ViewModel
         public string get_NameofStaff()
         {
             string staff = "Thảo Cute";
+            if (LoginViewModel.TaiKhoanSuDung != null)
+                staff = LoginViewModel.TaiKhoanSuDung.HoTen;
             return staff;
         }
 
@@ -830,7 +832,7 @@ namespace MasterSaveDemo.ViewModel
                         ObservableCollection<ListMatHangMua> temp = new ObservableCollection<ListMatHangMua>();
                         foreach (var mh in ListMatHang)
                             temp.Add(mh);
-                        PhieuNhapHang_PrintPreview_ViewModel x = new PhieuNhapHang_PrintPreview_ViewModel(MaPhieuNhapKho, TenNhanVien, NgayLap, SelectedItemNCC.TenNCC, DiaChi, SDT, Fax, TongTien, temp);
+                        PhieuNhapHang_PrintPreview_ViewModel x = new PhieuNhapHang_PrintPreview_ViewModel(MaPhieuNhapKho, TenNhanVien, NgayThangNam, SelectedItemNCC.TenNCC, DiaChi, SDT, Fax, TongTien, temp);
                         PhieuNhapHang_PrintPreview pnk = new PhieuNhapHang_PrintPreview(x);
                         pnk.Show();
                     }

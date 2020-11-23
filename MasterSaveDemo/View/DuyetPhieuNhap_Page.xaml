@@ -73,7 +73,7 @@
                         <GridViewColumn Width="70" Header="STT" DisplayMemberBinding="{Binding STT}"/>
                         <GridViewColumn Width="200" Header="Mã Phiếu" DisplayMemberBinding="{Binding Ma}"/>
                         <GridViewColumn Width="220" Header="Ngày Lập" DisplayMemberBinding="{Binding NgayLap}"/>
-                        <GridViewColumn Width="100"  Header="Quầy" DisplayMemberBinding="{Binding Quay}"/>
+                        <GridViewColumn Width="100"  Header="Người lập" DisplayMemberBinding="{Binding NguoiLap}"/>
                     </GridView>
                 </ListView.View>
                 <i:Interaction.Triggers>

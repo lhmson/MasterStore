@@ -70,7 +70,7 @@
                             </i:EventTrigger>
                         </i:Interaction.Triggers>
                     </HamburgerMenu:HamburgerMenuItem>
-                    <HamburgerMenu:HamburgerMenuItem x:Name="XuatHang_Page_Button" Icon="/Images/DuyetNhap.png" Text="Thực hiện Xuất hàng" IsEnabled="{Binding Enable_XuatHang}" ToolTip="{Binding XuatHang_Tooltip}" ToolTipService.Placement="Right" ToolTipService.HorizontalOffset="10">
+                    <HamburgerMenu:HamburgerMenuItem x:Name="XuatHang_Page_Button" Icon="/Images/DuyetNhap.png" Text="Kiểm duyệt nhập hàng" IsEnabled="{Binding Enable_XuatHang}" ToolTip="{Binding XuatHang_Tooltip}" ToolTipService.Placement="Right" ToolTipService.HorizontalOffset="10">
                         <i:Interaction.Triggers>
                             <i:EventTrigger EventName="GotFocus">
                                 <i:InvokeCommandAction Command="{Binding DuyetXuatHang_Page_SelectedCommand}"
@@ -87,7 +87,7 @@
                             </i:EventTrigger>
                         </i:Interaction.Triggers>
                     </HamburgerMenu:HamburgerMenuItem>
-                    <HamburgerMenu:HamburgerMenuItem x:Name="DuyetXuatHang_Page_Button" Icon="/Images/DuyetXuat.png" Text="Thực hiện Xuất hàng" IsEnabled="{Binding Enable_XuatHang}" ToolTip="{Binding XuatHang_Tooltip}" ToolTipService.Placement="Right" ToolTipService.HorizontalOffset="10">
+                    <HamburgerMenu:HamburgerMenuItem x:Name="DuyetXuatHang_Page_Button" Icon="/Images/DuyetXuat.png" Text="Kiểm duyệt xuất hàng" IsEnabled="{Binding Enable_XuatHang}" ToolTip="{Binding XuatHang_Tooltip}" ToolTipService.Placement="Right" ToolTipService.HorizontalOffset="10">
                         <i:Interaction.Triggers>
                             <i:EventTrigger EventName="GotFocus">
                                 <i:InvokeCommandAction Command="{Binding XuatHang_Page_SelectedCommand}"
