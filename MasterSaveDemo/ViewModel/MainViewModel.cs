@@ -410,6 +410,16 @@ namespace MasterSaveDemo.ViewModel
                 {
                     // restart the program
                     System.Diagnostics.Process.Start(Application.ResourceAssembly.Location);
+                    if (LoginViewModel.Quay != null)
+                    {
+                        ObservableCollection<QUAY> list_quay = new ObservableCollection<QUAY>(DataProvider.Ins.DB.QUAYs);
+                        foreach (var items in list_quay)
+                            if (items.MaQuay == LoginViewModel.Quay.MaQuay)
+                            {
+                                items.DangSuDung = 0;
+                                DataProvider.Ins.DB.SaveChanges();
+                            }
+                    }
                     Application.Current.Shutdown();
                 }
             });

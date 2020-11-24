@@ -118,7 +118,7 @@
                     <TextBlock Text="(Ký, ghi rõ họ và tên)" FontWeight="Thin" FontStyle="Oblique" HorizontalAlignment="Center"/>
                 </StackPanel>
                 <StackPanel Orientation="Vertical" Grid.Column="1">
-                    <TextBlock Text="........., ngày....tháng.....năm...." FontStyle="Italic" HorizontalAlignment="Center"/>
+                    <TextBlock Text="{Binding NgayThangNam}" FontStyle="Italic" HorizontalAlignment="Center"/>
                     <TextBlock Text="Cửa hàng trưởng" FontWeight="Bold" HorizontalAlignment="Center"/>
                     <TextBlock Text="(Ký, ghi rõ họ và tên)" FontWeight="Thin" FontStyle="Oblique" HorizontalAlignment="Center"/>
                 </StackPanel>
