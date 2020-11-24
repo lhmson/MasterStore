@@ -7,10 +7,12 @@ using System.Collections.ObjectModel;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Timers;
 using System.Windows;
 using System.Windows.Controls;
 using System.Windows.Input;
 using System.Xml.Linq;
+using System.IO;
 
 namespace MasterSaveDemo.ViewModel
 {
@@ -166,7 +168,14 @@ namespace MasterSaveDemo.ViewModel
         public void init_ListView()
         {
             ObservableCollection<PHIEUNHAPKHO> list_PXK = new ObservableCollection<PHIEUNHAPKHO>(DataProvider.Ins.DB.PHIEUNHAPKHOes);
-            ListPhieu = new ObservableCollection<ListPhieu>();
+
+            int count = 0;
+            if (ListPhieu != null)
+            {
+                count = ListPhieu.Count();
+            }
+
+            ObservableCollection<ListPhieu> ListPhieu_temp = new ObservableCollection<ListPhieu>();
 
             int stt = 1;
 
@@ -176,8 +185,12 @@ namespace MasterSaveDemo.ViewModel
                     string nguoilap = phieu.NGUOIDUNG.HoTen;
                     ListPhieu temp = new ListPhieu(stt.ToString(), phieu.MaPhieuNhapKho, phieu.NgayLap.ToString("dd/MM/yyyy"),nguoilap);
                     stt++;
-                    ListPhieu.Add(temp);
+                    ListPhieu_temp.Add(temp);
                 }
+
+            if (count == ListPhieu_temp.Count())
+                return;
+            ListPhieu = ListPhieu_temp;
         }
 
         #region Icommand
@@ -185,10 +198,29 @@ namespace MasterSaveDemo.ViewModel
         public ICommand KhongDuyetCommand { get; set; }
         public ICommand SelectionChangedCommand { get; set; }
         #endregion
+        private void OnTimerEvent(object sender, EventArgs e)
+        {
+            init_ListView();
+        }
+
+        private void dispatcherTimer_Tick(object sender, EventArgs e)
+        {
+            init_ListView();
+        }
+
+        private void TimerLoad()
+        {
+            System.Windows.Threading.DispatcherTimer dispatcherTimer = new System.Windows.Threading.DispatcherTimer();
+            dispatcherTimer.Tick += new EventHandler(dispatcherTimer_Tick);
+            dispatcherTimer.Interval = new TimeSpan(0, 0, 5);
+            dispatcherTimer.Start();
+        }
 
         public DuyetPhieuNhap_ViewModel()
         {
+
             init_ListView();
+            TimerLoad();
             SelectionChangedCommand = new RelayCommand<Object>((p) => { return true; }, (p) =>
             {
                 if (SelectedPhieu != null)
