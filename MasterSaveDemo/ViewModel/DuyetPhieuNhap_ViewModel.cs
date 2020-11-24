@@ -174,7 +174,7 @@ namespace MasterSaveDemo.ViewModel
                 if (phieu.Duyet == 0)
                 {
                     string nguoilap = phieu.NGUOIDUNG.HoTen;
-                    ListPhieu temp = new ListPhieu(stt.ToString(), phieu.MaPhieuNhapKho, phieu.NgayLap.ToString("dd/mm/yyyy"),nguoilap);
+                    ListPhieu temp = new ListPhieu(stt.ToString(), phieu.MaPhieuNhapKho, phieu.NgayLap.ToString("dd/MM/yyyy"),nguoilap);
                     stt++;
                     ListPhieu.Add(temp);
                 }
