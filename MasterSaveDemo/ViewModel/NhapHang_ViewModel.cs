@@ -863,7 +863,7 @@ namespace MasterSaveDemo.ViewModel
 
             HuyCommand = new RelayCommand<Object>((p) => { return true; }, (p) =>
             {
-                System.Windows.Forms.DialogResult kq = System.Windows.Forms.MessageBox.Show("Bạn có chắc hủy hóa đơn này không", "Hủy hóa đơn", System.Windows.Forms.MessageBoxButtons.YesNo, System.Windows.Forms.MessageBoxIcon.Warning);
+                System.Windows.Forms.DialogResult kq = System.Windows.Forms.MessageBox.Show("Bạn có chắc hủy phiếu nhập hàng này không", "Hủy phiếu nhập hàng", System.Windows.Forms.MessageBoxButtons.YesNo, System.Windows.Forms.MessageBoxIcon.Warning);
 
                 if (kq == System.Windows.Forms.DialogResult.No) return;
                 huy_PNK();
