@@ -15,6 +15,8 @@ namespace MasterSaveDemo.Helper
         public string TenMH { get; set; }
         public string NguoiLap { get; set; }
         public string NgayLap { get; set; }
+        public string SLTonKho { get; set; }
+        public string SLTonGian { get; set; }
 
         public ListTheKho(int stt, THEKHO TK)
         {
@@ -24,6 +26,8 @@ namespace MasterSaveDemo.Helper
             TenMH = TK.MATHANG.TenMH;
             NguoiLap = TK.NGUOIDUNG.HoTen;
             NgayLap = TK.NgayLap.ToString("dd/MM/yyyy");
+            SLTonGian = TK.MATHANG.SoLuongTonGian + "";
+            SLTonKho = TK.SoLuongTonKho + "";
         }
     }
 }

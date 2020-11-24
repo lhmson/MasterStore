@@ -657,12 +657,11 @@ namespace MasterSaveDemo.ViewModel
 
                     if (VisibilityOfListNguoiDung == Visibility.Visible && SelectedItemNguoiDung != null) // Edit Nhóm người dùng
                     {
-                        if (LoginViewModel.TaiKhoanSuDung!= null)
-                            if (LoginViewModel.TaiKhoanSuDung.MaNhom == 1)
-                            {
-                                System.Windows.MessageBox.Show("Bạn không có quyền chỉnh sửa cho Quản trị viên");
-                                return;
-                            } 
+                        if (SelectedItemNguoiDung.TenNhom == "Quản Trị Viên")
+                        {
+                            System.Windows.MessageBox.Show("Không thể sửa thông tin được cho nhóm Quản Trị Viên");
+                            return;
+                        }    
                         VisibilityOfEdit = Visibility.Visible;
                         VisibilityOfAdd = Visibility.Hidden;
                         MatKhau = SelectedItemNguoiDung.MatKhau;
@@ -673,12 +672,12 @@ namespace MasterSaveDemo.ViewModel
 
                     if (VisibilityOfListPhanQuyen == Visibility.Visible && SelectedPhanQuyen != null) // Edit Bảng phân quyền
                     {
-                        if (LoginViewModel.TaiKhoanSuDung != null)
-                            if (LoginViewModel.TaiKhoanSuDung.MaNhom == 1)
-                            {
-                                System.Windows.MessageBox.Show("Bạn không có quyền chỉnh sửa cho Quản trị viên");
-                                return;
-                            }
+
+                        if (SelectedPhanQuyen.TenNhomQuyen == "Quản Trị Viên")
+                        {
+                            System.Windows.MessageBox.Show("Không thể phân quyền được cho nhóm Quản Trị Viên");
+                            return;
+                        }
                         VisibilityOfTenNhomQuyen = Visibility.Hidden;
                         BangPhanQuyen PQ = SelectedPhanQuyen;
                         PQ.EnabledCheckBox = true;

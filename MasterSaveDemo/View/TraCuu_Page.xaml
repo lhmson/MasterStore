@@ -114,8 +114,10 @@
                                 <GridViewColumn Width="120" Header="Mã Thẻ Kho" DisplayMemberBinding="{Binding MaThe}"/>
                                 <GridViewColumn Width="120" Header="Mã MH" DisplayMemberBinding="{Binding MaMH}"/>
                                 <GridViewColumn Width="200" Header="Tên MH" DisplayMemberBinding="{Binding TenMH}"/>
-                                <GridViewColumn Width="200" Header="Người Lập" DisplayMemberBinding="{Binding NguoiLap}"/>
+                                <GridViewColumn Width="120" Header="Người Lập" DisplayMemberBinding="{Binding NguoiLap}"/>
                                 <GridViewColumn Width="150" Header="Ngày Lập" DisplayMemberBinding="{Binding NgayLap}"/>
+                                <GridViewColumn Width="150" Header="Tồn Gian" DisplayMemberBinding="{Binding SLTonGian}"/>
+                                <GridViewColumn Width="150" Header="Tồn Kho" DisplayMemberBinding="{Binding SLTonKho}"/>
                             </GridView>
                         </ListView.View>
                         <i:Interaction.Triggers>
