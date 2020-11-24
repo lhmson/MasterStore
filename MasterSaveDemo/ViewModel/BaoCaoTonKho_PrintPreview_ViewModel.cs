@@ -155,8 +155,17 @@ namespace MasterSaveDemo.ViewModel
              set { _NguoiTaoPhieu = value; OnPropertyChanged(); }
          }
 
-         //---------------
-         private ObservableCollection<DongBaoCaoTonKho> _ListBaoCaoTonKho;
+        private string _NgayThangNam;
+
+        public string NgayThangNam
+        {
+            get { return _NgayThangNam; }
+            set { _NgayThangNam = value; OnPropertyChanged(); }
+        }
+
+
+        //---------------
+        private ObservableCollection<DongBaoCaoTonKho> _ListBaoCaoTonKho;
 
          public ObservableCollection<DongBaoCaoTonKho> ListBaoCaoTonKho
          {
@@ -172,10 +181,13 @@ namespace MasterSaveDemo.ViewModel
              StartDate = inputStartDate;
              EndDate = inputEndDate;
              NguoiTaoPhieu = inputNguoiTao;
-             //for (int i = 0; i < listBaoCao.Count(); i++)
-             //    ListBaoCaoDoanhSo[i].SoThuTu = i + 1;
-
-             CloseWindowCommand = new RelayCommand<object>((p) => { return p == null ? false : true; }, (p) =>
+            //for (int i = 0; i < listBaoCao.Count(); i++)
+            //    ListBaoCaoDoanhSo[i].SoThuTu = i + 1;
+            if (LoginViewModel.TaiKhoanSuDung != null)
+                NguoiTaoPhieu = LoginViewModel.TaiKhoanSuDung.HoTen;
+            string date = DateTime.Now.ToString("dd/MM/yyyy");
+            NgayThangNam = "Ngày " + date.Substring(0, 2) + ", tháng " + date.Substring(3, 2) + ", năm " + date.Substring(6, 4);
+            CloseWindowCommand = new RelayCommand<object>((p) => { return p == null ? false : true; }, (p) =>
              {
                  var ex = p as Window;
                  ex.Close();
