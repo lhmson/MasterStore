@@ -35,12 +35,12 @@ namespace MasterSaveDemo.ViewModel
         {
             if (!String.IsNullOrWhiteSpace(ma))
             {
-                return (mh.MaMH.Contains(ma));
+                return (mh.MaMH.ToLower().Contains(ma.ToLower()));
             }
 
             if (!String.IsNullOrWhiteSpace(ten))
             {
-                return mh.TenMH.Contains(ten);
+                return mh.TenMH.ToLower().Contains(ten.ToLower());
             }
 
             return true;

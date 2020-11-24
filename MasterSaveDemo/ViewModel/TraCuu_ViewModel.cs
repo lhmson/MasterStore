@@ -635,7 +635,7 @@ namespace MasterSaveDemo.ViewModel
             int stt = 1;
 
             foreach (var tk in list_TheKho)
-                if (tk.MaMH.Contains(txtMaMH) && tk.MATHANG.TenMH.Contains(txtTenMH))
+                if (tk.MaMH.ToLower().Contains(txtMaMH) && tk.MATHANG.TenMH.ToLower().Contains(txtTenMH))
                 {
                     ListTheKho temp = new ListTheKho(stt, tk);
                     stt++;
