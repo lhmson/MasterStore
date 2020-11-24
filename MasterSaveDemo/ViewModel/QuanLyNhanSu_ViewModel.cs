@@ -657,6 +657,12 @@ namespace MasterSaveDemo.ViewModel
 
                     if (VisibilityOfListNguoiDung == Visibility.Visible && SelectedItemNguoiDung != null) // Edit Nhóm người dùng
                     {
+                        if (LoginViewModel.TaiKhoanSuDung!= null)
+                            if (LoginViewModel.TaiKhoanSuDung.MaNhom == 1)
+                            {
+                                System.Windows.MessageBox.Show("Bạn không có quyền chỉnh sửa cho Quản trị viên");
+                                return;
+                            } 
                         VisibilityOfEdit = Visibility.Visible;
                         VisibilityOfAdd = Visibility.Hidden;
                         MatKhau = SelectedItemNguoiDung.MatKhau;
@@ -667,6 +673,12 @@ namespace MasterSaveDemo.ViewModel
 
                     if (VisibilityOfListPhanQuyen == Visibility.Visible && SelectedPhanQuyen != null) // Edit Bảng phân quyền
                     {
+                        if (LoginViewModel.TaiKhoanSuDung != null)
+                            if (LoginViewModel.TaiKhoanSuDung.MaNhom == 1)
+                            {
+                                System.Windows.MessageBox.Show("Bạn không có quyền chỉnh sửa cho Quản trị viên");
+                                return;
+                            }
                         VisibilityOfTenNhomQuyen = Visibility.Hidden;
                         BangPhanQuyen PQ = SelectedPhanQuyen;
                         PQ.EnabledCheckBox = true;
