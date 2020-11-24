@@ -781,7 +781,7 @@ namespace MasterSaveDemo.ViewModel
         public void init_ListView()
         {
             ObservableCollection<PHIEUXUATKHO> list_PXK = new ObservableCollection<PHIEUXUATKHO>(DataProvider.Ins.DB.PHIEUXUATKHOes);
-            ListPhieu = new ObservableCollection<ListPhieu>();
+            ObservableCollection<ListPhieu> ListPhieu_temp = new ObservableCollection<ListPhieu>();
 
             int stt = 1;
 
@@ -790,8 +790,31 @@ namespace MasterSaveDemo.ViewModel
                 {
                     ListPhieu temp = new ListPhieu(stt.ToString(), phieu.MaPhieuXK, phieu.NgayLap.ToString("dd/MM/yyyy"), phieu.QUAY.TenQuay,phieu.NGUOIDUNG.HoTen);
                     stt++;
-                    ListPhieu.Add(temp);
+                    ListPhieu_temp.Add(temp);
                 }
+
+            if (ListPhieu == null)
+            {
+                ListPhieu = ListPhieu_temp;
+                init_ListCTPhieu("");
+            }
+            else
+            {
+                if (ListPhieu.Count() != ListPhieu_temp.Count())
+                {
+                    ListPhieu = ListPhieu_temp;
+                    init_ListCTPhieu("");
+                    return;
+                }
+
+                for (int i = ListPhieu.Count()-1; i >= 0; i--)
+                    if (ListPhieu[i].Ma != ListPhieu_temp[i].Ma)
+                    {
+                        ListPhieu = ListPhieu_temp;
+                        init_ListCTPhieu("");
+                        return;
+                    }
+            }
         }
 
         public void init_ListCTPhieu(string maPhieu)
@@ -808,6 +831,24 @@ namespace MasterSaveDemo.ViewModel
                     ListCTPhieu.Add(temp);
                 }
         }
+        private void OnTimerEvent(object sender, EventArgs e)
+        {
+            init_ListView();
+        }
+
+        private void dispatcherTimer_Tick(object sender, EventArgs e)
+        {
+            init_ListView();
+        }
+
+        private void TimerLoad()
+        {
+            System.Windows.Threading.DispatcherTimer dispatcherTimer = new System.Windows.Threading.DispatcherTimer();
+            dispatcherTimer.Tick += new EventHandler(dispatcherTimer_Tick);
+            dispatcherTimer.Interval = new TimeSpan(0, 0, 5);
+            dispatcherTimer.Start();
+        }
+
         #endregion
 
         #region Icommand
@@ -819,6 +860,7 @@ namespace MasterSaveDemo.ViewModel
         public XuatHang_ViewModel()
         {
             init_ListView();
+            TimerLoad();
             SelectionChangedCommand = new RelayCommand<Object>((p) => { return true; }, (p) =>
             {
                 if (SelectedPhieu != null)

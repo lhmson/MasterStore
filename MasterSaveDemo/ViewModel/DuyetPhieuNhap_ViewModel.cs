@@ -169,11 +169,6 @@ namespace MasterSaveDemo.ViewModel
         {
             ObservableCollection<PHIEUNHAPKHO> list_PXK = new ObservableCollection<PHIEUNHAPKHO>(DataProvider.Ins.DB.PHIEUNHAPKHOes);
 
-            int count = 0;
-            if (ListPhieu != null)
-            {
-                count = ListPhieu.Count();
-            }
 
             ObservableCollection<ListPhieu> ListPhieu_temp = new ObservableCollection<ListPhieu>();
 
@@ -188,9 +183,28 @@ namespace MasterSaveDemo.ViewModel
                     ListPhieu_temp.Add(temp);
                 }
 
-            if (count == ListPhieu_temp.Count())
-                return;
-            ListPhieu = ListPhieu_temp;
+            if (ListPhieu == null)
+            {
+                ListPhieu = ListPhieu_temp;
+                init_ListCTPhieu("");
+            }
+            else
+            {
+                if (ListPhieu.Count() != ListPhieu_temp.Count())
+                {
+                    ListPhieu = ListPhieu_temp;
+                    init_ListCTPhieu("");
+                    return;
+                }
+
+                for (int i = ListPhieu.Count()-1; i >= 0; i--)
+                    if (ListPhieu[i].Ma != ListPhieu_temp[i].Ma)
+                    {
+                        ListPhieu = ListPhieu_temp;
+                        init_ListCTPhieu("");
+                        return;
+                    }
+            }    
         }
 
         #region Icommand
