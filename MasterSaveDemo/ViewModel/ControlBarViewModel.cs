@@ -91,6 +91,16 @@ namespace MasterSaveDemo.ViewModel
                     System.Windows.Forms.DialogResult kq = System.Windows.Forms.MessageBox.Show("Bạn có chắc chắn thoát không?", "Đăng xuất", System.Windows.Forms.MessageBoxButtons.YesNo, System.Windows.Forms.MessageBoxIcon.Question);
                     if(kq == System.Windows.Forms.DialogResult.Yes)
                     {
+                        if (LoginViewModel.Quay != null)
+                        {
+                            ObservableCollection<QUAY> list_quay = new ObservableCollection<QUAY>(DataProvider.Ins.DB.QUAYs);
+                            foreach (var items in list_quay)
+                                if (items.MaQuay == LoginViewModel.Quay.MaQuay)
+                                {
+                                    items.DangSuDung = 0;
+                                    DataProvider.Ins.DB.SaveChanges();
+                                }
+                        }
                         window.Close();
                     }
                 }
