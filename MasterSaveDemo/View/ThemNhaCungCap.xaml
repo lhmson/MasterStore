@@ -126,7 +126,7 @@
             <Button  Command="{Binding AddNCCCommand}" Content="Thêm" FontSize="16" Height="40" Margin="0,0,16,0"></Button>
         </Grid>
         <Grid Margin="8,8,8,0" Grid.Row="10" Grid.Column="10" Grid.ColumnSpan="2">
-            <Button  Command="{Binding EditNCCCommand}" Content="Sửa" FontSize="16" Height="40" Margin="0,0,16,0"></Button>
+            <Button  Command="{Binding EditNCCCommand}" Content="Lưu thay đổi" FontSize="16" Height="40" Margin="0,0,16,0"></Button>
 
         </Grid>
         <Grid Margin="8,8,8,0" Grid.Row="10" Grid.Column="8" Grid.ColumnSpan="2"/>
