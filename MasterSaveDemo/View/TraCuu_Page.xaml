@@ -135,6 +135,7 @@
                         <ListView.View>
                             <GridView>
                                 <GridViewColumn Header="STT" DisplayMemberBinding="{Binding STT}"/>
+                                <GridViewColumn  Header="Mã Phiếu" DisplayMemberBinding="{Binding MaPhieu}"/>
                                 <GridViewColumn  Header="Loại" DisplayMemberBinding="{Binding Loai}"/>
                                 <GridViewColumn  Header="Ngày" DisplayMemberBinding="{Binding Ngay}"/>
                                 <GridViewColumn  Header="Nhập" DisplayMemberBinding="{Binding Nhap}"/>

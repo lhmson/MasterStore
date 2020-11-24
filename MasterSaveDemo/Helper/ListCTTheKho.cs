@@ -16,6 +16,7 @@ namespace MasterSaveDemo.Helper
         public string Nhap { get; set; }
         public string Xuat { get; set; }
         public string DienGiai { get; set; }
+        public string MaPhieu { get; set; }
 
         public void check_PhieuNhap(string maPhieu, string maMH)
         {
@@ -24,6 +25,7 @@ namespace MasterSaveDemo.Helper
             foreach (var phieu in list_CTphieu)
                 if (phieu.MaPhieuNhapKho == maPhieu && phieu.MaMH == maMH)
                 {
+                    MaPhieu = phieu.MaPhieuNhapKho;
                     Loai = "Nhập hàng";
                     Ngay = phieu.PHIEUNHAPKHO.NgayLap.ToString("dd/MM/yyyy");
                     Nhap = phieu.SoLuong + "";
@@ -39,6 +41,7 @@ namespace MasterSaveDemo.Helper
             foreach (var phieu in list_CTphieu)
                 if (phieu.MaPhieuXK == maPhieu && phieu.MaMH == maMH)
                 {
+                    MaPhieu = phieu.MaPhieuXK;
                     Loai = "Xuất hàng";
                     Ngay = phieu.PHIEUXUATKHO.NgayLap.ToString("dd/MM/yyyy");
                     Xuat = phieu.SoLuong + "";
