@@ -105,7 +105,7 @@
             <TextBox materialDesign:HintAssist.Hint="Tên mặt hàng được chọn"
                              Text="{Binding MaMH}"
                         Style="{StaticResource MaterialDesignFloatingHintTextBox}"
-                        VerticalAlignment="Center" IsEnabled="False" />
+                        VerticalAlignment="Center" IsReadOnly="True" IsEnabled="True" />
         </Grid>
         <Grid Margin="8,8,32,8" Grid.Row="7" Grid.Column="9" Grid.ColumnSpan="4">
             <TextBox materialDesign:HintAssist.Hint="Số lượng"

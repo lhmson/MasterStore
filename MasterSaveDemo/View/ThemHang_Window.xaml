@@ -112,7 +112,7 @@
             <TextBox materialDesign:HintAssist.Hint="Mã mặt hàng được chọn"
                              Text="{Binding MaMH}"
                         Style="{StaticResource MaterialDesignFloatingHintTextBox}"
-                        VerticalAlignment="Center" IsEnabled="False" />
+                        VerticalAlignment="Center" IsEnabled="True" IsReadOnly="True" />
         </Grid>
         <Grid Margin="8,8,32,8" Grid.Row="8" Grid.Column="10" Grid.ColumnSpan="3" >
             <Button  Command="{Binding ThemHangCommand}" CommandParameter="{Binding ElementName=ThemHangWindow}"

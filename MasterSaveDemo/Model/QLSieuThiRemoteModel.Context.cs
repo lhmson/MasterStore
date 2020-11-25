@@ -12,6 +12,7 @@ namespace MasterSaveDemo.Model
     using System;
     using System.Data.Entity;
     using System.Data.Entity.Infrastructure;
+    using System.Data.Entity.SqlServer;
     
     public partial class QLSieuThiRemoteEntities : DbContext
     {
@@ -46,5 +47,14 @@ namespace MasterSaveDemo.Model
         public virtual DbSet<THEKHO> THEKHOes { get; set; }
         public virtual DbSet<THONGBAO> THONGBAOs { get; set; }
         public virtual DbSet<THONGKENGAY> THONGKENGAYs { get; set; }
+    }
+
+    public class MyConfiguration : DbConfiguration
+    {
+        public MyConfiguration()
+        {
+            SetExecutionStrategy("System.Data.SqlClient", () => new SqlAzureExecutionStrategy());
+            SetDefaultConnectionFactory(new LocalDbConnectionFactory("mssqllocaldb"));
+        }
     }
 }
