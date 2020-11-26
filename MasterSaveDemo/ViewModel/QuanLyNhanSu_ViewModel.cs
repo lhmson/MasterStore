@@ -855,14 +855,14 @@ namespace MasterSaveDemo.ViewModel
                         int maNhom = search_MaNhom(SelectedPhanQuyen.TenNhomQuyen);
 
                         Delete_PhanQuyen(maNhom);
-                        if (SelectedPhanQuyen.chkNhapHang) Add_PhanQuyen(maNhom, 1);
-                        if (SelectedPhanQuyen.chkXuatHang) Add_PhanQuyen(maNhom, 2);
-                        if (SelectedPhanQuyen.chkBanHang) Add_PhanQuyen(maNhom, 3);
-                        if (SelectedPhanQuyen.chkTraCuu) Add_PhanQuyen(maNhom, 4);
-                        if (SelectedPhanQuyen.chkBCDS) Add_PhanQuyen(maNhom, 5);
-                        if (SelectedPhanQuyen.chkBCTK) Add_PhanQuyen(maNhom, 6);
-                        if (SelectedPhanQuyen.chkTDQD) Add_PhanQuyen(maNhom, 7);
-                        if (SelectedPhanQuyen.chkQLNS) Add_PhanQuyen(maNhom, 8);
+                        if (SelectedPhanQuyen.chkQLNS) Add_PhanQuyen(maNhom, 1);
+                        if (SelectedPhanQuyen.chkNhapHang) Add_PhanQuyen(maNhom, 2);
+                        if (SelectedPhanQuyen.chkKiemDuyetNhapHang) Add_PhanQuyen(maNhom, 3);
+                        if (SelectedPhanQuyen.chkBanHang) Add_PhanQuyen(maNhom, 4);
+                        if (SelectedPhanQuyen.chkKiemDuyetXuatHang) Add_PhanQuyen(maNhom, 5);
+                        if (SelectedPhanQuyen.chkTraCuu) Add_PhanQuyen(maNhom, 6);
+                        if (SelectedPhanQuyen.chkBCDS) Add_PhanQuyen(maNhom, 7);
+                        if (SelectedPhanQuyen.chkBCTK) Add_PhanQuyen(maNhom, 8);
                         //System.Windows.Forms.MessageBox.Show("Chỉnh sửa quyền thành công cho nhóm " + SelectedPhanQuyen.TenNhomQuyen);
                         DialogOpen = true;
                         ThongBao = "Chỉnh sửa quyền thành công cho nhóm " + SelectedPhanQuyen.TenNhomQuyen;
