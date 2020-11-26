@@ -12,16 +12,23 @@ namespace MasterSaveDemo.Model
     using System;
     using System.Data.Entity;
     using System.Data.Entity.Infrastructure;
-    
+    using System.Data.Entity.ModelConfiguration.Conventions;
+
     public partial class QLSieuThiEntities : DbContext
     {
         public QLSieuThiEntities()
             : base("name=QLSieuThiEntities")
         {
         }
-    
+
+        public QLSieuThiEntities(string nameOrConnectionString) : base(nameOrConnectionString)
+        {
+            ((IObjectContextAdapter)this).ObjectContext.CommandTimeout = 180;
+        }
+
         protected override void OnModelCreating(DbModelBuilder modelBuilder)
         {
+            modelBuilder.Conventions.Remove<PluralizingTableNameConvention>();
             throw new UnintentionalCodeFirstException();
         }
     
