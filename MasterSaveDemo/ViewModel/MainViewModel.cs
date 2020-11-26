@@ -42,46 +42,53 @@ namespace MasterSaveDemo.ViewModel
             set { _Enable_Home = value; OnPropertyChanged(); }
         }
 
-        private bool _Enable_MoSo;
-        public bool Enable_XuatHang
+        private bool _Enable_NhapHang;
+        public bool Enable_NhapHang
         {
-            get => _Enable_MoSo;
-            set { _Enable_MoSo = value; OnPropertyChanged(); }
+            get => _Enable_NhapHang;
+            set { _Enable_NhapHang = value; OnPropertyChanged(); }
         }
 
-        private bool _Enable_GuiTien;
+        private bool _Enable_DuyetNhapHang;
+        public bool Enable_DuyetNhapHang
+        {
+            get => _Enable_DuyetNhapHang;
+            set { _Enable_DuyetNhapHang = value; OnPropertyChanged(); }
+        }
+
+        private bool _Enable_BanHang;
         public bool Enable_BanHang
         {
-            get => _Enable_GuiTien;
-            set { _Enable_GuiTien = value; OnPropertyChanged(); }
+            get => _Enable_BanHang;
+            set { _Enable_BanHang = value; OnPropertyChanged(); }
         }
 
-        private bool _Enable_RutTien;
-        public bool Enable_TraCuu
+        private bool _Enable_DuyetXuatHang;
+        public bool Enable_DuyetXuatHang
         {
-            get => _Enable_RutTien;
-            set { _Enable_RutTien = value; OnPropertyChanged(); }
+            get => _Enable_DuyetXuatHang;
+            set { _Enable_DuyetXuatHang = value; OnPropertyChanged(); }
         }
 
         private bool _Enable_TraCuu;
-        public bool Enable_BCDS
+        public bool Enable_TraCuu
         {
             get => _Enable_TraCuu;
             set { _Enable_TraCuu = value; OnPropertyChanged(); }
         }
 
         private bool _Enable_BCDS;
-        public bool Enable_BCTK
+        public bool Enable_BCDS
         {
             get => _Enable_BCDS;
             set { _Enable_BCDS = value; OnPropertyChanged(); }
         }
 
-        private bool _Enable_BCMD;
-        public bool Enable_TDQD
+        private bool _Enable_BCTK;
+        public bool Enable_BCTK
         {
-            get => _Enable_BCMD;
-            set { _Enable_BCMD = value; OnPropertyChanged(); }
+            get => _Enable_BCTK;
+            set { _Enable_BCTK = value; OnPropertyChanged(); }
         }
 
         private Page _FrameContent;
@@ -108,18 +115,12 @@ namespace MasterSaveDemo.ViewModel
         public ICommand DangXuat_SelectedCommand { get; set; }
         #endregion
 
-        private bool _Enable_TDQD;
-        public bool Enable_QLNS
-        {
-            get => _Enable_TDQD;
-            set { _Enable_TDQD = value; OnPropertyChanged(); }
-        }
-
         private bool _Enable_QLNS;
-        public bool Enable_NhapHang
+        public bool Enable_QLNS
         {
             get => _Enable_QLNS;
             set { _Enable_QLNS = value; OnPropertyChanged(); }
+
         }
 
         // tool tip of navigation
@@ -208,7 +209,7 @@ namespace MasterSaveDemo.ViewModel
 
         private void Init_Button()
         {
-            Enable_Home = Enable_BanHang = Enable_TraCuu = Enable_BCDS = Enable_BCTK = Enable_TDQD = Enable_NhapHang = Enable_QLNS = Enable_XuatHang = false;
+            Enable_Home = Enable_NhapHang = Enable_DuyetNhapHang = Enable_BanHang = Enable_DuyetXuatHang = Enable_TraCuu = Enable_BCDS = Enable_BCTK = Enable_QLNS = false;
             Enable_Home = true;
             // tooltip handle
             XuatHang_Tooltip = BanHang_Tooltip = TraCuu_Tooltip = BaoCaoDS_Tooltip = BaoCaoTK_Tooltip = TDQD_Tooltip = NhapHang_Tooltip = QLNS_Tooltip = "Không thể truy cập";
@@ -220,28 +221,28 @@ namespace MasterSaveDemo.ViewModel
             switch (maChucNang)
             {
                 case 1:
-                    Enable_NhapHang = true;
+                    Enable_QLNS = true;
                     break;
                 case 2:
-                    Enable_XuatHang = true;
+                    Enable_NhapHang = true;
                     break;
                 case 3:
-                    Enable_BanHang = true;
+                    Enable_DuyetNhapHang = true;
                     break;
                 case 4:
-                    Enable_TraCuu = true;
+                    Enable_BanHang = true;
                     break;
                 case 5:
-                    Enable_BCDS = true;
+                    Enable_DuyetXuatHang = true;
                     break;
                 case 6:
-                    Enable_BCTK = true;
+                    Enable_TraCuu = true;
                     break;
                 case 7:
-                    Enable_TDQD = true;
+                    Enable_BCDS = true;
                     break;
                 case 8:
-                    Enable_QLNS = true;
+                    Enable_BCTK = true;
                     break;
                 case 9:
                     break;
@@ -294,7 +295,7 @@ namespace MasterSaveDemo.ViewModel
         {
             updateThongKeNgay();
             // set bang true sau nay phai sua hihi
-            Enable_BCTK = Enable_TDQD = Enable_BanHang = Enable_Home = Enable_XuatHang = Enable_NhapHang = Enable_TraCuu = Enable_QLNS = Enable_BCDS = true;
+            Init_Button();
             //Selected_HOME = true;
             //Selected_DangXuat = false;
             LoadedWindowCommand = new RelayCommand<Window>((p) => { return true; }, (p) => {

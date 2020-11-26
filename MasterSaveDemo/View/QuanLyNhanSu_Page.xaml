@@ -286,16 +286,15 @@
                                                 </GridViewColumn.CellTemplate>
                                             </GridViewColumn>
 
-                                            <GridViewColumn Header="Xuất hàng"  >
+                                            <GridViewColumn Header="Kiểm duyệt nhập hàng" >
                                                 <GridViewColumn.CellTemplate>
                                                     <DataTemplate>
                                                         <StackPanel HorizontalAlignment="Center" VerticalAlignment="Center">
-                                                            <CheckBox IsChecked ="{Binding chkXuatHang}" IsEnabled="{Binding EnabledCheckBox}" />
+                                                            <CheckBox HorizontalAlignment="Center" IsChecked ="{Binding chkKiemDuyetNhapHang}" IsEnabled="{Binding EnabledCheckBox}"/>
                                                         </StackPanel>
                                                     </DataTemplate>
                                                 </GridViewColumn.CellTemplate>
                                             </GridViewColumn>
-
 
                                             <GridViewColumn Header="Bán hàng" >
                                                 <GridViewColumn.CellTemplate>
@@ -307,6 +306,16 @@
                                                 </GridViewColumn.CellTemplate>
                                             </GridViewColumn>
 
+                                            <GridViewColumn Header="Kiểm duyệt xuất hàng"  >
+                                                <GridViewColumn.CellTemplate>
+                                                    <DataTemplate>
+                                                        <StackPanel HorizontalAlignment="Center" VerticalAlignment="Center">
+                                                            <CheckBox IsChecked ="{Binding chkKiemDuyetXuatHang}" IsEnabled="{Binding EnabledCheckBox}" />
+                                                        </StackPanel>
+                                                    </DataTemplate>
+                                                </GridViewColumn.CellTemplate>
+                                            </GridViewColumn>
+                                            
                                             <GridViewColumn Header="Tra cứu kho" >
                                                 <GridViewColumn.CellTemplate>
                                                     <DataTemplate>
@@ -332,16 +341,6 @@
                                                     <DataTemplate>
                                                         <StackPanel HorizontalAlignment="Center" VerticalAlignment="Center">
                                                             <CheckBox IsChecked ="{Binding chkBCTK}" IsEnabled="{Binding EnabledCheckBox}" />
-                                                        </StackPanel>
-                                                    </DataTemplate>
-                                                </GridViewColumn.CellTemplate>
-                                            </GridViewColumn>
-
-                                            <GridViewColumn Header="Thay đổi quy định" >
-                                                <GridViewColumn.CellTemplate>
-                                                    <DataTemplate>
-                                                        <StackPanel HorizontalAlignment="Center" VerticalAlignment="Center">
-                                                            <CheckBox IsChecked ="{Binding chkTDQD}" IsEnabled="{Binding EnabledCheckBox}" />
                                                         </StackPanel>
                                                     </DataTemplate>
                                                 </GridViewColumn.CellTemplate>

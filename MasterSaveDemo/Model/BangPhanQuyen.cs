@@ -12,19 +12,19 @@ namespace MasterSaveDemo.Model
     {
         public string TenNhomQuyen { get; set; }
         public bool chkNhapHang { get; set; }
-        public bool chkXuatHang { get; set; }
+        public bool chkKiemDuyetNhapHang { get; set; }
         public bool chkBanHang { get; set; }
+        public bool chkKiemDuyetXuatHang { get; set; }
         public bool chkTraCuu { get; set; }
         public bool chkBCDS { get; set; }
         public bool chkBCTK { get; set; }
-        public bool chkTDQD { get; set; }
         public bool chkQLNS { get; set; }
         public bool EnabledCheckBox { get; set; }
 
         public BangPhanQuyen(string Ten, bool Enabled)
         {
 
-            chkNhapHang = chkXuatHang = chkBanHang = chkTraCuu = chkBCDS = chkBCTK = chkTDQD = chkQLNS = false;
+            chkNhapHang = chkKiemDuyetNhapHang = chkBanHang = chkTraCuu = chkBCDS = chkBCTK = chkKiemDuyetXuatHang = chkQLNS = false;
             EnabledCheckBox = Enabled;
 
             ObservableCollection<PHANQUYEN> phanQuyen = new ObservableCollection<PHANQUYEN>(DataProvider.Ins.DB.PHANQUYENs);
@@ -40,28 +40,28 @@ namespace MasterSaveDemo.Model
                             switch (PQ.MaChucNang)
                             {
                                 case 1:
-                                    chkNhapHang = true;
+                                    chkQLNS = true;
                                     break;
                                 case 2:
-                                    chkXuatHang = true;
+                                    chkNhapHang = true;
                                     break;
                                 case 3:
-                                    chkBanHang = true;
+                                    chkKiemDuyetNhapHang = true;
                                     break;
                                 case 4:
-                                    chkTraCuu = true;
+                                    chkBanHang = true;
                                     break;
                                 case 5:
-                                    chkBCDS = true;
+                                    chkKiemDuyetXuatHang = true;
                                     break;
                                 case 6:
-                                    chkBCTK = true;
+                                    chkTraCuu = true;
                                     break;
                                 case 7:
-                                    chkTDQD = true;
+                                    chkBCDS = true;
                                     break;
                                 case 8:
-                                    chkQLNS = true;
+                                    chkBCTK = true;
                                     break;
                             }
                         }
