@@ -43,6 +43,7 @@ namespace MasterSaveDemo.ViewModel
         public ICommand AddNSXCommand { get; set; }
         public ICommand EditNSXCommand { get; set; }
         public ICommand EditMHCommand { get; set; }
+        public ICommand ChangeNCC { get; set; }
 
         #endregion
 
@@ -604,7 +605,7 @@ namespace MasterSaveDemo.ViewModel
             {
                 ThemHangNhap_ViewModel.okAdd = false;
                 Window themHANG = new ThemHangNhap_Window();
-                themHANG.DataContext = new ThemHangNhap_ViewModel();
+                themHANG.DataContext = new ThemHangNhap_ViewModel(SelectedItemNCC.MaNCC);
                 themHANG.ShowDialog();
                 if (ThemHangNhap_ViewModel.okAdd)
                 {
@@ -876,6 +877,16 @@ namespace MasterSaveDemo.ViewModel
                 ThongBao = "Lập phiếu nhập hàng thành công!";
                 save_PNK();
                 DialogOpen = true;
+            });
+
+            ChangeNCC = new RelayCommand<Object>((p) => { return true; }, (p) =>
+            {
+                if (ListMatHang == null || ListMatHang.Count() == 0) return;
+                MessageBoxResult res = MessageBox.Show("Bạn có chắc thay đổi nhà cung cấp khi đang thêm mặt hàng? Danh sách mặt hàng sẽ hủy sau đó!!!", "Thay đổi", MessageBoxButton.YesNo, MessageBoxImage.Question);
+                if (res == MessageBoxResult.Yes)
+                {
+                    ListMatHang.Clear();
+                }
             });
             #endregion
 
