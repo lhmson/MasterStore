@@ -175,7 +175,7 @@
             <Button VerticalAlignment="Stretch" Command="{Binding AddMHCommand}" Content="Thêm" FontSize="16" Height="40" Margin="0,0,16,0"></Button>
         </Grid>
         <Grid Margin="8,0,8,8" Grid.Column="10" Grid.Row="10" Grid.ColumnSpan="2">
-            <Button Command="{Binding EditMHCommand}" Content="Sửa" Height="40" FontSize="16" Margin="8,0"></Button>
+            <Button Command="{Binding EditMHCommand}" Content="Lưu thay đổi" Height="40" FontSize="16" Margin="8,0"></Button>
         </Grid>
     </Grid>
 </Window>

@@ -718,7 +718,9 @@ namespace MasterSaveDemo.ViewModel
                 SelectedItemNCC.SDT = SDT;
                 DataProvider.Ins.DB.SaveChanges();
                 OnPropertyChanged("SelectedItemNCC");
-                InitNCC();
+
+                //InitNCC();
+                MessageBox.Show("Bạn lưu thành công nhà cung cấp");
             });
 
             AddNSXCommand = new AppCommand<object>((p) =>
@@ -814,7 +816,8 @@ namespace MasterSaveDemo.ViewModel
                 SelectedItemNSX.SDT = SDTNSX;
                 DataProvider.Ins.DB.SaveChanges();
                 OnPropertyChanged("SelectedItemNSX");
-                InitNSX();
+                //InitNSX();
+                MessageBox.Show("Bạn lưu thành công nhà sản xuất");
 
             });
 
@@ -982,7 +985,8 @@ namespace MasterSaveDemo.ViewModel
                 image = null;
                 OnPropertyChanged("SelectedItemMH");
 
-                InitMH();
+                //InitMH();
+                MessageBox.Show("Bạn lưu thành công mặt hàng");
 
 
             });
