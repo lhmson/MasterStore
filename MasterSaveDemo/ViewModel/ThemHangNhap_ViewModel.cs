@@ -15,6 +15,7 @@ namespace MasterSaveDemo.ViewModel
     {
         #region Sub Functions
 
+        string maNCC = "1";
         public void init_ListView()
         {
             ObservableCollection<MATHANG> listMatHang = new ObservableCollection<MATHANG>(DataProvider.Ins.DB.MATHANGs);
@@ -33,6 +34,7 @@ namespace MasterSaveDemo.ViewModel
 
         public bool duyet_MatHang(MATHANG mh, string ma, string ten)
         {
+            if (mh.MaNCC != maNCC) return false;
             if (!String.IsNullOrWhiteSpace(ma))
             {
                 return (mh.MaMH.ToLower().Contains(ma.ToLower()));
@@ -163,8 +165,13 @@ namespace MasterSaveDemo.ViewModel
         public static bool okAdd { get; set; }
         #endregion
 
-        public ThemHangNhap_ViewModel()
+        public ThemHangNhap_ViewModel ()
         {
+
+        }
+        public ThemHangNhap_ViewModel(string maNCC)
+        {
+            this.maNCC = maNCC;
             okAdd = false;
             init_ListView();
             ThoatCommand = new RelayCommand<Window>((p) => { return true; }, (p) => {
