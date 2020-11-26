@@ -33,7 +33,7 @@
                         <TextBlock FontSize="20" Foreground="Gray" Width="auto" Margin="15 15 15 15" TextWrapping="Wrap" Text="{Binding ThongBao}" HorizontalAlignment="Center"/>
                         <StackPanel Orientation="Horizontal" HorizontalAlignment="Center">
                             <Button Content="OK" Command="{Binding DialogOK}" Style="{DynamicResource MaterialDesignFlatButton}" Margin="4" VerticalAlignment="Center"/>
-                            <Button Visibility="{Binding IsCancelVisible}" Content="Cancel" Command="{Binding DialogCancel}" Style="{DynamicResource MaterialDesignFlatButton}" Margin="4" VerticalAlignment="Center"/>
+         
                         </StackPanel>
                     </StackPanel>
                 </Grid>

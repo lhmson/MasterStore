@@ -35,6 +35,7 @@ namespace MasterSaveDemo.ViewModel
             get => _Selected_DangXuat;
             set { _Selected_DangXuat = value; OnPropertyChanged(); }
         }
+        #region Enable
         private bool _Enable_Home;
         public bool Enable_Home
         {
@@ -90,6 +91,7 @@ namespace MasterSaveDemo.ViewModel
             get => _Enable_BCTK;
             set { _Enable_BCTK = value; OnPropertyChanged(); }
         }
+        #endregion
 
         private Page _FrameContent;
 
@@ -123,7 +125,9 @@ namespace MasterSaveDemo.ViewModel
 
         }
 
+        #endregion
         // tool tip of navigation
+        #region Tooltip
         private string _Home_Tooltip;
         public string Home_Tooltip
         {
@@ -131,61 +135,62 @@ namespace MasterSaveDemo.ViewModel
             set { _Home_Tooltip = value; OnPropertyChanged(); }
         }
 
-        private string _MoSo_Tooltip;
-        public string XuatHang_Tooltip
+        private string _NhapHang_Tooltip;
+        public string NhapHang_Tooltip
         {
-            get => _MoSo_Tooltip;
-            set { _MoSo_Tooltip = value; OnPropertyChanged(); }
+            get => _NhapHang_Tooltip;
+            set { _NhapHang_Tooltip = value; OnPropertyChanged(); }
         }
 
-        private string _GuiTien_Tooltip;
+        private string _BanHang_Tooltip;
         public string BanHang_Tooltip
         {
-            get => _GuiTien_Tooltip;
-            set { _GuiTien_Tooltip = value; OnPropertyChanged(); }
-        }
-
-        private string _RutTien_Tooltip;
-        public string TraCuu_Tooltip
-        {
-            get => _RutTien_Tooltip;
-            set { _RutTien_Tooltip = value; OnPropertyChanged(); }
+            get => _BanHang_Tooltip;
+            set { _BanHang_Tooltip = value; OnPropertyChanged(); }
         }
 
         private string _TraCuu_Tooltip;
-        public string BaoCaoDS_Tooltip
+        public string TraCuu_Tooltip
         {
             get => _TraCuu_Tooltip;
             set { _TraCuu_Tooltip = value; OnPropertyChanged(); }
         }
 
         private string _BaoCaoDS_Tooltip;
-        public string BaoCaoTK_Tooltip
+        public string BaoCaoDS_Tooltip
         {
             get => _BaoCaoDS_Tooltip;
             set { _BaoCaoDS_Tooltip = value; OnPropertyChanged(); }
         }
 
-        private string _BaoCaoMD_Tooltip;
-        public string TDQD_Tooltip
+        private string _BaoCaoTK_Tooltip;
+        public string BaoCaoTK_Tooltip
         {
-            get => _BaoCaoMD_Tooltip;
-            set { _BaoCaoMD_Tooltip = value; OnPropertyChanged(); }
-        }
-
-        private string _TDQD_Tooltip;
-        public string QLNS_Tooltip
-        {
-            get => _TDQD_Tooltip;
-            set { _TDQD_Tooltip = value; OnPropertyChanged(); }
+            get => _BaoCaoTK_Tooltip;
+            set { _BaoCaoTK_Tooltip = value; OnPropertyChanged(); }
         }
 
         private string _QLNS_Tooltip;
-        public string NhapHang_Tooltip
+        public string QLNS_Tooltip
         {
             get => _QLNS_Tooltip;
             set { _QLNS_Tooltip = value; OnPropertyChanged(); }
         }
+
+        private string _DuyetNhapHang_Tooltip;
+        public string DuyetNhapHang_Tooltip
+        {
+            get => _DuyetNhapHang_Tooltip;
+            set { _DuyetNhapHang_Tooltip = value; OnPropertyChanged(); }
+        }
+
+        private string _DuyetXuatHang_Tooltip;
+        public string DuyetXuatHang_Tooltip
+        {
+            get => _DuyetXuatHang_Tooltip;
+            set { _DuyetXuatHang_Tooltip = value; OnPropertyChanged(); }
+        }
+
 
         #endregion
 
@@ -212,7 +217,8 @@ namespace MasterSaveDemo.ViewModel
             Enable_Home = Enable_NhapHang = Enable_DuyetNhapHang = Enable_BanHang = Enable_DuyetXuatHang = Enable_TraCuu = Enable_BCDS = Enable_BCTK = Enable_QLNS = false;
             Enable_Home = true;
             // tooltip handle
-            XuatHang_Tooltip = BanHang_Tooltip = TraCuu_Tooltip = BaoCaoDS_Tooltip = BaoCaoTK_Tooltip = TDQD_Tooltip = NhapHang_Tooltip = QLNS_Tooltip = "Không thể truy cập";
+            Home_Tooltip = NhapHang_Tooltip = DuyetNhapHang_Tooltip = BanHang_Tooltip = DuyetXuatHang_Tooltip 
+                = TraCuu_Tooltip = BaoCaoDS_Tooltip = BaoCaoTK_Tooltip = "Không thể truy cập";
             Home_Tooltip = "Có thể truy cập";
         }
 
@@ -255,28 +261,30 @@ namespace MasterSaveDemo.ViewModel
             switch (maChucNang)
             {
                 case 1:
-                    NhapHang_Tooltip = "Có thể truy cập";
+                    QLNS_Tooltip = "Có thể truy cập";
                     break;
                 case 2:
-                    XuatHang_Tooltip = "Có thể truy cập";
+                    NhapHang_Tooltip = "Có thể truy cập";
                     break;
                 case 3:
-                    BanHang_Tooltip = "Có thể truy cập";
+                    DuyetNhapHang_Tooltip = "Có thể truy cập";
                     break;
                 case 4:
-                    TraCuu_Tooltip = "Có thể truy cập";
+                    BanHang_Tooltip = "Có thể truy cập";
                     break;
                 case 5:
-                    BaoCaoDS_Tooltip = "Có thể truy cập";
+                    DuyetXuatHang_Tooltip = "Có thể truy cập";
                     break;
                 case 6:
-                    BaoCaoTK_Tooltip = "Có thể truy cập";
+                    TraCuu_Tooltip = "Có thể truy cập";
                     break;
                 case 7:
-                    TDQD_Tooltip = "Có thể truy cập";
+                    BaoCaoDS_Tooltip = "Có thể truy cập";
                     break;
                 case 8:
-                    QLNS_Tooltip = "Có thể truy cập";
+                    BaoCaoTK_Tooltip = "Có thể truy cập";
+                    break;
+                case 9:
                     break;
             }
         }
