@@ -578,6 +578,20 @@ namespace MasterSaveDemo.ViewModel
         }
         #endregion
 
+        public int getNewID_NGUOIDUNG()
+        {
+            ObservableCollection<NGUOIDUNG> listNguoiDung = new ObservableCollection<NGUOIDUNG>(DataProvider.Ins.DB.NGUOIDUNGs);
+
+            int max = 0;
+            foreach (var item in listNguoiDung)
+            {
+                int id = int.Parse(item.MaNguoiDung);
+                if (id > max)
+                    max = id;
+            }
+            return max + 1;
+        }
+
         public QuanLyNhanSu_ViewModel()
         {
             Tat_ToolTip();
@@ -657,9 +671,9 @@ namespace MasterSaveDemo.ViewModel
 
                     if (VisibilityOfListNguoiDung == Visibility.Visible && SelectedItemNguoiDung != null) // Edit Nhóm người dùng
                     {
-                        if (SelectedItemNguoiDung.TenNhom == "Quản Trị Viên")
+                        if (SelectedItemNguoiDung.TenNhom == "Ban quản lý  ")
                         {
-                            System.Windows.MessageBox.Show("Không thể sửa thông tin được cho nhóm Quản Trị Viên");
+                            System.Windows.MessageBox.Show("Không thể sửa thông tin được cho nhóm Ban quản lý");
                             return;
                         }    
                         VisibilityOfEdit = Visibility.Visible;
@@ -673,9 +687,9 @@ namespace MasterSaveDemo.ViewModel
                     if (VisibilityOfListPhanQuyen == Visibility.Visible && SelectedPhanQuyen != null) // Edit Bảng phân quyền
                     {
 
-                        if (SelectedPhanQuyen.TenNhomQuyen == "Quản Trị Viên")
+                        if (SelectedPhanQuyen.TenNhomQuyen == "Ban quản lý")
                         {
-                            System.Windows.MessageBox.Show("Không thể phân quyền được cho nhóm Quản Trị Viên");
+                            System.Windows.MessageBox.Show("Không thể phân quyền được cho nhóm Ban quản lý");
                             return;
                         }
                         VisibilityOfTenNhomQuyen = Visibility.Hidden;
@@ -775,24 +789,25 @@ namespace MasterSaveDemo.ViewModel
                     {
                         if (Check_ThemNhanVien())
                         {
-
                             int Ma_Nhom = search_MaNhom(SelectedTenNhom);
                             var nguoiDung = new NGUOIDUNG()
                             {
+                                MaNguoiDung = getNewID_NGUOIDUNG().ToString(),
                                 TenDangNhap = TenDangNhap,
                                 MatKhau = MatKhau,
                                 HoTen = HoTen,
-                                MaNhom = Ma_Nhom
+                                MaNhom = Ma_Nhom,
+                                DiaChi = " ",
+                                SDT = " ",
+                                GioiTinh = " ",
                             };
+
                             DataProvider.Ins.DB.NGUOIDUNGs.Add(nguoiDung);
                             DataProvider.Ins.DB.SaveChanges();
-
-                            //System.Windows.Forms.MessageBox.Show("Đã thêm nhân viên thành công");
                             DialogOpen = true;
                             ThongBao = "Đã thêm nhân viên thành công";
                             NhanVien nv = new NhanVien(TenDangNhap, MatKhau, HoTen, SelectedTenNhom);
                             ListNhanVien.Add(nv);
-                            //System.Windows.MessageBox.Show(nv.TenDangNhap);
                             VisibilityOfAdd = Visibility.Hidden;
                             ResetTextbox();
                             VisibilityOfAdd = Visibility.Hidden;
