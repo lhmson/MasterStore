@@ -70,7 +70,7 @@
         
         <AssociationConnector Association="QLSieuThiModel.FK__PHANQUYEN__MaChu__2E1BDC42" />
 =======
-      <Diagram DiagramId="dd7b267123fc4685b8d5ffee1828b917" Name="Diagram1" ZoomLevel="64">
+      <Diagram DiagramId="dd7b267123fc4685b8d5ffee1828b917" Name="Diagram1" ZoomLevel="48">
         <EntityTypeShape EntityType="QLSieuThiModel.CT_HOADON" Width="1.5" PointX="8.25" PointY="11.375" />
         <EntityTypeShape EntityType="QLSieuThiModel.CT_PHIEUNHAPKHO" Width="1.5" PointX="8.25" PointY="7.5" />
         <EntityTypeShape EntityType="QLSieuThiModel.CT_PHIEUXUATKHO" Width="1.5" PointX="11.25" PointY="11.375" />

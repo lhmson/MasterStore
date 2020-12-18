@@ -156,39 +156,51 @@
     <Compile Include="Helper\ListMatHangThem.cs" />
     <Compile Include="Helper\ListPhieu.cs" />
     <Compile Include="Helper\ListTheKho.cs" />
+    <Compile Include="Model\CHUCNANG.cs">
+      <DependentUpon>QLSieuThiRemoteModel123.tt</DependentUpon>
+    </Compile>
     <Compile Include="Model\CT_HOADON.cs">
-      <DependentUpon>QLSieuThiRemoteModel.tt</DependentUpon>
+      <DependentUpon>QLSieuThiRemoteModel123.tt</DependentUpon>
     </Compile>
     <Compile Include="Model\CT_PHIEUNHAPKHO.cs">
-      <DependentUpon>QLSieuThiRemoteModel.tt</DependentUpon>
+      <DependentUpon>QLSieuThiRemoteModel123.tt</DependentUpon>
     </Compile>
     <Compile Include="Model\CT_PHIEUXUATKHO.cs">
-      <DependentUpon>QLSieuThiRemoteModel.tt</DependentUpon>
+      <DependentUpon>QLSieuThiRemoteModel123.tt</DependentUpon>
     </Compile>
     <Compile Include="Model\CT_THEKHO.cs">
-      <DependentUpon>QLSieuThiRemoteModel.tt</DependentUpon>
+      <DependentUpon>QLSieuThiRemoteModel123.tt</DependentUpon>
     </Compile>
     <Compile Include="Model\CT_THONGKENGAY.cs">
-      <DependentUpon>QLSieuThiRemoteModel.tt</DependentUpon>
+      <DependentUpon>QLSieuThiRemoteModel123.tt</DependentUpon>
     </Compile>
     <Compile Include="Model\HOADON.cs">
-      <DependentUpon>QLSieuThiRemoteModel.tt</DependentUpon>
+      <DependentUpon>QLSieuThiRemoteModel123.tt</DependentUpon>
     </Compile>
     <Compile Include="Model\MATHANG.cs">
-      <DependentUpon>QLSieuThiRemoteModel.tt</DependentUpon>
+      <DependentUpon>QLSieuThiRemoteModel123.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Model\NGUOIDUNG.cs">
+      <DependentUpon>QLSieuThiRemoteModel123.tt</DependentUpon>
     </Compile>
     <Compile Include="Model\NHACUNGCAP.cs">
-      <DependentUpon>QLSieuThiRemoteModel.tt</DependentUpon>
+      <DependentUpon>QLSieuThiRemoteModel123.tt</DependentUpon>
     </Compile>
     <Compile Include="Model\NhanVien.cs" />
     <Compile Include="Model\NHASANXUAT.cs">
-      <DependentUpon>QLSieuThiRemoteModel.tt</DependentUpon>
+      <DependentUpon>QLSieuThiRemoteModel123.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Model\NHOMNGUOIDUNG.cs">
+      <DependentUpon>QLSieuThiRemoteModel123.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Model\PHANQUYEN.cs">
+      <DependentUpon>QLSieuThiRemoteModel123.tt</DependentUpon>
     </Compile>
     <Compile Include="Model\PHIEUNHAPKHO.cs">
-      <DependentUpon>QLSieuThiRemoteModel.tt</DependentUpon>
+      <DependentUpon>QLSieuThiRemoteModel123.tt</DependentUpon>
     </Compile>
     <Compile Include="Model\PHIEUXUATKHO.cs">
-      <DependentUpon>QLSieuThiRemoteModel.tt</DependentUpon>
+      <DependentUpon>QLSieuThiRemoteModel123.tt</DependentUpon>
     </Compile>
     <Compile Include="Model\QLSieuThiModel.Context.cs">
       <AutoGen>True</AutoGen>
@@ -220,20 +232,38 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>QLSieuThiRemoteModel.edmx</DependentUpon>
     </Compile>
+    <Compile Include="Model\QLSieuThiRemoteModel123.Context.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>QLSieuThiRemoteModel123.Context.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Model\QLSieuThiRemoteModel123.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>QLSieuThiRemoteModel123.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Model\QLSieuThiRemoteModel123.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>QLSieuThiRemoteModel123.edmx</DependentUpon>
+    </Compile>
     <Compile Include="Model\QUAY.cs">
-      <DependentUpon>QLSieuThiRemoteModel.tt</DependentUpon>
+      <DependentUpon>QLSieuThiRemoteModel123.tt</DependentUpon>
     </Compile>
     <Compile Include="Model\sysdiagram.cs">
       <DependentUpon>QLSieuThiModel.tt</DependentUpon>
     </Compile>
+    <Compile Include="Model\THAMSO.cs">
+      <DependentUpon>QLSieuThiRemoteModel123.tt</DependentUpon>
+    </Compile>
     <Compile Include="Model\THEKHO.cs">
-      <DependentUpon>QLSieuThiRemoteModel.tt</DependentUpon>
+      <DependentUpon>QLSieuThiRemoteModel123.tt</DependentUpon>
     </Compile>
     <Compile Include="Model\THONGBAO.cs">
-      <DependentUpon>QLSieuThiRemoteModel.tt</DependentUpon>
+      <DependentUpon>QLSieuThiRemoteModel123.tt</DependentUpon>
     </Compile>
     <Compile Include="Model\THONGKENGAY.cs">
-      <DependentUpon>QLSieuThiRemoteModel.tt</DependentUpon>
+      <DependentUpon>QLSieuThiRemoteModel123.tt</DependentUpon>
     </Compile>
     <Compile Include="NhapHang_PrintPreview.xaml.cs">
       <DependentUpon>NhapHang_PrintPreview.xaml</DependentUpon>
@@ -290,27 +320,12 @@
     </Compile>
     <Compile Include="Model\BangPhanQuyen.cs" />
     <Compile Include="Model\BaoCaoDS.cs" />
-    <Compile Include="Model\CHUCNANG.cs">
-      <DependentUpon>QLSieuThiRemoteModel.tt</DependentUpon>
-    </Compile>
     <Compile Include="Model\DataProvider.cs" />
     <Compile Include="Model\ListBaoCaoDongMo.cs" />
     <Compile Include="Model\ListBaoCaoDongMo_DaBaoCao.cs" />
     <Compile Include="Model\ListLichSuPhieuRut.cs" />
     <Compile Include="Model\ListLichSuPhieuGui.cs" />
     <Compile Include="Model\STKDuocTraCuu.cs" />
-    <Compile Include="Model\NGUOIDUNG.cs">
-      <DependentUpon>QLSieuThiRemoteModel.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Model\NHOMNGUOIDUNG.cs">
-      <DependentUpon>QLSieuThiRemoteModel.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Model\PHANQUYEN.cs">
-      <DependentUpon>QLSieuThiRemoteModel.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Model\THAMSO.cs">
-      <DependentUpon>QLSieuThiRemoteModel.tt</DependentUpon>
-    </Compile>
     <Compile Include="ResourceXAML\ThayDoiQuyDinh_Resource.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -536,6 +551,13 @@
     <None Include="Model\QLSieuThiRemoteModel.edmx.diagram">
       <DependentUpon>QLSieuThiRemoteModel.edmx</DependentUpon>
     </None>
+    <EntityDeploy Include="Model\QLSieuThiRemoteModel123.edmx">
+      <Generator>EntityModelCodeGenerator</Generator>
+      <LastGenOutput>QLSieuThiRemoteModel123.Designer.cs</LastGenOutput>
+    </EntityDeploy>
+    <None Include="Model\QLSieuThiRemoteModel123.edmx.diagram">
+      <DependentUpon>QLSieuThiRemoteModel123.edmx</DependentUpon>
+    </None>
     <None Include="packages.config" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
@@ -621,6 +643,16 @@
       <Generator>TextTemplatingFileGenerator</Generator>
       <DependentUpon>QLSieuThiRemoteModel.edmx</DependentUpon>
       <LastGenOutput>QLSieuThiRemoteModel.cs</LastGenOutput>
+    </Content>
+    <Content Include="Model\QLSieuThiRemoteModel123.Context.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>QLSieuThiRemoteModel123.edmx</DependentUpon>
+      <LastGenOutput>QLSieuThiRemoteModel123.Context.cs</LastGenOutput>
+    </Content>
+    <Content Include="Model\QLSieuThiRemoteModel123.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>QLSieuThiRemoteModel123.edmx</DependentUpon>
+      <LastGenOutput>QLSieuThiRemoteModel123.cs</LastGenOutput>
     </Content>
     <Content Include="QLSTK.sql" />
   </ItemGroup>

@@ -22,11 +22,11 @@ namespace MasterSaveDemo.Model
             }
         }
 
-        public QLSieuThiRemoteEntities DB { get; set; }
+        public QLSieuThiEntities123 DB { get; set; }
 
         private DataProvider()
         {
-            DB = new QLSieuThiRemoteEntities();
+            DB = new QLSieuThiEntities123();
         }
     }
 }
