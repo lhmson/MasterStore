@@ -11,43 +11,36 @@ namespace MasterSaveDemo.UnitTest
     [TestFixture]
     public class TestQuanLyNhanVien
     {
-        //private QuanLyNhanSu_ViewModel _QLNS;
+        private QuanLyNhanSu_ViewModel _QLNS;
 
-        //[SetUp]
-        //public void Setup()
-        //{
-        //    _QLNS = new QuanLyNhanSu_ViewModel();
-        //}
+        [SetUp]
+        public void Setup()
+        {
+            _QLNS = new QuanLyNhanSu_ViewModel();
+        }
 
-        //[TestCase(true, "Quản trị viên")]
-        //[TestCase(true, "Trưởng Phòng Nhân Sự")]
-        //[TestCase(false, "Kế toán")]
+        [TestCase(true, "Ban Quản lý")]
+        [TestCase(true, "Thu Ngân")]
+        [TestCase(true, "Cửa Hàng Trưởng")]
+        [TestCase(true, "HR")]
+        [TestCase(false, "Trưởng Phòng Nhân Sự")]
+        [TestCase(false, "Kế toán")]
 
-        //public void KiemTraChuoiToanKhoangTrang(bool ok, string name)
-        //{
-        //    Assert.AreEqual(ok, _QLNS.Check_TenNhomQuyen(name));
-        //}
+        public void TestTonTaiQuyen(bool ok, string name)
+        {
+            Assert.AreEqual(ok, _QLNS.Check_TenNhomQuyen(name));
+        }
 
-        //[Test]
-        //public void Test_TaoMaNhomNguoiDung_1()
-        //{
-        //    Assert.AreEqual(6, _QLNS.CreateCodeNhomNguoiDung());
-        //}
+        [TestCase(2, "Thủ Kho")]
+        [TestCase(3, "Thu Ngân")]
+        [TestCase(4, "Cửa Hàng Trưởng")]
+        [TestCase(5, "HR")]
+        [TestCase(6, "Ban quản lý")]
 
-        //[TestCase(1, "Quản Trị Viên")]
-        //[TestCase(2, "Kiểm Toán Viên")]
-        //[TestCase(3, "Giao Dịch Viên")]
-
-        //public void Tim_MaNhom(int number, string name)
-        //{
-        //    Assert.AreEqual(number, _QLNS.search_MaNhom(name));
-        //}
-
-        //[Test]
-        //public void Tim_MaNhom_2()
-        //{
-        //    Assert.AreEqual(0, _QLNS.search_MaNhom("Kế toán"));
-        //}
+        public void Tim_MaNhom(int number, string name)
+        {
+            Assert.AreEqual(number, _QLNS.search_MaNhom(name));
+        }
     }
 
 }

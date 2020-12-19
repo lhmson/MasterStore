@@ -332,11 +332,11 @@
       <DependentUpon>ThayDoiQuyDinh_Resource.resx</DependentUpon>
     </Compile>
     <Compile Include="UnitTest\TestBaoCaoDoanhSo.cs" />
-    <Compile Include="UnitTest\TestHome.cs" />
-    <Compile Include="UnitTest\TestMoSo.cs" />
+    <Compile Include="UnitTest\TestThemHang.cs" />
+    <Compile Include="UnitTest\TestBanHang.cs" />
     <Compile Include="UnitTest\TestQuanLyNhanVien.cs" />
-    <Compile Include="UnitTest\TestThayDoiQuyDinh.cs" />
-    <Compile Include="UnitTest\TestTraCuu.cs" />
+    <Compile Include="UnitTest\TestNhapHang.cs" />
+    <Compile Include="UnitTest\TestDuyetPhieuNhap.cs" />
     <Compile Include="ViewModel\BaoCaoDoanhSo_PrintPreview_ViewModel.cs" />
     <Compile Include="ViewModel\BaoCaoDoanhSo_ViewModel.cs" />
     <Compile Include="ViewModel\BaoCaoTonKho_PrintPreview_ViewModel.cs" />
