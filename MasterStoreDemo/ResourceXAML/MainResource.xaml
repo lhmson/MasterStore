@@ -1,0 +1,22 @@
+﻿<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+                    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+                    xmlns:viewmodel="clr-namespace:MasterStoreDemo.ViewModel"
+                    xmlns:local="clr-namespace:MasterStoreDemo.ResourceXAML;assembly=">
+    <viewmodel:MainViewModel x:Key="MainVM"></viewmodel:MainViewModel>
+    <viewmodel:LoginViewModel x:Key="LoginVM"></viewmodel:LoginViewModel>
+    <viewmodel:NhapHang_ViewModel x:Key="NhapHangVM"></viewmodel:NhapHang_ViewModel>
+    <viewmodel:XuatHang_ViewModel x:Key="XuatHangVM"></viewmodel:XuatHang_ViewModel>
+    <viewmodel:BanHang_ViewModel x:Key="BanHangVM"></viewmodel:BanHang_ViewModel>
+    <viewmodel:TraCuu_ViewModel x:Key="TraCuuVM"></viewmodel:TraCuu_ViewModel>
+    <viewmodel:BaoCaoDoanhSo_ViewModel x:Key="BaoCaoDoanhSoVM"></viewmodel:BaoCaoDoanhSo_ViewModel>
+    <viewmodel:BaoCaoTonKho_ViewModel x:Key="BaoCaoTonKhoVM"></viewmodel:BaoCaoTonKho_ViewModel>
+    <viewmodel:ThayDoiQuyDinh_ViewModel x:Key="ThayDoiQuyDinhVM"></viewmodel:ThayDoiQuyDinh_ViewModel>
+    <viewmodel:QuanLyNhanSu_ViewModel x:Key="QuanLyNhanSuVM"></viewmodel:QuanLyNhanSu_ViewModel>
+    <viewmodel:Home_PageViewModel x:Key="HomeVM"></viewmodel:Home_PageViewModel>
+    <viewmodel:ControlBarViewModel x:Key="SelfControlVM"></viewmodel:ControlBarViewModel>
+    <viewmodel:CaiDatKhac_ViewModel x:Key="CaiDatKhacVM"></viewmodel:CaiDatKhac_ViewModel>
+    <viewmodel:ThemHang_ViewModel x:Key="ThemHangVM"></viewmodel:ThemHang_ViewModel>
+    <viewmodel:PhieuDNXH_ViewModel x:Key="PhieuDNXHVM"></viewmodel:PhieuDNXH_ViewModel>
+    <viewmodel:ThemHangNhap_ViewModel x:Key="ThemHangNhapVM"></viewmodel:ThemHangNhap_ViewModel>
+    <viewmodel:DuyetPhieuNhap_ViewModel x:Key="DuyetPhieuNhapVM"></viewmodel:DuyetPhieuNhap_ViewModel>
+</ResourceDictionary>
