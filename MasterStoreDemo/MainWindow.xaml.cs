@@ -28,16 +28,16 @@ namespace MasterStoreDemo
     {
         #region Management Page Selections
 
-        private Home_Page HomePage = new Home_Page();
-        private NhapHang_Page MoSoPage = new NhapHang_Page();
-       // private XuatHang_Page GuiTienPage = new XuatHang_Page();
-        private BanHang_Page RutTienPage = new BanHang_Page();
-        private BaoCaoDoanhSo_Page BaoCaoDoanhSoPage = new BaoCaoDoanhSo_Page();
-        private BaoCaoTonKho_Page BaoCaoMoDongPage = new BaoCaoTonKho_Page();
-        private ThayDoiQuyDinh_Page ThayDoiQuyDinhPage = new ThayDoiQuyDinh_Page();
-        private QuanLyNhanSu_Page QuanLyNhanSuPage = new QuanLyNhanSu_Page();
-        private CaiDatKhac_Page CaiDatKhacPage = new CaiDatKhac_Page();
-        private TraCuu_Page TraCuuPage = new TraCuu_Page();
+       // private Home_Page HomePage = new Home_Page();
+       // private NhapHang_Page MoSoPage = new NhapHang_Page();
+       //// private XuatHang_Page GuiTienPage = new XuatHang_Page();
+       // private BanHang_Page RutTienPage = new BanHang_Page();
+       // private BaoCaoDoanhSo_Page BaoCaoDoanhSoPage = new BaoCaoDoanhSo_Page();
+       // private BaoCaoTonKho_Page BaoCaoMoDongPage = new BaoCaoTonKho_Page();
+       // private ThayDoiQuyDinh_Page ThayDoiQuyDinhPage = new ThayDoiQuyDinh_Page();
+       // private QuanLyNhanSu_Page QuanLyNhanSuPage = new QuanLyNhanSu_Page();
+       // private CaiDatKhac_Page CaiDatKhacPage = new CaiDatKhac_Page();
+       // private TraCuu_Page TraCuuPage = new TraCuu_Page();
         #endregion
 
         public MainWindow()
